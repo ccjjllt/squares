@@ -1,0 +1,426 @@
+{
+  "date": "2026-11-06",
+  "note": "Hashes are recorded at relocation, before intentional updates to our documentation and script paths. Historical reports and upstream sources are retained verbatim.",
+  "moves": [
+    {
+      "old_path": "README.md",
+      "new_path": "docs/getting-started.md",
+      "sha256_at_move": "f0215668d240462fac7578bf289792382de7ade6ce8d8c4523f2d4cc49e3cfa4"
+    },
+    {
+      "old_path": "THIRD_PARTY_NOTICES.md",
+      "new_path": "docs/third-party.md",
+      "sha256_at_move": "8d86cdc80bdfb6287f32ed76ff333db0ac397b646d91994668cad1a33570bd49"
+    },
+    {
+      "old_path": "research/analysis/analysis_console.txt",
+      "new_path": "outputs/analysis/baseline/logs/analysis_console.txt",
+      "sha256_at_move": "f648b73c96cf6ff1d8377e5b0f44472d3a5a3413d610da21ff858180be596d47"
+    },
+    {
+      "old_path": "research/analysis/analyze_baseline.py",
+      "new_path": "scripts/analysis/analyze_baseline.py",
+      "sha256_at_move": "9b6fb416e054df323a0d5dd5dd50ae94327c3a19b74b1834922b2bea1405552c"
+    },
+    {
+      "old_path": "research/analysis/atlas_snapshot.json",
+      "new_path": "data/references/kaggle/atlas_snapshot.json",
+      "sha256_at_move": "ae8bf1438df4dab5995b062aeddd28ad1e128ab193690655c3c92eaf5cdaad97"
+    },
+    {
+      "old_path": "research/analysis/atlas_v79_vs_submitted.csv",
+      "new_path": "outputs/analysis/baseline/tables/atlas_v79_vs_submitted.csv",
+      "sha256_at_move": "925a78c5b9930a45ce8f0dab9ae923b5dedd7fba902c6770009d9e36c1efb2d4"
+    },
+    {
+      "old_path": "research/analysis/baseline_by_K.csv",
+      "new_path": "outputs/analysis/baseline/tables/baseline_by_K.csv",
+      "sha256_at_move": "5aa364b9ab7c05dad4bb72affee12931662d7e60fcfad41d7ff75720a6c99298"
+    },
+    {
+      "old_path": "research/analysis/baseline_by_phase_g.csv",
+      "new_path": "outputs/analysis/baseline/tables/baseline_by_phase_g.csv",
+      "sha256_at_move": "d01c5bc9d460ce2f1e9de7f30b3ddb5b3fd2e770272e2095d27f5bb2880c5b30"
+    },
+    {
+      "old_path": "research/analysis/baseline_per_puzzle_analysis.csv",
+      "new_path": "outputs/analysis/baseline/tables/baseline_per_puzzle_analysis.csv",
+      "sha256_at_move": "d8b26cafcc1aa0ff3b82dce9aea36bfb786077ab62fdef23dd8b13f75cb4b320"
+    },
+    {
+      "old_path": "research/analysis/baseline_summary.json",
+      "new_path": "outputs/analysis/baseline/summaries/baseline_summary.json",
+      "sha256_at_move": "c8db3202e189ebbb07f8cde6bd09f0c620dd111f964ce23f2c975dab0d3f31b1"
+    },
+    {
+      "old_path": "research/analysis/boxed_snapshot.json",
+      "new_path": "data/references/kaggle/boxed_snapshot.json",
+      "sha256_at_move": "c87f80097faea8ddc858472408d2abab249809b74e7c023425dbc22aed56176b"
+    },
+    {
+      "old_path": "research/analysis/boxed_v16_float_estimates.csv",
+      "new_path": "outputs/analysis/baseline/tables/boxed_v16_float_estimates.csv",
+      "sha256_at_move": "98ca0f6b5cc7b578f0a3888022bdd99b783812f95161bd8f5ea386a8650bcb0e"
+    },
+    {
+      "old_path": "research/analysis/family_K_squared_plus_7_to_11.csv",
+      "new_path": "outputs/analysis/baseline/tables/family_K_squared_plus_7_to_11.csv",
+      "sha256_at_move": "684c3129e3e116d0c8795fcc07d265c26aca4797d38f1ab1421c692aea7027fa"
+    },
+    {
+      "old_path": "research/analysis/family_K_squared_plus_K_minus_7_to_10.csv",
+      "new_path": "outputs/analysis/baseline/tables/family_K_squared_plus_K_minus_7_to_10.csv",
+      "sha256_at_move": "37e0e377518909f7e80e7f33c022a1cdf220e17f7735fb4a2ac7f9bb49091113"
+    },
+    {
+      "old_path": "research/analysis/official_per_puzzle_output.zip",
+      "new_path": "data/references/downloads/official_per_puzzle_output.zip",
+      "sha256_at_move": "8739c76e681f900923b900c9df0ef75cf421d39cabb54650c4b9ad19b6a76d85"
+    },
+    {
+      "old_path": "research/analysis/perpuzzle_best_20261029.csv",
+      "new_path": "data/references/leaderboards/perpuzzle_best_20261029.csv",
+      "sha256_at_move": "ada09ba81a90ced3372ea9faa9da98b9b23ac3af86d9707a2260dc88b0e866c9"
+    },
+    {
+      "old_path": "research/analysis/plot_baseline_analysis.py",
+      "new_path": "scripts/analysis/plot_baseline_analysis.py",
+      "sha256_at_move": "ed901af410802c81568619eb87d3c751f7c05b2b7dab3b41eadea859ddfedab0"
+    },
+    {
+      "old_path": "research/analysis/post_atlas_record_gap_candidates.csv",
+      "new_path": "outputs/analysis/baseline/tables/post_atlas_record_gap_candidates.csv",
+      "sha256_at_move": "727975adc0a6e72b387616bc0d46b913b3f9700268e254e42ec4fa41bfb25ef8"
+    },
+    {
+      "old_path": "research/analysis/post_boxed_record_gap_candidates.csv",
+      "new_path": "outputs/analysis/baseline/tables/post_boxed_record_gap_candidates.csv",
+      "sha256_at_move": "3ddd83433ebb301d42d03f22efd360b484524158c9d2a9a9e2c024b9ebdc1c96"
+    },
+    {
+      "old_path": "research/analysis/public_snapshot.json",
+      "new_path": "data/references/kaggle/public_snapshot.json",
+      "sha256_at_move": "41f8be9fe4ebbbe3de26c504a13109839048c41e8087715ac3580a0c836e8f52"
+    },
+    {
+      "old_path": "research/analysis/rank_snapshot.json",
+      "new_path": "data/references/kaggle/rank_snapshot.json",
+      "sha256_at_move": "a4bc562f5097503c044c408efc4bfee122fb49423f429dfe6460a17ec25082ee"
+    },
+    {
+      "old_path": "research/analysis/record_gap_candidates.csv",
+      "new_path": "outputs/analysis/baseline/tables/record_gap_candidates.csv",
+      "sha256_at_move": "b73822256a1bb259d300a2f6777f5d3d7a0f5624a7dbf0586428f6d7279fa3c5"
+    },
+    {
+      "old_path": "research/analysis/record_gap_families.png",
+      "new_path": "outputs/analysis/baseline/figures/record_gap_families.png",
+      "sha256_at_move": "9a226cfdbc3eb454909b4bcf860f04cf709e892e03b5fa1613b755b4fdbfb692"
+    },
+    {
+      "old_path": "research/analysis/record_sources.json",
+      "new_path": "data/references/kaggle/record_sources.json",
+      "sha256_at_move": "1dbc4bc0a5354786d40cb145765bfdb9e97367da8f9658905d3a535f4a6fbd12"
+    },
+    {
+      "old_path": "research/analysis/research_outcome.json",
+      "new_path": "outputs/analysis/baseline/summaries/research_outcome.json",
+      "sha256_at_move": "f5c627c8fd2afea1d066131d54d68ed7989f5f4d1631e27c29081f680c7a08ea"
+    },
+    {
+      "old_path": "research/analysis/research_plan.json",
+      "new_path": "outputs/analysis/baseline/summaries/research_plan.json",
+      "sha256_at_move": "4c4c3777d6f301236e95b4e39e8106aaf62155a8dbf14add87f97b76c5a029ef"
+    },
+    {
+      "old_path": "research/analysis/score_vs_record_gap.png",
+      "new_path": "outputs/analysis/baseline/figures/score_vs_record_gap.png",
+      "sha256_at_move": "2e3922d7b4e802bfe013d28e0fd84034e883f85dd206921887fd88f095ddae5a"
+    },
+    {
+      "old_path": "research/analysis/simple_closure_opportunities.json",
+      "new_path": "outputs/analysis/baseline/summaries/simple_closure_opportunities.json",
+      "sha256_at_move": "de42d1e1ecb686cf30ecefc8ffa2ca0b09e04237068da953a9a63ca054736a16"
+    },
+    {
+      "old_path": "research/analysis/topics_snapshot.json",
+      "new_path": "data/references/kaggle/topics_snapshot.json",
+      "sha256_at_move": "d97ef26005e18c6b33b2a71c1027afd67e39e263db5e99996e78b993d8a7ff02"
+    },
+    {
+      "old_path": "research/competition_snapshot.json",
+      "new_path": "data/references/kaggle/competition_snapshot.json",
+      "sha256_at_move": "766baa6b35920853444eb20a5539135ef199e81ee8a54750082c9791adcc0365"
+    },
+    {
+      "old_path": "research/discussions_snapshot.json",
+      "new_path": "data/references/kaggle/discussions_snapshot.json",
+      "sha256_at_move": "cb992de7ac1bbd43d6da3e7ea716f0fc68bc26d5406281f6ca3978ccda898e60"
+    },
+    {
+      "old_path": "research/frontier_sources/source_index.json",
+      "new_path": "data/references/literature/source_index.json",
+      "sha256_at_move": "8d6b8706cb27e6d2fe0f34fbcf9282ef03afb368f6f8759c2a1da98b49de47f1"
+    },
+    {
+      "old_path": "research/notebooks/alexchilton__fault-line-dp-basin-hopping-lb-22-2620.ipynb",
+      "new_path": "notebooks/public/alexchilton__fault-line-dp-basin-hopping-lb-22-2620.ipynb",
+      "sha256_at_move": "30b05f4a1c4972b308539ce7bb78f56ff3a81be45203a3ca8e8cafa79f0d6ae7"
+    },
+    {
+      "old_path": "research/notebooks/alexchilton__fault-line-dp-basin-hopping-lb-22-2620.metadata.json",
+      "new_path": "notebooks/public/alexchilton__fault-line-dp-basin-hopping-lb-22-2620.metadata.json",
+      "sha256_at_move": "c77515c37452b6c576d64e7055e14805d37752696a9f8c090e6c96479c6adfec"
+    },
+    {
+      "old_path": "research/notebooks/alexchilton__squares-101-the-starter-kit-7-500-downloads.ipynb",
+      "new_path": "notebooks/public/alexchilton__squares-101-the-starter-kit-7-500-downloads.ipynb",
+      "sha256_at_move": "f0315d71de461d99196b3a1e83e31f6989dd84a144f3cfcb117677065e4c08fb"
+    },
+    {
+      "old_path": "research/notebooks/alexchilton__squares-101-the-starter-kit-7-500-downloads.metadata.json",
+      "new_path": "notebooks/public/alexchilton__squares-101-the-starter-kit-7-500-downloads.metadata.json",
+      "sha256_at_move": "b9c53843b64003161e4aa0195fcfa4e4f8d3a7d6dd4e8868b26e06d619d50c35"
+    },
+    {
+      "old_path": "research/notebooks/az05192000gmailcom__22-2427-stretching-good-packings-to-nearby-n.ipynb",
+      "new_path": "notebooks/public/az05192000gmailcom__22-2427-stretching-good-packings-to-nearby-n.ipynb",
+      "sha256_at_move": "90ce306e74d5701ac3e8c52fc418911e56958afddc994e662c44d89effa3eca2"
+    },
+    {
+      "old_path": "research/notebooks/az05192000gmailcom__22-2427-stretching-good-packings-to-nearby-n.metadata.json",
+      "new_path": "notebooks/public/az05192000gmailcom__22-2427-stretching-good-packings-to-nearby-n.metadata.json",
+      "sha256_at_move": "e83283fa0dd261f64a3648d2756c5857ce71cac1d5ffe84806a9c74cccba3e7b"
+    },
+    {
+      "old_path": "research/notebooks/cdeotte__squares-in-squares-ftmc-milp-refill-22-311.ipynb",
+      "new_path": "notebooks/public/cdeotte__squares-in-squares-ftmc-milp-refill-22-311.ipynb",
+      "sha256_at_move": "0db4cfa72820f04ae0ae8a26d2e18dff2fb8a1abd8fc8135447133ffe2414432"
+    },
+    {
+      "old_path": "research/notebooks/cdeotte__squares-in-squares-ftmc-milp-refill-22-311.metadata.json",
+      "new_path": "notebooks/public/cdeotte__squares-in-squares-ftmc-milp-refill-22-311.metadata.json",
+      "sha256_at_move": "b4b8e23003e57710faeddbb29c388b2148670567477c02c34fde662a4041fd8c"
+    },
+    {
+      "old_path": "research/notebooks/kirilltym__22-2499-cpu-cuda-mps-eda-budget-lp.ipynb",
+      "new_path": "notebooks/public/kirilltym__22-2499-cpu-cuda-mps-eda-budget-lp.ipynb",
+      "sha256_at_move": "27f55ef5edfd180398b116d09b540dfc10b627491da36291b5dc25c9dd8e7b2d"
+    },
+    {
+      "old_path": "research/notebooks/kirilltym__22-2499-cpu-cuda-mps-eda-budget-lp.metadata.json",
+      "new_path": "notebooks/public/kirilltym__22-2499-cpu-cuda-mps-eda-budget-lp.metadata.json",
+      "sha256_at_move": "5241e5546fbbe21324c384652625f709918726e008b30061fce6a0e438a74a7c"
+    },
+    {
+      "old_path": "research/notebooks/lightningv08__squares-in-squares-cuda-packing-search.ipynb",
+      "new_path": "notebooks/public/lightningv08__squares-in-squares-cuda-packing-search.ipynb",
+      "sha256_at_move": "389de7244acbf11bf39d5fa044c0b9290e48521cca413cfc1fc08aa17adaac14"
+    },
+    {
+      "old_path": "research/notebooks/lightningv08__squares-in-squares-cuda-packing-search.metadata.json",
+      "new_path": "notebooks/public/lightningv08__squares-in-squares-cuda-packing-search.metadata.json",
+      "sha256_at_move": "ed54595c2d7c5daf1a1b0844d3daafe2f22164f1e6d3d566ce11bf90d3a46ee1"
+    },
+    {
+      "old_path": "research/notebooks/malyshevdanil__squares-in-squares-living-atlas-of-tight-packings.ipynb",
+      "new_path": "notebooks/public/malyshevdanil__squares-in-squares-living-atlas-of-tight-packings.ipynb",
+      "sha256_at_move": "3ee95f1d6974f075d7e417a7ae24a4a24ea2c9c01b87afa7ef0866d3a0b681ae"
+    },
+    {
+      "old_path": "research/notebooks/malyshevdanil__squares-in-squares-living-atlas-of-tight-packings.metadata.json",
+      "new_path": "notebooks/public/malyshevdanil__squares-in-squares-living-atlas-of-tight-packings.metadata.json",
+      "sha256_at_move": "c72125710ba4c631f9e7ce2467dc66bd794e213b187a5d108d798b9c3e542d6a"
+    },
+    {
+      "old_path": "research/notebooks/mdmuqtadirfuad__squares-in-squares-certified-method.ipynb",
+      "new_path": "notebooks/public/mdmuqtadirfuad__squares-in-squares-certified-method.ipynb",
+      "sha256_at_move": "5fafcab701a49da58bd9b4e6a6e5cf61aa0da9f204e74decc68abc0b2a415b5c"
+    },
+    {
+      "old_path": "research/notebooks/mdmuqtadirfuad__squares-in-squares-certified-method.metadata.json",
+      "new_path": "notebooks/public/mdmuqtadirfuad__squares-in-squares-certified-method.metadata.json",
+      "sha256_at_move": "48e7bb45b7ae220af5e7f83046c979de88510cf62499b47bffd10fe4b9afa49a"
+    },
+    {
+      "old_path": "research/notebooks/prvsiyan__a-square-deal-research-to-verified-packings.ipynb",
+      "new_path": "notebooks/public/prvsiyan__a-square-deal-research-to-verified-packings.ipynb",
+      "sha256_at_move": "7a96af1b4eacd567d88065a4bb049fc2ee79c27fe87405324c9080cdcf5152f8"
+    },
+    {
+      "old_path": "research/notebooks/prvsiyan__a-square-deal-research-to-verified-packings.metadata.json",
+      "new_path": "notebooks/public/prvsiyan__a-square-deal-research-to-verified-packings.metadata.json",
+      "sha256_at_move": "434388d37c8fe4c73554bf407114aef411afac3bfc7857267bbb9ee0dfe4380d"
+    },
+    {
+      "old_path": "research/notebooks/search_ScoreAscending.json",
+      "new_path": "data/references/kaggle/notebook_search/search_ScoreAscending.json",
+      "sha256_at_move": "d84e88bd2a4751c0797b8c33a57c7ad98896e71d1d9f51cbb139d1dde15a60c2"
+    },
+    {
+      "old_path": "research/notebooks/search_ScoreDescending.json",
+      "new_path": "data/references/kaggle/notebook_search/search_ScoreDescending.json",
+      "sha256_at_move": "298fc756c06220257ac066c5ca642e5e45576df4f5be9f6531080e67e47b28c2"
+    },
+    {
+      "old_path": "research/notebooks/search_VoteCount.json",
+      "new_path": "data/references/kaggle/notebook_search/search_VoteCount.json",
+      "sha256_at_move": "f369ace97cd8b20a75eddd16674b01a90886c4620021fae075627e08dfb1c1ab"
+    },
+    {
+      "old_path": "research/official_metric.metadata.json",
+      "new_path": "third_party/kaggle/metric_v20/official_metric.metadata.json",
+      "sha256_at_move": "e2876286bc5f62ea938eea02671d89fdca67a139cf3ed9b63e2651f90ceb37e9"
+    },
+    {
+      "old_path": "research/official_metric.py",
+      "new_path": "third_party/kaggle/metric_v20/official_metric.py",
+      "sha256_at_move": "abce6231e3eda28d040455e651bfe3578bce31bb69449c99f67f0b82a4a6c56b"
+    },
+    {
+      "old_path": "research/open_source/evand/README.md",
+      "new_path": "third_party/evand/README.md",
+      "sha256_at_move": "6a1dbf9dcf65ea3dcec3190938f556ad5fee644e833f1a3da672b26f196bc1da"
+    },
+    {
+      "old_path": "research/open_source/evand/search/packer/CLAIMS.md",
+      "new_path": "third_party/evand/search/packer/CLAIMS.md",
+      "sha256_at_move": "84c0ada2c90300575c6d14c331d4c2c1691e4973e4e4ffb3cc790923c8aa85f5"
+    },
+    {
+      "old_path": "research/open_source/evand/search/packer/Cargo.toml",
+      "new_path": "third_party/evand/search/packer/Cargo.toml",
+      "sha256_at_move": "dbff027ab1edf719cd2f69d5fce5639ab7d4abc1abfe3dcbc237919f4355d4ae"
+    },
+    {
+      "old_path": "research/open_source/evand/search/packer/DESIGN.md",
+      "new_path": "third_party/evand/search/packer/DESIGN.md",
+      "sha256_at_move": "04259062fcb284a6d33f36eaceb7ab82e28b724cc6c664ae60ea1c00443b1dcf"
+    },
+    {
+      "old_path": "research/open_source/evand/search/packer/README.md",
+      "new_path": "third_party/evand/search/packer/README.md",
+      "sha256_at_move": "efd2b2199108055ac8578430cbca859136f8bc64f966c9d498911eb85af45100"
+    },
+    {
+      "old_path": "research/open_source/evand/search/packer/bandflip.py",
+      "new_path": "third_party/evand/search/packer/bandflip.py",
+      "sha256_at_move": "36c191d731a3ddee9e270bc6f73513523ac1c9ddd118898c99bc3abd9438f75e"
+    },
+    {
+      "old_path": "research/open_source/evand/search/packer/compose2.py",
+      "new_path": "third_party/evand/search/packer/compose2.py",
+      "sha256_at_move": "e75b79623732dae90d8e2ccb19c3a3e6c3a3417e3b3a643ba781e411431ae439"
+    },
+    {
+      "old_path": "research/open_source/evand/search/packer/fillfast.py",
+      "new_path": "third_party/evand/search/packer/fillfast.py",
+      "sha256_at_move": "8ab4e45745d21aa3b6a1a3b994de203196476a0232255c0f24a1b2a790e856ca"
+    },
+    {
+      "old_path": "research/open_source/evand/search/packer/ftmc.py",
+      "new_path": "third_party/evand/search/packer/ftmc.py",
+      "sha256_at_move": "430642449bf6300ff97b6b261e8874a620a2b2dfbc388caf4ff73af9037454d4"
+    },
+    {
+      "old_path": "research/open_source/evand/search/packer/gen.py",
+      "new_path": "third_party/evand/search/packer/gen.py",
+      "sha256_at_move": "a5e82ed1023c27e615483dbc55e93fbc51c1900665a8c745333e4189ff4c2343"
+    },
+    {
+      "old_path": "research/open_source/evand/search/packer/mondrian.py",
+      "new_path": "third_party/evand/search/packer/mondrian.py",
+      "sha256_at_move": "78afc3dfd6031188309c6238f49b47e944f415b0870434be3b9f17ab2c3c68ce"
+    },
+    {
+      "old_path": "research/open_source/evand/search/packer/movegen.py",
+      "new_path": "third_party/evand/search/packer/movegen.py",
+      "sha256_at_move": "9dd52ce2acc51d28171b2f099ea16ccaf4560cb90e073db5cfc61d7f8600eb8a"
+    },
+    {
+      "old_path": "research/open_source/evand/search/packer/pk/engine.py",
+      "new_path": "third_party/evand/search/packer/pk/engine.py",
+      "sha256_at_move": "aec7fb6f1e70326deb69fb190638060e5f6fdb86ace6bcc2c3feea095392d96b"
+    },
+    {
+      "old_path": "research/open_source/evand/search/packer/pk/schedules.py",
+      "new_path": "third_party/evand/search/packer/pk/schedules.py",
+      "sha256_at_move": "2b05def2f0515ba16f15d736d9c596a78cd0ee946f61f05cfb1bc9942cc9356d"
+    },
+    {
+      "old_path": "research/open_source/evand/search/packer/rectlib.py",
+      "new_path": "third_party/evand/search/packer/rectlib.py",
+      "sha256_at_move": "1e7ae9d8a359987b8aa2081e8f207f6ee21c03e05b538e756aa4996b72d769c4"
+    },
+    {
+      "old_path": "research/open_source/evand/search/packer/src/fq.rs",
+      "new_path": "third_party/evand/search/packer/src/fq.rs",
+      "sha256_at_move": "7e51dd561b8c6f86cb69caba69fc637b02147c33012804f1c94139b1914774e3"
+    },
+    {
+      "old_path": "research/open_source/evand_extras_manifest.json",
+      "new_path": "third_party/evand_extras_manifest.json",
+      "sha256_at_move": "118dfdde93540149f4cc23f6ef517164f2d5c4369b8bdcdcee23c5c74cbb63e3"
+    },
+    {
+      "old_path": "research/open_source/evand_manifest.json",
+      "new_path": "third_party/evand_manifest.json",
+      "sha256_at_move": "647e37016b55ca82b51ef02edb00b4a908d570626fab1caa2ca373bf37512c58"
+    },
+    {
+      "old_path": "research/public_datasets_snapshot.json",
+      "new_path": "data/references/kaggle/public_datasets_snapshot.json",
+      "sha256_at_move": "e10c525d0f434299a876915a16d472e5a474af8d85a4722d13102c785d0d7113"
+    },
+    {
+      "old_path": "research/sample_data_audit.json",
+      "new_path": "outputs/analysis/baseline/summaries/sample_data_audit.json",
+      "sha256_at_move": "b6e756ec6f0275bee4348cb024a7a0b60b720eed7ef6863d60f518cc29df27f3"
+    },
+    {
+      "old_path": "data/sample_submission.csv",
+      "new_path": "data/competition/sample_submission.csv",
+      "sha256_at_move": "a7f736d6cc72975459732a15d6ce6ae6588ad97d0c84f4d26905fd31ec09c74c"
+    },
+    {
+      "old_path": "outputs/grid.csv",
+      "new_path": "outputs/baselines/grid.csv",
+      "sha256_at_move": "a7f736d6cc72975459732a15d6ce6ae6588ad97d0c84f4d26905fd31ec09c74c"
+    },
+    {
+      "old_path": "outputs/smoke.csv",
+      "new_path": "outputs/examples/smoke/submission.csv",
+      "sha256_at_move": "95ec019c7495217d91542babaa9687a3155f3e98618b2c52e3c89cbcd5d0b88e"
+    },
+    {
+      "old_path": "outputs/smoke-report/report.json",
+      "new_path": "outputs/examples/smoke/report/report.json",
+      "sha256_at_move": "aa6164a9c6d024c7acdd06a47ff05847b014f5578320c74f3148ce72c5988162"
+    },
+    {
+      "old_path": "outputs/smoke-report/per_puzzle.csv",
+      "new_path": "outputs/examples/smoke/report/per_puzzle.csv",
+      "sha256_at_move": "deb8a6cf20a9819c68074d0b8d05cbdc11f8dfeed93a294884b30f0f4af3f294"
+    },
+    {
+      "old_path": "outputs/research/atlas_v79/report.json",
+      "new_path": "outputs/scores/atlas_v79/report.json",
+      "sha256_at_move": "b5353fb9480fc76449334da985d88afe76dd604b5c043e2f80beb6db79178716"
+    },
+    {
+      "old_path": "outputs/research/atlas_v79/per_puzzle.csv",
+      "new_path": "outputs/scores/atlas_v79/per_puzzle.csv",
+      "sha256_at_move": "098693d8571475672177839f5aefbf9b299197f90d3d3fd46f555f1dc1487b5c"
+    },
+    {
+      "old_path": "outputs/research/boxed_v16/report.json",
+      "new_path": "outputs/scores/boxed_v16/report.json",
+      "sha256_at_move": "70951b96071f1cdb5fe5734dcbbebe6224e345722d9af6ccddeb08b384e1d724"
+    },
+    {
+      "old_path": "outputs/research/boxed_v16/per_puzzle.csv",
+      "new_path": "outputs/scores/boxed_v16/per_puzzle.csv",
+      "sha256_at_move": "07931df6f81651c07b507b1e755824e8e92717e59e80014affb632934b91165d"
+    }
+  ]
+}

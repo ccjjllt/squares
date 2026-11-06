@@ -1,18 +1,13 @@
-.PHONY: setup check test baseline smoke
+.PHONY: setup baseline analyze figures
 
 setup:
 	uv sync --locked
 
-check:
-	uv run ruff check .
-	uv run ruff format --check src tests
-
-test:
-	uv run pytest
-
 baseline:
-	uv run squares baseline --output outputs/grid.csv
+	uv run squares baseline --output outputs/baselines/grid.csv
 
-smoke:
-	uv run squares baseline --max-n 10 --output outputs/smoke.csv
-	uv run squares score outputs/smoke.csv --max-n 10 --workers 2 --output-dir outputs/smoke-report
+analyze:
+	uv run python scripts/analysis/analyze_baseline.py
+
+figures:
+	uv run --with matplotlib python scripts/analysis/plot_baseline_analysis.py

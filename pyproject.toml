@@ -17,7 +17,7 @@ dependencies = [
 squares = "squares.cli:main"
 
 [dependency-groups]
-dev = ["pytest>=8,<10", "ruff>=0.12,<1"]
+dev = ["ruff>=0.12,<1"]
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/squares"]
@@ -25,14 +25,10 @@ packages = ["src/squares"]
 [tool.uv]
 cache-dir = ".cache/uv"
 
-[tool.pytest.ini_options]
-testpaths = ["tests"]
-addopts = "-ra"
-
 [tool.ruff]
 target-version = "py311"
 line-length = 100
-extend-exclude = ["research", "src/squares/_vendor"]
+extend-exclude = ["third_party", "notebooks", "data", "outputs", "src/squares/_vendor"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B"]

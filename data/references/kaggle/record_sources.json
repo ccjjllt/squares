@@ -1,0 +1,109 @@
+{
+  "retrieved_on": "2026-11-06",
+  "bank": {
+    "id": 12951012,
+    "ref": "lostdecimal27/squares-in-squares-bank",
+    "subtitle": "Certified 22.26 submission plus the per-puzzle leaderboard bests and gap table",
+    "creator_name": "Rohan Jangam",
+    "total_bytes": "25931648",
+    "last_updated": "2026-10-29T17:41:21.223Z",
+    "download_count": 922,
+    "license_name": "CC0: Public Domain",
+    "description": "Companion data for the notebook *Squares in Squares: bands, gadgets, exact angles*.\n\n**submission.csv** - a complete, verifier-certified submission for the Kaggle competition *Squares in Squares* (pack n unit squares, n = 1..1000, into the smallest enclosing square). It merges the best public packings, dilates every packing by 1 + 1e-10 so that exact irrational contacts pass the interval-arithmetic verifier, and adds one packing composed by a fault-line gadget search (n = 654). Public score 22.2619751.\n\n**perpuzzle_best.csv** - the best side length L reached on the leaderboard for every puzzle n, with the team and date, as published by the competition hosts in their per-puzzle leaderboard notebook.\n\n**targets.csv** - for every n >= 325 written as n = K^2 + D: our overhang f = L - K, the leaders' overhang, and the score gap (L_ours - L_best) / sqrt(n). This is the table behind the gap analysis in the notebook.\n\nColumns of submission.csv follow the competition format: id (n_square_id), n, square_id, x, y, angle (radians).",
+    "owner_name": "Rohan Jangam",
+    "owner_ref": "lostdecimal27",
+    "kernel_count": 6,
+    "title": "Squares in Squares bank and per-puzzle bests",
+    "view_count": 50,
+    "vote_count": 3,
+    "current_version_number": 2,
+    "usability_rating": 0.64705884,
+    "tags": [
+      {
+        "ref": "mathematics",
+        "name": "mathematics",
+        "description": "",
+        "full_path": "subject > mathematics",
+        "competition_count": 16,
+        "dataset_count": 473,
+        "script_count": 494,
+        "total_count": 983
+      },
+      {
+        "ref": "optimization",
+        "name": "optimization",
+        "description": "",
+        "full_path": "technique > optimization",
+        "competition_count": 36,
+        "dataset_count": 354,
+        "script_count": 2189,
+        "total_count": 2579
+      }
+    ],
+    "versions": [
+      {
+        "version_number": 2,
+        "creation_date": "2026-10-29T17:41:21.223Z",
+        "creator_name": "Rohan Jangam",
+        "creator_ref": "squares-in-squares-bank",
+        "version_notes": "add subtitle, description, tags and column descriptions",
+        "status": "Ready"
+      },
+      {
+        "version_number": 1,
+        "creation_date": "2026-10-29T17:08:06.723Z",
+        "creator_name": "Rohan Jangam",
+        "creator_ref": "squares-in-squares-bank",
+        "version_notes": "Initial release",
+        "status": "Ready"
+      }
+    ],
+    "thumbnail_image_url": "https://storage.googleapis.com/kaggle-datasets-images/new-version-temp-images/default-backgrounds-24.png-23694458/dataset-thumbnail.png"
+  },
+  "bank_files": {
+    "dataset_files": [
+      {
+        "name": "perpuzzle_best.csv",
+        "creation_date": "2026-10-29T17:41:22.373Z",
+        "total_bytes": "81305"
+      },
+      {
+        "name": "submission.csv",
+        "creation_date": "2026-10-29T17:41:23.739Z",
+        "total_bytes": "25824768"
+      },
+      {
+        "name": "targets.csv",
+        "creation_date": "2026-10-29T17:41:23.126Z",
+        "total_bytes": "25575"
+      }
+    ]
+  },
+  "official_notebook": {
+    "id": 139891049,
+    "ref": "inversion/squares-in-squares-per-puzzle-leaderboard",
+    "title": "Squares in Squares - Per-Puzzle Leaderboard",
+    "author": "inversion",
+    "slug": "squares-in-squares-per-puzzle-leaderboard",
+    "last_run_time": "2026-11-03T06:25:55.828783400Z",
+    "language": "python",
+    "kernel_type": "notebook",
+    "is_private": false,
+    "enable_gpu": false,
+    "enable_internet": false,
+    "category_ids": [
+      "scheduled"
+    ],
+    "dataset_data_sources": [
+      ""
+    ],
+    "competition_data_sources": [
+      "squares-in-squares"
+    ],
+    "total_votes": 129,
+    "enable_tpu": false,
+    "current_version_number": 25,
+    "docker_image": "gcr.io/kaggle-images/python@sha256:81b1e7c4b4f0f2a7e0a33943c95754b1b7af6b30d65221633a284b6b601cd84a",
+    "machine_shape": "None"
+  }
+}

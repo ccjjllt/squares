@@ -1,0 +1,77 @@
+{
+  "date": "2026-11-06",
+  "removed": [
+    {
+      "path": ".cache",
+      "bytes": 235875660,
+      "reason": "Package and plotting caches; active venv has no symlinks into this directory"
+    },
+    {
+      "path": ".ruff_cache",
+      "bytes": 686,
+      "reason": "Disposable lint cache"
+    },
+    {
+      "path": "outputs/baselines/grid.csv",
+      "bytes": 12872271,
+      "reason": "Byte-identical to official sample; regenerate with make baseline"
+    },
+    {
+      "path": "outputs/examples/smoke",
+      "bytes": 7832,
+      "reason": "Old initialization smoke example"
+    },
+    {
+      "path": "outputs/analysis/baseline/logs/analysis_console.txt",
+      "bytes": 22935,
+      "reason": "Regenerable console transcript"
+    },
+    {
+      "path": "data/references/downloads/official_per_puzzle_output.zip",
+      "bytes": 22,
+      "reason": "Empty ZIP, no data entries"
+    },
+    {
+      "path": "outputs/submissions/public_stretching_v2/upload_headers.txt",
+      "bytes": 730,
+      "reason": "Temporary HTTP headers; completed Kaggle receipt retained"
+    },
+    {
+      "path": "outputs/submissions/public_stretching_v2/upload_response.json",
+      "bytes": 1105,
+      "reason": "Temporary upload response; completed Kaggle receipt retained"
+    },
+    {
+      "path": "outputs/submissions/public_stretching_v2/latest_official_source.txt",
+      "bytes": 30779,
+      "reason": "Downloaded notebook code matches canonical official metric"
+    },
+    {
+      "path": "third_party/kaggle/metric_v20",
+      "bytes": 29983,
+      "reason": "Duplicate official metric and provenance; canonical copy retained in src/squares/_vendor"
+    },
+    {
+      "path": "src/squares/__pycache__",
+      "bytes": 26437,
+      "reason": "Regenerable Python bytecode"
+    },
+    {
+      "path": "src/squares/_vendor/__pycache__",
+      "bytes": 38921,
+      "reason": "Regenerable Python bytecode"
+    }
+  ],
+  "removed_logical_bytes": 248907361,
+  "retained": [
+    ".venv",
+    "data/public",
+    "data/competition",
+    "outputs/submissions/public_stretching_v2 (receipt, provenance and scoring reports)",
+    "outputs/scores",
+    "outputs/analysis (tables, summaries, figures)",
+    "notebooks/public",
+    "third_party/evand"
+  ],
+  "note": "Logical file sizes, not a measurement of free disk space. Downloaded third-party code is retained locally but ignored by Git; source manifests remain versioned."
+}

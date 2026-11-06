@@ -1,21 +1,42 @@
+# Local environments and disposable caches
 .venv/
 .cache/
 __pycache__/
 *.py[cod]
 *.egg-info/
-.pytest_cache/
 .ruff_cache/
-.coverage
-htmlcov/
 build/
 dist/
 .DS_Store
+
+# Credentials stay local
 .env
 .env.*
+!.env.example
 kaggle.json
 .kaggle/
-data/**
+
+# Large inputs stay local; small reference data stays in Git
+data/*
 !data/.gitkeep
-outputs/**
+!data/references/
+data/references/downloads/
+
+# Keep curated research results, not generated runs or logs
+outputs/*
 !outputs/.gitkeep
+!outputs/analysis/
+outputs/analysis/**/logs/
+
+# Downloaded upstream code is reproducible from retained source metadata
+/notebooks/public/*.ipynb
+/third_party/evand/
+
+# Editor scratch files
 .ipynb_checkpoints/
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+*~

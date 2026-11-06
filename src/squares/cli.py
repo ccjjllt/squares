@@ -41,7 +41,7 @@ def build_parser() -> argparse.ArgumentParser:
     commands = parser.add_subparsers(dest="command", required=True)
     baseline = commands.add_parser("baseline", help="Generate an axis-aligned grid submission")
     baseline.add_argument("--max-n", type=_max_n, default=MAX_N)
-    baseline.add_argument("--output", type=Path, default=Path("outputs/grid.csv"))
+    baseline.add_argument("--output", type=Path, default=Path("outputs/baselines/grid.csv"))
     inspect = commands.add_parser("inspect", help="Validate CSV structure (not overlap geometry)")
     inspect.add_argument("submission", type=Path)
     score = commands.add_parser("score", help="Run official v20 per-puzzle geometry evaluation")
@@ -83,7 +83,7 @@ def main(argv: list[str] | None = None) -> int:
             report = score_submission(
                 args.submission, modes=modes, max_n=args.max_n, workers=args.workers
             )
-            output_dir = args.output_dir or Path("outputs") / f"{args.submission.stem}-score"
+            output_dir = args.output_dir or Path("outputs/scores") / args.submission.stem
             write_report(report, output_dir)
             print(
                 json.dumps(

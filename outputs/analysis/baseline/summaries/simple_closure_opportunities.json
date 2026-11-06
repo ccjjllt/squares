@@ -1,0 +1,25 @@
+{
+  "submitted": {
+    "delete_same_box_opportunities": [],
+    "add_L_border_opportunities": [
+      {
+        "n": 852,
+        "donor": 795,
+        "score_gain_bound": 2.997941776583106e-07
+      },
+      {
+        "n": 915,
+        "donor": 856,
+        "score_gain_bound": 3.2343362913874935e-05
+      }
+    ],
+    "tolerance_L": 1e-09,
+    "note": "Scalar closure bound only; deletion with cropping or remeshing could do better."
+  },
+  "atlas_v79": {
+    "delete_same_box_opportunities": [],
+    "add_L_border_opportunities": [],
+    "tolerance_L": 1e-09,
+    "note": "Scalar closure bound only; deletion with cropping or remeshing could do better."
+  }
+}

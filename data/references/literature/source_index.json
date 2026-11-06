@@ -1,0 +1,87 @@
+{
+  "retrieved_on": "2026-11-06",
+  "scope": "Primary-source literature and open-source research relevant to improving the submitted 22.2427257787 packing portfolio. No solver run or new score claimed.",
+  "sources": [
+    {
+      "key": "gensane2005",
+      "year": 2005,
+      "title": "Improved Dense Packings of Congruent Squares in a Square",
+      "url": "https://link.springer.com/content/pdf/10.1007/s00454-004-1129-z.pdf",
+      "evidence": "Section 6 describes random feasible moves, adaptive amplitudes, joint position/angle perturbation and reinflation; improvements were found for 11, 29, 37.",
+      "application": "Use adaptive kick-and-quench around structured incumbents, rather than independent random placements.",
+      "limit": "Historical small-n evidence; not a guarantee on n up to 1000."
+    },
+    {
+      "key": "evand2026",
+      "year": 2026,
+      "title": "Evan Daniel square-packing packer research",
+      "url": "https://github.com/evand/square-packing/tree/main/search/packer",
+      "evidence_url": "https://raw.githubusercontent.com/evand/square-packing/main/search/packer/CLAIMS.md",
+      "evidence": "C25: fresh public packings followed by composition yielded n>324 records. C27: only binding pieces transmit their improvement to a composite. C45: five of six rectangle-composition records reproduced. C46-C47: allowing slack constructions followed by exploration was essential in several examples.",
+      "application": "Target bottleneck gadgets, maintain diverse parents, compose at temporarily larger L then relax. Rust fq/anneal/harden and Python crop/composition tools are public.",
+      "limit": "Most detailed benchmarks concern n=110 or n<=324. Numerical speedups and success rates should not be extrapolated unchanged."
+    },
+    {
+      "key": "ostashev2026",
+      "year": 2026,
+      "title": "Square Packing",
+      "url": "https://ostashev.ai/square-packing/",
+      "repo": "https://github.com/dostashev/square-packing",
+      "evidence": "Author reports random GPU searches jam above about n=130; V-bands with integer-programmed upright corner fills, softening/re-hardening, and rectangular composition produced new layouts. Record structures can merge separate tilted bands into one.",
+      "application": "Search structural band/corner parameters and selectively soften contacts, with geometric compositions as starts.",
+      "limit": "Published repository exposes records and verification code; full GPU generator was not found in the public tree."
+    },
+    {
+      "key": "griffcass2026",
+      "year": 2026,
+      "title": "Squares in squares: 39 improved packings",
+      "url": "https://github.com/griffcass/square-packing",
+      "code_url": "https://raw.githubusercontent.com/griffcass/square-packing/main/slp.py",
+      "evidence": "Public SLP optimizes x/y/theta and L with analytic contact derivatives, elastic slack, adaptive trust regions, second-order corrections, and HiGHS IPM. Historical 39 improvements compare to the catalogue of 2026-09-23.",
+      "application": "Use as a small transparent polishing/reference solver after structural moves.",
+      "limit": "Historical records are largely superseded and do not establish additional gain over the submitted November baseline."
+    },
+    {
+      "key": "nakajima2026",
+      "year": 2026,
+      "title": "Soft-to-Rigid: Shape Continuation as an Alternative Search for Packing Congruent Shapes",
+      "url": "https://arxiv.org/html/2610.14463v1",
+      "repo": "https://github.com/yoheinakajima/soft-to-rigid",
+      "evidence": "Inradius-preserving Minkowski rounding interpolates disks to polygons. Paper finds complementary small-square packings but says hardening is not the better default and does not prove that splitting a fixed budget between methods pays.",
+      "application": "Try local or partial re-hardening of band junctions; preserve useful structure rather than rebuilding large-n instances from disks.",
+      "limit": "Square benchmarks mainly n<=30. Larger-n transfer is a research hypothesis, not a reported result."
+    },
+    {
+      "key": "arslanov2021",
+      "year": 2021,
+      "title": "Improved Packings of n(n-1) Unit Squares in a Square",
+      "url": "https://www.combinatorics.org/ojs/index.php/eljc/article/download/v28i4p22/pdf/",
+      "evidence": "Constructive squeezable rectangles and tilted stacks establish below-grid families and extension inequalities; rectangular components propagate compression to larger instances.",
+      "application": "Generalize square-only donors to nearly-square rectangular components and parameterized tilt families.",
+      "limit": "Existence below a grid ceiling does not imply improvement over the current public packing; landing-page and PDF boundary n=12 wording differs."
+    },
+    {
+      "key": "bui2025v2",
+      "year": 2025,
+      "revision": "2026-03-15",
+      "title": "Square packing with O(x^0.6) wasted area",
+      "url": "https://arxiv.org/html/2508.04603v2",
+      "evidence": "Constructive asymptotic W(x)=O(x^(3/5)); square is reduced to right trapezoids then tightly packed almost-rectangular quadrilaterals with nonparallel sides.",
+      "application": "Investigate multi-angle tapered bands and trapezoidal end-cap primitives.",
+      "limit": "Asymptotic constants and thresholds are not a usable guarantee at competition side lengths <=32; no ready-to-use solver found."
+    },
+    {
+      "key": "mcclenagan2026",
+      "year": 2026,
+      "title": "Optimally Packing a Large Square by Unit Squares",
+      "url": "https://arxiv.org/html/2602.01484v1",
+      "evidence": "Another O(x^(3/5)) waste construction alternates two stack-packing routines inside narrow trapezoidal gaps.",
+      "application": "A distinct source of finite multiscale boundary templates and angle transitions.",
+      "limit": "The title does not mean optimal packings for each n are solved. Practical benefit for n<=1000 is unestablished."
+    }
+  ],
+  "secondary_resource_caution": {
+    "url": "https://raw.githubusercontent.com/franciscouzo/square-packing/master/KAGGLE.md",
+    "findings": "Kaggle export documentation still names metric v17; current README says new n>324 rows are not published during the competition. Useful exact donors and source lineage, not evidence of a stronger downloadable current full portfolio."
+  }
+}
