@@ -1,0 +1,24 @@
+{
+  "id": 140099559,
+  "ref": "alexchilton/squares-101-the-starter-kit-7-500-downloads",
+  "title": "Squares 101: the Starter Kit (7,500+ downloads)",
+  "author": "alex chilton",
+  "slug": "squares-101-the-starter-kit-7-500-downloads",
+  "last_run_time": "2026-11-03T03:03:36.758678500Z",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": false,
+  "enable_gpu": false,
+  "enable_internet": false,
+  "dataset_data_sources": [
+    "alexchilton/squares-in-squares-starter-kit"
+  ],
+  "competition_data_sources": [
+    "squares-in-squares"
+  ],
+  "total_votes": 51,
+  "enable_tpu": false,
+  "current_version_number": 47,
+  "docker_image": "gcr.io/kaggle-images/python@sha256:81b1e7c4b4f0f2a7e0a33943c95754b1b7af6b30d65221633a284b6b601cd84a",
+  "machine_shape": "None"
+}

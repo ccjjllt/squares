@@ -1,0 +1,42 @@
+{
+  "id": 140171258,
+  "ref": "alexchilton/fault-line-dp-basin-hopping-lb-22-2620",
+  "title": "Fault-line DP + Basin Hopping - LB 22.2620",
+  "author": "alex chilton",
+  "slug": "fault-line-dp-basin-hopping-lb-22-2620",
+  "last_run_time": "2026-11-03T03:03:30.296498Z",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": false,
+  "enable_gpu": false,
+  "enable_internet": true,
+  "dataset_data_sources": [
+    "alexchilton/squares-in-squares-starter-kit"
+  ],
+  "kernel_data_sources": [
+    "alexchilton/certified-merge-of-public-packings-lb-22-5978",
+    "rushikeshpundkar/1000-puzzles-ensemble-lb-22-298819",
+    "nilanjansaha123/seam-dp-multi-basin-hop-kink-lp-quench",
+    "myadiamond/auto-optimizer-packing-unit-squares",
+    "aqibrazadev/squares-in-squares-top-lb-blending-visualization",
+    "saamhm/auto-optimizer-packing-unit-squares",
+    "busyaprime/lb-22-2546533-best-public-packings-fq-hop",
+    "sigmaborov/squares-in-squares-certified-contact-polish",
+    "evgendvorkin/squares-in-squares-deep-eda-analogies",
+    "origlisko/notebook329dca8125",
+    "deleted/142751002",
+    "nilanjansaha123/hybrid-slp-basin-hopper-t4x2",
+    "prvsiyan/a-square-deal-research-to-verified-packings",
+    "jazivxt/boxed-in-sub",
+    "malyshevdanil/squares-in-squares-living-atlas-of-tight-packings",
+    "az05192000gmailcom/l-band-builds-re-quench-and-the-1-packings"
+  ],
+  "competition_data_sources": [
+    "squares-in-squares"
+  ],
+  "total_votes": 19,
+  "enable_tpu": false,
+  "current_version_number": 44,
+  "docker_image": "gcr.io/kaggle-images/python@sha256:81b1e7c4b4f0f2a7e0a33943c95754b1b7af6b30d65221633a284b6b601cd84a",
+  "machine_shape": "None"
+}

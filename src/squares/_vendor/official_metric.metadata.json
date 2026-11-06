@@ -1,0 +1,29 @@
+{
+  "source_url": "https://www.kaggle.com/code/metric/squares-in-squares",
+  "retrieved_on": "2026-11-06",
+  "retrieval_method": "Kaggle MCP get_notebook_info",
+  "note": "Unmodified Kaggle v20 code snapshot. Provenance of the downloaded source, not a claim of local validation.",
+  "metadata": {
+    "id": 128385355,
+    "ref": "metric/squares-in-squares",
+    "title": "Squares in Squares",
+    "author": "Kaggle Competition Metrics",
+    "slug": "squares-in-squares",
+    "last_run_time": "2026-11-03T03:01:29.039596300Z",
+    "language": "python",
+    "kernel_type": "notebook",
+    "is_private": false,
+    "enable_gpu": false,
+    "enable_internet": false,
+    "category_ids": [
+      "competition metric",
+      "other"
+    ],
+    "total_votes": 52,
+    "enable_tpu": false,
+    "current_version_number": 20,
+    "docker_image": "gcr.io/kaggle-images/python@sha256:dafd4ce5668bbf1ad422e4c109e0f18c9623c3a7c7f48b0235f13142755c40b9",
+    "machine_shape": "None"
+  },
+  "sha256": "abce6231e3eda28d040455e651bfe3578bce31bb69449c99f67f0b82a4a6c56b"
+}

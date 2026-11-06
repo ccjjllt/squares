@@ -1,0 +1,39 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "squares-in-squares"
+version = "0.1.0"
+description = "Reproducible local experiments for Kaggle Squares in Squares"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "mpmath==1.4.1",
+  "pandas==2.3.3",
+]
+
+[project.scripts]
+squares = "squares.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8,<10", "ruff>=0.12,<1"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/squares"]
+
+[tool.uv]
+cache-dir = ".cache/uv"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+extend-exclude = ["research", "src/squares/_vendor"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+

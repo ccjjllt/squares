@@ -1,0 +1,24 @@
+{
+  "id": 142978568,
+  "ref": "az05192000gmailcom/22-2427-stretching-good-packings-to-nearby-n",
+  "title": "22.2427 | Stretching good packings to nearby n",
+  "author": "3정훈",
+  "slug": "22-2427-stretching-good-packings-to-nearby-n",
+  "last_run_time": "2026-11-03T03:02:16.705697600Z",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": false,
+  "enable_gpu": false,
+  "enable_internet": false,
+  "dataset_data_sources": [
+    "az05192000gmailcom/squares-in-squares-stretched-packings",
+    "lostdecimal27/squares-in-squares-bank"
+  ],
+  "competition_data_sources": [
+    "squares-in-squares"
+  ],
+  "enable_tpu": false,
+  "current_version_number": 2,
+  "docker_image": "gcr.io/kaggle-images/python@sha256:0717e81990be591f8c5f98f033d29ab23e9ffde057e5b3a6bd4371f93969e962",
+  "machine_shape": "None"
+}

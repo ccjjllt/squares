@@ -1,0 +1,138 @@
+{
+  "kernels": [
+    {
+      "ref": "arunsworkspace/squares-in-squares-baseline-pipeline",
+      "title": "Squares in Squares - Baseline Pipeline",
+      "author": "ARUNAGIRINATHAN K",
+      "last_run_time": "2026-10-22T06:08:27.443Z",
+      "total_votes": 9
+    },
+    {
+      "ref": "zkskhurram/kaggle-squares-in-squares",
+      "title": "\ud83d\udcd0 Kaggle: Squares in Squares",
+      "author": "zkskhurram",
+      "last_run_time": "2026-10-24T08:36:52.810Z",
+      "total_votes": 3
+    },
+    {
+      "ref": "mirzamilanfarabi/qwen3-agent",
+      "title": "Qwen3 Agent",
+      "author": "Mirza Milan Farabi",
+      "last_run_time": "2026-10-24T20:42:25.490Z"
+    },
+    {
+      "ref": "soumikkaran/notebooksquare",
+      "title": "notebooksquare",
+      "author": "Soumik Karan",
+      "last_run_time": "2026-10-25T16:42:01.357Z",
+      "total_votes": 1
+    },
+    {
+      "ref": "chaitanyajamble/squares-in-squares",
+      "title": "Squares in Squares ",
+      "author": "Chaitanya Jamble",
+      "last_run_time": "2026-10-27T05:27:57.563Z"
+    },
+    {
+      "ref": "chaitanyajamble/squares-in-squares-2",
+      "title": "Squares  in Squares 2",
+      "author": "Chaitanya Jamble",
+      "last_run_time": "2026-10-27T07:06:14.027Z",
+      "total_votes": 3
+    },
+    {
+      "ref": "saqibishtiaq699/basic-code-with-visualization-example",
+      "title": "Basic Code with Visualization Example",
+      "author": "Saqib Ishtiaq",
+      "last_run_time": "2026-10-30T03:34:49.740Z"
+    },
+    {
+      "ref": "satycodshandilya/square-in-square",
+      "title": "Square_in_Square",
+      "author": "Satyam Shandilya",
+      "last_run_time": "2026-11-04T09:49:17.847Z",
+      "total_votes": 1
+    },
+    {
+      "ref": "lianlian99/notebook74f07cadb8",
+      "title": "notebook74f07cadb8",
+      "author": "chensiyv",
+      "last_run_time": "2026-10-29T15:01:29.177Z"
+    },
+    {
+      "ref": "lianlian99/notebookd325f29440",
+      "title": "notebookd325f29440",
+      "author": "chensiyv",
+      "last_run_time": "2026-10-29T15:51:44.510Z"
+    },
+    {
+      "ref": "mirzamilanfarabi/squares-in-squares-v1",
+      "title": "Squares in Squares v1",
+      "author": "Mirza Milan Farabi",
+      "last_run_time": "2026-10-22T16:35:46.623Z",
+      "total_votes": 2
+    },
+    {
+      "ref": "avikdas567/optimal-packing-of-n-unit-squares-sat-dynamics",
+      "title": "Optimal Packing of N Unit Squares: SAT & Dynamics",
+      "author": "Avik Das",
+      "last_run_time": "2026-10-22T15:54:18.637Z",
+      "total_votes": 16
+    },
+    {
+      "ref": "koushikkumardinda/squares-in-squares-g-bel-contact-lp-closure",
+      "title": "\ud83d\udfe6 Squares in Squares: Göbel, Contact-LP & Closure",
+      "author": "KOUSHIK KUMAR DINDA",
+      "last_run_time": "2026-11-04T01:49:23.077Z",
+      "total_votes": 4
+    },
+    {
+      "ref": "yuki16/squares-baseline-merge-best-v2",
+      "title": "Squares_Baseline_Merge_Best_v2",
+      "author": "yuki16",
+      "last_run_time": "2026-10-22T01:29:22.203Z",
+      "total_votes": 3
+    },
+    {
+      "ref": "jkaren/a-student-s-journey-from-28-94-to-22-94",
+      "title": "A student's journey from 28.94 to 22.94",
+      "author": "J Karen ",
+      "last_run_time": "2026-11-03T14:07:31.263Z",
+      "total_votes": 21
+    },
+    {
+      "ref": "avazaku/squarecraft-beyond-the-grid-22-7417-lb",
+      "title": "Squarecraft | Beyond the Grid | 22.7417 LB",
+      "author": "Sargis Khachatryan",
+      "last_run_time": "2026-10-21T22:02:12.453Z",
+      "total_votes": 12
+    },
+    {
+      "ref": "rishabhbafnaiiitd/squares-in-squares-quest",
+      "title": "Squares in Squares Quest",
+      "author": "Rishabh Bafna",
+      "last_run_time": "2026-11-01T19:25:59.127Z",
+      "total_votes": 1
+    },
+    {
+      "ref": "alexchilton/certified-merge-of-public-packings-lb-22-5978",
+      "title": "Certified Merge of Public Packings - LB 22.5978",
+      "author": "alex chilton",
+      "last_run_time": "2026-10-21T23:13:46.287Z",
+      "total_votes": 3
+    },
+    {
+      "ref": "malyshevdanil/squares-in-squares-fresh-records-certified",
+      "title": "Squares in Squares | Fresh Records, Certified",
+      "author": "Malyshev Danil",
+      "last_run_time": "2026-10-22T05:19:28.607Z",
+      "total_votes": 2
+    },
+    {
+      "ref": "rushikeshpundkar/squares-in-squares-neighbour-transfer-squeeze",
+      "title": "Squares in Squares | Neighbour Transfer + Squeeze",
+      "author": "Rushikesh Pundkar",
+      "last_run_time": "2026-10-28T06:43:58.917Z"
+    }
+  ]
+}

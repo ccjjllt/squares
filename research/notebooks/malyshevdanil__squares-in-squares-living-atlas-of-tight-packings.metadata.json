@@ -1,0 +1,29 @@
+{
+  "id": 141339464,
+  "ref": "malyshevdanil/squares-in-squares-living-atlas-of-tight-packings",
+  "title": "Squares in Squares Living Atlas of Tight Packings",
+  "author": "Malyshev Danil",
+  "slug": "squares-in-squares-living-atlas-of-tight-packings",
+  "last_run_time": "2026-11-03T03:02:28.910380200Z",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": false,
+  "enable_gpu": false,
+  "enable_internet": true,
+  "kernel_data_sources": [
+    "malyshevdanil/squares-in-squares-fresh-records-certified",
+    "prvsiyan/a-square-deal-research-to-verified-packings",
+    "kirilltym/22-2499-cpu-cuda-mps-eda-budget-lp",
+    "seshurajup/1000-puzzles-ensemble-lb-22-2540",
+    "mdmuqtadirfuad/squares-in-squares-certified-method",
+    "pramonoutomo/sis-best-packings-22-2498853780-kaggle-verified"
+  ],
+  "competition_data_sources": [
+    "squares-in-squares"
+  ],
+  "total_votes": 63,
+  "enable_tpu": false,
+  "current_version_number": 78,
+  "docker_image": "gcr.io/kaggle-images/python@sha256:17b2fc7f27c25c6c2fd4230ec8e66097ab2b89fc88e1e4d6f338b72e1ee0bc3e",
+  "machine_shape": "None"
+}
