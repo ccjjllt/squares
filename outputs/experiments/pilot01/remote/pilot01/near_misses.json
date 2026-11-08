@@ -1,0 +1,116 @@
+{
+  "candidates": [
+    {
+      "key": "near_000000",
+      "n": 803,
+      "parent_candidate": "candidate_000032",
+      "L_float": 28.827487355822427,
+      "not_officially_scored": true
+    },
+    {
+      "key": "near_000001",
+      "n": 803,
+      "parent_candidate": "candidate_000032",
+      "L_float": 28.827449886809983,
+      "not_officially_scored": true
+    },
+    {
+      "key": "near_000002",
+      "n": 803,
+      "parent_candidate": "candidate_000032",
+      "L_float": 28.827482547708453,
+      "not_officially_scored": true
+    },
+    {
+      "key": "near_000003",
+      "n": 803,
+      "parent_candidate": "candidate_000032",
+      "L_float": 28.82747337982713,
+      "not_officially_scored": true
+    },
+    {
+      "key": "near_000004",
+      "n": 591,
+      "parent_candidate": "candidate_000069",
+      "L_float": 24.81893351278799,
+      "not_officially_scored": true
+    },
+    {
+      "key": "near_000005",
+      "n": 591,
+      "parent_candidate": "candidate_000069",
+      "L_float": 24.81888391777573,
+      "not_officially_scored": true
+    },
+    {
+      "key": "near_000006",
+      "n": 591,
+      "parent_candidate": "candidate_000069",
+      "L_float": 24.81890432157866,
+      "not_officially_scored": true
+    },
+    {
+      "key": "near_000007",
+      "n": 591,
+      "parent_candidate": "candidate_000069",
+      "L_float": 24.818933512600562,
+      "not_officially_scored": true
+    },
+    {
+      "key": "near_000008",
+      "n": 803,
+      "parent_candidate": "candidate_000032",
+      "L_float": 28.827487355822427,
+      "not_officially_scored": true
+    },
+    {
+      "key": "near_000009",
+      "n": 803,
+      "parent_candidate": "candidate_000032",
+      "L_float": 28.827409145131078,
+      "not_officially_scored": true
+    },
+    {
+      "key": "near_000010",
+      "n": 803,
+      "parent_candidate": "candidate_000032",
+      "L_float": 28.827452790601438,
+      "not_officially_scored": true
+    },
+    {
+      "key": "near_000011",
+      "n": 803,
+      "parent_candidate": "candidate_000032",
+      "L_float": 28.82737875163838,
+      "not_officially_scored": true
+    },
+    {
+      "key": "near_000012",
+      "n": 591,
+      "parent_candidate": "candidate_000069",
+      "L_float": 24.81893351278799,
+      "not_officially_scored": true
+    },
+    {
+      "key": "near_000013",
+      "n": 591,
+      "parent_candidate": "candidate_000069",
+      "L_float": 24.81887321875097,
+      "not_officially_scored": true
+    },
+    {
+      "key": "near_000014",
+      "n": 591,
+      "parent_candidate": "candidate_000069",
+      "L_float": 24.818925623625752,
+      "not_officially_scored": true
+    },
+    {
+      "key": "near_000015",
+      "n": 591,
+      "parent_candidate": "candidate_000069",
+      "L_float": 24.81890603978743,
+      "not_officially_scored": true
+    }
+  ]
+}

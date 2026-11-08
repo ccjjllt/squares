@@ -1,0 +1,39 @@
+{
+  "642": {
+    "chain_depth": 1,
+    "operator": "slab_up",
+    "candidate_key": "candidate_000024",
+    "parents": [
+      {
+        "source": "outputs/experiments/pilot01/remote/pilot01/near_misses.npz",
+        "sha256": "07ea7d86f5b5c728ce6716a2c06d88df6a148e4b00af5e27e779db8ff8fbab2d",
+        "key": "near_000013",
+        "n": 591,
+        "chain_depth": 0,
+        "state_sha256": "2e560b56ba9e465d5c882a16385bfd1c5466664b27912a9c09edf35f86c81c15",
+        "geometry_signature": "639cecbb51b3e6ea7b439560475a9c7733413532eebed943fd163f03a0a7bc7b",
+        "parent_candidate": "candidate_000069",
+        "parent_operator": "crossover",
+        "ancestry": [
+          {
+            "source": "data/public/penguin_v2/submission.csv",
+            "sha256": "243c0d9768b5c98acc629ebb1b9f4272ea8077f40a9fcc5402047a33c7d5b309",
+            "n": 591,
+            "state_sha256": "86ed3b1a99f2f4b44ab72eabb8f1a7a2d0f6f218bfc8a64b444d461d11efbd8d",
+            "geometry_signature": "c9c218cf27b4c117c38705e0aa62abe1e7fc656ed00adecd075f85870b03166b"
+          },
+          {
+            "source": "data/public/atlas_v79/submission.csv",
+            "sha256": "fcecec42a8e608a4c4674b91d84689f30b1113f5307117b5c559468d540bb2c5",
+            "n": 591,
+            "state_sha256": "3b1adcac5235c4e9ebb8642a715a4c73c8cce86ec43567204c6098bcd700faef",
+            "geometry_signature": "781155327e7cb6d663ac01e0381604f2c96de0b6036637ffd1477a91a1130c85"
+          }
+        ],
+        "not_officially_scored": true
+      }
+    ],
+    "verified_submission_sha256": "f9cabad4fa76ee163373dcacec48beea0b6e827d9dc26d45617acd3d8515360f",
+    "provenance": "outputs/experiments/pilot02/verification.json"
+  }
+}

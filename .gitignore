@@ -22,15 +22,22 @@ data/*
 !data/references/
 data/references/downloads/
 
-# Keep curated research results, not generated runs or logs
+# New runs stay local; retain the small evidence for the accepted research.
 outputs/*
 !outputs/.gitkeep
-!outputs/analysis/
-outputs/analysis/**/logs/
-
-# Downloaded upstream code is reproducible from retained source metadata
-/notebooks/public/*.ipynb
-/third_party/evand/
+!outputs/submissions/
+outputs/submissions/*
+!outputs/submissions/merged_research_20261107/
+outputs/submissions/merged_research_20261107/submission.csv
+!outputs/experiments/
+outputs/experiments/*
+!outputs/experiments/pilot01/
+!outputs/experiments/pilot02/
+!outputs/experiments/pilot04/
+!outputs/scores/
+outputs/scores/*
+!outputs/scores/penguin_v2_verified/
+!outputs/scores/square_deal_v33/
 
 # Editor scratch files
 .ipynb_checkpoints/

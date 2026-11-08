@@ -1,36 +1,16 @@
 # Squares in Squares
 
-[Kaggle Squares in Squares](https://www.kaggle.com/competitions/squares-in-squares) 几何优化研究项目。围绕公开布局、逐题差距和结构搜索开展实验。
+[Kaggle Squares in Squares](https://www.kaggle.com/competitions/squares-in-squares) 几何优化研究项目：通过结构迁移、接缝交叉和连续松弛寻找更紧的正方形布局。
 
-## 文档入口
+截至 2026-11-07，正式成绩为 **22.2322230038**，1,000 题全部有效；其中 n=459、642 为自研改善。研究结论和停止方向统一记录在研究概况中。
 
-- [文档目录](docs/index.md)
-- [开发与实验指南](docs/getting-started.md)
-- [比赛与提交记录](docs/competition.md)
-- [优化研究与优先方向](docs/research/optimization.md)
-- [项目目录与文件存放约定](docs/project-layout.md)
-- [第三方来源说明](docs/third-party.md)
-
-## 开始使用
-
-在项目根目录运行：
+- [研究概况](docs/research.md)：当前结果、有效主线、停止方向及原因。
+- [使用指南](docs/getting-started.md)：问题定义、环境、候选生成、评分与合并。
+- [来源记录](docs/third-party.md)：保留代码与公开布局的出处。
 
 ```sh
-uv sync --locked
+uv sync --locked --extra experiments
 uv run squares --help
-make analyze
 ```
 
-`make analyze` 使用本地公开布局和已有评分记录，输出逐题分析。新克隆项目需要先准备对应本地数据，详见开发指南。
-
-## 目录
-
-```text
-docs/          项目文档与研究结论
-src/           自有 Python 包及运行时评分器
-scripts/       分析与绘图脚本
-notebooks/     公开 Notebook 及元数据
-third_party/   原样保留的第三方代码摘录
-data/          比赛输入、公开布局、参考资料
-outputs/       分析结果、评分报告、候选布局与提交归档
-```
+当前最佳布局及完整验证保存在 `outputs/submissions/merged_research_20261107/`。代码在 `src/`，实验入口在 `scripts/`；数据和实验产物的保留约定见使用指南。

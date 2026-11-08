@@ -1,0 +1,9 @@
+{
+  "source_url": "https://www.kaggle.com/code/lightningv08/squares-in-squares-cuda-packing-search",
+  "notebook_version": 24,
+  "author": "Vladislav Lavrentev",
+  "source_cell": 19,
+  "extraction": "CUDA string from %%writefile gpu_topology.py; kernel bytes unmodified. Host wrapper is local.",
+  "kernel_sha256": "c1452753438fb9644446c375a06dd4ad66466985232bd06d31f4ba5502b97989",
+  "notebook_sha256": "389de7244acbf11bf39d5fa044c0b9290e48521cca413cfc1fc08aa17adaac14"
+}

@@ -1,29 +1,30 @@
-# 第三方来源说明
+# 来源记录
 
-本文件记录项目中的第三方来源，不构成对第三方材料的重新授权。本项目没有通过统一许可证覆盖下列代码、坐标或文档。
+本文件记录整理后仍保留的第三方代码和坐标来源，版本信息截至 2026-11-07。各材料继续适用原作者的条款，项目未将它们重新授权为统一许可证。
 
-## Kaggle 官方评分代码
+## 运行时代码
 
-- 来源：[Squares in Squares 官方评分 Notebook](https://www.kaggle.com/code/metric/squares-in-squares)。
-- 作者标识：Kaggle Competition Metrics。
-- 保存版本：v20；通过 Kaggle MCP 于 2026 年 11 月 6 日读取。
-- 原样源码：`src/squares/_vendor/official_metric.py`；重复研究副本已清理。
-- 出处、上游运行时间及源码 SHA-256：`src/squares/_vendor/official_metric.metadata.json`。
+| 材料 | 固定来源 | 本地文件与证据 |
+| --- | --- | --- |
+| 官方评分器 | [Kaggle Competition Metrics，v20](https://www.kaggle.com/code/metric/squares-in-squares) | `src/squares/_vendor/official_metric.py`，版本与 SHA-256 在同目录 `official_metric.metadata.json` |
+| Chains + Crossover 几何摘录 | [estopadilla，v1](https://www.kaggle.com/code/estopadilla/beating-124-public-bests-chains-crossover) | `third_party/chains/geometry_original.py`，单元位置和 SHA-256 在 `source.json` |
+| CUDA Packing Search 内核 | [Vladislav Lavrentev / lightningv08，v24](https://www.kaggle.com/code/lightningv08/squares-in-squares-cuda-packing-search) | `third_party/cuda_packing/gpu_topology_kernel.cu`，提取位置和 SHA-256 在 `manifest.json` |
 
-评分源码保留原样；项目的读写、报告和命令行封装位于 `_vendor` 目录外。使用或再分发该代码应查阅上游页面提供的条款，不应将本地封装的授权推及官方代码。
+官方评分器和 CUDA 内核保留原始源码。结构算子的本地扩展位于 `src/squares/search/structure.py`，GPU 封装位于 `gpu_relax.py`；未复用上游 Notebook 的完整实验流程。Python 依赖与版本由 `pyproject.toml`、`uv.lock` 声明，各依赖保留自己的许可证。
 
-## 公开 Notebook 与比赛资料
+## 固定公开布局
 
-`notebooks/public/` 在本地保存调研时读取的公开 Notebook；下载的 `.ipynb` 不纳入 Git，配套 `.metadata.json` 保留在版本管理中，记录作者、Kaggle 引用和版本。`data/references/kaggle/` 中的小型快照保留比赛页面、讨论和数据集信息的出处。
+每个目录中的坐标文件名均为 `submission.csv`。公开作者可能更新 Notebook，重建时需获取这里记录的固定输出。
 
-这些文件用于研究和复现准备。作者对代码、坐标数据、图像及引用材料的许可可能不同；公开可读不代表全部内容都采用同一开源许可证。复制到求解器或对外再分发前，应沿元数据中的原始来源检查各自许可证并保留要求的署名。
+| 来源 | 保存版本 | 本地目录 | 用途 |
+| --- | --- | --- | --- |
+| [Penguin Certified Research Portfolio](https://www.kaggle.com/code/penguin069/squares-in-squares-certified-research-portfolio) | v2 | `data/public/penguin_v2/` | 历史研究基线、结构供体 |
+| [Living Atlas of Tight Packings](https://www.kaggle.com/code/malyshevdanil/squares-in-squares-living-atlas-of-tight-packings) | v79 | `data/public/atlas_v79/` | 交叉供体 |
+| [Squares Public Merge Daily](https://www.kaggle.com/code/kmmmvs/squares-public-merge-daily) | v13 | `data/public/daily_v13/` | 迁移链供体 |
+| [A Square Deal](https://www.kaggle.com/code/prvsiyan/a-square-deal-research-to-verified-packings) | v33 | `data/public/square_deal_v33/` | 最终合并所用公共基线 |
 
-官方 `sample_submission.csv` 如存在于本地 `data/competition/`，来源于 [比赛数据页](https://www.kaggle.com/competitions/squares-in-squares/data)，受相应数据使用说明与比赛规则约束。`data/competition/` 与 `data/public/` 默认不纳入 Git；小型参考快照 `data/references/` 可纳入版本管理。
+四份公开布局的固定SHA-256统一见[来源清单](../data/references/sources.json)；Atlas的旧Notebook元数据曾显示v78，使用本地v79布局时应以此坐标哈希核对。最终提交来源及自研两题归因见 `outputs/submissions/merged_research_20261107/provenance.json`。最终布局包含 Square Deal v33 的公共结果及自研 n=459、642，公共更新与自主搜索收益分别统计。
 
-## Python 依赖
+`data/references/leaderboards/perpuzzle_best_20261029.csv` 来自 [lostdecimal27 的 squares-in-squares-bank](https://www.kaggle.com/datasets/lostdecimal27/squares-in-squares-bank)，是 2026-10-29 的边长纪录镜像，不包含领先布局坐标，也不是实时榜单。
 
-Python 依赖通过 `pyproject.toml` 与 `uv.lock` 声明和固定，由包管理器安装，不作为本项目自有源码重新授权。各依赖及其传递依赖继续适用各自发行包中的许可证与声明。
-
-## 开源求解器研究快照
-
-`third_party/evand/` 在本地保留读取时的上游相对目录和原文，包括其 README、DESIGN 与 CLAIMS；下载副本不纳入 Git。它是研究用源码摘录，不是完整可构建的仓库克隆。版本管理保留 `third_party/evand_manifest.json` 与 `third_party/evand_extras_manifest.json`，其中记录文件版本和 blob SHA，仓库版本为 `bb4cc78e5b35103c1f177db55e9cf08974e66563`。这些清单中的 `path` 为上游相对路径。
+未继续采用的 Notebook、论文调研与 Evan 求解器摘录已清理；相关研究结论及停止原因统一保存在[研究概况](research.md)。

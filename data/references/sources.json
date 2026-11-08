@@ -1,0 +1,43 @@
+{
+  "recorded_on": "2026-11-09",
+  "evidence_as_of": "2026-11-07",
+  "live_refresh_performed": false,
+  "public_packings": [
+    {
+      "path": "data/public/penguin_v2/submission.csv",
+      "source_url": "https://www.kaggle.com/code/penguin069/squares-in-squares-certified-research-portfolio",
+      "version": 2,
+      "sha256": "243c0d9768b5c98acc629ebb1b9f4272ea8077f40a9fcc5402047a33c7d5b309",
+      "purpose": "结构供体；n591进入n642血缘；Pilot02重建基线"
+    },
+    {
+      "path": "data/public/atlas_v79/submission.csv",
+      "source_url": "https://www.kaggle.com/code/malyshevdanil/squares-in-squares-living-atlas-of-tight-packings",
+      "version": 79,
+      "sha256": "fcecec42a8e608a4c4674b91d84689f30b1113f5307117b5c559468d540bb2c5",
+      "purpose": "结构供体；n591进入n642血缘；以布局哈希为准，旧Notebook元数据曾显示v78"
+    },
+    {
+      "path": "data/public/daily_v13/submission.csv",
+      "source_url": "https://www.kaggle.com/code/kmmmvs/squares-public-merge-daily",
+      "version": 13,
+      "sha256": "82b9193e1d76a9f9a16cd1ed79536747e09313617427012fb62360dde5bdcc81",
+      "purpose": "结构供体；n551进入551→504→459血缘"
+    },
+    {
+      "path": "data/public/square_deal_v33/submission.csv",
+      "source_url": "https://www.kaggle.com/code/prvsiyan/a-square-deal-research-to-verified-packings",
+      "version": 33,
+      "sha256": "940d493f1137e4121e93615b6ea9b5b9c376668742432e504817b42628704995",
+      "purpose": "最终公共对照；自研收益以此完整布局为参照"
+    }
+  ],
+  "historical_records": {
+    "path": "data/references/leaderboards/perpuzzle_best_20261029.csv",
+    "sha256": "ada09ba81a90ced3372ea9faa9da98b9b23ac3af86d9707a2260dc88b0e866c9",
+    "source_url": "https://www.kaggle.com/datasets/lostdecimal27/squares-in-squares-bank",
+    "dataset_version": 2,
+    "snapshot_date": "2026-10-29",
+    "usage": "可选历史排序参考，不是实时差距或预期收益"
+  }
+}

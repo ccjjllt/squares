@@ -1,116 +1,113 @@
-# 开发与实验指南
+# 使用指南
 
-[Kaggle Squares in Squares](https://www.kaggle.com/competitions/squares-in-squares) 的本地实验项目，提供提交文件检查、网格基线生成和官方 v20 逐题评分封装。先建立可复现的评分流程，再逐步接入结构搜索与局部优化。
+所有命令从项目根目录运行。研究状态与停止原因见[研究概况](research.md)，第三方版本见[来源记录](third-party.md)。
 
-## 环境准备
+## 问题与文件格式
 
-项目默认使用 Python 3.12（见 `.python-version`），通过 [uv](https://docs.astral.sh/uv/) 管理虚拟环境和锁文件。在项目根目录运行：
+对每个 `n=1…1000`，把 n 个边长为 1 的正方形放入尽可能小的轴对齐正方形容器。方块可以旋转，内部不能重叠。评分为 `sum(max(0, L_n / sqrt(n) - 1))`，越低越好；`L_n` 由方块角点的包围盒计算。
+
+完整提交包含 500,500 行，列为 `id,n,square_id,x,y,angle`。`id` 为唯一非负整数，`square_id` 在每题覆盖 `0…n-1`，`x/y` 是中心坐标，`angle` 单位为弧度。候选文件可只包含部分题目，但每个 n 必须完整。缺失或无效题目按网格罚分处理；合法但更差的布局不会自动截断到网格分。
+
+## 环境与检查
+
+项目默认 Python 3.12，依赖由 `uv.lock` 固定。结构搜索和局部修复需要 `experiments` 依赖组中的 SciPy：
 
 ```sh
-uv sync --locked
+uv sync --locked --extra experiments
 uv run squares --help
+uv run squares inspect outputs/submissions/merged_research_20261107/submission.csv
 ```
 
-`uv sync` 会创建本地 `.venv`，缓存放在 `.cache/uv`。核心依赖固定为 `mpmath==1.4.1`、`pandas==2.3.3`，完整版本由 `uv.lock` 固定。官方 v20 使用的 `mpf.man` 和 `mpf.exp` 需要兼容的 mpmath 版本，不应直接降级到 1.3。
-
-## 快速开始
-
-以生成和查看前 10 题的网格布局为例：
+`inspect` 检查格式、标识符和题目完整性，不检查重叠。新环境没有布局文件时，可生成小型网格验证安装：
 
 ```sh
-uv run squares baseline --max-n 10 --output outputs/examples/example.csv
-uv run squares inspect outputs/examples/example.csv
+uv run squares baseline --max-n 10 --output outputs/examples/grid10.csv
+uv run squares score outputs/examples/grid10.csv --max-n 10 --mode both --workers 1 --output-dir outputs/examples/grid10_score
 ```
 
-需要分析逐题得分时运行：
+仅对前 10 题计算的分数不能与完整比赛成绩比较。
+
+## 官方评分与跨轮合并
+
+评分使用原样保存的官方 v20。`text` 模式保留原始十进制文本；`float64` 模式经 pandas 的 round-trip 浮点读写后评分；默认 `both` 执行两条路径。高精度接触判定对微小重叠和读写精度敏感，浮点残差小并不等于有效布局。
+
+每次输出 `report.json` 和 `per_puzzle.csv`，包含文件/评分器哈希、环境版本、有效性及逐题分数。已提交题目无效时命令返回非零状态；总分不能代替有效性检查。
+
+从下一轮实验中选择每题最佳布局：
 
 ```sh
-uv run squares score outputs/examples/example.csv --max-n 10 --mode both --workers 2 --output-dir outputs/scores/example
+uv run squares merge \
+  --baseline outputs/submissions/merged_research_20261107/submission.csv \
+  --baseline-report outputs/submissions/merged_research_20261107/validation/report.json \
+  --candidate outputs/experiments/next/remote/improved_groups.csv \
+  --output-dir outputs/merged/next --workers 4
 ```
 
-`--max-n 10` 表示仅对 `n=1…10` 评分，所得总分不能与全 1,000 题的排行榜比较。省略它时按全部 1,000 题评分，文件中未提供的题目计入网格罚分。
+`--candidate` 可重复。示例中的 `next/remote/improved_groups.csv` 是待生成的新实验结果，需替换为实际路径。合并按完整 n 组选择；两条评分路径都不得比基线退步，保留原始数值文本并记录来源。同题的多次改善只按最终赢家计算一次。
 
-## 完整基线与提交文件
-
-生成全部 1,000 题的网格布局：
+`--baseline-report` 仅复用与基线哈希、评分器和环境一致的完整报告；环境改变时省略该参数重新评分。最终序列化文件在提交前仍需完整独立复评：
 
 ```sh
-uv run squares baseline --max-n 1000 --output outputs/baselines/grid.csv
-uv run squares inspect outputs/baselines/grid.csv
+uv run squares score outputs/merged/next/submission.csv \
+  --mode both --workers 4 --output-dir outputs/merged/next/validation
 ```
 
-完整文件包含 500,500 行，列为：
+这些命令只生成和验证本地文件，不提交比赛。官方评分源码位于 `src/squares/_vendor/`；更新版本时应重新记录来源和哈希。
 
-```text
-id,n,square_id,x,y,angle
-```
+## 保留的结构搜索流程
 
-每个 `n` 对应一套完整布局，`square_id` 覆盖 `0…n-1`；`x`、`y` 为单位正方形的中心坐标，`angle` 为弧度。`id` 必须为唯一非负整数。部分提交以整题为单位，不能只提交某个 `n` 的部分方块。
+CPU 生成迁移链与接缝交叉候选，GPU 批量连续松弛，官方评分接受有效赢家。新赢家和近优布局可导出为下一轮供体；目前跨轮结构生成仍需重新调用脚本。
 
-`inspect` 检查列、标识符、题目完整性、数值格式和输入范围，**不检查方块重叠**。已下载官方样例时可运行：
+生成一轮有界候选：
 
 ```sh
-uv run squares inspect data/competition/sample_submission.csv
+uv run python scripts/experiments/prepare_candidates.py \
+  --baseline outputs/submissions/merged_research_20261107/submission.csv \
+  --baseline-lineage-json outputs/submissions/merged_research_20261107/baseline_lineage.json \
+  --donor data/public/penguin_v2/submission.csv \
+  --donor data/public/atlas_v79/submission.csv \
+  --donor data/public/daily_v13/submission.csv \
+  --max-candidates 48 --max-seconds 120 \
+  --output-dir outputs/experiments/next/candidates
 ```
 
-大文件目录 `data/competition/`、`data/public/` 不纳入 Git；小型参考资料 `data/references/` 保留在版本管理中。新克隆项目可从比赛数据页下载样例，或直接使用 `baseline` 生成本地基线。
+可用 `--parent-n` 聚焦指定父题，用 `--max-parents-per-n`、`--slab-beam-width` 和 `--crossover-children` 控制多样性。默认纪录表 `data/references/leaderboards/perpuzzle_best_20261029.csv` 是历史排序线索，不能作为当前可获得收益。
 
-## 逐题评分
+继续已有迁移链时，成对传入 `--donor-pool-npz` 和 `--donor-pool-json`，指向同一次运行导出的 `donors.npz/json`。Pilot04 的供体保存在 `outputs/experiments/pilot04/remote/pilot04/`。上例的 `baseline_lineage.json` 对应最终基线中的459、642，保留已有链深度；更换基线时也应提供相应谱系，不要用旧基线的谱系文件描述新坐标。
+
+GPU 环境需要安装本项目、NVIDIA CUDA 与匹配的 CuPy；普通本地环境安装不包含 GPU 运行时。在该环境中运行：
 
 ```sh
-uv run squares score outputs/baselines/grid.csv --mode both --max-n 1000 --workers 4 --output-dir outputs/scores/grid
+python scripts/experiments/run_gpu_pilot.py \
+  --baseline outputs/submissions/merged_research_20261107/submission.csv \
+  --candidates outputs/experiments/next/candidates/candidates.npz \
+  --manifest outputs/experiments/next/candidates/manifest.json \
+  --output-dir outputs/experiments/next/remote \
+  --seconds 900 --batch 32 --staged-warm --incumbent-passes 10
 ```
 
-评分使用原样保存的官方 v20 单题函数，不替换其几何判定。`--workers` 控制进程数；高精度接触判定可能较慢，调试时优先使用较小的 `--max-n` 和 `--workers 1`。
+`--local-repair` 可启用固定角度修复，默认关闭；已有实验显示它成本较高。评价以官方验证后的净收益为准。运行产物包括 `improved_groups.csv`、赢家/供体数组、`per_n_gains.json` 和 `summary.json`。
 
-| 模式 | 输入路径 |
+使用 Kaggle GPU 时，`scripts/kaggle/build_pilot_bundle.py` 将代码和候选打包，不包含凭据，也不启动远程运行。用 `--candidates-dir`、`--output-dir` 指定目录，并显式指定 `--account`、`--slug`、`--run-name` 以及至少一个 `--kernel-source` 或 `--dataset-source`。输入源必须实际包含与候选 manifest 中 SHA-256 一致的 `submission.csv`；最终合并基线需单独作为输入提供，公共 Penguin 输出不能代替它。打包命令的完整参数可用 `--help` 查看。
+
+`scripts/kaggle/account_api.py` 提供显式账号的 quota/push/status/logs/output 操作，需要另行安装 Kaggle 官方 Python 包及配置本地凭据；`push` 会启动计算。计算账号与比赛提交账号分别指定，不因打包而自动更换提交身份。
+
+## 目录与保留约定
+
+| 目录 | 保留内容 |
 | --- | --- |
-| `text` | 保留 CSV 中坐标和角度的原始十进制文本后评分 |
-| `float64` | pandas C 引擎以 `float_precision="round_trip"` 读入 double，再导出文本评分 |
-| `both` | 分别执行以上两条路径，默认模式 |
+| `docs/` | 本指南、研究概况、来源记录 |
+| `src/squares/` | 官方评分封装、逐题合并、结构搜索与松弛 |
+| `scripts/experiments/` | 候选生成与 GPU 搜索入口 |
+| `scripts/kaggle/` | 运行打包和账号操作 |
+| `third_party/` | 正在使用的 chains 原始摘录、CUDA 内核及来源清单 |
+| `data/public/` | Penguin v2、Atlas v79、Daily v13、Square Deal v33 固定布局 |
+| `data/references/` | 保留的来源、历史纪录及清理记录 |
+| `outputs/submissions/` | 正式提交、完整评分、来源和回执 |
+| `outputs/experiments/` | 有效主线的候选、供体、赢家及必要谱系证据 |
 
-`float64` 是固定本地环境下的读写模拟，不能保证与 Kaggle 后台当前解析环境完全相同。保存原文仍有必要，但只验证原文不足以判断提交经过浮点读写后是否有效。导出格式、依赖版本和微小间隙都可能影响接触判定。
+固定公开布局和最终完整CSV在本地保存，Git克隆不会自动携带；来源、评分、有效赢家和供体等小型证据列入保留范围，新实验产物默认忽略。恢复公开布局时按[来源清单](../data/references/sources.json)核对版本与哈希。最终几何与成绩可用Square Deal v33和Pilot04的`improved_groups.csv`逐题合并重建；Pilot04的旧输入可用Penguin v2和Pilot02的`improved_groups.csv`重建。
 
-每次评分写入：
+正式提交的原始字节仍以保存的完整CSV为准。以v33为基线重建时，n=1的angle文本为`0`，原提交为`0.0`；其余字段一致，几何和成绩相同，但文件哈希不同。逐字节恢复需保留该原始文本并核对研究概况中的SHA-256。
 
-- `report.json`：各模式汇总，以及输入 SHA-256、官方评分源码 SHA-256、版本和运行依赖信息。
-- `per_puzzle.csv`：`mode,n,score,L,status,reason`，保留每题得分、认证边长、状态和原因。
-
-汇总区分有效题目、无效已提交题目与缺失题目。缺失题目允许按网格罚分计入；已提交布局未通过验证时，CLI 返回退出码 `1`。结构检查失败会提前报错。不要只看总分判断合法性：完全平方数题目的网格罚分也是零。
-
-官方目标是最小化 `Σ(L_n / sqrt(n) - 1)`。全网格布局按公式计算的参考总分约为 `28.9376699166`。合法但更差的布局不会自动截断到网格分。`L` 没有被认证时应结合 `status` 与 `reason` 判断，不能把空值或零占位当作改进。
-
-## 目录与分析脚本
-
-文件存放约定见[项目目录](project-layout.md)，研究结论见[优化方向](research/optimization.md)。
-
-在项目根目录重跑现有分析：
-
-```sh
-uv run python scripts/analysis/analyze_baseline.py
-uv run --with matplotlib python scripts/analysis/plot_baseline_analysis.py
-```
-
-分析表格、摘要和图分别写入 `outputs/analysis/baseline/tables/`、`summaries/`、`figures/`。原始纪录表位于 `data/references/leaderboards/`，公开提交文件位于 `data/public/`。
-
-新克隆项目若要重建基线分析，需要准备以下本地输入。下载时选择表中的版本，文件名均为 `submission.csv`：
-
-| 来源 | 版本 | 放置目录 |
-| --- | --- | --- |
-| [Stretching](https://www.kaggle.com/code/az05192000gmailcom/22-2427-stretching-good-packings-to-nearby-n) | Notebook v2 | `data/public/stretching_v2/` |
-| [Living Atlas](https://www.kaggle.com/code/malyshevdanil/squares-in-squares-living-atlas-of-tight-packings) | Notebook v79 | `data/public/atlas_v79/` |
-| [Boxed In](https://www.kaggle.com/code/jazivxt/boxed-in-sub) | Notebook v16 | `data/public/boxed_v16/` |
-
-分析脚本必需 Stretching 的本地评分记录；Atlas 输入存在时会额外生成对比表与同族分析。缺少 Stretching 评分记录时，可本地生成，不会提交到 Kaggle：
-
-```sh
-uv run squares score data/public/stretching_v2/submission.csv --mode both --output-dir outputs/submissions/public_stretching_v2/validation
-```
-
-绘图需要先生成分析摘要；第二张图还需要 Atlas 对比表。Boxed 的研究结果是已归档的独立分析，当前 `analyze_baseline.py` 不会重新生成它。
-
-不要直接修改 `_vendor/official_metric.py`。需要更新官方版本时，重新获取源码、记录出处和校验值，再检查新旧版本的评分行为；本地扩展写在封装层。
-
-后续优先建立逐题候选库，按完整 `n` 组选择已验证的较优布局，并保留来源。再接入 stretching、斜带和 gadget 组合等结构搜索，最后使用 contact polish 精修。当前骨架不包含这些搜索器或自动合并功能，也不会自动向 Kaggle 提交。
-
-第三方代码、数据与研究快照的使用说明见 [第三方来源说明](third-party.md)。
+后续实验先将结论与停止原因更新到 `docs/research.md`，再清理被替代或无用途的中间产物。有效坐标、来源谱系和最终验证需一起保留，不再为每轮实验新建一篇独立说明。

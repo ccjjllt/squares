@@ -1,0 +1,45 @@
+{
+  "prepared_at": "2026-11-07T04:13:34.113502+08:00",
+  "status": "COMPLETE",
+  "competition": "squares-in-squares",
+  "account": "ccjjllt",
+  "filename": "submission_merged_research_20261107.csv",
+  "path": "/Users/zhaohuaxiang/ccjjllt/squares/outputs/submissions/merged_research_20261107/submission.csv",
+  "bytes": 25839440,
+  "sha256": "d091b9780588ef13484ff10c4a1a99a7c9b3c45ab33113bd2272a35637da2e55",
+  "md5": "99e790c894e2c2cfa0a80ddb9d3fd4d6",
+  "local_score": 22.232223003847444,
+  "valid_puzzles": 1000,
+  "public_source": {
+    "ref": "prvsiyan/a-square-deal-research-to-verified-packings",
+    "version": 33,
+    "sha256": "940d493f1137e4121e93615b6ea9b5b9c376668742432e504817b42628704995",
+    "local_score": 22.232244667317776
+  },
+  "self_research_puzzles": [
+    459,
+    642
+  ],
+  "self_research_gain_over_public_v33": 2.1663470331390045e-05,
+  "experiments": [
+    "pilot01",
+    "pilot02",
+    "local_repair_probe",
+    "local_repair_continuation",
+    "pilot04",
+    "core01",
+    "compose01",
+    "compose02",
+    "pilot05"
+  ],
+  "metric_verified_current": "outputs/planning/20261107/official_metric_final_check.json",
+  "final_full_score_report": "validation/report.json",
+  "submission_count_this_goal": 1,
+  "submission_ref": 58068296,
+  "submission_url": "https://www.kaggle.com/competitions/squares-in-squares/submissions",
+  "submitted_observed_at": "2026-11-06T20:15:48.691416+00:00",
+  "public_score": "22.2322230038",
+  "official_matches_local_rounded_10_decimals": true,
+  "completed_observed_at": "2026-11-06T20:27:29.064460+00:00",
+  "observed_rank": 102
+}

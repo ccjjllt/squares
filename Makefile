@@ -1,13 +1,7 @@
-.PHONY: setup baseline analyze figures
+.PHONY: setup baseline
 
 setup:
-	uv sync --locked
+	uv sync --locked --extra experiments
 
 baseline:
 	uv run squares baseline --output outputs/baselines/grid.csv
-
-analyze:
-	uv run python scripts/analysis/analyze_baseline.py
-
-figures:
-	uv run --with matplotlib python scripts/analysis/plot_baseline_analysis.py

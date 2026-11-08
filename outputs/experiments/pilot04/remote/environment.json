@@ -1,0 +1,7 @@
+{
+  "gpu_count": 2,
+  "mpmath": "1.4.1",
+  "pandas": "2.3.3",
+  "scipy": "1.16.3",
+  "baseline_sha256": "f9cabad4fa76ee163373dcacec48beea0b6e827d9dc26d45617acd3d8515360f"
+}

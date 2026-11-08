@@ -1,0 +1,13 @@
+{
+  "observed_rank": 102,
+  "team_count": 1740,
+  "team_id": 17301584,
+  "public_submissions": [
+    {
+      "id": 58068296,
+      "date_submitted": "2026-11-06T20:15:25.017Z",
+      "public_score": "22.2322230038"
+    }
+  ],
+  "source": "Kaggle MCP get_competition and list_team_public_submissions"
+}

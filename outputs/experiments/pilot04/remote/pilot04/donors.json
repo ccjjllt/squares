@@ -1,0 +1,436 @@
+{
+  "baseline_sha256": "f9cabad4fa76ee163373dcacec48beea0b6e827d9dc26d45617acd3d8515360f",
+  "archive_sha256": "78094155049c2eded572798d17387d862ab765a4d98889075907fb388a9075b7",
+  "candidates": [
+    {
+      "key": "winner_0459",
+      "n": 459,
+      "donor_kind": "winner",
+      "parent_candidate": "incumbent_459_4",
+      "parent_operator": "slab_down",
+      "last_operator": "incumbent_continuation",
+      "chain_depth": 2,
+      "ancestry": [
+        {
+          "source": "outputs/experiments/pilot04/input_donors/donors.npz",
+          "sha256": "4468c88cedfa64b0857c118015b383e73013a619c7e839f9d13fca34bb1978eb",
+          "key": "near_candidate_000031",
+          "n": 504,
+          "chain_depth": 1,
+          "state_sha256": "86eff9682e48ef3b54857620aadf8a8a58b9d5227d2e2dcc166b908c9eca822d",
+          "source_array_sha256": "86eff9682e48ef3b54857620aadf8a8a58b9d5227d2e2dcc166b908c9eca822d",
+          "source_reported_state_sha256": "86eff9682e48ef3b54857620aadf8a8a58b9d5227d2e2dcc166b908c9eca822d",
+          "geometry_signature": "f2d4787b111856ab56553f29be3245c92d71c79cb23834dc000140914a45bc59",
+          "parent_candidate": "candidate_000031",
+          "parent_operator": "slab_down",
+          "ancestry": [
+            {
+              "source": "data/public/daily_v13/submission.csv",
+              "sha256": "82b9193e1d76a9f9a16cd1ed79536747e09313617427012fb62360dde5bdcc81",
+              "n": 551,
+              "chain_depth": 0,
+              "state_sha256": "e1c1bb62de9f2fadd6a0ff48c25f6a8dfb89d84062c80dd6dbc3d1a9ac9224a1",
+              "geometry_signature": "e2b91b352772ba31f34fa894856d80dc128c6b2d0bd5ef8e640cec7c38b56a1b"
+            }
+          ],
+          "not_officially_scored": true,
+          "donor_kind": "near_miss",
+          "scores": null
+        }
+      ],
+      "L_float": 21.90481042657259,
+      "not_officially_scored": false,
+      "scores": {
+        "text": {
+          "score": 0.022428992824623073,
+          "L": "21.90481042657258684380748185319206917013867385923388",
+          "reason": "ok"
+        },
+        "float64": {
+          "score": 0.022428992824623073,
+          "L": "21.90481042657258792380748234467812606766947663010541",
+          "reason": "ok"
+        }
+      },
+      "array_sha256": "568327edcc8694a3f34ed572c9d168432f2189f851069bb975be4ea895b66321",
+      "state_sha256": "568327edcc8694a3f34ed572c9d168432f2189f851069bb975be4ea895b66321",
+      "previous_incumbent_array_sha256": "f0886e5febf68fb14944271b5dde4497d59b0197b7dbcf02432d754f1a20d269"
+    },
+    {
+      "key": "winner_0642",
+      "n": 642,
+      "donor_kind": "winner",
+      "parent_candidate": "incumbent_642_5",
+      "parent_operator": "slab_up",
+      "last_operator": "incumbent_continuation",
+      "chain_depth": 1,
+      "ancestry": [
+        {
+          "source": "outputs/experiments/pilot01/remote/pilot01/near_misses.npz",
+          "sha256": "07ea7d86f5b5c728ce6716a2c06d88df6a148e4b00af5e27e779db8ff8fbab2d",
+          "key": "near_000013",
+          "n": 591,
+          "chain_depth": 0,
+          "state_sha256": "2e560b56ba9e465d5c882a16385bfd1c5466664b27912a9c09edf35f86c81c15",
+          "geometry_signature": "639cecbb51b3e6ea7b439560475a9c7733413532eebed943fd163f03a0a7bc7b",
+          "parent_candidate": "candidate_000069",
+          "parent_operator": "crossover",
+          "ancestry": [
+            {
+              "source": "data/public/penguin_v2/submission.csv",
+              "sha256": "243c0d9768b5c98acc629ebb1b9f4272ea8077f40a9fcc5402047a33c7d5b309",
+              "n": 591,
+              "state_sha256": "86ed3b1a99f2f4b44ab72eabb8f1a7a2d0f6f218bfc8a64b444d461d11efbd8d",
+              "geometry_signature": "c9c218cf27b4c117c38705e0aa62abe1e7fc656ed00adecd075f85870b03166b"
+            },
+            {
+              "source": "data/public/atlas_v79/submission.csv",
+              "sha256": "fcecec42a8e608a4c4674b91d84689f30b1113f5307117b5c559468d540bb2c5",
+              "n": 591,
+              "state_sha256": "3b1adcac5235c4e9ebb8642a715a4c73c8cce86ec43567204c6098bcd700faef",
+              "geometry_signature": "781155327e7cb6d663ac01e0381604f2c96de0b6036637ffd1477a91a1130c85"
+            }
+          ],
+          "not_officially_scored": true
+        }
+      ],
+      "L_float": 25.832765157405614,
+      "not_officially_scored": false,
+      "scores": {
+        "text": {
+          "score": 0.01953791658812576,
+          "L": "25.83276515740561503624652851420580446918113791415336",
+          "reason": "ok"
+        },
+        "float64": {
+          "score": 0.01953791658812576,
+          "L": "25.83276515740561505046888260550086622980590028983764",
+          "reason": "ok"
+        }
+      },
+      "array_sha256": "f1f15f795af639e2ba66eea0da20021c9a2ba52f9f3571f86ed73e893c88ee9c",
+      "state_sha256": "6aeea6fdf9ad1963a11a1b256c2e9d29ade2d983514f5eccc9ad1e31bf4fc6d4",
+      "previous_incumbent_array_sha256": "601fdff07e1653eda12420fc3d8c5b1698d501a22e23024b6b978e2ff9705136"
+    },
+    {
+      "key": "near_candidate_000001",
+      "n": 459,
+      "parent_candidate": "candidate_000001",
+      "parent_operator": "slab_down",
+      "chain_depth": 2,
+      "ancestry": [
+        {
+          "source": "outputs/experiments/pilot04/input_donors/donors.npz",
+          "sha256": "4468c88cedfa64b0857c118015b383e73013a619c7e839f9d13fca34bb1978eb",
+          "key": "near_candidate_000031",
+          "n": 504,
+          "chain_depth": 1,
+          "state_sha256": "86eff9682e48ef3b54857620aadf8a8a58b9d5227d2e2dcc166b908c9eca822d",
+          "source_array_sha256": "86eff9682e48ef3b54857620aadf8a8a58b9d5227d2e2dcc166b908c9eca822d",
+          "source_reported_state_sha256": "86eff9682e48ef3b54857620aadf8a8a58b9d5227d2e2dcc166b908c9eca822d",
+          "geometry_signature": "f2d4787b111856ab56553f29be3245c92d71c79cb23834dc000140914a45bc59",
+          "parent_candidate": "candidate_000031",
+          "parent_operator": "slab_down",
+          "ancestry": [
+            {
+              "source": "data/public/daily_v13/submission.csv",
+              "sha256": "82b9193e1d76a9f9a16cd1ed79536747e09313617427012fb62360dde5bdcc81",
+              "n": 551,
+              "chain_depth": 0,
+              "state_sha256": "e1c1bb62de9f2fadd6a0ff48c25f6a8dfb89d84062c80dd6dbc3d1a9ac9224a1",
+              "geometry_signature": "e2b91b352772ba31f34fa894856d80dc128c6b2d0bd5ef8e640cec7c38b56a1b"
+            }
+          ],
+          "not_officially_scored": true,
+          "donor_kind": "near_miss",
+          "scores": null
+        }
+      ],
+      "L_float": 21.90801420696874,
+      "not_officially_scored": true,
+      "donor_kind": "near_miss",
+      "array_sha256": "b073e2323cfe084afa2f247b77cb2fff8fe2c864061a0553c644550422813b3c",
+      "state_sha256": "b073e2323cfe084afa2f247b77cb2fff8fe2c864061a0553c644550422813b3c"
+    },
+    {
+      "key": "near_candidate_000004",
+      "n": 459,
+      "parent_candidate": "candidate_000004",
+      "parent_operator": "slab_down",
+      "chain_depth": 2,
+      "ancestry": [
+        {
+          "source": "outputs/experiments/pilot04/input_donors/donors.npz",
+          "sha256": "4468c88cedfa64b0857c118015b383e73013a619c7e839f9d13fca34bb1978eb",
+          "key": "near_candidate_000031",
+          "n": 504,
+          "chain_depth": 1,
+          "state_sha256": "86eff9682e48ef3b54857620aadf8a8a58b9d5227d2e2dcc166b908c9eca822d",
+          "source_array_sha256": "86eff9682e48ef3b54857620aadf8a8a58b9d5227d2e2dcc166b908c9eca822d",
+          "source_reported_state_sha256": "86eff9682e48ef3b54857620aadf8a8a58b9d5227d2e2dcc166b908c9eca822d",
+          "geometry_signature": "f2d4787b111856ab56553f29be3245c92d71c79cb23834dc000140914a45bc59",
+          "parent_candidate": "candidate_000031",
+          "parent_operator": "slab_down",
+          "ancestry": [
+            {
+              "source": "data/public/daily_v13/submission.csv",
+              "sha256": "82b9193e1d76a9f9a16cd1ed79536747e09313617427012fb62360dde5bdcc81",
+              "n": 551,
+              "chain_depth": 0,
+              "state_sha256": "e1c1bb62de9f2fadd6a0ff48c25f6a8dfb89d84062c80dd6dbc3d1a9ac9224a1",
+              "geometry_signature": "e2b91b352772ba31f34fa894856d80dc128c6b2d0bd5ef8e640cec7c38b56a1b"
+            }
+          ],
+          "not_officially_scored": true,
+          "donor_kind": "near_miss",
+          "scores": null
+        }
+      ],
+      "L_float": 21.90801421059687,
+      "not_officially_scored": true,
+      "donor_kind": "near_miss",
+      "array_sha256": "35d4808a1bcea6e3480be56593b7d53865b7d7268a12cb5aa4e7e944d795e410",
+      "state_sha256": "35d4808a1bcea6e3480be56593b7d53865b7d7268a12cb5aa4e7e944d795e410"
+    },
+    {
+      "key": "near_candidate_000007",
+      "n": 459,
+      "parent_candidate": "candidate_000007",
+      "parent_operator": "slab_down",
+      "chain_depth": 2,
+      "ancestry": [
+        {
+          "source": "outputs/experiments/pilot04/input_donors/donors.npz",
+          "sha256": "4468c88cedfa64b0857c118015b383e73013a619c7e839f9d13fca34bb1978eb",
+          "key": "near_candidate_000031",
+          "n": 504,
+          "chain_depth": 1,
+          "state_sha256": "86eff9682e48ef3b54857620aadf8a8a58b9d5227d2e2dcc166b908c9eca822d",
+          "source_array_sha256": "86eff9682e48ef3b54857620aadf8a8a58b9d5227d2e2dcc166b908c9eca822d",
+          "source_reported_state_sha256": "86eff9682e48ef3b54857620aadf8a8a58b9d5227d2e2dcc166b908c9eca822d",
+          "geometry_signature": "f2d4787b111856ab56553f29be3245c92d71c79cb23834dc000140914a45bc59",
+          "parent_candidate": "candidate_000031",
+          "parent_operator": "slab_down",
+          "ancestry": [
+            {
+              "source": "data/public/daily_v13/submission.csv",
+              "sha256": "82b9193e1d76a9f9a16cd1ed79536747e09313617427012fb62360dde5bdcc81",
+              "n": 551,
+              "chain_depth": 0,
+              "state_sha256": "e1c1bb62de9f2fadd6a0ff48c25f6a8dfb89d84062c80dd6dbc3d1a9ac9224a1",
+              "geometry_signature": "e2b91b352772ba31f34fa894856d80dc128c6b2d0bd5ef8e640cec7c38b56a1b"
+            }
+          ],
+          "not_officially_scored": true,
+          "donor_kind": "near_miss",
+          "scores": null
+        }
+      ],
+      "L_float": 21.908014256919497,
+      "not_officially_scored": true,
+      "donor_kind": "near_miss",
+      "array_sha256": "35b03bf7f13c8fff55af7ab851c48326382e5f54a685794edd208e6d4412d02e",
+      "state_sha256": "35b03bf7f13c8fff55af7ab851c48326382e5f54a685794edd208e6d4412d02e"
+    },
+    {
+      "key": "near_candidate_000010",
+      "n": 459,
+      "parent_candidate": "candidate_000010",
+      "parent_operator": "slab_down",
+      "chain_depth": 2,
+      "ancestry": [
+        {
+          "source": "outputs/experiments/pilot04/input_donors/donors.npz",
+          "sha256": "4468c88cedfa64b0857c118015b383e73013a619c7e839f9d13fca34bb1978eb",
+          "key": "near_candidate_000031",
+          "n": 504,
+          "chain_depth": 1,
+          "state_sha256": "86eff9682e48ef3b54857620aadf8a8a58b9d5227d2e2dcc166b908c9eca822d",
+          "source_array_sha256": "86eff9682e48ef3b54857620aadf8a8a58b9d5227d2e2dcc166b908c9eca822d",
+          "source_reported_state_sha256": "86eff9682e48ef3b54857620aadf8a8a58b9d5227d2e2dcc166b908c9eca822d",
+          "geometry_signature": "f2d4787b111856ab56553f29be3245c92d71c79cb23834dc000140914a45bc59",
+          "parent_candidate": "candidate_000031",
+          "parent_operator": "slab_down",
+          "ancestry": [
+            {
+              "source": "data/public/daily_v13/submission.csv",
+              "sha256": "82b9193e1d76a9f9a16cd1ed79536747e09313617427012fb62360dde5bdcc81",
+              "n": 551,
+              "chain_depth": 0,
+              "state_sha256": "e1c1bb62de9f2fadd6a0ff48c25f6a8dfb89d84062c80dd6dbc3d1a9ac9224a1",
+              "geometry_signature": "e2b91b352772ba31f34fa894856d80dc128c6b2d0bd5ef8e640cec7c38b56a1b"
+            }
+          ],
+          "not_officially_scored": true,
+          "donor_kind": "near_miss",
+          "scores": null
+        }
+      ],
+      "L_float": 21.907810264280194,
+      "not_officially_scored": true,
+      "donor_kind": "near_miss",
+      "array_sha256": "ef5f82215c49e80ba5f499fe99af83b7bb2f800d101741356adb589193f1a1c4",
+      "state_sha256": "ef5f82215c49e80ba5f499fe99af83b7bb2f800d101741356adb589193f1a1c4"
+    },
+    {
+      "key": "near_candidate_000013",
+      "n": 459,
+      "parent_candidate": "candidate_000013",
+      "parent_operator": "slab_down",
+      "chain_depth": 2,
+      "ancestry": [
+        {
+          "source": "outputs/experiments/pilot04/input_donors/donors.npz",
+          "sha256": "4468c88cedfa64b0857c118015b383e73013a619c7e839f9d13fca34bb1978eb",
+          "key": "near_candidate_000042",
+          "n": 504,
+          "chain_depth": 1,
+          "state_sha256": "207669d5d810897753d2e3c7e100b83c13a719a9c5e7512ce21df12d77e44f6e",
+          "source_array_sha256": "207669d5d810897753d2e3c7e100b83c13a719a9c5e7512ce21df12d77e44f6e",
+          "source_reported_state_sha256": "207669d5d810897753d2e3c7e100b83c13a719a9c5e7512ce21df12d77e44f6e",
+          "geometry_signature": "1c6b7e3f5c7b75a07afae420d1fb4236a1ec74eceb0551e54bf65537dcf4f19d",
+          "parent_candidate": "candidate_000042",
+          "parent_operator": "slab_down",
+          "ancestry": [
+            {
+              "source": "data/public/penguin_v2/submission.csv",
+              "sha256": "243c0d9768b5c98acc629ebb1b9f4272ea8077f40a9fcc5402047a33c7d5b309",
+              "n": 551,
+              "chain_depth": 0,
+              "state_sha256": "e5da3c6f96a3288343a8388e75cb718330c89b257c6db7239a032515f1ea0094",
+              "geometry_signature": "d2051d0f15f4b553de000eec57b076392cdc85326811c65c3065891350ed20d6"
+            }
+          ],
+          "not_officially_scored": true,
+          "donor_kind": "near_miss",
+          "scores": null
+        }
+      ],
+      "L_float": 21.907810389246652,
+      "not_officially_scored": true,
+      "donor_kind": "near_miss",
+      "array_sha256": "1b52cc077b9f3ce5132f0ce326e9ae3df3497acc0ff3df300f792f0c12b21df4",
+      "state_sha256": "1b52cc077b9f3ce5132f0ce326e9ae3df3497acc0ff3df300f792f0c12b21df4"
+    },
+    {
+      "key": "near_candidate_000016",
+      "n": 459,
+      "parent_candidate": "candidate_000016",
+      "parent_operator": "slab_down",
+      "chain_depth": 2,
+      "ancestry": [
+        {
+          "source": "outputs/experiments/pilot04/input_donors/donors.npz",
+          "sha256": "4468c88cedfa64b0857c118015b383e73013a619c7e839f9d13fca34bb1978eb",
+          "key": "near_candidate_000042",
+          "n": 504,
+          "chain_depth": 1,
+          "state_sha256": "207669d5d810897753d2e3c7e100b83c13a719a9c5e7512ce21df12d77e44f6e",
+          "source_array_sha256": "207669d5d810897753d2e3c7e100b83c13a719a9c5e7512ce21df12d77e44f6e",
+          "source_reported_state_sha256": "207669d5d810897753d2e3c7e100b83c13a719a9c5e7512ce21df12d77e44f6e",
+          "geometry_signature": "1c6b7e3f5c7b75a07afae420d1fb4236a1ec74eceb0551e54bf65537dcf4f19d",
+          "parent_candidate": "candidate_000042",
+          "parent_operator": "slab_down",
+          "ancestry": [
+            {
+              "source": "data/public/penguin_v2/submission.csv",
+              "sha256": "243c0d9768b5c98acc629ebb1b9f4272ea8077f40a9fcc5402047a33c7d5b309",
+              "n": 551,
+              "chain_depth": 0,
+              "state_sha256": "e5da3c6f96a3288343a8388e75cb718330c89b257c6db7239a032515f1ea0094",
+              "geometry_signature": "d2051d0f15f4b553de000eec57b076392cdc85326811c65c3065891350ed20d6"
+            }
+          ],
+          "not_officially_scored": true,
+          "donor_kind": "near_miss",
+          "scores": null
+        }
+      ],
+      "L_float": 21.90781041304532,
+      "not_officially_scored": true,
+      "donor_kind": "near_miss",
+      "array_sha256": "e1f6185101c13e5830badb1481c09cabfe883bce9af82bd0e19ce9b12e8d4e7a",
+      "state_sha256": "e1f6185101c13e5830badb1481c09cabfe883bce9af82bd0e19ce9b12e8d4e7a"
+    },
+    {
+      "key": "near_candidate_000019",
+      "n": 459,
+      "parent_candidate": "candidate_000019",
+      "parent_operator": "slab_down",
+      "chain_depth": 2,
+      "ancestry": [
+        {
+          "source": "outputs/experiments/pilot04/input_donors/donors.npz",
+          "sha256": "4468c88cedfa64b0857c118015b383e73013a619c7e839f9d13fca34bb1978eb",
+          "key": "near_candidate_000042",
+          "n": 504,
+          "chain_depth": 1,
+          "state_sha256": "207669d5d810897753d2e3c7e100b83c13a719a9c5e7512ce21df12d77e44f6e",
+          "source_array_sha256": "207669d5d810897753d2e3c7e100b83c13a719a9c5e7512ce21df12d77e44f6e",
+          "source_reported_state_sha256": "207669d5d810897753d2e3c7e100b83c13a719a9c5e7512ce21df12d77e44f6e",
+          "geometry_signature": "1c6b7e3f5c7b75a07afae420d1fb4236a1ec74eceb0551e54bf65537dcf4f19d",
+          "parent_candidate": "candidate_000042",
+          "parent_operator": "slab_down",
+          "ancestry": [
+            {
+              "source": "data/public/penguin_v2/submission.csv",
+              "sha256": "243c0d9768b5c98acc629ebb1b9f4272ea8077f40a9fcc5402047a33c7d5b309",
+              "n": 551,
+              "chain_depth": 0,
+              "state_sha256": "e5da3c6f96a3288343a8388e75cb718330c89b257c6db7239a032515f1ea0094",
+              "geometry_signature": "d2051d0f15f4b553de000eec57b076392cdc85326811c65c3065891350ed20d6"
+            }
+          ],
+          "not_officially_scored": true,
+          "donor_kind": "near_miss",
+          "scores": null
+        }
+      ],
+      "L_float": 21.90781037143118,
+      "not_officially_scored": true,
+      "donor_kind": "near_miss",
+      "array_sha256": "74335fddd37ee1f742da596fa189f1ea835132ec2504ce236ef47e8b397f60e3",
+      "state_sha256": "74335fddd37ee1f742da596fa189f1ea835132ec2504ce236ef47e8b397f60e3"
+    },
+    {
+      "key": "near_candidate_000022",
+      "n": 459,
+      "parent_candidate": "candidate_000022",
+      "parent_operator": "slab_down",
+      "chain_depth": 2,
+      "ancestry": [
+        {
+          "source": "outputs/experiments/pilot04/input_donors/donors.npz",
+          "sha256": "4468c88cedfa64b0857c118015b383e73013a619c7e839f9d13fca34bb1978eb",
+          "key": "near_candidate_000042",
+          "n": 504,
+          "chain_depth": 1,
+          "state_sha256": "207669d5d810897753d2e3c7e100b83c13a719a9c5e7512ce21df12d77e44f6e",
+          "source_array_sha256": "207669d5d810897753d2e3c7e100b83c13a719a9c5e7512ce21df12d77e44f6e",
+          "source_reported_state_sha256": "207669d5d810897753d2e3c7e100b83c13a719a9c5e7512ce21df12d77e44f6e",
+          "geometry_signature": "1c6b7e3f5c7b75a07afae420d1fb4236a1ec74eceb0551e54bf65537dcf4f19d",
+          "parent_candidate": "candidate_000042",
+          "parent_operator": "slab_down",
+          "ancestry": [
+            {
+              "source": "data/public/penguin_v2/submission.csv",
+              "sha256": "243c0d9768b5c98acc629ebb1b9f4272ea8077f40a9fcc5402047a33c7d5b309",
+              "n": 551,
+              "chain_depth": 0,
+              "state_sha256": "e5da3c6f96a3288343a8388e75cb718330c89b257c6db7239a032515f1ea0094",
+              "geometry_signature": "d2051d0f15f4b553de000eec57b076392cdc85326811c65c3065891350ed20d6"
+            }
+          ],
+          "not_officially_scored": true,
+          "donor_kind": "near_miss",
+          "scores": null
+        }
+      ],
+      "L_float": 21.907810346324563,
+      "not_officially_scored": true,
+      "donor_kind": "near_miss",
+      "array_sha256": "81bc8cd053ab0b71f6b0bd9972beaaaac968cc75a9f3eec6346b5d97b858180a",
+      "state_sha256": "81bc8cd053ab0b71f6b0bd9972beaaaac968cc75a9f3eec6346b5d97b858180a"
+    }
+  ]
+}

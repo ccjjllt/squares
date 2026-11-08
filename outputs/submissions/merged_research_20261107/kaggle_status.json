@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"ref\": 58068296,\n  \"total_bytes\": \"25839440\",\n  \"date\": \"2026-11-06T20:15:25.017Z\",\n  \"description\": \"Square Deal v33 + verified structural/continuation winners n=459,642. Local official v20 text+float64 22.232223003847444; all 1000 valid. SHA256 d091b9780588ef13484ff10c4a1a99a7c9b3c45ab33113bd2272a35637da2e55. One final merged research submission.\",\n  \"file_name\": \"submission_merged_research_20261107.csv\",\n  \"public_score\": \"22.2322230038\",\n  \"status\": \"COMPLETE\",\n  \"submitted_by\": \"ccjjllt\",\n  \"submitted_by_ref\": \"ccjjllt\",\n  \"team_name\": \"ccjjllt\",\n  \"url\": \"/submissions/58068296/58068296.raw\"\n}"
+    }
+  ],
+  "isError": false
+}

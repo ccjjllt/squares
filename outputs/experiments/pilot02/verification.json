@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "baseline": {
+    "path": "data/public/penguin_v2/submission.csv",
+    "sha256": "243c0d9768b5c98acc629ebb1b9f4272ea8077f40a9fcc5402047a33c7d5b309",
+    "score_report": "outputs/scores/penguin_v2_verified/report.json"
+  },
+  "submission": {
+    "path": "outputs/experiments/pilot02/remote/pilot02/submission.csv",
+    "sha256": "f9cabad4fa76ee163373dcacec48beea0b6e827d9dc26d45617acd3d8515360f",
+    "rows": 500500,
+    "puzzles": 1000
+  },
+  "checks": {
+    "expected_header": true,
+    "complete_groups": true,
+    "correct_group_counts": true,
+    "correct_square_ids": true,
+    "unique_complete_row_ids": true,
+    "row_order_ids_preserved": true,
+    "unchanged_groups_text_preserved": true,
+    "actual_changed_groups_match_gain_report": true,
+    "partial_equals_changed_groups": true,
+    "baseline_sha_matches_full_score_report": true,
+    "output_sha_matches_remote_summary": true,
+    "current_metric_matches_baseline_report": true,
+    "n642_text_valid": true,
+    "n642_text_baseline_score_reproduced": true,
+    "n642_text_remote_score_reproduced": true,
+    "n642_text_strict_improvement": true,
+    "n642_float64_valid": true,
+    "n642_float64_baseline_score_reproduced": true,
+    "n642_float64_remote_score_reproduced": true,
+    "n642_float64_strict_improvement": true,
+    "reported_total_gain_reproduced": true
+  },
+  "all_checks_passed": true,
+  "changed_groups": [
+    642
+  ],
+  "unchanged_group_count": 999,
+  "changed_rows": 642,
+  "metric": {
+    "version": 20,
+    "sha256": "abce6231e3eda28d040455e651bfe3578bce31bb69449c99f67f0b82a4a6c56b",
+    "source_url": "https://www.kaggle.com/code/metric/squares-in-squares"
+  },
+  "winner_details": [
+    {
+      "n": 642,
+      "origin": "structure",
+      "operator": "slab_up",
+      "candidate_key": "candidate_000024",
+      "trajectory": 2,
+      "round": 0,
+      "seed": 20261107,
+      "compression_depth": 0.0001,
+      "chain_depth": 1,
+      "parameters": {
+        "direction": "up",
+        "order": [
+          1,
+          0
+        ],
+        "cuts": [
+          {
+            "axis": 1,
+            "cut": 19.009763616552934,
+            "period": 1.1170443864941764
+          },
+          {
+            "axis": 0,
+            "cut": 10.45519696151026,
+            "period": 1.0733102321618349
+          }
+        ],
+        "chain_depth": 1,
+        "parent_chain_depths": [
+          0
+        ]
+      },
+      "parents": [
+        {
+          "source": "outputs/experiments/pilot01/remote/pilot01/near_misses.npz",
+          "sha256": "07ea7d86f5b5c728ce6716a2c06d88df6a148e4b00af5e27e779db8ff8fbab2d",
+          "key": "near_000013",
+          "n": 591,
+          "chain_depth": 0,
+          "state_sha256": "2e560b56ba9e465d5c882a16385bfd1c5466664b27912a9c09edf35f86c81c15",
+          "geometry_signature": "639cecbb51b3e6ea7b439560475a9c7733413532eebed943fd163f03a0a7bc7b",
+          "parent_candidate": "candidate_000069",
+          "parent_operator": "crossover",
+          "ancestry": [
+            {
+              "source": "data/public/penguin_v2/submission.csv",
+              "sha256": "243c0d9768b5c98acc629ebb1b9f4272ea8077f40a9fcc5402047a33c7d5b309",
+              "n": 591,
+              "state_sha256": "86ed3b1a99f2f4b44ab72eabb8f1a7a2d0f6f218bfc8a64b444d461d11efbd8d",
+              "geometry_signature": "c9c218cf27b4c117c38705e0aa62abe1e7fc656ed00adecd075f85870b03166b"
+            },
+            {
+              "source": "data/public/atlas_v79/submission.csv",
+              "sha256": "fcecec42a8e608a4c4674b91d84689f30b1113f5307117b5c559468d540bb2c5",
+              "n": 591,
+              "state_sha256": "3b1adcac5235c4e9ebb8642a715a4c73c8cce86ec43567204c6098bcd700faef",
+              "geometry_signature": "781155327e7cb6d663ac01e0381604f2c96de0b6036637ffd1477a91a1130c85"
+            }
+          ],
+          "not_officially_scored": true
+        }
+      ],
+      "scores": {
+        "text": {
+          "before": {
+            "score": 0.019550065086660018,
+            "L": "25.83307297264676170591962137889402724272145101641678",
+            "reason": "ok"
+          },
+          "after": {
+            "score": 0.01954217160514693,
+            "L": "25.83287296983089226013149192728078470552709433468941",
+            "reason": "ok"
+          },
+          "score_gain": 7.893481513088219e-06,
+          "L_gain": 0.00020000281586973756
+        },
+        "float64": {
+          "before": {
+            "score": 0.019550065086660018,
+            "L": "25.83307297264676170591962137889402724272145101641678",
+            "reason": "ok"
+          },
+          "after": {
+            "score": 0.01954217160514693,
+            "L": "25.83287296983089230013149192728078470552709433468941",
+            "reason": "ok"
+          },
+          "score_gain": 7.893481513088219e-06,
+          "L_gain": 0.00020000281586973756
+        }
+      }
+    }
+  ],
+  "combined": {
+    "text": {
+      "score": 22.233080361291634,
+      "baseline_score": 22.233088254773147,
+      "confirmed_score_gain": 7.893481513088219e-06,
+      "valid": 1000,
+      "invalid_submitted": 0,
+      "missing": 0,
+      "derivation": "Previously verified scores for 999 byte-identical groups plus independently re-scored changed group."
+    },
+    "float64": {
+      "score": 22.233080361291634,
+      "baseline_score": 22.233088254773147,
+      "confirmed_score_gain": 7.893481513088219e-06,
+      "valid": 1000,
+      "invalid_submitted": 0,
+      "missing": 0,
+      "derivation": "Previously verified scores for 999 byte-identical groups plus independently re-scored changed group."
+    }
+  },
+  "limitations": [
+    "Combined score is a local official v20 evaluation, not a Kaggle submission score.",
+    "Unchanged groups reuse the just-completed full baseline text/float64 scoring, verified by byte-identical CSV group rows.",
+    "Search lineage includes one crossover intermediate followed by a slab_up step; this does not demonstrate two consecutive slab migration steps."
+  ]
+}

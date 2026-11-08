@@ -1,0 +1,12 @@
+{
+  "source_url": "https://www.kaggle.com/code/estopadilla/beating-124-public-bests-chains-crossover",
+  "notebook_version": 1,
+  "notebook_sha256": "213af87047ee6acd5fd049059ab47458e16b86b38abea8d74978418b15046101",
+  "source_cell": 3,
+  "source_lines": [
+    1,
+    334
+  ],
+  "extracted_geometry_sha256": "40b3e735967382734197ecf8903e9f0aaf4afd961da8c3870bbcbcf5aaeff9c9",
+  "note": "Original geometry block retained for attribution; imports added for standalone reading. The local structure adapter extends candidate enumeration. No upstream license regrant is asserted."
+}

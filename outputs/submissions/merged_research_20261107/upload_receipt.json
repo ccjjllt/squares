@@ -1,0 +1,26 @@
+{
+  "http_status": 200,
+  "size": "25839440",
+  "md5": "meeQyJTiws+gqA3bnT/U1g==",
+  "size_and_md5_verified": true,
+  "sha256": "d091b9780588ef13484ff10c4a1a99a7c9b3c45ab33113bd2272a35637da2e55",
+  "response_keys": [
+    "kind",
+    "id",
+    "selfLink",
+    "mediaLink",
+    "name",
+    "bucket",
+    "generation",
+    "metageneration",
+    "storageClass",
+    "size",
+    "md5Hash",
+    "crc32c",
+    "etag",
+    "timeCreated",
+    "updated",
+    "timeStorageClassUpdated",
+    "timeFinalized"
+  ]
+}

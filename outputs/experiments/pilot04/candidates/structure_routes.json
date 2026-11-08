@@ -1,0 +1,377 @@
+[
+  {
+    "source": "outputs/experiments/pilot04/input_donors/donors.npz",
+    "key": "winner_pilot02_n642",
+    "chain_depth": 1,
+    "record_gap_score": 0.0008744334974653652,
+    "n": 642,
+    "L": 25.83287296983089,
+    "tilted_count_gt_5deg": 237,
+    "bands": [
+      {
+        "axis": 0,
+        "count": 149,
+        "period": 1.070421100767604,
+        "mean_tilt_deg": 20.898826886351678
+      },
+      {
+        "axis": 1,
+        "count": 78,
+        "period": 1.1130054741958155,
+        "mean_tilt_deg": 26.042559140477316
+      }
+    ],
+    "two_band_eligible": true,
+    "canonical_eligible": true
+  },
+  {
+    "source": "outputs/experiments/pilot04/input_donors/donors.npz",
+    "key": "near_candidate_000002",
+    "chain_depth": 1,
+    "record_gap_score": 0.0008744334974653652,
+    "n": 642,
+    "L": 25.836072905074857,
+    "tilted_count_gt_5deg": 237,
+    "bands": [
+      {
+        "axis": 0,
+        "count": 146,
+        "period": 1.0706901877237451,
+        "mean_tilt_deg": 20.936505674066915
+      },
+      {
+        "axis": 1,
+        "count": 76,
+        "period": 1.1120638672521022,
+        "mean_tilt_deg": 25.943102271408158
+      }
+    ],
+    "two_band_eligible": true,
+    "canonical_eligible": true
+  },
+  {
+    "source": "outputs/experiments/pilot04/input_donors/donors.npz",
+    "key": "near_candidate_000003",
+    "chain_depth": 1,
+    "record_gap_score": 0.0008471006670327697,
+    "n": 862,
+    "L": 29.839957125731736,
+    "tilted_count_gt_5deg": 285,
+    "bands": [
+      {
+        "axis": 1,
+        "count": 120,
+        "period": 1.0863546049166461,
+        "mean_tilt_deg": -22.99928275325581
+      },
+      {
+        "axis": 0,
+        "count": 153,
+        "period": 1.069713106997763,
+        "mean_tilt_deg": 20.7992878758147
+      }
+    ],
+    "two_band_eligible": true,
+    "canonical_eligible": true
+  },
+  {
+    "source": "outputs/experiments/pilot04/input_donors/donors.npz",
+    "key": "near_candidate_000009",
+    "chain_depth": 1,
+    "record_gap_score": 0.0002413520072597094,
+    "n": 504,
+    "L": 22.918135747736457,
+    "tilted_count_gt_5deg": 177,
+    "bands": [
+      {
+        "axis": 0,
+        "count": 104,
+        "period": 1.0501194324801082,
+        "mean_tilt_deg": -17.773132633709604
+      },
+      {
+        "axis": 1,
+        "count": 57,
+        "period": 1.0841776593811525,
+        "mean_tilt_deg": 22.726714586660144
+      }
+    ],
+    "two_band_eligible": true,
+    "canonical_eligible": true
+  },
+  {
+    "source": "outputs/experiments/pilot04/input_donors/donors.npz",
+    "key": "near_candidate_000013",
+    "chain_depth": 1,
+    "record_gap_score": 0.0008744334974653652,
+    "n": 642,
+    "L": 25.835972911369883,
+    "tilted_count_gt_5deg": 237,
+    "bands": [
+      {
+        "axis": 0,
+        "count": 146,
+        "period": 1.0707021284809268,
+        "mean_tilt_deg": 20.938175734396523
+      },
+      {
+        "axis": 1,
+        "count": 77,
+        "period": 1.111902830323572,
+        "mean_tilt_deg": 25.926040351827
+      }
+    ],
+    "two_band_eligible": true,
+    "canonical_eligible": true
+  },
+  {
+    "source": "outputs/experiments/pilot04/input_donors/donors.npz",
+    "key": "near_candidate_000014",
+    "chain_depth": 1,
+    "record_gap_score": 0.0008471006670327697,
+    "n": 862,
+    "L": 29.83995714079757,
+    "tilted_count_gt_5deg": 285,
+    "bands": [
+      {
+        "axis": 1,
+        "count": 120,
+        "period": 1.0862105762358452,
+        "mean_tilt_deg": -22.981377491072717
+      },
+      {
+        "axis": 0,
+        "count": 153,
+        "period": 1.0697229183417822,
+        "mean_tilt_deg": 20.800671294822862
+      }
+    ],
+    "two_band_eligible": true,
+    "canonical_eligible": true
+  },
+  {
+    "source": "outputs/experiments/pilot04/input_donors/donors.npz",
+    "key": "near_candidate_000020",
+    "chain_depth": 1,
+    "record_gap_score": 0.0002413520072597094,
+    "n": 504,
+    "L": 22.918135760687427,
+    "tilted_count_gt_5deg": 177,
+    "bands": [
+      {
+        "axis": 0,
+        "count": 104,
+        "period": 1.0499846909606145,
+        "mean_tilt_deg": -17.750180666370607
+      },
+      {
+        "axis": 1,
+        "count": 57,
+        "period": 1.083468312454935,
+        "mean_tilt_deg": 22.63698986705034
+      }
+    ],
+    "two_band_eligible": true,
+    "canonical_eligible": true
+  },
+  {
+    "source": "outputs/experiments/pilot04/input_donors/donors.npz",
+    "key": "near_candidate_000024",
+    "chain_depth": 1,
+    "record_gap_score": 0.0008744334974653652,
+    "n": 642,
+    "L": 25.835972934238406,
+    "tilted_count_gt_5deg": 237,
+    "bands": [
+      {
+        "axis": 0,
+        "count": 148,
+        "period": 1.0708182509420627,
+        "mean_tilt_deg": 20.954408304666703
+      },
+      {
+        "axis": 1,
+        "count": 79,
+        "period": 1.1123281657816677,
+        "mean_tilt_deg": 25.97107148828383
+      }
+    ],
+    "two_band_eligible": true,
+    "canonical_eligible": true
+  },
+  {
+    "source": "outputs/experiments/pilot04/input_donors/donors.npz",
+    "key": "near_candidate_000025",
+    "chain_depth": 1,
+    "record_gap_score": 0.0008471006670327697,
+    "n": 862,
+    "L": 29.839957108736876,
+    "tilted_count_gt_5deg": 285,
+    "bands": [
+      {
+        "axis": 1,
+        "count": 120,
+        "period": 1.0863375533558512,
+        "mean_tilt_deg": -22.997163884369584
+      },
+      {
+        "axis": 0,
+        "count": 153,
+        "period": 1.0697116411976861,
+        "mean_tilt_deg": 20.799081185361153
+      }
+    ],
+    "two_band_eligible": true,
+    "canonical_eligible": true
+  },
+  {
+    "source": "outputs/experiments/pilot04/input_donors/donors.npz",
+    "key": "near_candidate_000031",
+    "chain_depth": 1,
+    "record_gap_score": 0.0002413520072597094,
+    "n": 504,
+    "L": 22.91813570943514,
+    "tilted_count_gt_5deg": 177,
+    "bands": [
+      {
+        "axis": 0,
+        "count": 104,
+        "period": 1.049895457511506,
+        "mean_tilt_deg": -17.73496150672629
+      },
+      {
+        "axis": 1,
+        "count": 57,
+        "period": 1.0837400935866734,
+        "mean_tilt_deg": 22.671420876171442
+      }
+    ],
+    "two_band_eligible": true,
+    "canonical_eligible": true
+  },
+  {
+    "source": "outputs/experiments/pilot04/input_donors/donors.npz",
+    "key": "near_candidate_000035",
+    "chain_depth": 1,
+    "record_gap_score": 0.0008744334974653652,
+    "n": 642,
+    "L": 25.83587294586587,
+    "tilted_count_gt_5deg": 237,
+    "bands": [
+      {
+        "axis": 0,
+        "count": 146,
+        "period": 1.0707235569779403,
+        "mean_tilt_deg": 20.941172358344595
+      },
+      {
+        "axis": 1,
+        "count": 77,
+        "period": 1.112055682483675,
+        "mean_tilt_deg": 25.94223546338687
+      }
+    ],
+    "two_band_eligible": true,
+    "canonical_eligible": true
+  },
+  {
+    "source": "outputs/experiments/pilot04/input_donors/donors.npz",
+    "key": "near_candidate_000036",
+    "chain_depth": 1,
+    "record_gap_score": 0.0008471006670327697,
+    "n": 862,
+    "L": 29.839957154485642,
+    "tilted_count_gt_5deg": 285,
+    "bands": [
+      {
+        "axis": 1,
+        "count": 120,
+        "period": 1.0862928242359302,
+        "mean_tilt_deg": -22.991604540144515
+      },
+      {
+        "axis": 0,
+        "count": 153,
+        "period": 1.069754538053237,
+        "mean_tilt_deg": 20.805128966154868
+      }
+    ],
+    "two_band_eligible": true,
+    "canonical_eligible": true
+  },
+  {
+    "source": "outputs/experiments/pilot04/input_donors/donors.npz",
+    "key": "near_candidate_000042",
+    "chain_depth": 1,
+    "record_gap_score": 0.0002413520072597094,
+    "n": 504,
+    "L": 22.918135726680994,
+    "tilted_count_gt_5deg": 177,
+    "bands": [
+      {
+        "axis": 0,
+        "count": 104,
+        "period": 1.0500747215058859,
+        "mean_tilt_deg": -17.76552036831985
+      },
+      {
+        "axis": 1,
+        "count": 57,
+        "period": 1.084294770215956,
+        "mean_tilt_deg": 22.74148432970306
+      }
+    ],
+    "two_band_eligible": true,
+    "canonical_eligible": true
+  },
+  {
+    "source": "outputs/experiments/pilot04/input_donors/donors.npz",
+    "key": "near_candidate_000044",
+    "chain_depth": 1,
+    "record_gap_score": 0.0008744334974653652,
+    "n": 642,
+    "L": 25.83587287432399,
+    "tilted_count_gt_5deg": 237,
+    "bands": [
+      {
+        "axis": 0,
+        "count": 146,
+        "period": 1.0705810990443425,
+        "mean_tilt_deg": 20.921240672259664
+      },
+      {
+        "axis": 1,
+        "count": 77,
+        "period": 1.1122799744253893,
+        "mean_tilt_deg": 25.965974750482776
+      }
+    ],
+    "two_band_eligible": true,
+    "canonical_eligible": true
+  },
+  {
+    "source": "outputs/experiments/pilot04/input_donors/donors.npz",
+    "key": "near_candidate_000045",
+    "chain_depth": 1,
+    "record_gap_score": 0.0008471006670327697,
+    "n": 862,
+    "L": 29.839957164923362,
+    "tilted_count_gt_5deg": 285,
+    "bands": [
+      {
+        "axis": 1,
+        "count": 120,
+        "period": 1.0867146088300523,
+        "mean_tilt_deg": -23.043959223537627
+      },
+      {
+        "axis": 0,
+        "count": 153,
+        "period": 1.06954050294059,
+        "mean_tilt_deg": 20.774931806879586
+      }
+    ],
+    "two_band_eligible": true,
+    "canonical_eligible": true
+  }
+]

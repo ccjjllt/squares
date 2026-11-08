@@ -1,0 +1,66 @@
+{
+  "baseline_sha256": "f9cabad4fa76ee163373dcacec48beea0b6e827d9dc26d45617acd3d8515360f",
+  "bundle_sha256": "0ccca3977f6ee0ee7f6142d73255d6da862909ffc19d30e8c9d6e2050c6874c3",
+  "archive_bytes": 667067,
+  "compressed_bytes": 167220,
+  "code_bytes": 225338,
+  "files": {
+    "scripts/experiments/run_gpu_pilot.py": "db4e57b03ce0df3ccff43a09b67b2ef5b748277787d7556bac58f6f69bd9e88e",
+    "src/squares/__init__.py": "80d9abf561878806c3161263d4943c85e99a455595f1e6fb775e6e771a9aef6a",
+    "src/squares/__main__.py": "b4482e49df066a45cf5e96611ad8c28cd90e8fc6d6bdc8a8796b84b8d2fb5a4e",
+    "src/squares/_vendor/__init__.py": "74457a454af09fddfea38d66ad6c53dbcc84890038aa2a341441693a39ea58ea",
+    "src/squares/_vendor/official_metric.metadata.json": "13561d79bc4f760c3fa4dfb3a23a93d500ffeab7fcaf4d2e2e488f13f12b5ff6",
+    "src/squares/_vendor/official_metric.py": "abce6231e3eda28d040455e651bfe3578bce31bb69449c99f67f0b82a4a6c56b",
+    "src/squares/cli.py": "2584cc1dc390349cc7412b2748dfab4a92ebf8464473da0a29262c565d0ef299",
+    "src/squares/merge.py": "173d8f4b624dac43fd9fa82ee68393de3ec455e2bd1ea3905509a8942f19f0fa",
+    "src/squares/metrics.py": "f959c25df7598430588b28ec8f7836ae93bd5df78f7ae729bab4be539a9be1e6",
+    "src/squares/search/__init__.py": "64dcaf3c0cc73f3b750180ce2a29fa33724f6c50f91f1c7fd47cee61e0ef60d4",
+    "src/squares/search/gpu_relax.py": "0e436474cc7af963fdf605b7d525b626e719ccfd2d2ac143bbd958d9d8abdf6c",
+    "src/squares/search/local_repair.py": "0881013dd29796ddf1c22af2dcb59cc90e6e03a26965472bac3f20e08970bcaf",
+    "src/squares/search/structure.py": "1e58f8cefe430f312a5c9e69162a3d423a4a65ad8bd29ffdbcff7e7ef2470cff",
+    "src/squares/submission.py": "6ed9bbd60e972e3d9cddf9fe624303165f9147a14373ff9e4a9b37e212720cba",
+    "third_party/cuda_packing/gpu_topology_kernel.cu": "c1452753438fb9644446c375a06dd4ad66466985232bd06d31f4ba5502b97989",
+    "third_party/cuda_packing/manifest.json": "d5f09ac8232efa404901fb441da62b48fee0e3caeded9dff181e47e4ebc45e7c",
+    "inputs/candidates.npz": "b5d7c8b1e2143bedcba9a2eaae42721c13658a594fe5da0d87cebc8b1c09b70b",
+    "inputs/manifest.json": "60b53286c81840eaf7b8828166d18c76649d078205339008c6b53cb3bbcaca71"
+  },
+  "search_seconds": 600,
+  "metadata": {
+    "id": "qingyu1232/squares-structural-pilot-20261107-04",
+    "title": "squares structural pilot 20261107 04",
+    "code_file": "pilot.py",
+    "language": "python",
+    "kernel_type": "script",
+    "is_private": true,
+    "enable_gpu": true,
+    "enable_internet": true,
+    "machine_shape": "NvidiaTeslaT4",
+    "competition_sources": [],
+    "dataset_sources": [],
+    "kernel_sources": [
+      "qingyu1232/squares-structural-pilot-20261107-02"
+    ]
+  },
+  "search_parameters": {
+    "batch": 8,
+    "steps": 3000,
+    "warm_steps": 1500,
+    "warm_passes": 2,
+    "warm_slack": 0.003,
+    "refine_passes": 1,
+    "refine_steps": 3000,
+    "depth_min": 1e-06,
+    "depth_max": 0.001,
+    "rounds": 1,
+    "max_candidates": 24,
+    "run_name": "pilot04",
+    "staged_warm": true,
+    "warm_shrink_factor": 0.5,
+    "incumbent_passes": 6,
+    "incumbent_step": 0.0001,
+    "incumbent_n": [
+      642
+    ],
+    "local_repair": true
+  }
+}

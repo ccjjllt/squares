@@ -1,0 +1,16 @@
+{
+  "id": "qingyu1232/squares-structural-pilot-20261107-04",
+  "title": "squares structural pilot 20261107 04",
+  "code_file": "pilot.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "machine_shape": "NvidiaTeslaT4",
+  "competition_sources": [],
+  "dataset_sources": [],
+  "kernel_sources": [
+    "qingyu1232/squares-structural-pilot-20261107-02"
+  ]
+}

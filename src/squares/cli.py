@@ -50,6 +50,12 @@ def build_parser() -> argparse.ArgumentParser:
     score.add_argument("--max-n", type=_max_n, default=MAX_N, help="Score n=1..max-n")
     score.add_argument("--workers", type=_positive, default=4)
     score.add_argument("--output-dir", type=Path)
+    merge = commands.add_parser("merge", help="Select best complete n groups across experiments")
+    merge.add_argument("--baseline", type=Path, required=True)
+    merge.add_argument("--candidate", type=Path, action="append", default=[])
+    merge.add_argument("--baseline-report", type=Path)
+    merge.add_argument("--output-dir", type=Path, required=True)
+    merge.add_argument("--workers", type=_positive, default=4)
     return parser
 
 
@@ -75,6 +81,17 @@ def main(argv: list[str] | None = None) -> int:
             )
         elif args.command == "inspect":
             print(json.dumps(summarize_submission(read_submission(args.submission)), indent=2))
+        elif args.command == "merge":
+            from squares.merge import merge_submissions
+
+            result = merge_submissions(
+                args.baseline,
+                args.candidate,
+                args.output_dir,
+                baseline_report=args.baseline_report,
+                workers=args.workers,
+            )
+            print(json.dumps(result, indent=2))
         else:
             from squares.metrics import score_submission, write_report
 
