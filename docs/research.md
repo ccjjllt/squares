@@ -4,20 +4,21 @@
 
 ## 当前结果（已与官方对齐）
 
-项目研究将 n=1…1000 个单位正方形分别装入尽量小的正方形容器。当前基线为 2026-11-09 日间多源合并：Atlas v107 + 抛光（n=553、696）+ Daily v35 + kirilltym 22-2160 部分解（8 题）+ pilot08 n=642 续压。
+项目研究将 n=1…1000 个单位正方形分别装入尽量小的正方形容器。当前基线为 Atlas v108 + 自研独有题组（n=642 续压链、kirilltym 部分解 8 题、Daily v35 互补题、抛光 n=553/696）逐题合并。
 
 | 项目 | 分数（越低越好） |
 | --- | ---: |
 | 旧正式提交 Stretching v2 | 22.2427257787 |
 | 仓库旧归档 58068296（Square Deal v33 + 自研 n=459、642） | 22.2322230038 |
 | 中间提交 58153974（Atlas v107 + 自研 n=642） | 22.2161912103，COMPLETE |
-| 当前基线提交 58156456 | **22.2160143492，COMPLETE** |
+| 中间提交 58156456（Atlas v107 + 抛光 + Daily v35 + kirill + pilot08 n=642） | 22.2160143492，COMPLETE |
+| 当前基线提交 58165370 | **22.2157802829，COMPLETE** |
 
-当前文件：`outputs/merged/daily35_kirill_pilot08/submission.csv`，SHA-256 `c80f961504e37e1daace8c709b9842a09efd2efc00c8be38f0f2c79db4465341`，500,500 行、1,000 题，文本 / float64 双路径同分且全部有效。相对旧归档下降约 0.01620865，其中主体来自公共更新与多源合并；旧自研 n=459 已被公共方案超过，不再计入成绩证据，仅保留为结构供体；n=642 仍领先并经 pilot08 续压再改善约 3.2e-6。
+当前文件：`outputs/merged/v108_plus_self/submission.csv`，SHA-256 `bc505d351c16a1a5720c2d12870a2213eb9c19a6a91a68d91c913590f093ec23`，500,500 行、1,000 题，文本 / float64 双路径同分且全部有效。相对旧归档下降约 0.01644272，其中主体来自公共更新与多源合并；旧自研 n=459 已被公共方案超过，不再计入成绩证据，仅保留为结构供体；n=642 仍领先并经 pilot08 续压再改善约 3.2e-6。
 
-- [当前基线来源与链路](../outputs/merged/daily35_kirill_pilot08/provenance.json)
-- [当前基线谱系（n=642 depth2）](../outputs/merged/daily35_kirill_pilot08/baseline_lineage.json)
-- [完整独立评分](../outputs/merged/daily35_kirill_pilot08/validation/report.json)
+- [当前基线来源与链路](../outputs/merged/v108_plus_self/provenance.json)
+- [当前基线谱系（n=642 depth2）](../outputs/merged/v108_plus_self/baseline_lineage.json)
+- [完整独立评分](../outputs/merged/v108_plus_self/validation/report.json)
 
 注意：`outputs/merged/daily35_kirill_pilot08/` 与当日各 pilot 产物按保留约定只存本地，不进 git；仓库以本页与 `provenance.json` 的哈希为准。公开源在日内仍有更新（Atlas v108、kirilltym 22-2160 v22 已出现），下一轮先刷新对照再选题，避免重复研究已被超过的题目。
 
@@ -49,7 +50,7 @@
 | Pilot08 | n=642 续压赢家，增益约 `3.2e-6`，238 次 local-repair；其余 23 候选零赢家 | 已合入当前基线；同参数模板用于 pilot09 |
 | 抛光 n=696、553 | 固定角/自由角各 +2.8e-09、+1.7e-09，双路径验证通过；738、652 四组 <1.1e-10 | 只收过 1e-10 门限的题；已合入基线 |
 | Daily v35、kirilltym 22-2160 合并 | Daily 164 题 +2.46e-05；kirill 8 题 +1.49e-04；均双路径 1000 有效 | 已合入当前基线并提交 58156456 |
-| Atlas v108、kirilltym v22 | 日内新出现，尚未下载验证 | 下一轮先刷新对照，避免重复研究已被超过的题目 |
+| Atlas v108、kirilltym v22 | v108 本地 22.21579565，v22 部分解；合并净约 `2.34e-04` | 已合入当前基线并提交 58165370；下一轮先刷新对照，避免重复研究已被超过的题目 |
 | 大规模局部 LP 修复 | Pilot04 173次约207秒，仅5次通过浮点修复；Pilot05 83次约115秒，无新赢家 | 不作为普遍优化路线；只在主线中按较小穿透量筛选使用。求解失败不证明几何不可行 |
 | 专用 GPU 吞吐研究 | n642、600步、三次重复，batch8/32/64约26.17/105.94/130.36条轨迹/秒 | 测量任务已结束，保留结论、删除专用脚本与原始输出；吞吐提升不是分数收益，也不保证跨题通用 |
 | 旧 Stretching / Boxed 基线分析 | 原分析定位了大n及106题历史候选，但依据旧基线与2026-10-29纪录 | 删除旧分析脚本、表图、公共旧CSV及重复规划；不把旧约0.06463差距当当前可获收益 |
