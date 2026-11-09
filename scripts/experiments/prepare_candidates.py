@@ -138,6 +138,8 @@ def main() -> None:
         if not isinstance(supplied, dict):
             raise ValueError("Baseline lineage must be an explicit n-to-metadata mapping")
         for raw_n, entry in supplied.items():
+            if not str(raw_n).lstrip("+-").isdigit():
+                continue
             n = int(raw_n)
             if str(n) in baseline_lineage or n not in baseline or not isinstance(entry, dict):
                 raise ValueError(f"Invalid or duplicate baseline lineage n={raw_n}")
