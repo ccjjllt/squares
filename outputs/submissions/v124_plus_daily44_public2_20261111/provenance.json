@@ -1,0 +1,82 @@
+{
+  "competition": "squares-in-squares",
+  "account": "ccjjllt",
+  "baseline": {
+    "path": "outputs/merged/v124_plus_daily44/submission.csv",
+    "score": 22.195925625258056,
+    "sha256": "f41570a8482b6872f9c09644407591c4d47fdae269fd0022dbe8958101d71839"
+  },
+  "candidates": [
+    {
+      "name": "nilanjansaha123/squares-gpu-seam-dp-soft-rigid-highs",
+      "sha256": "01cb16d8eb66b53ae2b4f108e6073eb27c9debde17b7ad40a4299ef42e0eefaa",
+      "winning_puzzles": [
+        378,
+        452,
+        459,
+        495,
+        500,
+        593,
+        601,
+        644,
+        646
+      ]
+    },
+    {
+      "name": "busyaprime FQ packings dataset (updated 2026-11-11 12:05)",
+      "winning_puzzles": [
+        412,
+        415,
+        418,
+        419,
+        454,
+        500,
+        590,
+        649,
+        690,
+        696,
+        701,
+        738,
+        742,
+        747,
+        750,
+        756,
+        805,
+        806,
+        863,
+        864,
+        865,
+        876,
+        918,
+        927,
+        933,
+        965
+      ]
+    }
+  ],
+  "combined_candidate": {
+    "path": "outputs/experiments/research_20261111/public_frontier/candidate_public.csv",
+    "sha256": "4ff0aa356dd58a647ad5a9a33c7a49d1b1aed1708ea37f77abfe6ebc7ab7a3ff",
+    "rows": 22767,
+    "complete_groups": 34
+  },
+  "chain": [
+    {
+      "step": "merged",
+      "score": 22.19455003115503,
+      "net_gain": 0.001375594103030009,
+      "changed_puzzles": 34
+    }
+  ],
+  "merged_score": 22.19455003115503,
+  "merged_sha256": "4b9092a91f67ec4721337696ea8c09c22fff2cf93b3f11b2293b0fbd51b324de",
+  "validation": "text == float64; 1000/1000 valid; official v20 metric sha256 abce6231e3eda28d040455e651bfe3578bce31bb69449c99f67f0b82a4a6c56b",
+  "submission_ref": 58237691,
+  "submission_status": "COMPLETE",
+  "official_public_score": 22.1945500311,
+  "previous_official_score": 22.1959256252,
+  "local_gain_over_previous_official": 0.001375594,
+  "prepared_at": "2026-11-11T20:45:00+08:00",
+  "notes": "34 complete n groups selected per puzzle from two public updates posted after 2026-11-11 08:48 UTC. Every group was certified with official_metric.evaluate_single_puzzle on both text and float64 routes before merge; the merged file was then fully rescored 1000/1000. The projected total matches busyaprime's advertised LB 22.1945500. Official score returned 22.1945500311 (COMPLETE), matching the projected total to the displayed precision.",
+  "official_gain_over_previous": 0.0013755941
+}
