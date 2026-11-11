@@ -11,6 +11,7 @@
 | 58239472 | public2 + penguin069 boxed 认证联合，25 题，净 `0.000398183` | 22.194151848166 | 22.194152 | 103/1942 |
 | 58241961 | public2+penguin + grennwolf GA，5 题，净 `0.000646850` | 22.193504998422 | 提交待评 | — |
 | **58242719** | **GA 合并 + nilanjan/atlas 15:15，10 题，净 `0.000451864`** | **22.193053134449** | **22.193053** | **97/1942** |
+| 58243251 | + evand packer n=910，净 `7.5e-8` | 22.193053059279 | 提交待评 | — |
 
 - 当前归档：`outputs/submissions/v124_plus_daily44_public2_penguin_20261111/`
 - 当前文件 SHA-256：`11b5e39c840182b905450505e5800ce0b033c776107c5b751baea8551be39075`
@@ -91,6 +92,7 @@ Cats and boxes 的公开 notebook（`pjmathematician/three-square-packings-that-
 - 正式归档（官方 22.194152）：`outputs/submissions/v124_plus_daily44_public2_penguin_20261111/`
 - GA 合并（本地 22.1935049984）：`outputs/submissions/v124_plus_daily44_public2_penguin_ga_20261111/`
 - nilanjan/atlas 15:15 合并（官方 22.193053，排名 97/1942）：`outputs/submissions/v124_plus_daily44_public2_penguin_ga_nilan_20261111/`
+- evand n=910 微合并（本地 22.1930530593，待评）：`outputs/submissions/v124_plus_daily44_public2_penguin_ga_nilan_n910_20261111/`
 - n=910 候选：`outputs/merged/v124_plus_daily44_public2_penguin_n910/`
 - 模板负结果：`outputs/experiments/research_20261111/templates/`
 - CDB/记录族：`outputs/experiments/research_20261111/literature/`

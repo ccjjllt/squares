@@ -1,0 +1,33 @@
+{
+  "competition": "squares-in-squares",
+  "account": "ccjjllt",
+  "baseline": {
+    "path": "outputs/submissions/v124_plus_daily44_public2_penguin_ga_nilan_20261111/submission.csv",
+    "score": 22.193053134449364,
+    "sha256": "2a2cfa529695e549a8d989604cad7cdaf0a7070024395bb6ec1ceeed28141e10"
+  },
+  "candidate": {
+    "name": "evand packer campaign n=910",
+    "source": "outputs/experiments/research_20261111/packercampaign/improved_groups.csv",
+    "method": "public evand/square-packing engine, targeted 0.74 CPU-h campaign; n=910 same-basin rowslide/aswap/mirror/crot refinement",
+    "winning_puzzles": [910]
+  },
+  "chain": [
+    {
+      "step": "per-puzzle merge",
+      "score": 22.193053059279052,
+      "net_gain": 7.517031108683625e-08,
+      "changed_puzzles": [910]
+    }
+  ],
+  "merged_score": 22.193053059279052,
+  "merged_sha256": "fb647c7e389338bd47d213ec381f4ac676e24595dbc2c58a09b021a6a3474ade",
+  "validation": "text == float64; 1000/1000 valid; independent full rescore via vendored official v20 metric",
+  "submission_ref": 58243251,
+  "submission_status": "PENDING",
+  "official_public_score": null,
+  "previous_official_score": 22.193053,
+  "local_gain_over_previous_official": 7.517031108683625e-08,
+  "prepared_at": "2026-11-11T23:52:00+08:00",
+  "notes": "Micro-submission: the gain is below the six-decimal leaderboard display, but it is a certified full 1000-puzzle improvement above the 1e-10 threshold. The n=910 group comes from the evand packer campaign and is the only structural win that engine produced."
+}
