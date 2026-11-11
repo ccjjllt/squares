@@ -8,7 +8,8 @@
 | 提交 | 内容 | 本地双路径 | 官方 | 排名 |
 |---|---|---:|---:|---:|
 | 58237691 | public2：nilanjan seam-dp + busyaprime FQ，34 题 | 22.194550031155 | 22.1945500311 | 104/1942 |
-| **58239472** | **public2 + penguin069 boxed 认证联合，25 题，净 `0.000398183`** | **22.194151848166** | **22.194152** | **103/1942** |
+| 58239472 | public2 + penguin069 boxed 认证联合，25 题，净 `0.000398183` | 22.194151848166 | 22.194152 | 103/1942 |
+| **待评** | **public2+penguin + grennwolf GA，5 题，净 `0.000646850`** | **22.193504998422** | **提交待评** | — |
 
 - 当前归档：`outputs/submissions/v124_plus_daily44_public2_penguin_20261111/`
 - 当前文件 SHA-256：`11b5e39c840182b905450505e5800ce0b033c776107c5b751baea8551be39075`
@@ -69,8 +70,10 @@ Cats and boxes 的公开 notebook（`pjmathematician/three-square-packings-that-
 
 ## 6. 外部全局搜索
 
-- `grennwolf/squares-in-squares-top-1-santa-2025`（排行榜第 3 的 inspector gadget 队）正在 Kaggle GPU 上运行 Santa-2025 1st-place 的岛式 GA；其 `rank.py` 以“距逐题 leader 的 gap”排序，天然优先 971/911/910。该 notebook 的 atlas 起点与当前前沿在这些题上仅差约 3e-10，因此其输出可直接作为新候选来源。
-- 截至本报告，该 notebook 仍为 RUNNING，尚无公开输出；若完成，应按逐题完整 n 组认证后合并。
+- `grennwolf/squares-in-squares-top-1-santa-2025`（排行榜第 3 的 inspector gadget 队）的 Santa-2025 1st-place 岛式 GA 输出已下载（session 368440075，`submission_improved.csv`，SHA `0d1350e5…`）。
+- 逐题比较：n=335/462/497/643/690 更优，总净增益 `0.00064685`；合并后本地 **22.1935049984**，双路径 1000/1000 有效。
+- 该 GA 以 atlas 为起点，在其余 994 题上比当前前沿差，因此只取 5 个完整 n 组；每组在 merge 时用本仓库官方指标重新认证。
+- 这是首次由全局进化搜索拿到的实质收益，说明头部多角度族内仍有可搜索空间；GA 仍可继续运行并产出新版本。
 
 ## 7. 继续方向（按期望收益排序）
 
@@ -80,7 +83,8 @@ Cats and boxes 的公开 notebook（`pjmathematician/three-square-packings-that-
 
 ## 8. 产物索引
 
-- 正式归档：`outputs/submissions/v124_plus_daily44_public2_penguin_20261111/`
+- 正式归档（官方 22.194152）：`outputs/submissions/v124_plus_daily44_public2_penguin_20261111/`
+- GA 合并（本地 22.1935049984，待评）：`outputs/submissions/v124_plus_daily44_public2_penguin_ga_20261111/`
 - n=910 候选：`outputs/merged/v124_plus_daily44_public2_penguin_n910/`
 - 模板负结果：`outputs/experiments/research_20261111/templates/`
 - CDB/记录族：`outputs/experiments/research_20261111/literature/`

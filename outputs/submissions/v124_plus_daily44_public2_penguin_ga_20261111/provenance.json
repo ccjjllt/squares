@@ -1,0 +1,44 @@
+{
+  "competition": "squares-in-squares",
+  "account": "ccjjllt",
+  "baseline": {
+    "path": "outputs/submissions/v124_plus_daily44_public2_penguin_20261111/submission.csv",
+    "score": 22.194151848165717,
+    "sha256": "11b5e39c840182b905450505e5800ce0b033c776107c5b751baea8551be39075"
+  },
+  "candidate": {
+    "name": "grennwolf/squares-in-squares-top-1-santa-2025",
+    "method": "island genetic algorithm (Santa 2025 1st-place design) on 2x T4, GPU L-BFGS relaxation + exact contact LP polish",
+    "session_id": 368440075,
+    "file": "submission_improved.csv",
+    "downloaded": "2026-11-11T22:45:00+08:00",
+    "sha256": "0d1350e52981199337483571bc87773a2e15fc1641d313529a68b2defc551cb5",
+    "score": 22.194221956149,
+    "winning_puzzles": [335, 462, 497, 643, 690]
+  },
+  "chain": [
+    {
+      "step": "per-puzzle merge",
+      "score": 22.193504998422572,
+      "net_gain": 0.0006468497431424414,
+      "changed_puzzles": [335, 462, 497, 643, 690]
+    }
+  ],
+  "per_puzzle_gain": {
+    "335": 0.00016970794749560092,
+    "462": 0.00017428292613863583,
+    "497": 0.00009518254348539479,
+    "643": 0.00003191812537695071,
+    "690": 0.00017575820064585912
+  },
+  "merged_score": 22.193504998422572,
+  "merged_sha256": "7dd9aef05b2566187726f7017e10c3483d3319b54b7a569b35645f339a0b4bae",
+  "validation": "text == float64; 1000/1000 valid; independent full rescore via vendored official v20 metric",
+  "submission_ref": null,
+  "submission_status": "PREPARED",
+  "official_public_score": null,
+  "previous_official_score": 22.194152,
+  "local_gain_over_previous_official": 0.0006470016,
+  "prepared_at": "2026-11-11T22:50:00+08:00",
+  "notes": "The grennwolf GA output is based on the public atlas, so it is worse than our merged frontier on 994 puzzles; only the five complete n groups that beat us were selected. Each selected group was re-certified by our own official metric during merge. This is the first material gain from a genuinely global evolutionary search: the GA's multi-angle block mutations found layouts that the local LP/fq/polish route could not."
+}

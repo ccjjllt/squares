@@ -18,17 +18,19 @@
 | 58232975（v124 + Atlas 新版，28 题，净 `0.00304`） | 22.1963280817，COMPLETE |
 | 58236174（v124+atlasnew2 + Daily v44，51 题，净 `5.0e-10`） | 22.1959256252，COMPLETE（本地 22.195925625258） |
 | 58237691（v124+daily44 + public2：nilanjan seam-dp + busyaprime FQ，34 题，净 `0.001375594`） | 22.1945500311，COMPLETE（本地 22.1945500312） |
-| **58239472（public2 + penguin 认证联合，25 题，净 `0.000398183`）** | **22.194152，COMPLETE（本地 22.1941518482，排名 103/1942）** |
+| 58239472（public2 + penguin 认证联合，25 题，净 `0.000398183`） | 22.194152，COMPLETE（本地 22.1941518482，排名 103/1942） |
+| **待评（public2+penguin + grennwolf GA，5 题，净 `0.000646850`）** | **本地 22.1935049984，双路径 1000 有效，提交待评** |
 
-当前文件：`outputs/submissions/v124_plus_daily44_public2_penguin_20261111/submission.csv`，SHA-256 `11b5e39c840182b905450505e5800ce0b033c776107c5b751baea8551be39075`，500,500 行、1,000 题，文本 / float64 双路径同分且全部有效。相对 58237691 的官方 22.1945500311 下降约 `0.000398`；相对旧归档累计下降约 `0.03807115`。官方榜 2026-11-11T13:45:48Z 快照确认 22.194152、排名 103/1942。
+当前文件：`outputs/submissions/v124_plus_daily44_public2_penguin_ga_20261111/submission.csv`，SHA-256 `7dd9aef05b2566187726f7017e10c3483d3319b54b7a569b35645f339a0b4bae`，500,500 行、1,000 题，文本 / float64 双路径同分且全部有效。相对 58239472 的官方 22.194152 下降 `0.000646850`（n=335/462/497/643/690）；相对旧归档累计下降约 `0.038718`。
 
-- [当前基线来源与官方回执](../outputs/submissions/v124_plus_daily44_public2_penguin_20261111/provenance.json)
-- [合并报告](../outputs/submissions/v124_plus_daily44_public2_penguin_20261111/merge_report.json)
-- [完整独立评分](../outputs/submissions/v124_plus_daily44_public2_penguin_20261111/validation/report.json)
+- [当前基线来源与官方回执](../outputs/submissions/v124_plus_daily44_public2_penguin_ga_20261111/provenance.json)
+- [合并报告](../outputs/submissions/v124_plus_daily44_public2_penguin_ga_20261111/merge_report.json)
+- [完整独立评分](../outputs/submissions/v124_plus_daily44_public2_penguin_ga_20261111/validation/report.json)
+- 上一官方基线：[58239472 归档](../outputs/submissions/v124_plus_daily44_public2_penguin_20261111/provenance.json)
 
-注意：`outputs/merged/` 下的中间链与有效 pilot 产物（pilot08/09、v124_plus_self、v124_plus_daily44、v124_plus_daily44_public2、v124_plus_daily44_public2_penguin）按保留约定只存本地，不进 git；仓库以本页、`provenance.json` 和正式提交归档为准。2026-11-11 已删除零赢家 pilot06/07 本地副本、已超前中间合并（atlas_v107_plus_self、atlas_v107_plus_self_polish、daily35_kirill）、抛光重复完整 CSV 与 atlas_v107 本地下载，仅保留结论。
+注意：`outputs/merged/` 下的中间链与有效 pilot 产物（pilot08/09、v124_plus_self、v124_plus_daily44、v124_plus_daily44_public2、v124_plus_daily44_public2_penguin、v124_plus_daily44_public2_penguin_ga）按保留约定只存本地，不进 git；仓库以本页、`provenance.json` 和正式提交归档为准。2026-11-11 已删除零赢家 pilot06/07 本地副本、已超前中间合并（atlas_v107_plus_self、atlas_v107_plus_self_polish、daily35_kirill）、抛光重复完整 CSV 与 atlas_v107 本地下载，仅保留结论。
 
-截至 2026-11-11 晚间的公开对照：**nilanjansaha123 的 seam-dp/soft-rigid 输出（09:58，`01cb16d8…`）与 busyaprime 的 FQ packings（12:05）合并后为 22.194550031**，与 busyaprime 标题中的 LB 22.1945500 一致；其中 34 题已合入。**penguin069 的 boxed 认证联合（12:39，`f86cb7d8…`）进一步在 25 题上优于该前沿，逐题合并后本地 22.1941518482**；其自身总分 22.1942480 被我们的逐题选择超过。Daily v44（`48c51d2b…`，22.1959256255）、Atlas v127 certified（`0199ae…`，22.1959256349）、Square Deal v39（`396aa573…`，22.1995203）均已被超过。排行榜第一为非公开的 22.0544215；当前官方 22.194152 排名 103/1942，与榜首仍有约 `0.13973` 差距。相对 2026-10-29 逐题纪录仍有 **401 题实质差距、合计约 `0.12706`**（547 个原始正值中 146 个小于 1e-12），头部仍为 971/911/910/791/972/793/908/634/861/803（`8e-4–1.3e-3`）。
+截至 2026-11-11 晚间的公开对照：**nilanjansaha123 的 seam-dp/soft-rigid 输出（09:58，`01cb16d8…`）与 busyaprime 的 FQ packings（12:05）合并后为 22.194550031**，与 busyaprime 标题中的 LB 22.1945500 一致；其中 34 题已合入。**penguin069 的 boxed 认证联合（12:39，`f86cb7d8…`）进一步在 25 题上优于该前沿，逐题合并后本地 22.1941518482**。**grennwolf/inspector gadget 的 Santa-2025 岛式 GA 输出（`submission_improved.csv`，SHA `0d1350e5…`）在 n=335/462/497/643/690 上更优，逐题合并后本地 22.1935049984（净 `0.00064685`）**；这是本轮首次由全局进化搜索拿到的实质收益。Daily v44（`48c51d2b…`，22.1959256255）、Atlas v127 certified（`0199ae…`，22.1959256349）、Square Deal v39（`396aa573…`，22.1995203）均已被超过。排行榜第一为非公开的 22.0544215；上一官方 22.194152 排名 103/1942，与榜首仍有约 `0.13973` 差距。相对 2026-10-29 逐题纪录仍有 **401 题实质差距、合计约 `0.12706`**（547 个原始正值中 146 个小于 1e-12），头部仍为 971/911/910/791/972/793/908/634/861/803（`8e-4–1.3e-3`）。
 
 ## 保留的研究主线（已升级）
 
@@ -73,6 +75,7 @@
 | evand atlas / exact / tilings 外部布局 | 公开 atlas n≤324、exact register 324 份、n=964/1092/1228 证书逐题比较：0 题优于当前（n=964 当前 31.5355 < 证书 31.8595） | 外部精确研究库也被当前公开合并前沿支配；不再重复下载比对 |
 | penguin 认证联合（12:39 UTC） | 249 个新几何组、117 个钉住的公开源；逐题合并后 25 题更优，净 `0.000398183`，本地 22.1941518482，双路径 1000 有效 | 已提交 58239472；来源与哈希见归档 provenance。公开合并仍在日内更新，需持续逐题吸收 |
 | evand packer 目标 campaign | 0.74 CPU-h、348 次应用；仅 n=910 认证赢家 `7.517e-8`，band/chainshift/reinsert/add/drop/kick/melt 等结构移动全部 0 赢家 | 该引擎在当前前沿只能做同盆地微调；若继续需为大 n 移植 band/bulb/fault 生成器并给单题 10+ CPU-h |
+| grennwolf Santa-2025 岛式 GA | 公共 notebook 的 `submission_improved.csv`（session 368440075，SHA `0d1350e5…`）逐题比较：5 题更优（335/462/497/643/690），净 `0.00064685`，本地 22.1935049984，双路径 1000 有效 | 已合并并准备提交；这是首次由全局进化搜索拿到的实质收益，证明头部多角度族内仍有可搜索空间 |
 | 从零 K²+D 模板（T1 行带、T4 角块、全局） | T1 冻结 (K−t)×K 格后，f<1 的带容量比目标恰好少 `D` 个方块；T4 受面积排除；从零全局收敛到 `L=K+1` | 任何“保持直立子格刚性、把 D 个方块塞进 f<1 边界带”的构造都不可行；上界由容量给出，不需要再试同类模板 |
 | 记录族反推（CDB / 中心对角块） | 精确复现 Friedman 的 n=26/65/85/89（`7/2+3/√2`、`5+5/√2` 等，1e-15）；f(D) 表在 K=31 平滑上升 0.5066→0.9988；该族在 K=31 的容量平台为 966，无法到达 971 的 31.6368；n=687 的当前解与该族预测 1e-6 内一致 | 当前合并前沿已使用该族；它不是新收益来源。f(D) 是数值最优接触构型而非闭式，H 的 SPEC 保留为供体/诊断资料 |
 | Cats and boxes 公开方法（n=299/260/232） | 其“破纪录”布局不是单角刚性带：倾斜区更大、含 14–21 个略不同角度，或拆成对角两个独立块；这三个坐标已被我们当前前沿超过 | 结构原则是新线索：对 971/911/910/791/972 做“加厚多角度倾斜区”实验（subagent I 进行中），不再做刚性带镜像 |
