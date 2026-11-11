@@ -17,17 +17,18 @@
 | 58227413（Atlas v124 + sqd v39 + daily v43，212 题，净约 `0.01641`） | 22.1993688316，COMPLETE |
 | 58232975（v124 + Atlas 新版，28 题，净 `0.00304`） | 22.1963280817，COMPLETE |
 | 58236174（v124+atlasnew2 + Daily v44，51 题，净 `5.0e-10`） | 22.1959256252，COMPLETE（本地 22.195925625258） |
-| **58237691（v124+daily44 + public2：nilanjan seam-dp + busyaprime FQ，34 题，净 `0.001375594`）** | **22.1945500311，COMPLETE（本地 22.1945500312）** |
+| 58237691（v124+daily44 + public2：nilanjan seam-dp + busyaprime FQ，34 题，净 `0.001375594`） | 22.1945500311，COMPLETE（本地 22.1945500312） |
+| **58239472（public2 + penguin 认证联合，25 题，净 `0.000398183`）** | **本地 22.1941518482，双路径 1000 有效，提交待评** |
 
-当前文件：`outputs/submissions/v124_plus_daily44_public2_20261111/submission.csv`，SHA-256 `4b9092a91f67ec4721337696ea8c09c22fff2cf93b3f11b2293b0fbd51b324de`，500,500 行、1,000 题，文本 / float64 双路径同分且全部有效。相对上一次正式提交 22.1963280817 累计下降 `0.00177805`；相对旧归档累计下降约 `0.03767297`。
+当前文件：`outputs/submissions/v124_plus_daily44_public2_penguin_20261111/submission.csv`，SHA-256 `11b5e39c840182b905450505e5800ce0b033c776107c5b751baea8551be39075`，500,500 行、1,000 题，文本 / float64 双路径同分且全部有效。相对 58237691 的官方 22.1945500311 下降 `0.000398183`；相对旧归档累计下降约 `0.03807115`。
 
-- [当前基线来源与官方回执](../outputs/submissions/v124_plus_daily44_public2_20261111/provenance.json)
-- [合并报告](../outputs/submissions/v124_plus_daily44_public2_20261111/merge_report.json)
-- [完整独立评分](../outputs/submissions/v124_plus_daily44_public2_20261111/validation/report.json)
+- [当前基线来源与官方回执](../outputs/submissions/v124_plus_daily44_public2_penguin_20261111/provenance.json)
+- [合并报告](../outputs/submissions/v124_plus_daily44_public2_penguin_20261111/merge_report.json)
+- [完整独立评分](../outputs/submissions/v124_plus_daily44_public2_penguin_20261111/validation/report.json)
 
-注意：`outputs/merged/` 下的中间链与有效 pilot 产物（pilot08/09、v124_plus_self、v124_plus_daily44、v124_plus_daily44_public2）按保留约定只存本地，不进 git；仓库以本页、`provenance.json` 和正式提交归档为准。2026-11-11 已删除零赢家 pilot06/07 本地副本、已超前中间合并（atlas_v107_plus_self、atlas_v107_plus_self_polish、daily35_kirill）、抛光重复完整 CSV 与 atlas_v107 本地下载，仅保留结论。
+注意：`outputs/merged/` 下的中间链与有效 pilot 产物（pilot08/09、v124_plus_self、v124_plus_daily44、v124_plus_daily44_public2、v124_plus_daily44_public2_penguin）按保留约定只存本地，不进 git；仓库以本页、`provenance.json` 和正式提交归档为准。2026-11-11 已删除零赢家 pilot06/07 本地副本、已超前中间合并（atlas_v107_plus_self、atlas_v107_plus_self_polish、daily35_kirill）、抛光重复完整 CSV 与 atlas_v107 本地下载，仅保留结论。
 
-截至 2026-11-11 晚间的公开对照：**nilanjansaha123 的 seam-dp/soft-rigid 输出（09:58，`01cb16d8…`）与 busyaprime 的 FQ packings（12:05）合并后为 22.194550031**，与 busyaprime 标题中的 LB 22.1945500 一致；其中 34 题优于我们，已合入当前基线。Daily v44（`48c51d2b…`，22.1959256255）与 Atlas v127 certified（`0199ae…`，22.1959256349）已被这次更新超过；Atlas 相对 Daily 增益仍为 0 题。Square Deal v39（`396aa573…`，22.1995203）无更新。排行榜第一为非公开的 22.0544215；当前官方 22.1945500311 约排 104/1942，与榜首仍有约 `0.14013` 差距。相对 2026-10-29 逐题纪录仍有 **401 题实质差距、合计约 `0.12706`**（547 个原始正值中 146 个小于 1e-12），头部仍为 971/911/910/791/972/793/908/634/861/803（`8e-4–1.3e-3`）。
+截至 2026-11-11 晚间的公开对照：**nilanjansaha123 的 seam-dp/soft-rigid 输出（09:58，`01cb16d8…`）与 busyaprime 的 FQ packings（12:05）合并后为 22.194550031**，与 busyaprime 标题中的 LB 22.1945500 一致；其中 34 题已合入。**penguin069 的 boxed 认证联合（12:39，`f86cb7d8…`）进一步在 25 题上优于该前沿，逐题合并后本地 22.1941518482**；其自身总分 22.1942480 被我们的逐题选择超过。Daily v44（`48c51d2b…`，22.1959256255）、Atlas v127 certified（`0199ae…`，22.1959256349）、Square Deal v39（`396aa573…`，22.1995203）均已被超过。排行榜第一为非公开的 22.0544215；当前官方 22.1945500311 约排 104/1942，与榜首仍有约 `0.14013` 差距。相对 2026-10-29 逐题纪录仍有 **401 题实质差距、合计约 `0.12706`**（547 个原始正值中 146 个小于 1e-12），头部仍为 971/911/910/791/972/793/908/634/861/803（`8e-4–1.3e-3`）。
 
 ## 保留的研究主线（已升级）
 

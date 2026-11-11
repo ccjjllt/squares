@@ -15,7 +15,7 @@
 ```sh
 uv sync --locked --extra experiments
 uv run squares --help
-uv run squares inspect outputs/submissions/v124_plus_daily44_public2_20261111/submission.csv
+uv run squares inspect outputs/submissions/v124_plus_daily44_public2_penguin_20261111/submission.csv
 ```
 
 `inspect` 检查格式、标识符和题目完整性，不检查重叠。新环境没有布局文件时，可生成小型网格验证安装：
@@ -37,8 +37,8 @@ uv run squares score outputs/examples/grid10.csv --max-n 10 --mode both --worker
 
 ```sh
 uv run squares merge \
-  --baseline outputs/submissions/v124_plus_daily44_public2_20261111/submission.csv \
-  --baseline-report outputs/submissions/v124_plus_daily44_public2_20261111/validation/report.json \
+  --baseline outputs/submissions/v124_plus_daily44_public2_penguin_20261111/submission.csv \
+  --baseline-report outputs/submissions/v124_plus_daily44_public2_penguin_20261111/validation/report.json \
   --candidate outputs/experiments/next/remote/improved_groups.csv \
   --output-dir outputs/merged/next --workers 4
 ```
@@ -62,8 +62,8 @@ CPU 生成迁移链与接缝交叉候选，GPU 批量连续松弛，官方评分
 
 ```sh
 uv run python scripts/experiments/prepare_candidates.py \
-  --baseline outputs/submissions/v124_plus_daily44_public2_20261111/submission.csv \
-  --baseline-lineage-json outputs/submissions/v124_plus_daily44_public2_20261111/baseline_lineage.json \
+  --baseline outputs/submissions/v124_plus_daily44_public2_penguin_20261111/submission.csv \
+  --baseline-lineage-json outputs/submissions/v124_plus_daily44_public2_penguin_20261111/baseline_lineage.json \
   --donor data/public/penguin_v2/submission.csv \
   --donor data/public/atlas_v79/submission.csv \
   --donor data/public/daily_v13/submission.csv \
@@ -79,7 +79,7 @@ GPU 环境需要安装本项目、NVIDIA CUDA 与匹配的 CuPy；普通本地�
 
 ```sh
 python scripts/experiments/run_gpu_pilot.py \
-  --baseline outputs/submissions/v124_plus_daily44_public2_20261111/submission.csv \
+  --baseline outputs/submissions/v124_plus_daily44_public2_penguin_20261111/submission.csv \
   --candidates outputs/experiments/next/candidates/candidates.npz \
   --manifest outputs/experiments/next/candidates/manifest.json \
   --output-dir outputs/experiments/next/remote \

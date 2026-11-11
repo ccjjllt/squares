@@ -2,7 +2,7 @@
 
 [Kaggle Squares in Squares](https://www.kaggle.com/competitions/squares-in-squares) 几何优化研究项目：通过结构迁移、接缝交叉和连续松弛寻找更紧的正方形布局。
 
-截至 2026-11-11，官方成绩 **22.1945500311**（提交 58237691），本地 22.1945500312，1,000 题全部有效；收益主要来自 Atlas/Daily/nilanjan/busyaprime 公共更新与逐题合并。研究结论和停止方向统一记录在研究概况中。
+截至 2026-11-11，官方已确认 **22.1945500311**（提交 58237691），本地最新 **22.1941518482**（提交 58239472 待评），1,000 题全部有效；收益主要来自 Atlas/Daily/nilanjan/busyaprime/penguin 公共更新与逐题合并。研究结论和停止方向统一记录在研究概况中。
 
 - [研究概况](docs/research.md)：当前结果、有效主线、停止方向及原因。
 - [使用指南](docs/getting-started.md)：问题定义、环境、候选生成、评分与合并。
@@ -13,4 +13,4 @@ uv sync --locked --extra experiments
 uv run squares --help
 ```
 
-当前最佳布局及完整验证保存在 `outputs/submissions/v124_plus_daily44_public2_20261111/`。代码在 `src/`，实验入口在 `scripts/`；数据和实验产物的保留约定见使用指南。
+当前最佳布局及完整验证保存在 `outputs/submissions/v124_plus_daily44_public2_penguin_20261111/`。代码在 `src/`，实验入口在 `scripts/`；数据和实验产物的保留约定见使用指南。
