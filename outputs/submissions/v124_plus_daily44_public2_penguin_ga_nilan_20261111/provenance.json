@@ -1,0 +1,44 @@
+{
+  "competition": "squares-in-squares",
+  "account": "ccjjllt",
+  "baseline": {
+    "path": "outputs/submissions/v124_plus_daily44_public2_penguin_ga_20261111/submission.csv",
+    "score": 22.193504998422572,
+    "sha256": "7dd9aef05b2566187726f7017e10c3483d3319b54b7a569b35645f339a0b4bae"
+  },
+  "candidates": [
+    {
+      "name": "nilanjansaha123/squares-gpu-seam-dp-soft-rigid-highs",
+      "last_run": "2026-11-11T14:55:58Z",
+      "output_downloaded": "2026-11-11T15:15Z",
+      "submission_sha256": "7a6822f80782e8412da8745d26d433eef8912d376dadac5aba072f8745d79cf2",
+      "score": 22.193053143946
+    },
+    {
+      "name": "malyshevdanil/squares-in-squares-living-atlas-of-tight-packings",
+      "last_run": "2026-11-11T14:40:28Z",
+      "output_downloaded": "2026-11-11T15:04Z",
+      "submission_sha256": "a53b6b06206150271fb670252428fa4eac2f35e144061eb60701c141a064ae97",
+      "score": 22.193696738428,
+      "note": "same 10 winning n as nilanjan; atlas layout used only where it is the better of the two"
+    }
+  ],
+  "chain": [
+    {
+      "step": "per-puzzle merge",
+      "score": 22.193053134449364,
+      "net_gain": 0.00045186397320895466,
+      "changed_puzzles": [459, 495, 505, 510, 552, 593, 601, 642, 646, 933]
+    }
+  ],
+  "merged_score": 22.193053134449364,
+  "merged_sha256": "2a2cfa529695e549a8d989604cad7cdaf0a7070024395bb6ec1ceeed28141e10",
+  "validation": "text == float64; 1000/1000 valid; independent full rescore via vendored official v20 metric",
+  "submission_ref": 58242719,
+  "submission_status": "PENDING",
+  "official_public_score": null,
+  "previous_official_score": 22.194152,
+  "local_gain_over_previous_official": 0.0010988656,
+  "prepared_at": "2026-11-11T23:30:00+08:00",
+  "notes": "The 15:15 nilanjan update and the 15:04 atlas update share the same ten improved complete n groups. Per-puzzle merge over the GA-merged frontier selects them and leaves all other puzzles untouched. Upload used the resumable-upload API through storage.googleapis.com because www.googleapis.com was unreachable from this network."
+}
