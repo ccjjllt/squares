@@ -82,6 +82,10 @@ Cats and boxes 的公开 notebook（`pjmathematician/three-square-packings-that-
 2. **逐题吸收公开更新**：penguin/busyaprime/nilanjan/atlas 仍在日内更新；每次新输出用 `squares merge` 逐题筛选，只有完整 n 组且官方 L 严格更小才收。
 3. **停止**：刚性带镜像、单方块插入、删除+polish、固定角 LP、从零 K²+D 模板、CDB 模板、evand 引擎的结构移动——均已有硬负结果或容量证书。
 
+## 7.1 当前剩余差距
+
+以 22.193053 的当前最佳为基准，相对 2026-10-29 逐题纪录仍有 401 题实质差距、合计 `0.125560596`（原始正值 547 题）。头部未变：971/911/910/791/972/793/908/634/861/803，单项 `8e-4–1.3e-3`。本轮两次合并（GA 5 题 + nilanjan/atlas 10 题）把总差距从 `0.12706` 降到 `0.12556`，即拿回了约 0.0015 的届时差距。
+
 ## 8. 产物索引
 
 - 正式归档（官方 22.194152）：`outputs/submissions/v124_plus_daily44_public2_penguin_20261111/`
