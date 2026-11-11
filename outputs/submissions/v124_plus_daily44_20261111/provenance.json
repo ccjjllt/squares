@@ -1,0 +1,32 @@
+{
+  "competition": "squares-in-squares",
+  "account": "ccjjllt",
+  "baseline": {
+    "path": "outputs/merged/v124_plus_atlasnew2/submission.csv",
+    "score": 22.195925625757795,
+    "sha256": "956c7be7cf42853be6e90f5ef2f277c993205e81747946cecb459973dc8a1017"
+  },
+  "candidate": {
+    "name": "kmmmvs/squares-public-merge-daily v44",
+    "path": "downloaded 2026-11-11; output sha256 48c51d2b8dd3e5841f1d99c5e4e1a415b7e1991cc8cca4dd617f8fa7f613dfdc",
+    "score": 22.195925625471624
+  },
+  "chain": [
+    {
+      "step": "merged",
+      "score": 22.195925625258056,
+      "net_gain": 4.997382507809789e-10,
+      "changed_puzzles": 51
+    }
+  ],
+  "merged_score": 22.195925625258056,
+  "merged_sha256": "f41570a8482b6872f9c09644407591c4d47fdae269fd0022dbe8958101d71839",
+  "validation": "text == float64; 1000/1000 valid; official v20 metric sha256 abce6231e3eda28d040455e651bfe3578bce31bb69449c99f67f0b82a4a6c56b",
+  "submission_ref": 58236174,
+  "submission_status": "COMPLETE",
+  "official_public_score": 22.1959256252,
+  "previous_official_score": 22.1963280817,
+  "official_gain": 0.0004024565000000123,
+  "prepared_at": "2026-11-11T19:45:00+08:00",
+  "notes": "Daily v44 output merged per puzzle into the v124+atlasnew2 baseline. Daily v44 dominates the previous local best on 51 puzzles and is worse on none. Atlas v127 certified output (0199ae...) was the atlasnew2 candidate and contributes no additional puzzle beyond Daily v44; its pre-cert submission_merged.csv was not used."
+}
