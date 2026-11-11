@@ -20,9 +20,9 @@
 | 58237691（v124+daily44 + public2：nilanjan seam-dp + busyaprime FQ，34 题，净 `0.001375594`） | 22.1945500311，COMPLETE（本地 22.1945500312） |
 | 58239472（public2 + penguin 认证联合，25 题，净 `0.000398183`） | 22.194152，COMPLETE（本地 22.1941518482，排名 103/1942） |
 | **58241961（public2+penguin + grennwolf GA，5 题，净 `0.000646850`）** | **22.193505，COMPLETE（本地 22.1935049984，排名 100/1942）** |
-| **58242719（GA 合并 + nilanjan/atlas 15:15，10 题，净 `0.000451864`）** | **本地 22.1930531344，双路径 1000 有效，提交待评** |
+| **58242719（GA 合并 + nilanjan/atlas 15:15，10 题，净 `0.000451864`）** | **22.193053，COMPLETE（本地 22.1930531344，排名 97/1942）** |
 
-当前文件：`outputs/submissions/v124_plus_daily44_public2_penguin_ga_nilan_20261111/submission.csv`，SHA-256 `2a2cfa529695e549a8d989604cad7cdaf0a7070024395bb6ec1ceeed28141e10`，500,500 行、1,000 题，文本 / float64 双路径同分且全部有效。相对 58239472 的官方 22.194152 累计下降 `0.001098866`（GA 5 题 + nilanjan/atlas 10 题）；相对旧归档累计下降约 `0.039170`。
+当前文件：`outputs/submissions/v124_plus_daily44_public2_penguin_ga_nilan_20261111/submission.csv`，SHA-256 `2a2cfa529695e549a8d989604cad7cdaf0a7070024395bb6ec1ceeed28141e10`，500,500 行、1,000 题，文本 / float64 双路径同分且全部有效。相对 58239472 的官方 22.194152 累计下降 `0.001098866`（GA 5 题 + nilanjan/atlas 10 题）；相对旧归档累计下降约 `0.039170`。官方榜 2026-11-11T15:45Z 快照确认 22.193053、排名 97/1942。
 
 - [当前基线来源与官方回执](../outputs/submissions/v124_plus_daily44_public2_penguin_ga_nilan_20261111/provenance.json)
 - [合并报告](../outputs/submissions/v124_plus_daily44_public2_penguin_ga_nilan_20261111/merge_report.json)

@@ -28,17 +28,30 @@
       "step": "per-puzzle merge",
       "score": 22.193053134449364,
       "net_gain": 0.00045186397320895466,
-      "changed_puzzles": [459, 495, 505, 510, 552, 593, 601, 642, 646, 933]
+      "changed_puzzles": [
+        459,
+        495,
+        505,
+        510,
+        552,
+        593,
+        601,
+        642,
+        646,
+        933
+      ]
     }
   ],
   "merged_score": 22.193053134449364,
   "merged_sha256": "2a2cfa529695e549a8d989604cad7cdaf0a7070024395bb6ec1ceeed28141e10",
   "validation": "text == float64; 1000/1000 valid; independent full rescore via vendored official v20 metric",
   "submission_ref": 58242719,
-  "submission_status": "PENDING",
-  "official_public_score": null,
+  "submission_status": "COMPLETE",
+  "official_public_score": 22.193053,
   "previous_official_score": 22.194152,
   "local_gain_over_previous_official": 0.0010988656,
   "prepared_at": "2026-11-11T23:30:00+08:00",
-  "notes": "The 15:15 nilanjan update and the 15:04 atlas update share the same ten improved complete n groups. Per-puzzle merge over the GA-merged frontier selects them and leaves all other puzzles untouched. Upload used the resumable-upload API through storage.googleapis.com because www.googleapis.com was unreachable from this network."
+  "notes": "The 15:15 nilanjan update and the 15:04 atlas update share the same ten improved complete n groups. Per-puzzle merge over the GA-merged frontier selects them and leaves all other puzzles untouched. Upload used the resumable-upload API through storage.googleapis.com because www.googleapis.com was unreachable from this network. Public leaderboard snapshot 2026-11-11T15:45Z confirms 22.193053, SubmissionCount 13, rank 97/1942.",
+  "official_rank": 97,
+  "leaderboard_checked_at": "2026-11-11T15:45:00Z"
 }
