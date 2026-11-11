@@ -47,10 +47,12 @@
   "merged_sha256": "7dd9aef05b2566187726f7017e10c3483d3319b54b7a569b35645f339a0b4bae",
   "validation": "text == float64; 1000/1000 valid; independent full rescore via vendored official v20 metric",
   "submission_ref": 58241961,
-  "submission_status": "PENDING",
-  "official_public_score": null,
+  "submission_status": "COMPLETE",
+  "official_public_score": 22.193505,
   "previous_official_score": 22.194152,
   "local_gain_over_previous_official": 0.0006470016,
   "prepared_at": "2026-11-11T23:06:00+08:00",
-  "notes": "The grennwolf GA output is based on the public atlas, so it is worse than our merged frontier on 994 puzzles; only the five complete n groups that beat us were selected. Each selected group was re-certified by our own official metric during merge. This is the first material gain from a genuinely global evolutionary search: the GA's multi-angle block mutations found layouts that the local LP/fq/polish route could not. Submitted via the resumable-upload API through storage.googleapis.com because www.googleapis.com was unreachable from this network; submission ref 58241961."
+  "notes": "The grennwolf GA output is based on the public atlas, so it is worse than our merged frontier on 994 puzzles; only the five complete n groups that beat us were selected. Each selected group was re-certified by our own official metric during merge. This is the first material gain from a genuinely global evolutionary search: the GA's multi-angle block mutations found layouts that the local LP/fq/polish route could not. Submitted via the resumable-upload API through storage.googleapis.com because www.googleapis.com was unreachable from this network; submission ref 58241961. Public leaderboard snapshot 2026-11-11T15:35Z confirms 22.193505, SubmissionCount 12, rank 100/1942.",
+  "official_rank": 100,
+  "leaderboard_checked_at": "2026-11-11T15:35:00Z"
 }
