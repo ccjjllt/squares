@@ -271,6 +271,49 @@ def cut(P: np.ndarray, axis: int, xc: float, sign: int = 1) -> np.ndarray:
     return Q[~near]
 
 
+# ---------- rectangular restack (non-two-band operator) ----------
+def rect_restack(
+    P: np.ndarray,
+    axis: int = 0,
+    frac: float = 0.5,
+    width: float = 2.0,
+    seed: int = 0,
+    max_snap_deg: float = 12.0,
+) -> np.ndarray | None:
+    """Snap near-upright strip squares upright in place, keeping centres fixed.
+
+    Works on any structure (in particular non-two-band packings that the
+    slab/crossover operators skip). Squares whose centres fall in a strip
+    (``axis``, ``frac``, ``width``) and whose tilt is within
+    ``max_snap_deg`` of upright snap their angles to the nearest multiple
+    of 90 degrees plus tiny deterministic jitter; strongly tilted squares
+    are untouched so only shallow contact violations appear. The dry side
+    barely moves; both are left for the GPU quench.
+    """
+
+    if axis not in (0, 1):
+        raise ValueError("axis must be 0 or 1")
+    P = normalize(np.asarray(P, dtype=np.float64))
+    if len(P) < 1:
+        return None
+    rng = np.random.default_rng(seed)
+    lo, hi = P[:, axis].min(), P[:, axis].max()
+    if hi - lo < 2 * width:
+        return None
+    xc = lo + float(frac) * (hi - lo)
+    inside = (P[:, axis] > xc - width) & (P[:, axis] <= xc)
+    if not inside.any() or inside.all():
+        return None
+    Q = P.copy()
+    near_upright = np.abs(tilt(Q)[inside]) <= max_snap_deg
+    idx = np.flatnonzero(inside)[near_upright]
+    if not len(idx):
+        return None
+    snapped = np.round(Q[idx, 2] / (math.pi / 2)) * (math.pi / 2)
+    Q[idx, 2] = (snapped + rng.uniform(-1e-3, 1e-3, len(idx))) % (math.pi / 2)
+    return normalize(Q)
+
+
 def shrink_all(
     P: np.ndarray, tries: int = 60, depth: float = 0.02
 ) -> tuple[np.ndarray, int] | None:

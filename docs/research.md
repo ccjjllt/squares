@@ -1,6 +1,6 @@
 # 研究概况与取舍
 
-整理日期：2026-11-09（北京时间）；实验与正式成绩截至 2026-11-09 晚间。本页是唯一研究状态入口，取代历史计划、公开前沿快照和逐轮长文。这里的“停止”是当前资源取舍，不是数学不可行或算法无效的证明。
+整理日期：2026-11-11（北京时间）；实验与正式成绩截至 2026-11-09 晚间，本地待评截至 2026-11-11。本页是唯一研究状态入口，取代历史计划、公开前沿快照和逐轮长文。这里的“停止”是当前资源取舍，不是数学不可行或算法无效的证明。已放弃路线只留本页简述，不保留文档、脚本与中间产物。
 
 ## 当前结果（已与官方对齐）
 
@@ -13,6 +13,9 @@
 | 中间提交 58153974（Atlas v107 + 自研 n=642） | 22.2161912103，COMPLETE |
 | 中间提交 58156456（Atlas v107 + 抛光 + Daily v35 + kirill + pilot08 n=642） | 22.2160143492，COMPLETE |
 | 当前基线提交 58165370 | **22.2157802829，COMPLETE** |
+| 待评 pilot09（n=642，相对 58165370 约 `1.23e-7`） | 22.2157801597，本地 1000 有效，提交 58226707 PENDING |
+| 待评 v124 合并（Atlas v124 + sqd v39 + daily v43，212 题，净约 `0.01641`） | 22.1993688317，本地 1000 有效，提交 58227413 PENDING |
+| 本地最新 v124+Atlas最新（28 题，净 `0.00304`） | **22.1963280818，本地双路径1000有效；已提交 58232975 COMPLETE，官方 22.1963280817 一致** |
 
 当前文件：`outputs/merged/v108_plus_self/submission.csv`，SHA-256 `bc505d351c16a1a5720c2d12870a2213eb9c19a6a91a68d91c913590f093ec23`，500,500 行、1,000 题，文本 / float64 双路径同分且全部有效。相对旧归档下降约 0.01644272，其中主体来自公共更新与多源合并；旧自研 n=459 已被公共方案超过，不再计入成绩证据，仅保留为结构供体；n=642 仍领先并经 pilot08 续压再改善约 3.2e-6。
 
@@ -20,7 +23,7 @@
 - [当前基线谱系（n=642 depth2）](../outputs/merged/v108_plus_self/baseline_lineage.json)
 - [完整独立评分](../outputs/merged/v108_plus_self/validation/report.json)
 
-注意：`outputs/merged/daily35_kirill_pilot08/` 与当日各 pilot 产物按保留约定只存本地，不进 git；仓库以本页与 `provenance.json` 的哈希为准。公开源在日内仍有更新（Atlas v108、kirilltym 22-2160 v22 已出现），下一轮先刷新对照再选题，避免重复研究已被超过的题目。
+注意：`outputs/merged/daily35_kirill_pilot08/` 与有效 pilot 产物（pilot08/09、v108_plus_self/p09、v124_plus_self）按保留约定只存本地，不进 git；仓库以本页与 `provenance.json` 的哈希为准。2026-11-11 已删除零赢家 pilot06/07 本地副本、已超前中间合并（atlas_v107_plus_self、atlas_v107_plus_self_polish、daily35_kirill）、抛光重复完整 CSV 与 atlas_v107 本地下载，仅保留结论。公开源在日内仍有更新（Atlas v108、kirilltym 22-2160 v22 已出现），下一轮先刷新对照再选题，避免重复研究已被超过的题目。
 
 ## 保留的研究主线（已升级）
 
@@ -33,9 +36,9 @@
 | kirilltym 22-2160 部分解 | 8 题更优，净约 `1.49e-4` |
 | 抛光 n=553、696 | CPU 接触抛光，净约 `4.5e-9`；738、652 对照零收益，路线冻结 |
 
-代码入口保留 `prepare_candidates.py`、`run_gpu_pilot.py`，搜索模块保留 `structure.py`、`gpu_relax.py` 和按需调用的 `local_repair.py`。`squares merge` 保留完整题组、原始坐标文本、双路径评分和来源追踪。
+代码入口保留 `prepare_candidates.py`、`run_gpu_pilot.py`，搜索模块保留 `structure.py`、`gpu_relax.py`、按需调用的 `local_repair.py` 与新增 `archive.py`（接触拓扑供体档案，P0）。`squares merge` 保留完整题组、原始坐标文本、双路径评分和来源追踪。
 
-新赢家已能自适应续压并导出，但进入下一轮迁移 / 交叉仍需再次运行候选生成脚本。当前没有在线自动生成下一代的完整循环，也没有按接触拓扑组织的供体档案。具体命令见[使用指南](getting-started.md)。
+在线跨代循环仍需手动触发候选生成；`archive.py` 已提供按拓扑去重与每 n 4–8 供体配额，`run_gpu_pilot.py` 赢家自动续压待接。具体命令见[使用指南](getting-started.md)。
 
 ## 已完成实验与停止原因
 
@@ -46,9 +49,11 @@
 | 独立固定角度 LP 续压 | 21次尝试、8次接受，约21.1秒；相对Pilot02累计额外改善约`1.364892361e-7`，随后被Pilot04覆盖 | 停止独立路线，删除专用脚本及产物；收益小且不再贡献最终结果。GPU主线的可选修复模块仍保留 |
 | 小核心 / 薄带编辑与有限 refill | 29候选，固定角CPU和Pilot05自由角GPU均无净收益 | 停止当前编辑器，删除实现、候选及运行结果；有限编辑未显示效果，不将其扩大为完整FTMC工程 |
 | 有限两列矩形构件组合 | 128 / 512构件，各检查1000题，合计约14.3秒；容量改善为0，没有候选进入官方评分 | 停止当前组合器，删除实现及构件库；它没有独立优化矩形，也不是完整递归DP |
-| Pilot06、Pilot07 | 96 批次、约 95 秒 CUDA，零赢家；诊断：warm 200×1 带不动 dry_excess ~0.05，结构臂全灭或触及修复上限 | 保留诊断结论；pilot08 已改用深 warm（1500×2）+ 细化 + local-repair + 紧 dry 上限 |
-| Pilot08 | n=642 续压赢家，增益约 `3.2e-6`，238 次 local-repair；其余 23 候选零赢家 | 已合入当前基线；同参数模板用于 pilot09 |
-| 抛光 n=696、553 | 固定角/自由角各 +2.8e-09、+1.7e-09，双路径验证通过；738、652 四组 <1.1e-10 | 只收过 1e-10 门限的题；已合入基线 |
+| Pilot06、Pilot07 | 96 批次、约 95 秒 CUDA，零赢家；诊断：warm 200×1 带不动 dry_excess ~0.05，结构臂全灭或触及修复上限 | 保留诊断结论；pilot08 已改用深 warm（1500×2）+ 细化 + local-repair + 紧 dry 上限；2026-11-11 已删本地副本 |
+| Pilot08 | n=642 续压赢家，增益约 `3.2e-6`，238 次 local-repair；其余 23 候选零赢家 | 已合入当前基线；同参数模板用于 pilot09；赢家产物本地保留 |
+| Pilot09 | 12 候选、n=642 赢家 1，增益约 `1.23e-7`，334 次 local-repair | 待评，已合入 v108_plus_p09 并作为 v124 前基；非放弃路线，本地保留 |
+| 抛光 n=696、553 | 固定角/自由角各 +2.8e-09、+1.7e-09，双路径验证通过；738、652 四组 <1.1e-10 | 只收过 1e-10 门限的题；已合入基线；2026-11-11 已删重复完整 CSV，仅留 90K 候选 |
+| 已超前中间合并与下载 | atlas_v107_plus_self、atlas_v107_plus_self_polish、daily35_kirill 及 atlas_v107 本地下载均已被 v108/v124 链取代 | 2026-11-11 已删本地副本；链路以保留的 merge_report/provenance 与最终提交 CSV 为准 |
 | Daily v35、kirilltym 22-2160 合并 | Daily 164 题 +2.46e-05；kirill 8 题 +1.49e-04；均双路径 1000 有效 | 已合入当前基线并提交 58156456 |
 | Atlas v108、kirilltym v22 | v108 本地 22.21579565，v22 部分解；合并净约 `2.34e-04` | 已合入当前基线并提交 58165370；下一轮先刷新对照，避免重复研究已被超过的题目 |
 | 大规模局部 LP 修复 | Pilot04 173次约207秒，仅5次通过浮点修复；Pilot05 83次约115秒，无新赢家 | 不作为普遍优化路线；只在主线中按较小穿透量筛选使用。求解失败不证明几何不可行 |
@@ -67,14 +72,18 @@
 
 ## 下一步与证据保留
 
+深度研究（2026-11-11，四并行）：v124 相对 v108 的 212 改进中 179 题实质提分（均值 `9.2e-5`，中位 `2.6e-5`，最大 n=593 `7.2e-4`），53% 相邻成串，证实相邻迁移；相对 2026-10-29 纪录仍落后 401 题、合计约 `0.1319`，头部为 971/911/910/791/972/634/862/687/328（`8e-4–1.3e-3`），主攻 601–1000 簇兼顾 201–400。P0 已落地 `archive.py`（WL 2 轮接触图哈希，ruff 通过）并接入 `prepare_candidates`（manifest v2 全写 `topology_hash`，验证通过）；以 v124 为基生成 30 + 收窄 22 候选（后者 max 干超额 `0.0166`、crossover 12、子题仅 803/862，待 GPU）。MVE 优先级：fq 硬化/Soft → 自适应延长 → DP-lite → 矩形种子 → SLP 抛光；FTMC/Rust、pinwheel、全局重启、多 GPU 仍冻结。CPU 验证闭环：`cpu_quench.py` 对 52 干候选 88 次有效修复零赢家（与 Pilot02 76/80 修复丢增益一致）；v124 + kirill_v22/kirill_new/pilot09/polish 双路径合并 1957 组零改动（`v124_plus_kirill/merge_report.json`，重复 CSV 已删），证实 v124 已是 CPU 可达最小；634/687/328 非两带无算子覆盖。GPU：tight-gap 22候选T4实测 improved 0 / gain 0.0 / cuda 39.3s / 44 examined（summary.json已落盘），结构臂全灭、Crossover穿透scale_limit、对照臂LP全拒（121次211s）；浅warm（200x1）已证伪：同22候选按Pilot08模板（3000步/1500x2/refine3000x1/incumbent6）重跑deep-gap，44 examined / cuda 327.6s / LP 137次仍improved 0（summary.json已落盘，近优15组留作供体）；803/862两带子题上v124已极紧。公共源已刷新：daily_v43（eeb5…）与sqd_v39（396a…）最新输出与本地11-10副本sha一致，无更新；Atlas最新版（08ca00…，57题CPU接触LP改进）已下载并合并：`outputs/merged/v124_plus_atlasnew/submission.csv`（sha `08e2789b…`），28题入选净 `0.00304075`，双路径22.1963280818且1000有效。另新增CPU自由角抛光模块 `src/squares/search/free_polish.py`（改编自公开接触LP，ruff通过，v124上0 headroom符合预期）。自研管线五轮GPU全零：tight 0/44、deep 0/44、atlasnew-round 0/50（新n 849/852/906/908/909/976）、depth2跨代链 0/24、rect-round 0/64（新算子rect_restack打非两带328/634/687，干超额≤0.00094穿透~-0.001，深warm+LP292次，基线sha08e2789b）；CPU quench 0/52、kirill合并净0。剩余未探：fq/soft新损失已实现为CPU模块 `src/squares/search/soft_quench.py`（铰链平方罚+全光滑梯度，ruff通过，有限差分 maxrelerr 0.026；L-BFGS Wolfe在线搜索死的SAT切换处中止，已换自研阻尼Armijo下降），但在矩形干候选上零进展——罚项把接触对推开、边项往里压，原地僵持，同一修复成本墙。v124_plus_atlasnew（22.1963280818）已提交，比赛回执 ref 58232975（COMPLETE待官方计分）。矩形第二代：rect-round 32近优为暖父生成48 rect_restack候选，rect-gen2 T4 COMPLETE：93 examined / cuda 391.5s / LP 408次，improved 0；mixed-gap（971/910/791/972/969/851/804两带+686/741/854/492矩形，48候选）T4 COMPLETE：45 examined / cuda 486.5s / LP 261次 / 续压33批，improved 0；Atlas再新版（0199ae…）合并：`outputs/merged/v124_plus_atlasnew2/submission.csv`（sha `956c7be7…`），28题净 `0.00040246`，双路径22.1959256258且1000有效。
+
 下一轮先刷新公共对照和逐题差距，再围绕459、642及可迁移的相邻题开展有预算的跨轮搜索，保留不同接缝的近优状态。当前仍保留2026-10-29的逐题纪录CSV作为可选历史排序参考，不作为实时目标或收益预测。
 
-产物只保留以下用途：
+产物只保留以下用途（2026-11-11 已删 pilot06/07、超前中间合并、抛光重复 CSV、atlas_v107 下载；结论见上表，不另存档）：
 
 - `outputs/submissions/merged_research_20261107/`：唯一正式最佳文件、完整评分、官方回执和后续搜索使用的 `baseline_lineage.json`。
 - `outputs/experiments/pilot04/`：有效赢家、供体、候选、谱系、参数及当时自包含代码包；不保留重复完整提交和运行噪声。
 - `outputs/experiments/pilot02/`：n642的部分布局及验证证据，可与Penguin原文重建Pilot04输入。
 - `outputs/experiments/pilot01/`：有效血缘所需的近优供体档案。
+- `outputs/experiments/pilot08/`、`pilot09/`、`polish_n696_n553/candidate.csv`：已合入/待评赢家本地证据；零赢家中间态不保留。
+- `outputs/merged/v108_plus_self/`、`v108_plus_p09/`、`v124_plus_self/`、`daily35_kirill_pilot08/`：当前链本地验证与谱系；超前中间合并已删。
 - `outputs/scores/`：Penguin与Square Deal v33的完整双路径评分，用于复现和公共收益对照。
 - `data/public/`：Penguin、Atlas、Daily三个结构供体及Square Deal v33公共对照；下载身份统一见[来源清单](../data/references/sources.json)。
 

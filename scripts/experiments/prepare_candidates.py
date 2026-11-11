@@ -16,6 +16,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+from squares.search.archive import topology_hash
 from squares.search.structure import (
     bands,
     canonical,
@@ -25,6 +26,7 @@ from squares.search.structure import (
     normalize,
     packing_hash,
     packing_signature,
+    rect_restack,
     separations,
     side_length,
     tilt,
@@ -78,6 +80,9 @@ def main() -> None:
     )
     parser.add_argument("--max-crossover-pairs", type=int, default=20)
     parser.add_argument("--cuts", type=int, default=6)
+    parser.add_argument("--rect-n", type=int, action="append", default=[])
+    parser.add_argument("--rect-tries", type=int, default=6)
+    parser.add_argument("--rect-width", type=float, default=3.0)
     parser.add_argument("--max-seconds", type=float, default=240)
     parser.add_argument("--max-dry-excess", type=float, default=0.12)
     parser.add_argument("--seed", type=int, default=20261107)
@@ -125,7 +130,14 @@ def main() -> None:
         )
     if any(not 1 <= n <= 1000 for n in args.parent_n):
         parser.error("--parent-n must be in 1..1000")
+    if any(not 1 <= n <= 1000 for n in args.rect_n):
+        parser.error("--rect-n must be in 1..1000")
+    if args.rect_tries < 0:
+        parser.error("--rect-tries must be nonnegative")
+    if not math.isfinite(args.rect_width) or args.rect_width <= 0:
+        parser.error("--rect-width must be finite and positive")
     parent_ns = set(args.parent_n)
+    rect_ns = set(args.rect_n)
     started = time.monotonic()
     out = args.output_dir
     out.mkdir(parents=True, exist_ok=True)
@@ -223,10 +235,11 @@ def main() -> None:
                         "key": key,
                         "chain_depth": depth,
                         "record_gap_score": target_gap[n],
+                        "topology_hash": topology_hash(packing),
                         **desc,
                     }
                 )
-                if not desc["two_band_eligible"]:
+                if not desc["two_band_eligible"] and not (rect_ns and n in rect_ns):
                     continue
                 operator = entry.get("parent_operator", previous.get("operator"))
                 parents.append(
@@ -245,6 +258,7 @@ def main() -> None:
                             "source_array_sha256": source_array_hash,
                             "source_reported_state_sha256": entry.get("state_sha256"),
                             "geometry_signature": signature,
+                            "topology_hash": topology_hash(packing),
                             "parent_candidate": entry.get("parent_candidate"),
                             "parent_operator": operator,
                             "ancestry": entry.get("ancestry", previous.get("parents", [])),
@@ -270,9 +284,15 @@ def main() -> None:
                 continue
             seen_states.add(signature)
             desc = describe_structure(packing)
-            route = {"source": str(path), "n": n, "record_gap_score": target_gap.get(n, 0), **desc}
+            route = {
+                "source": str(path),
+                "n": n,
+                "record_gap_score": target_gap.get(n, 0),
+                "topology_hash": topology_hash(packing),
+                **desc,
+            }
             routes.append(route)
-            if desc["two_band_eligible"]:
+            if desc["two_band_eligible"] or (rect_ns and n in rect_ns):
                 lineage = baseline_lineage.get(str(n), {}) if path == args.baseline else {}
                 parents.append(
                     {
@@ -289,6 +309,7 @@ def main() -> None:
                             "baseline_lineage": lineage or None,
                             "state_sha256": state_hash,
                             "geometry_signature": signature,
+                            "topology_hash": topology_hash(packing),
                         },
                         "description": desc,
                         "gap": target_gap.get(n, 0),
@@ -354,6 +375,7 @@ def main() -> None:
                         np.ascontiguousarray(packing, dtype="<f8").tobytes()
                     ).hexdigest(),
                     "geometry_signature": signature,
+                    "topology_hash": topology_hash(packing),
                     "parameters": {
                         **parameters,
                         "chain_depth": child_depth,
@@ -382,6 +404,30 @@ def main() -> None:
             directions=directions,
         ):
             add(child, "slab_" + parameters["direction"], [parent], parameters)
+        if not parent["description"]["two_band_eligible"] and (
+            not rect_ns or parent["meta"]["n"] in rect_ns
+        ):
+            fracs = np.linspace(0.3, 0.7, max(1, args.rect_tries)).tolist()
+            for k in range(args.rect_tries):
+                if time.monotonic() - started > args.max_seconds:
+                    break
+                axis = k % 2
+                frac = fracs[k % len(fracs)]
+                child = rect_restack(
+                    parent["packing"],
+                    axis=axis,
+                    frac=float(frac),
+                    width=args.rect_width,
+                    seed=int(args.seed) + k,
+                )
+                if child is None:
+                    continue
+                add(
+                    child,
+                    "rect_restack",
+                    [parent],
+                    {"axis": axis, "frac": float(frac), "width": args.rect_width},
+                )
         print(
             json.dumps(
                 {
@@ -453,7 +499,7 @@ def main() -> None:
         metadata.append({"id": key, "key": key, **meta})
     np.savez_compressed(out / "candidates.npz", **arrays)
     manifest = {
-        "schema_version": 1,
+        "schema_version": 2,
         "angles": "radians",
         "seed": args.seed,
         "baseline": {
@@ -471,6 +517,10 @@ def main() -> None:
         "child_deduplication": (
             "normalized centers, square-periodic angles, row-order independent, "
             "rounded to 1e-12; original full-precision state retained"
+        ),
+        "topology": (
+            "WL(2) contact-graph hash (tilt bin + band id, sep<=1e-7 edges); "
+            "per-n cap 4-8, same topology <=2, see src/squares/search/archive.py"
         ),
         "candidates": metadata,
         "eligible_parents": len(parents),
