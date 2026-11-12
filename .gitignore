@@ -89,6 +89,16 @@ outputs/submissions/v124_plus_daily44_public2_penguin_ga_nilan_n910_20261111/*
 !outputs/submissions/v124_plus_daily44_public2_penguin_ga_nilan_n910_20261111/validation/
 outputs/submissions/v124_plus_daily44_public2_penguin_ga_nilan_n910_20261111/validation/*
 !outputs/submissions/v124_plus_daily44_public2_penguin_ga_nilan_n910_20261111/validation/report.json
+!outputs/submissions/public_update_1112_20261112/
+outputs/submissions/public_update_1112_20261112/*
+!outputs/submissions/public_update_1112_20261112/submission.csv
+!outputs/submissions/public_update_1112_20261112/report.json
+!outputs/submissions/public_update_1112_20261112/provenance.json
+!outputs/submissions/public_update_1112_20261112/merge_report.json
+!outputs/submissions/public_update_1112_20261112/baseline_lineage.json
+!outputs/submissions/public_update_1112_20261112/validation/
+outputs/submissions/public_update_1112_20261112/validation/*
+!outputs/submissions/public_update_1112_20261112/validation/report.json
 !outputs/experiments/
 outputs/experiments/*
 !outputs/experiments/pilot01/

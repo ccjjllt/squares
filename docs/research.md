@@ -21,9 +21,10 @@
 | 58239472（public2 + penguin 认证联合，25 题，净 `0.000398183`） | 22.194152，COMPLETE（本地 22.1941518482，排名 103/1942） |
 | **58241961（public2+penguin + grennwolf GA，5 题，净 `0.000646850`）** | **22.193505，COMPLETE（本地 22.1935049984，排名 100/1942）** |
 | **58242719（GA 合并 + nilanjan/atlas 15:15，10 题，净 `0.000451864`）** | **22.193053，COMPLETE（本地 22.1930531344，排名 97/1942）** |
-| 58243251（+ evand n=910，净 `7.5e-8`） | 本地 22.1930530593，双路径 1000 有效，提交待评（低于六位显示精度） |
+| 58243251（+ evand n=910，净 `7.5e-8`） | 本地 22.1930530593，双路径 1000 有效（低于六位显示精度） |
+| **58256528（公开更新：atlas 22:50 + prvsiyan 22:05 + GA 20:23，75+4 题，净 `0.0007196`）** | **本地 22.1923334334，双路径 1000 有效，提交待评** |
 
-当前文件：`outputs/submissions/v124_plus_daily44_public2_penguin_ga_nilan_n910_20261111/submission.csv`，SHA-256 `fb647c7e389338bd47d213ec381f4ac676e24595dbc2c58a09b021a6a3474ade`，500,500 行、1,000 题，文本 / float64 双路径同分且全部有效。相对 58239472 的官方 22.194152 累计下降 `0.001098941`（GA 5 题 + nilanjan/atlas 10 题 + evand n=910）；相对旧归档累计下降约 `0.039170`。官方榜 2026-11-11T15:45Z 快照确认 22.193053、排名 97/1942。
+当前文件：`outputs/submissions/public_update_1112_20261112/submission.csv`，SHA-256 `0cde0d2b3f575e8dd88531060d5678f4a152ece692f60c25a9ea87a2e435d079`，500,500 行、1,000 题，文本 / float64 双路径同分且全部有效。相对 58239472 的官方 22.194152 累计下降 `0.0018187`（GA 5 题 + nilanjan/atlas 10 题 + evand n=910 + 11-12 公开更新 79 题）；相对旧归档累计下降约 `0.03989`。2026-11-12 凌晨公开源继续更新（atlas 22:50、prvsiyan 22:05、grennwolf GA 20:23），当前本地 22.1923334334 已提交 58256528 待评。
 
 - [当前基线来源与官方回执](../outputs/submissions/v124_plus_daily44_public2_penguin_ga_nilan_20261111/provenance.json)
 - [合并报告](../outputs/submissions/v124_plus_daily44_public2_penguin_ga_nilan_20261111/merge_report.json)

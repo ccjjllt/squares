@@ -1,0 +1,59 @@
+{
+  "competition": "squares-in-squares",
+  "account": "ccjjllt",
+  "baseline": {
+    "path": "outputs/submissions/v124_plus_daily44_public2_penguin_ga_nilan_n910_20261111/submission.csv",
+    "score": 22.193053059279052,
+    "sha256": "fb647c7e389338bd47d213ec381f4ac676e24595dbc2c58a09b021a6a3474ade"
+  },
+  "candidates": [
+    {
+      "name": "malyshevdanil/squares-in-squares-living-atlas-of-tight-packings",
+      "last_run": "2026-11-11T22:50:08Z",
+      "submission_sha256": "88567c3b023cf62b423ebdac28e765e59443a6c3b15bb2937096ad520fe793f4",
+      "score": 22.192553245735,
+      "wins": 75
+    },
+    {
+      "name": "nilanjansaha123/squares-gpu-seam-dp-soft-rigid-highs",
+      "last_run": "2026-11-11T19:48:22Z",
+      "submission_sha256": "7112d2a33d1678e400d298e068364957342ca84896c035b587379e355c18ae36",
+      "score": 22.192821520774,
+      "wins": 39,
+      "note": "no improvement beyond the 22:50 atlas"
+    },
+    {
+      "name": "prvsiyan/squares-verified-best-of-1105",
+      "updated": "2026-11-11T22:05:14Z",
+      "submission_sha256": "dd6142b970729e84e125d77d7c1e90b51cd99c71ba95462944ed9c4c633853b0",
+      "score": 22.192599174941,
+      "wins": 85,
+      "note": "only +8.0e-10 beyond atlas"
+    },
+    {
+      "name": "grennwolf/squares-in-squares-top-1-santa-2025",
+      "session_id": 368566131,
+      "last_run": "2026-11-11T20:23:47Z",
+      "file": "submission_improved.csv",
+      "submission_sha256": "23d16a18b7a0273f4b4d94d01c39341af82a219536eed282a8c06009759a52eb",
+      "score": 22.192530053596,
+      "winning_puzzles": [497, 546, 590, 645]
+    }
+  ],
+  "chain": [
+    { "step": "atlas 22:50", "net_gain": 0.0004998974160743686, "score": 22.19255316186298 },
+    { "step": "nilanjan 19:48", "net_gain": 4.440892098500626e-16, "score": 22.19255316186298 },
+    { "step": "prvsiyan 22:05", "net_gain": 8.009728436064734e-10, "score": 22.192553161062005 },
+    { "step": "grennwolf GA 20:23", "net_gain": 0.0002197276562601047, "score": 22.192333433405746 }
+  ],
+  "merged_score": 22.192333433405746,
+  "merged_sha256": "0cde0d2b3f575e8dd88531060d5678f4a152ece692f60c25a9ea87a2e435d079",
+  "validation": "text == float64; 1000/1000 valid; independent full rescore via vendored official v20 metric",
+  "submission_ref": 58256528,
+  "submission_status": "PENDING",
+  "official_public_score": null,
+  "previous_official_score": 22.193053,
+  "local_gain_over_previous_official": 0.0007196,
+  "prepared_at": "2026-11-12T09:25:00+08:00",
+  "notes": "Public frontier refresh after the 2026-11-11 evening updates. The 22:50 atlas supersedes the 15:15 nilanjan/atlas pair; prvsiyan's verified best-of adds only 8e-10; the 20:23 grennwolf GA run adds four unique wins (497/546/590/645). The stale cshara 'current best' dataset scores 22.294985 and contributed nothing."
+}
