@@ -189,3 +189,10 @@
 
 - 所有 merge 都走 `squares merge` 的 text/float64 双路径认证；自动提交只提交认证后的 1000 题完整文件。
 - 每日额度 5 次：00:01 用 1 次，frontier 自动最多 3 次，留 1 次手动余量。
+
+### 2026-11-12 20:42 UTC contact polish round3（fresh triage，显著）
+
+- `qingyu1232/sis-polish3-20261113`（fresh triage 全 1000 题 → top-64 open × 600 s，4 workers）完成：**57 题改进、净 `1.0792e-4`**，远高于 round1 的 `5.21e-5`。
+- 最大收益：543（`3.35e-5`）、549（`2.12e-5`）、497（`1.70e-5`）、453（`1.58e-5`）、645（`9.9e-6`）、747（`4.3e-6`）、651（`4.0e-6`）。
+- 合并后本地 **22.173101430589412**（`outputs/submissions/candidate_1112i_20261112/`），独立 `squares score --mode both` 复核：text/float64 同分、1000 有效；已更新 `staged_latest`，00:01 UTC 自动提交将使用该文件。
+- 立即启动 round4：`qingyu1232/sis-polish4-20261113`（以 candidate i 为基座，fresh triage top-64 open × 420 s），watcher 自动下载、逐文件 merge、只在新分更低时覆盖暂存；预计 23:00 UTC 前完成，可赶上 00:01 提交。
