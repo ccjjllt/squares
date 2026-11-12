@@ -148,3 +148,10 @@
   - `ccjjllt` 的 private dataset 不能被 qingyu1232 kernel 挂载；跨账号用“把输入内嵌进 kernel”或改用 qingyu1232 自己的 dataset。
   - MCP 的 kernel 读接口对 ccjjllt 私有 kernel 一直 `Permission 'kernels.get' denied`，不要再依赖它取输出。
 - 已在 qingyu1232 下验证 dataset 创建可用（`qingyu1232/sis-qytest-20261113`）；后续重计算 campaign 统一用 qingyu1232 dataset + kernel，结果下载后本机认证合并。
+
+### 2026-11-13 近平方族结构化重优化：0 胜（停止方向）
+
+- Kaggle CPU 独立双跑（`qingyu1232/sis-nearsquare-s2-20261112` v4 与 `qingyu1232/sis-ns2-20261113`，708 s / 1337 s）对 n=626/842/902/963 做三臂搜索（生成族精确枚举 + 5 刚体 SE(2) soft-to-rigid 多起点 + contact polish），**全部 ΔL=0**，`squares merge` 净收益 0。
+- 关键证书：n=626 的当前布局恰好坐在其生成族的**容量台阶**上——精确计数 `s_min_feasible=0.520815` 与当前 L 完全相同；`s` 降 1e-3，容量从 626 掉到 602（−24 格）。15 个独立多起点（含 θ 偏离 45°、±1 换拓扑）全部收敛回同一 L，给出 5 刚体不可压证据。
+- 结论：榜首的 0.502153 属于**另一个族**；连续松弛（LP/SLP/fq/soft/polish）在这一族上必然为 0。不要再对 k²+1/k²+2 做局部/小参数优化，除非找到新的分块+矩形孔+边界 filler 族。
+- 产物：`outputs/experiments/research_20261112b/s2/report.md`（含本机误跑 103GB 记录与硬门禁）、`s2/kernel/`、`s2/runs/v2|v3|v4/`、`s2/merge_report.json`（0 胜）。
