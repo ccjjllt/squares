@@ -209,3 +209,9 @@
 - kobosh 18:47–19:51 三个 commit 只加日志/负结果（`free_band_ga`、`setpack367`、`setpack_lns`），`border-scan/merged.csv` blob 未变；jlevy HEAD 仍 `0ee1e762`。
 - 暂存保持 `13efc5fd…` = **22.17309952100155**。
 - 追加安全网：05:00 UTC 检查当日是否已有提交；若仍无，则提交暂存文件（`/tmp/fallback_submit.py`）。
+
+### 2026-11-12 23:45 UTC DNS 故障与提交加固
+
+- 23:45 终检时系统 DNS（223.5.5.5）无法解析 `api.kaggle.com`，而 8.8.8.8/1.1.1.1 正常（解析为 34.54.168.202）；storage.googleapis.com / www.kaggle.com 系统解析正常。
+- 解决：新增 `/tmp/kaggle_resolve.py`，运行时用 8.8.8.8 解析 Kaggle 三个主机并在进程内 patch `socket.getaddrinfo`，再调用 Kaggle CLI；`/tmp/kaggle_r` 为包装器。已实测 `competitions submissions` 正常。
+- 00:01 提交改用 `/tmp/auto_submit2.sh`：用包装器、从 00:00:40 开始每 60 s 重试最多 20 次；auto_frontier 与 fallback 也已切到包装器。旧脚本已 kill（PID 4141）。
