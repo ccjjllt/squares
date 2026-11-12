@@ -176,3 +176,15 @@
 - 卡死证据：971/910/908 接触数 2400–2880 = 1.34–1.49× 等静定 `2n−3`，中位自由位移 1e-11…1e-14，>2/3 方块完全卡死；整体收缩上界对应 ΔL：971 9.8e-11、910 1.9e-13、972 2.3e-13、908 2.1e-13、911 0。
 - 结论：剩余 0.028–0.035（合计 score ≈0.0051）不是同一参数化的局部变形；要追需换块划分/换构造（非对称主块 + L 形左下块 + 不同缺口切法）。优先级低于公开前沿合并与 GPU GA。
 - 产物：`outputs/experiments/research_20261112b/bands/report.md`、`bands/kernel_v1..v4/`、`bands/evidence/`。
+
+### 自动任务队列（2026-11-13）
+
+| 时间（UTC） | 脚本 | 动作 |
+| --- | --- | --- |
+| 00:01:30 | `/tmp/auto_submit.sh` | 提交 `staged_latest`（当前 candidate h，22.1732093524），失败重试 3 次 |
+| kernel 完成后 | `/tmp/watch_polish3.sh` | 下载 `sis-polish3` 输出，逐文件 `squares merge`，只在新分更低时覆盖 `staged_latest` |
+| 04:10 | `/tmp/auto_frontier.py` | 扫 JoeGun/jazivxt 新 run；有 wins 则 merge + 提交（用当日剩余额度） |
+| 11:30 / 15:30 | 同上 | 同上 |
+
+- 所有 merge 都走 `squares merge` 的 text/float64 双路径认证；自动提交只提交认证后的 1000 题完整文件。
+- 每日额度 5 次：00:01 用 1 次，frontier 自动最多 3 次，留 1 次手动余量。
