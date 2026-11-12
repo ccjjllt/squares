@@ -23,8 +23,16 @@
 | **58242719（GA 合并 + nilanjan/atlas 15:15，10 题，净 `0.000451864`）** | **22.193053，COMPLETE（本地 22.1930531344，排名 97/1942）** |
 | 58243251（+ evand n=910，净 `7.5e-8`） | 本地 22.1930530593，双路径 1000 有效（低于六位显示精度） |
 | **58256528（公开更新：atlas 22:50 + prvsiyan 22:05 + GA 20:23，75+4 题，净 `0.0007196`）** | **22.1923334334，COMPLETE（排名 129/1958）** |
+| **58258750（自研 GA 3 题 + jazivxt boxed-in-sub 11 题，净 `0.0006170`）** | **22.1917164423，COMPLETE（本地精确一致）** |
 
-当前文件：`outputs/submissions/public_update_1112_20261112/submission.csv`，SHA-256 `0cde0d2b3f575e8dd88531060d5678f4a152ece692f60c25a9ea87a2e435d079`，500,500 行、1,000 题，文本 / float64 双路径同分且全部有效。相对 58239472 的官方 22.194152 累计下降 `0.0018187`（GA 5 题 + nilanjan/atlas 10 题 + evand n=910 + 11-12 公开更新 79 题）；相对旧归档累计下降约 `0.03989`。2026-11-12 凌晨公开源继续更新（atlas 22:50、prvsiyan 22:05、grennwolf GA 20:23），当前官方 22.1923334334（提交 58256528，排名 129/1958），与本地精确一致。
+当前文件：`outputs/submissions/public_update_1112_20261112/submission.csv`，SHA-256 `0cde0d2b3f575e8dd88531060d5678f4a152ece692f60c25a9ea87a2e435d079`，500,500 行、1,000 题，文本 / float64 双路径同分且全部有效。相对 58239472 的官方 22.194152 累计下降 `0.0018187`（GA 5 题 + nilanjan/atlas 10 题 + evand n=910 + 11-12 公开更新 79 题）；相对旧归档累计下降约 `0.03989`。2026-11-12 凌晨公开源继续更新（atlas 22:50、prvsiyan 22:05、grennwolf GA 20:23），当前官方 **22.1917164423**（提交 58258750），与本地精确一致；2026-11-12 新增主办方逐题榜快照 `data/references/leaderboards/perpuzzle_best_20261111.csv`。
+
+### 2026-11-12 状态
+
+- 主办方逐题榜最新快照（2026-11-11 13:54 UTC 抓取，`data/references/leaderboards/perpuzzle_best_20261111.csv`）：411 题落后，合计 `0.140833`；全部追平对应总分 `22.050884`。其中 337 题的逐题纪录由 “Cats and boxes” 持有。
+- 刚性族诊断：把每题 `f = L - floor(sqrt(n))` 按 1e-6 聚类，20 个“重复 f 族”覆盖了 279 个实质差距中的 96 个、合计 `0.05195`。这些题的当前布局是共享同一刚性构件（如 `f=0.535534`、`0.707107`、`0.727922`），而对手在同一族内用了更优构件。优先攻族而不是逐题。
+- 自研 GA（grennwolf Santa-2025 岛式 GA，2×T4）已于 2026-11-11 13:54–14:58 跑到 3 题（453/549/640，`1.143e-4`）；2026-11-12 03:00 UTC 起再开两个 7 小时定向 run（A：主办方榜动态排序；B：新榜前 100 题固定表），预计 09:30 UTC 完成。
+- 公开前沿：atlas 02:28 新版、jazivxt 02:10、alexchilton 数据集 22:34 与 lucifer19/uneon/mzishran/keshigami 输出均已逐题比较，仅 jazivxt 胜出 11 题（`5.027e-4`）。
 
 - [当前基线来源与官方回执](../outputs/submissions/v124_plus_daily44_public2_penguin_ga_nilan_20261111/provenance.json)
 - [合并报告](../outputs/submissions/v124_plus_daily44_public2_penguin_ga_nilan_20261111/merge_report.json)
