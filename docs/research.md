@@ -155,3 +155,10 @@
 - 关键证书：n=626 的当前布局恰好坐在其生成族的**容量台阶**上——精确计数 `s_min_feasible=0.520815` 与当前 L 完全相同；`s` 降 1e-3，容量从 626 掉到 602（−24 格）。15 个独立多起点（含 θ 偏离 45°、±1 换拓扑）全部收敛回同一 L，给出 5 刚体不可压证据。
 - 结论：榜首的 0.502153 属于**另一个族**；连续松弛（LP/SLP/fq/soft/polish）在这一族上必然为 0。不要再对 k²+1/k²+2 做局部/小参数优化，除非找到新的分块+矩形孔+边界 filler 族。
 - 产物：`outputs/experiments/research_20261112b/s2/report.md`（含本机误跑 103GB 记录与硬门禁）、`s2/kernel/`、`s2/runs/v2|v3|v4/`、`s2/merge_report.json`（0 胜）。
+
+### 2026-11-12 18:25 UTC 候选更新（koboshchan PR union）
+
+- 前线监控从 koboshchan 新 commit/PR union 逐题认证 **126 题微缩**，净 `7.9189e-5`。
+- 合并后本地 **22.17320935237965**（`outputs/submissions/candidate_1112h_20261112/`），独立 `squares score --mode both` 复核：text/float64 同分、1000 有效、0 invalid、0 missing（147 s）。
+- 官方 22.1757729367 → 候选 22.1732093524，提升 `2.5636e-3`；对照公开榜约从 89 名升到 66 名。待 00:00 UTC 提交。
+- 同轮 polish3（Kaggle CPU，64 个 open 题 × 600 s）仍在跑，预计 21:00 UTC 前出结果。
