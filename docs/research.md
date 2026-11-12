@@ -202,3 +202,10 @@
 - `qingyu1232/sis-polish4-20261113`（以 candidate i 为基座，fresh triage top-64 open × 420 s）完成：47 题仅净 `1.9096e-6`；round3 是 `1.0792e-4`，边际下降两个数量级。
 - 当前本地最佳 **22.17309952100155**（`outputs/submissions/candidate_1112j_20261112/`，独立双路径 1000 有效），已更新 `staged_latest`，00:01 UTC 自动提交使用该文件。
 - 结论：contact polish 在当前前沿上已饱和，后续不再重复短周期 polish；除非公开前沿出现新供体改变接触图。
+
+### 2026-11-12 23:34 UTC 提交前终检：0 胜，暂存不变
+
+- 扫描 18:45 UTC 后 7 个新 kernel run + 数据集 + kobosh/jlevy HEAD：5 个可比较输出都是同一公开 union（总 L≈21461.6620），对暂存 **21461.5874** 逐题 0 胜；penguin069 20:10 与 grennwolf 22:08 ERROR 无输出。
+- kobosh 18:47–19:51 三个 commit 只加日志/负结果（`free_band_ga`、`setpack367`、`setpack_lns`），`border-scan/merged.csv` blob 未变；jlevy HEAD 仍 `0ee1e762`。
+- 暂存保持 `13efc5fd…` = **22.17309952100155**。
+- 追加安全网：05:00 UTC 检查当日是否已有提交；若仍无，则提交暂存文件（`/tmp/fallback_submit.py`）。
