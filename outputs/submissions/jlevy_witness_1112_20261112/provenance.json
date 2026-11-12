@@ -3,8 +3,8 @@
   "archived_at": "2026-11-12T04:20:00Z",
   "competition": "squares-in-squares",
   "submission_ref": 58260286,
-  "official_public_score": null,
-  "status": "PENDING",
+  "official_public_score": 22.1899791624,
+  "status": "COMPLETE",
   "team": "ccjjllt",
   "file": {
     "path": "outputs/submissions/jlevy_witness_1112_20261112/submission.csv",
