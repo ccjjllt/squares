@@ -65,5 +65,15 @@
     "float64_valid": 1000,
     "routes_equal": true
   },
-  "notes": "Merged per complete n group; both official scoring routes improve; local score equals the official public score to all reported digits."
+  "notes": "Merged per complete n group; both official scoring routes improve; local score equals the official public score to all reported digits. Independent re-score with the vendored official v20 metric gives 22.19171644233085 on both routes, 1000/1000 valid.",
+  "official_rank": 118,
+  "leaderboard_checked_at": "2026-11-12T03:41:00Z",
+  "leaderboard_teams": 1959,
+  "independent_verification": {
+    "cmd": "python -m squares score --mode both",
+    "score_both": 22.19171644233085,
+    "valid_text": 1000,
+    "valid_float64": 1000,
+    "elapsed_s": 288.2
+  }
 }
