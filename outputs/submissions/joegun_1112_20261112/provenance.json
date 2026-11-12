@@ -3,8 +3,8 @@
   "archived_at": "2026-11-12T05:15:00Z",
   "competition": "squares-in-squares",
   "submission_ref": 58260715,
-  "official_public_score": null,
-  "status": "PENDING",
+  "official_public_score": 22.177110528,
+  "status": "COMPLETE",
   "team": "ccjjllt",
   "file": {
     "path": "outputs/submissions/joegun_1112_20261112/submission.csv",
@@ -181,5 +181,8 @@
     "float64_valid": 1000,
     "routes_equal": true
   },
-  "notes": "136 complete n groups improved, +0.012868634; both official routes identical."
+  "notes": "136 complete n groups improved, +0.012868634; both official routes identical.",
+  "official_rank": 52,
+  "leaderboard_teams": 1961,
+  "leaderboard_checked_at": "2026-11-12T04:47:00Z"
 }
