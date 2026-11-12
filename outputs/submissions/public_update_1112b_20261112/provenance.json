@@ -1,0 +1,69 @@
+{
+  "schema": "squares-provenance/1",
+  "archived_at": "2026-11-12T03:13:54.443690+00:00",
+  "competition": "squares-in-squares",
+  "submission_ref": 58258750,
+  "official_public_score": 22.1917164423,
+  "status": "COMPLETE",
+  "team": "ccjjllt",
+  "file": {
+    "path": "outputs/submissions/public_update_1112b_20261112/submission.csv",
+    "sha256": "aa169b91b0176c34a4e5da85c5cc61c44a4bbc0fc0d9130ac00ed2cd508ab2de",
+    "bytes": 26067551
+  },
+  "baseline": {
+    "path": "outputs/submissions/public_update_1112_20261112/submission.csv",
+    "sha256": "0cde0d2b3f575e8dd88531060d5678f4a152ece692f60c25a9ea87a2e435d079",
+    "official": 22.1923334334
+  },
+  "sources": [
+    {
+      "name": "own GA run (grennwolf Santa-2025 island GA, 2xT4, 2026-11-11 13:54-14:58)",
+      "kernel": "ccjjllt/sis-ga-targeted-top-gaps-20261111",
+      "candidate_sha256": "e5ebec562e1e2b8fcd8b3be732599e50ad0c3742767e2b124433a36d753da2f1",
+      "wins": [
+        453,
+        549,
+        640
+      ],
+      "net_gain": 0.00011427329669966291
+    },
+    {
+      "name": "jazivxt/boxed-in-sub 2026-11-12 02:10 UTC",
+      "kernel": "jazivxt/boxed-in-sub",
+      "candidate_sha256": "87b72154e50297d010a63c978bb12aad7749e483c015c0974b892718df51c256",
+      "wins": [
+        374,
+        542,
+        707,
+        553,
+        497,
+        590,
+        546,
+        924,
+        644
+      ],
+      "net_gain": 0.0005027177781966596
+    }
+  ],
+  "merge": {
+    "net_gain": {
+      "text": 0.0005027177781966596,
+      "float64": 0.0005027177781962155
+    },
+    "score": {
+      "text": 22.19171644233085,
+      "float64": 22.19171644233085
+    },
+    "winning_n": null,
+    "changed_puzzles_count": 85
+  },
+  "validation": {
+    "path": "outputs/submissions/public_update_1112b_20261112/validation/report.json",
+    "puzzles": 1000,
+    "text_valid": 1000,
+    "float64_valid": 1000,
+    "routes_equal": true
+  },
+  "notes": "Merged per complete n group; both official scoring routes improve; local score equals the official public score to all reported digits."
+}
