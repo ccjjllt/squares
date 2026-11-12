@@ -183,6 +183,7 @@
 | --- | --- | --- |
 | 00:01:30 | `/tmp/auto_submit.sh` | 提交 `staged_latest`（当前 candidate h，22.1732093524），失败重试 3 次 |
 | kernel 完成后 | `/tmp/watch_polish3.sh` | 下载 `sis-polish3` 输出，逐文件 `squares merge`，只在新分更低时覆盖 `staged_latest` |
+| 23:45（11-12） | `/tmp/final_check.sh` | 终检 JoeGun/jazivxt 新 run，只 merge 更新 `staged_latest`，不提交（给 00:01 用） |
 | 04:10 | `/tmp/auto_frontier.py` | 扫 JoeGun/jazivxt 新 run；有 wins 则 merge + 提交（用当日剩余额度） |
 | 11:30 / 15:30 | 同上 | 同上 |
 
