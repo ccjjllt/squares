@@ -162,3 +162,9 @@
 - 合并后本地 **22.17320935237965**（`outputs/submissions/candidate_1112h_20261112/`），独立 `squares score --mode both` 复核：text/float64 同分、1000 有效、0 invalid、0 missing（147 s）。
 - 官方 22.1757729367 → 候选 22.1732093524，提升 `2.5636e-3`；对照公开榜约从 89 名升到 66 名。待 00:00 UTC 提交。
 - 同轮 polish3（Kaggle CPU，64 个 open 题 × 600 s）仍在跑，预计 21:00 UTC 前出结果。
+
+### 提交自动化（2026-11-13 00:01 UTC）
+
+- 暂存路径：`outputs/submissions/staged_latest/submission.csv`（当前 = candidate h，sha `6dcabf79…`，22.1732093524）。
+- 已启动后台脚本 `/tmp/auto_submit.sh`：等待到 2026-11-13 00:01:30 UTC，用 qingyu1232 团队账号 `kaggle competitions submit` 提交暂存文件，失败重试 3 次，日志 `/tmp/auto_submit.log`。00:00 前的任何新收益只需覆盖暂存文件即可被自动提交。
+- 当前官方 22.1757729367（89 名）；候选 h 对照公开榜约 67 名。
