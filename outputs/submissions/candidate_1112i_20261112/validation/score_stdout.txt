@@ -1,0 +1,24 @@
+Scoring n=1..1000, modes=text,float64
+{
+  "scope": {
+    "min_n": 1,
+    "max_n": 1000,
+    "full_competition": true
+  },
+  "runs": {
+    "text": {
+      "score": 22.173101430589412,
+      "valid": 1000,
+      "invalid_submitted": 0,
+      "missing": 0
+    },
+    "float64": {
+      "score": 22.173101430589412,
+      "valid": 1000,
+      "invalid_submitted": 0,
+      "missing": 0
+    }
+  },
+  "report": "outputs/scores/submission/report.json",
+  "elapsed_seconds": 146.75222845794633
+}

@@ -1,0 +1,143 @@
+{
+  "schema": "squares-provenance/1",
+  "archived_at": "2026-11-12T20:50:00Z",
+  "competition": "squares-in-squares",
+  "submission_ref": null,
+  "official_public_score": null,
+  "status": "CANDIDATE_NOT_SUBMITTED",
+  "team": "ccjjllt",
+  "file": {
+    "path": "outputs/submissions/candidate_1112i_20261112/submission.csv",
+    "sha256": "2baa5c3a0a9f24b78052180936a7cb7e8813a4217d2f654b0d9b9c05d1a23a9c",
+    "bytes": 26115224
+  },
+  "baseline": {
+    "path": "outputs/submissions/candidate_1112h_20261112/submission.csv",
+    "sha256": "6dcabf790d20bd88f1202a99906c7d36aa1fa2a179c3da7b8751725fb7f768e5",
+    "local": 22.17320935237965
+  },
+  "sources": [
+    {
+      "name": "contact polish round3 (Kaggle CPU qingyu1232/sis-polish3-20261113, fresh triage top-64 open x 600s)",
+      "wins_count": 57,
+      "net_gain": 0.00010792179023864194,
+      "top": [
+        [
+          543,
+          0.0007802238639698089,
+          3.3482610805459436e-05
+        ],
+        [
+          549,
+          0.000497426710648341,
+          2.1229654675565674e-05
+        ],
+        [
+          497,
+          0.00037928233345851936,
+          1.7013137808648212e-05
+        ],
+        [
+          453,
+          0.00033719497973194734,
+          1.584280216621311e-05
+        ],
+        [
+          645,
+          0.0002517409520415015,
+          9.912290306667844e-06
+        ],
+        [
+          747,
+          0.00011808998004170235,
+          4.32068642382492e-06
+        ],
+        [
+          651,
+          0.00010284563521523182,
+          4.030838245683409e-06
+        ],
+        [
+          587,
+          4.164049881438814e-05,
+          1.7186873192590045e-06
+        ]
+      ]
+    }
+  ],
+  "merge": {
+    "net_gain_vs_baseline": 0.00010792179023864194,
+    "score": {
+      "text": 22.173101430589412,
+      "float64": 22.173101430589412
+    },
+    "changed_puzzles": [
+      543,
+      549,
+      497,
+      453,
+      645,
+      747,
+      651,
+      587,
+      800,
+      862,
+      507,
+      936,
+      738,
+      598,
+      912,
+      809,
+      983,
+      459,
+      997,
+      970,
+      508,
+      865,
+      873,
+      989,
+      910,
+      922,
+      971,
+      642,
+      697,
+      875,
+      978,
+      990,
+      814,
+      981,
+      996,
+      864,
+      868,
+      604,
+      694,
+      421,
+      816,
+      505,
+      420,
+      550,
+      463,
+      504,
+      644,
+      988,
+      744,
+      874,
+      761,
+      703,
+      464,
+      510,
+      905,
+      966,
+      696
+    ]
+  },
+  "validation": {
+    "path": "outputs/submissions/candidate_1112i_20261112/validation/report.json",
+    "puzzles": 1000,
+    "text_valid": 1000,
+    "float64_valid": 1000,
+    "routes_equal": true,
+    "elapsed_seconds": 146.8
+  },
+  "notes": "Polish round3 merged 4 shard CSVs sequentially into candidate h; independent score confirms 22.1731014306. Auto-submit at 00:01 UTC uses this file."
+}
