@@ -1,0 +1,131 @@
+{
+  "schema": "squares-provenance/1",
+  "archived_at": "2026-11-12T22:30:00Z",
+  "competition": "squares-in-squares",
+  "submission_ref": null,
+  "official_public_score": null,
+  "status": "CANDIDATE_NOT_SUBMITTED",
+  "team": "ccjjllt",
+  "file": {
+    "path": "outputs/submissions/candidate_1112j_20261112/submission.csv",
+    "sha256": "13efc5fd57dc77cef776a941e6eecaf4da1434b273d14669a67d13dc40730f6b",
+    "bytes": 26007900
+  },
+  "baseline": {
+    "path": "outputs/submissions/candidate_1112i_20261112/submission.csv",
+    "sha256": "2baa5c3a0a9f24b78052180936a7cb7e8813a4217d2f654b0d9b9c05d1a23a9c",
+    "local": 22.173101430589412
+  },
+  "sources": [
+    {
+      "name": "contact polish round4 (Kaggle CPU qingyu1232/sis-polish4-20261113, top-64 open x 420s)",
+      "wins_count": 47,
+      "net_gain": 1.909587863810008e-06,
+      "top": [
+        [
+          587,
+          1.6246833215660672e-05,
+          6.705785718451484e-07
+        ],
+        [
+          645,
+          1.182504016128405e-05,
+          4.65610501653026e-07
+        ],
+        [
+          747,
+          1.2475689366908682e-05,
+          4.5646160373999333e-07
+        ],
+        [
+          549,
+          6.917841581355333e-06,
+          2.952462839822627e-07
+        ],
+        [
+          800,
+          3.138111210887473e-07,
+          1.10948985866803e-08
+        ],
+        [
+          453,
+          5.615694576022179e-08,
+          2.638483475184614e-09
+        ],
+        [
+          862,
+          6.96091433383117e-08,
+          2.3708968307885487e-09
+        ],
+        [
+          739,
+          4.9990930506282893e-08,
+          1.8389461052248168e-09
+        ]
+      ]
+    }
+  ],
+  "merge": {
+    "score": {
+      "text": 22.17309952100155,
+      "float64": 22.17309952100155
+    },
+    "changed_puzzles": [
+      587,
+      645,
+      747,
+      549,
+      800,
+      453,
+      862,
+      739,
+      740,
+      936,
+      997,
+      970,
+      595,
+      508,
+      459,
+      809,
+      502,
+      689,
+      983,
+      738,
+      912,
+      914,
+      989,
+      535,
+      934,
+      910,
+      869,
+      868,
+      742,
+      981,
+      969,
+      687,
+      873,
+      791,
+      810,
+      908,
+      928,
+      602,
+      640,
+      990,
+      374,
+      237,
+      156,
+      269,
+      180,
+      597,
+      370
+    ]
+  },
+  "validation": {
+    "path": "outputs/submissions/candidate_1112j_20261112/validation/report.json",
+    "puzzles": 1000,
+    "text_valid": 1000,
+    "float64_valid": 1000,
+    "routes_equal": true
+  },
+  "notes": "Polish saturation: round3 +1.079e-4, round4 +1.91e-6. Auto-submit 00:01 UTC uses this file."
+}
