@@ -139,3 +139,12 @@
 - `data/public/`：Penguin、Atlas、Daily三个结构供体及Square Deal v33公共对照；下载身份统一见[来源清单](../data/references/sources.json)。
 
 原始回执、谱系和运行清单中的历史路径保持其记录语义，其中部分临时文件已删除；它们不是当前运行入口。清理前的实验摘要、删除清单和文件哈希集中记录在[清理记录](../data/references/cleanup_20261109.json)。没有将废弃产物搬进新的归档目录。
+
+### 2026-11-13 本机误跑与 Kaggle 执行纪律（重要）
+
+- 2026-11-12 深夜 `near_square_s2.py` 在本机 Mac 误跑，峰值内存 **103 GB**；已 kill PID 90859/91262 及父 shell，并在脚本头部加硬保护：非 `/kaggle/input` 环境且未显式 `S2_ALLOW_LOCAL=1` 时直接退出。后续所有优化/搜索/批量验证一律在 Kaggle 运行，本机只做编排、下载、`squares merge/score` 认证。
+- Kaggle CLI 当前 `~/.kaggle/access_token` 属于 **qingyu1232**（团队账号）；`ccjjllt` 的提交走 MCP。实测：
+  - `qingyu1232` 的 dataset/kernel 创建、push、status、output 均正常（用 `KAGGLE_CONFIG_DIR=/tmp/kg_qingyu1232`）。
+  - `ccjjllt` 的 private dataset 不能被 qingyu1232 kernel 挂载；跨账号用“把输入内嵌进 kernel”或改用 qingyu1232 自己的 dataset。
+  - MCP 的 kernel 读接口对 ccjjllt 私有 kernel 一直 `Permission 'kernels.get' denied`，不要再依赖它取输出。
+- 已在 qingyu1232 下验证 dataset 创建可用（`qingyu1232/sis-qytest-20261113`）；后续重计算 campaign 统一用 qingyu1232 dataset + kernel，结果下载后本机认证合并。
