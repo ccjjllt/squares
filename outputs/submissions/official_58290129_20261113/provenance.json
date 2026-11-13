@@ -1,0 +1,42 @@
+{
+  "schema": "squares-provenance/1",
+  "archived_at": "2026-11-13T00:59:00Z",
+  "competition": "squares-in-squares",
+  "submission_ref": 58290129,
+  "official_public_score": null,
+  "status": "PENDING",
+  "team": "ccjjllt",
+  "submitted_by": "qingyu1232 (team member)",
+  "file": {
+    "path": "outputs/submissions/official_58290129_20261113/submission.csv",
+    "sha256": "13efc5fd57dc77cef776a941e6eecaf4da1434b273d14669a67d13dc40730f6b",
+    "bytes": 26007900
+  },
+  "local_score": 22.17309952100155,
+  "baseline": {
+    "official": 22.1757729367,
+    "improvement": 0.0026734157
+  },
+  "sources": [
+    {
+      "name": "contact polish round3+4 (Kaggle CPU)",
+      "net_gain": 0.00010982
+    },
+    {
+      "name": "koboshchan pr45 union (126 puzzles)",
+      "net_gain": 7.9189e-05
+    },
+    {
+      "name": "koboshchan round1/2 + jlevy witnesses",
+      "net_gain": 0.0018631
+    }
+  ],
+  "validation": {
+    "path": "outputs/submissions/official_58290129_20261113/validation/report.json",
+    "puzzles": 1000,
+    "text_valid": 1000,
+    "float64_valid": 1000,
+    "routes_equal": true
+  },
+  "notes": "Submitted 2026-11-13 00:49 UTC via qingyu1232 (team ccjjllt) after DNS workaround; first upload attempt hung 40 min, second succeeded in 26 s."
+}
