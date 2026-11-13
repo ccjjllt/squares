@@ -216,3 +216,9 @@
 - 23:45 终检时系统 DNS（223.5.5.5）无法解析 `api.kaggle.com`，而 8.8.8.8/1.1.1.1 正常（解析为 34.54.168.202）；storage.googleapis.com / www.kaggle.com 系统解析正常。
 - 解决：新增 `/tmp/kaggle_resolve.py`，运行时用 8.8.8.8 解析 Kaggle 三个主机并在进程内 patch `socket.getaddrinfo`，再调用 Kaggle CLI；`/tmp/kaggle_r` 为包装器。已实测 `competitions submissions` 正常。
 - 00:01 提交改用 `/tmp/auto_submit2.sh`：用包装器、从 00:00:40 开始每 60 s 重试最多 20 次；auto_frontier 与 fallback 也已切到包装器。旧脚本已 kill（PID 4141）。
+
+### 2026-11-13 04:10 / 05:00 UTC 自动检查
+
+- 04:10 自动前沿检查：JoeGun 仍是 2026-11-12 09:12 版本（未更新）；jazivxt 01:56 新输出逐题 **0 胜**。未提交。
+- 05:00 fallback：检测到今日已有提交（58290129），按设计跳过。
+- 下一次自动检查：11:30 / 15:30 UTC；JoeGun 若在上午更新，会自动 merge + 提交。
