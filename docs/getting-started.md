@@ -102,12 +102,13 @@ python scripts/experiments/run_gpu_pilot.py \
 | `scripts/kaggle/` | 运行打包和账号操作 |
 | `third_party/` | 正在使用的 chains 原始摘录、CUDA 内核及来源清单 |
 | `data/public/` | Penguin v2、Atlas v79、Daily v13、Square Deal v33 固定布局 |
-| `data/references/` | 保留的来源、历史纪录及清理记录 |
-| `outputs/submissions/` | 正式提交、完整评分、来源和回执 |
-| `outputs/experiments/` | 有效主线的候选、供体、赢家及必要谱系证据 |
+| `data/references/` | 保留的来源、逐题榜快照及 2026-11-09/2026-11-13 清理记录 |
+| `outputs/submissions/` | 正式提交、当前候选、完整评分、来源和回执 |
+| `outputs/experiments/` | pilot01/02/04/08/09、抛光候选、公开前沿报告及必要谱系证据 |
+| `outputs/merged/` | 仅保留 `daily35_kirill_pilot08`、`v108_plus_p09`、`v108_plus_self`、`v124_plus_self` 四个血缘目录 |
 
 固定公开布局和最终完整CSV在本地保存，Git克隆不会自动携带；来源、评分、有效赢家和供体等小型证据列入保留范围，新实验产物默认忽略。恢复公开布局时按[来源清单](../data/references/sources.json)核对版本与哈希。最终几何与成绩可用Square Deal v33和Pilot04的`improved_groups.csv`逐题合并重建；Pilot04的旧输入可用Penguin v2和Pilot02的`improved_groups.csv`重建。
 
 正式提交的原始字节仍以保存的完整CSV为准。以v33为基线重建时，n=1的angle文本为`0`，原提交为`0.0`；其余字段一致，几何和成绩相同，但文件哈希不同。逐字节恢复需保留该原始文本并核对研究概况中的SHA-256。
 
-后续实验先将结论与停止原因更新到 `docs/research.md`，再清理被替代或无用途的中间产物。有效坐标、来源谱系和最终验证需一起保留，不再为每轮实验新建一篇独立说明。
+后续实验先将结论与停止原因更新到 `docs/research.md`，再清理被替代或无用途的中间产物。有效坐标、来源谱系和最终验证需一起保留，不再为每轮实验新建一篇独立说明。2026-11-13 已按此约定删除停止方向的专用文档、脚本、原始下载和中间合并，释放 5.41 GiB；具体路径与保留证据见[清理记录](../data/references/cleanup_20261113.json)。

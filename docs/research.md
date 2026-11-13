@@ -1,6 +1,6 @@
 # 研究概况与取舍
 
-整理日期：2026-11-11（北京时间）；实验与正式成绩截至 2026-11-11 晚间。本页是唯一研究状态入口，取代历史计划、公开前沿快照和逐轮长文。这里的“停止”是当前资源取舍，不是数学不可行或算法无效的证明。已放弃路线只留本页简述，不保留文档、脚本与中间产物。
+整理日期：2026-11-13（北京时间）；实验与正式成绩截至 2026-11-13 05:00 UTC。本页是唯一研究状态入口，取代历史计划、公开前沿快照和逐轮长文。这里的“停止”是当前资源取舍，不是数学不可行或算法无效的证明。已放弃路线只留本页简述，不保留文档、脚本与中间产物；2026-11-13 的清理范围见[清理记录](../data/references/cleanup_20261113.json)。
 
 ## 当前结果（已与官方对齐）
 
@@ -29,9 +29,9 @@
 | **58271587（GA A/B 恢复 11 题 + prvsiyan 09:51 39 题，净 `0.0013376`）** | **22.1757729367，COMPLETE（排名 77/1971）** |
 | **58290129（koboshchan 公开产物 + contact polish round1–4，净 `0.0026734`）** | **22.1730995210，COMPLETE（排名 74/1999）** |
 
-当前文件：`outputs/submissions/public_update_1112_20261112/submission.csv`，SHA-256 `0cde0d2b3f575e8dd88531060d5678f4a152ece692f60c25a9ea87a2e435d079`，500,500 行、1,000 题，文本 / float64 双路径同分且全部有效。相对 58239472 的官方 22.194152 累计下降 `0.0018187`（GA 5 题 + nilanjan/atlas 10 题 + evand n=910 + 11-12 公开更新 79 题）；相对旧归档累计下降约 `0.03989`。2026-11-12 凌晨公开源继续更新（atlas 22:50、prvsiyan 22:05、grennwolf GA 20:23），当前官方 **22.1899791624**（提交 58260286，排名 101/1961）；当前官方 **22.1730995210**（提交 58290129，排名 74/1999），与本地 22.17309952100155 精确一致；较上一官方提交下降 `0.0026734`。
+2026-11-12 归档文件：`outputs/submissions/public_update_1112_20261112/submission.csv`，SHA-256 `0cde0d2b3f575e8dd88531060d5678f4a152ece692f60c25a9ea87a2e435d079`，500,500 行、1,000 题，文本 / float64 双路径同分且全部有效；对应官方 22.1899791624（提交 58260286）。当前官方/本地最佳已更新为 **22.1730995210 / 22.17309952100155**（提交 58290129，`outputs/submissions/official_58290129_20261113/`，SHA-256 `13efc5fd…`，排名 74/1999）。相对 58239472 的官方 22.194152 累计下降 `0.0018187`（GA 5 题 + nilanjan/atlas 10 题 + evand n=910 + 11-12 公开更新 79 题）；相对旧归档累计下降约 `0.03989`。2026-11-12 凌晨公开源继续更新（atlas 22:50、prvsiyan 22:05、grennwolf GA 20:23），较上一官方提交下降 `0.0026734`。
 
-2026-11-12 12:00 UTC 后公开前沿继续更新：jazivxt `boxed-in-sub` 11:16 版逐题 20 胜、净 `0.0005758`，已合入本地候选 `outputs/merged/jaz2_1112/submission.csv`（本地 **22.1751971838**，双路径 1000 有效）。随后两条新收益：
+2026-11-12 12:00 UTC 后公开前沿继续更新：jazivxt `boxed-in-sub` 11:16 版逐题 20 胜、净 `0.0005758`，已合入本地候选（中间合并 `jaz2_1112` 已于 2026-11-13 清理，最终结果进入 candidate h/j 与 official 58290129 归档；本地 **22.1751971838**，双路径 1000 有效）。随后两条新收益：
 
 1. **CPU contact polish（Kaggle，非 GPU）**：`sis-polish-cpu-a/b` 两个 kernel 对 160 个 gap 最大题各跑 80 题（4 worker × 240 s），共 kept 27 题、净 `5.21e-5`；收益集中在 640（`4.35e-4`）、587（`2.21e-4`）、747（`3.83e-4`）、800（`3.33e-4`）。triage 显示 1000 题中只有 **69 题存在一阶可行方向**，其余 931 题接触图已卡死——这也解释了 polish 的低产出。
 2. **koboshchan 公开产物**（新源）：`pell_corrugation/.../merged.csv`、`contact_slp_submission189`、`dual-pocket`，逐题认证 **25 胜**、净 `0.001855758936`，最大 n=269（`+6.87e-4`）、237（`+5.72e-4`）、971（`+3.41e-4`）、687（`+1.09e-4`）。
@@ -51,7 +51,7 @@
 - 上一步 GA 基线：[58241961 归档](../outputs/submissions/v124_plus_daily44_public2_penguin_ga_20261111/provenance.json)
 - 上一官方基线：[58239472 归档](../outputs/submissions/v124_plus_daily44_public2_penguin_20261111/provenance.json)
 
-注意：`outputs/merged/` 下的中间链与有效 pilot 产物（pilot08/09、v124_plus_self、v124_plus_daily44、v124_plus_daily44_public2、v124_plus_daily44_public2_penguin、v124_plus_daily44_public2_penguin_ga、v124_plus_daily44_public2_penguin_ga_nilan）按保留约定只存本地，不进 git；仓库以本页、`provenance.json` 和正式提交归档为准。2026-11-11 已删除零赢家 pilot06/07 本地副本、已超前中间合并（atlas_v107_plus_self、atlas_v107_plus_self_polish、daily35_kirill）、抛光重复完整 CSV 与 atlas_v107 本地下载，仅保留结论。
+注意：`outputs/merged/` 只保留 `daily35_kirill_pilot08`、`v108_plus_p09`、`v108_plus_self`、`v124_plus_self` 四个血缘目录；其余逐轮中间合并已于 2026-11-13 删除。仓库以本页、`provenance.json` 和正式提交归档为准。2026-11-11 已删除零赢家 pilot06/07 本地副本、已超前中间合并、抛光重复完整 CSV 与 atlas_v107 本地下载，仅保留结论；2026-11-13 的删除范围见[清理记录](../data/references/cleanup_20261113.json)。
 
 截至 2026-11-11 晚间的公开对照：**nilanjansaha123 的 seam-dp/soft-rigid 输出（09:58，`01cb16d8…`）与 busyaprime 的 FQ packings（12:05）合并后为 22.194550031**，与 busyaprime 标题中的 LB 22.1945500 一致；其中 34 题已合入。**penguin069 的 boxed 认证联合（12:39，`f86cb7d8…`）进一步在 25 题上优于该前沿，逐题合并后本地 22.1941518482**。**grennwolf/inspector gadget 的 Santa-2025 岛式 GA 输出（`submission_improved.csv`，SHA `0d1350e5…`）在 n=335/462/497/643/690 上更优，逐题合并后本地 22.1935049984（净 `0.00064685`）**；这是本轮首次由全局进化搜索拿到的实质收益。Daily v44（`48c51d2b…`，22.1959256255）、Atlas v127 certified（`0199ae…`，22.1959256349）、Square Deal v39（`396aa573…`，22.1995203）均已被超过。排行榜第一为非公开的 22.0544215；上一官方 22.194152 排名 103/1942，与榜首仍有约 `0.13973` 差距。相对 2026-10-29 逐题纪录仍有 **401 题实质差距、合计约 `0.12556`**（547 个原始正值中 146 个小于 1e-12），头部仍为 971/911/910/791/972/793/908/634/861/803（`8e-4–1.3e-3`）。
 
@@ -121,25 +121,46 @@
 
 这些方向只有在出现新构型、可复用实现或明确的小规模收益证据后才重新评估；不会因为旧计划里列过就自动继续。
 
+## 2026-11-13 停止方向清理（已删除 5.41 GiB）
+
+按“停止的研究只留本页简述，不保留文档、脚本和中间产物”的约定，本次清理删除了以下已停止路线。删除前 `outputs/` 为 6.1 GiB，清理后 682 MiB；仓库总计从约 7.5 GiB 降到 1.4 GiB。完整路径、大小和保留证据见[清理记录](../data/references/cleanup_20261113.json)。
+
+| 已停止路线 | 最后结论（停止原因） | 已删除 |
+| --- | --- | ---: |
+| 2026-11-11 五路并行：fault-line gadget DP、evand fq/bandflip、精确插入、长尾 55 题、模板/CDB/记录族、全 999 题固定角 LP、公开 notebook 拆解 | 除 evand packer 的 n=910（`7.517e-8`，已合入当时基线）外全部 0 认证赢家；固定角 LP 在 dL=1e-6 即不可行，接触图超静定；fault-line DP 1166 donors/14.8K gadgets 零进入认证；外部布局与长尾均被当前前沿支配 | `research_20261111/` + 11 个专用脚本 + `free_polish.py`/`soft_quench.py`（123 MiB） |
+| 2026-11-12 CDB、冻结网格/楔形、去尖角/两块分割、外部证书 hunt | CDB 901 题 0 胜；冻结网格 40 题 ΔL=0；去尖角为容量硬台阶；两块分割差 0.117–0.233；jlevy 3 胜已合入官方 58260286 | `research_20261112/`（196 MiB） |
+| 2026-11-12b 近平方族 S2 | 626/842/902/963 全部 ΔL=0；626 精确坐在容量台阶（s 降 1e-3 容量 626→602），15 个多起点回到同一 L | `research_20261112b/s2/`（28 MiB） |
+| 2026-11-13 d=9–12 两带+两轴块 | 244 次 swap + 34 次 transfer 全 0 改进；接触数 1.34–1.49× 等静定，整体收缩上界 ΔL≤9.8e-11 | `research_20261112b/bands/`（1.3 MiB） |
+| 2026-11-12b 文献反推 + 外部坐标源 | 闭式族 1075 个父布局 0 胜；Karimi 两斜条差 0.08–0.11；31 类外部源只有 koboshchan 25 题胜出且已合入当前候选 | `literature/` + `external/`（2.87 GiB） |
+| 2026-11-12b 逐题差距分析 | 目标表已过时，当前判断以 `data/references/leaderboards/perpuzzle_best_20261111.csv` 为准 | `research_20261112b/gaps/`（256 KiB） |
+| 2026-11-12b 公开前沿原始下载 | 已完成扫描的临时 submission 与合并副本；kobosh pr45 9 胜、其余 0 胜、终检 0 胜已记录 | `frontier/downloads` 等 9 个目录（1.22 GiB） |
+| 旧 GPU 结构 pilot 轮次 `next_*` | 9 轮全部 completed 且 improved_count=0 / winners=0，未进入当前血缘 | 9 个 `next_*` 目录（163 MiB） |
+| 已被取代的中间合并链 | 最终坐标已固化在正式提交/当前候选与 provenance；逐轮 26 MB CSV 不再承担复现作用 | `outputs/merged/` 33 个目录（839 MiB） |
+| 2026-11-12 日记 | 关键经验与基础设施结论已并入本页 | `docs/daily-2026-11-12.md` |
+
+保留：官方 58290129 / 当前候选 j / 暂存文件（同一 SHA-256 `13efc5fd…`）、其余 git 跟踪的正式提交归档、pilot01/02/04/08/09、`polish_n696_n553/candidate.csv`、四个血缘 merged 目录、`outputs/scores/`、`data/public/`、逐题榜快照，以及仍在使用的前沿监控报告和 `witness_to_submission.py`。
+
+2026-11-12 日记要点（删除前已并入）：公开 Code 输出会阶段性跳变，必须逐题扫描；jlevy witness 是有效的精确坐标来源；自研 GA 受周 GPU 30h 配额限制；公开 kernel/证书库扫描已饱和；重计算一律在 Kaggle，本机只做编排与 `squares merge/score` 认证。
+
 ## 下一步与证据保留
 
 深度研究（2026-11-11，五并行）：v124 相对 v108 的 212 改进中 179 题实质提分（均值 `9.2e-5`，中位 `2.6e-5`，最大 n=593 `7.2e-4`），53% 相邻成串，证实相邻迁移。以 v124_plus_daily44_public2 为当前前沿，相对 2026-10-29 逐题纪录仍有 401 题实质差距、合计约 `0.12706`（547 个原始正值中 146 个小于 1e-12；早期 401/0.1319 口径已过时）；头部为 971/911/910/791/972/793/908/634/861/803（`8e-4–1.3e-3`）。本轮把公开代码与外部研究库真正跑了一遍：fault-line gadget DP（1166 donors / 14.8K gadgets）、evand Rust `fq` + bandflip、精确插入、全 999 题固定角压缩 LP、长尾 55 题结构搜索、evand atlas/exact/tilings 外部布局比对——**全部零赢家**；固定角 LP 在 dL=1e-6 即不可行，给出接触图超静定的硬证书。确认的增量来自公开合并：Atlas v124 → 新版 → Daily v44 → nilanjan/busyaprime public2；官方从 22.1993688316 降到 22.1959256252，再降到官方 22.1945500311（提交 58237691，本地 22.1945500312）。结论：公开前沿与成熟布局的局部空间都已饱和，下一步必须做**新全局构型/模板族搜索**，而不是继续压已有布局；任何新路线先给出目标 n、可验证小实验和 1e-10 门限。
 
 下一轮先刷新公共对照和逐题差距，再围绕459、642及可迁移的相邻题开展有预算的跨轮搜索，保留不同接缝的近优状态。当前仍保留2026-10-29的逐题纪录CSV作为可选历史排序参考，不作为实时目标或收益预测。
 
-产物只保留以下用途（2026-11-11 已删 pilot06/07、超前中间合并、抛光重复 CSV、atlas_v107 下载；结论见上表，不另存档）：
+产物只保留以下用途（2026-11-13 已按停止方向清理，删除范围见[清理记录](../data/references/cleanup_20261113.json)）：
 
-- `outputs/submissions/v124_plus_daily44_20261111/`：当前正式最佳文件、完整评分、官方回执（58236174）和后续搜索使用的 `baseline_lineage.json`。
+- `outputs/submissions/official_58290129_20261113/`、`candidate_1112j_20261112/`、`staged_latest/`：当前官方/本地最佳与暂存文件，SHA-256 均 `13efc5fd…`，1000 题双路径有效。
 - `outputs/experiments/pilot04/`：有效赢家、供体、候选、谱系、参数及当时自包含代码包；不保留重复完整提交和运行噪声。
-- `outputs/experiments/pilot02/`：n642的部分布局及验证证据，可与Penguin原文重建Pilot04输入。
+- `outputs/experiments/pilot02/`：n642 的部分布局及验证证据，可与 Penguin 原文重建 Pilot04 输入。
 - `outputs/experiments/pilot01/`：有效血缘所需的近优供体档案。
 - `outputs/experiments/pilot08/`、`pilot09/`、`polish_n696_n553/candidate.csv`：已合入/待评赢家本地证据；零赢家中间态不保留。
-- `outputs/merged/v108_plus_self/`、`v108_plus_p09/`、`v124_plus_self/`、`daily35_kirill_pilot08/`：当前链本地验证与谱系；超前中间合并已删。
-- `outputs/experiments/research_20261111/`：本轮五路并行实验的脚本产物、负结果诊断与外部代码比对报告；零赢家候选 CSV 只留表头。
-- `outputs/scores/`：Penguin与Square Deal v33的完整双路径评分，用于复现和公共收益对照。
-- `data/public/`：Penguin、Atlas、Daily三个结构供体及Square Deal v33公共对照；下载身份统一见[来源清单](../data/references/sources.json)。
+- `outputs/merged/v108_plus_self/`、`v108_plus_p09/`、`v124_plus_self/`、`daily35_kirill_pilot08/`：当前链本地验证与谱系；其余中间合并已删。
+- `outputs/experiments/research_20261112b/frontier/`：保留 `report.md`、`monitor.md`、`final_sweep.md`、`witness_to_submission.py`、`download.sh`，供公开前沿继续扫描；原始下载与中间合并已删。
+- `outputs/scores/`：Penguin 与 Square Deal v33 的完整双路径评分，用于复现和公共收益对照。
+- `data/public/`：Penguin、Atlas、Daily 三个结构供体及 Square Deal v33 公共对照；下载身份统一见[来源清单](../data/references/sources.json)。
 
-原始回执、谱系和运行清单中的历史路径保持其记录语义，其中部分临时文件已删除；它们不是当前运行入口。清理前的实验摘要、删除清单和文件哈希集中记录在[清理记录](../data/references/cleanup_20261109.json)。没有将废弃产物搬进新的归档目录。
+原始回执、谱系和运行清单中的历史路径保持其记录语义，其中部分临时文件已删除；它们不是当前运行入口。清理前的实验摘要、删除清单和文件哈希集中记录在[2026-11-09 清理记录](../data/references/cleanup_20261109.json)和[2026-11-13 清理记录](../data/references/cleanup_20261113.json)。没有将废弃产物搬进新的归档目录。
 
 ### 2026-11-13 本机误跑与 Kaggle 执行纪律（重要）
 
@@ -155,7 +176,7 @@
 - Kaggle CPU 独立双跑（`qingyu1232/sis-nearsquare-s2-20261112` v4 与 `qingyu1232/sis-ns2-20261113`，708 s / 1337 s）对 n=626/842/902/963 做三臂搜索（生成族精确枚举 + 5 刚体 SE(2) soft-to-rigid 多起点 + contact polish），**全部 ΔL=0**，`squares merge` 净收益 0。
 - 关键证书：n=626 的当前布局恰好坐在其生成族的**容量台阶**上——精确计数 `s_min_feasible=0.520815` 与当前 L 完全相同；`s` 降 1e-3，容量从 626 掉到 602（−24 格）。15 个独立多起点（含 θ 偏离 45°、±1 换拓扑）全部收敛回同一 L，给出 5 刚体不可压证据。
 - 结论：榜首的 0.502153 属于**另一个族**；连续松弛（LP/SLP/fq/soft/polish）在这一族上必然为 0。不要再对 k²+1/k²+2 做局部/小参数优化，除非找到新的分块+矩形孔+边界 filler 族。
-- 产物：`outputs/experiments/research_20261112b/s2/report.md`（含本机误跑 103GB 记录与硬门禁）、`s2/kernel/`、`s2/runs/v2|v3|v4/`、`s2/merge_report.json`（0 胜）。
+- 产物已于 2026-11-13 清理（`s2/` 目录删除，本机误跑 103GB 与硬门禁结论保留在本页）；删除清单见[清理记录](../data/references/cleanup_20261113.json)。
 
 ### 2026-11-12 18:25 UTC 候选更新（koboshchan PR union）
 
@@ -176,7 +197,7 @@
 - 分解证据：每题 = 2 个轴对齐晶格块 + 2 个旋转带块（旋转晶格 + 阶梯剖面 + 逐行剪切；971 每条带 141 个方块）。L 由轴块 4 个外角决定；带角 ±2°、fan ±3°、shear ±0.6、平移 ±1、全局压缩 ±1%、带↔轴块单方块互换，全部回到同一 L。
 - 卡死证据：971/910/908 接触数 2400–2880 = 1.34–1.49× 等静定 `2n−3`，中位自由位移 1e-11…1e-14，>2/3 方块完全卡死；整体收缩上界对应 ΔL：971 9.8e-11、910 1.9e-13、972 2.3e-13、908 2.1e-13、911 0。
 - 结论：剩余 0.028–0.035（合计 score ≈0.0051）不是同一参数化的局部变形；要追需换块划分/换构造（非对称主块 + L 形左下块 + 不同缺口切法）。优先级低于公开前沿合并与 GPU GA。
-- 产物：`outputs/experiments/research_20261112b/bands/report.md`、`bands/kernel_v1..v4/`、`bands/evidence/`。
+- 产物已于 2026-11-13 清理（`bands/` 目录删除）；结论保留在本页，删除清单见[清理记录](../data/references/cleanup_20261113.json)。
 
 ### 自动任务队列（2026-11-13）
 

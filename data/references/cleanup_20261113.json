@@ -1,0 +1,190 @@
+{
+  "date": "2026-11-13",
+  "objective": "删除当前已停止研究的文档、脚本与产物，保留研究概况、停止原因、当前最佳布局和有效血缘证据，并回收磁盘空间。",
+  "research_overview": "docs/research.md",
+  "policy": "已放弃路线只保留 docs/research.md 中的简述与停止原因；不保留专用脚本、长报告、原始下载和中间合并。停止是当前资源取舍，不是数学不可行或算法无效的证明。",
+  "disk": {
+    "before_outputs": "6.1 GiB",
+    "after_outputs": "682 MiB",
+    "deleted_total_kb": 5670296,
+    "deleted_total_human": "5.41 GiB",
+    "before_repo": "约 7.5 GiB（含 .venv/.cache/.git）",
+    "after_repo": "1.4 GiB（du -sh .）"
+  },
+  "decisions": [
+    {
+      "scope": "2026-11-11 五路并行实验：fault-line gadget DP、evand fq/bandflip、精确插入、长尾 55 题、模板/CDB/记录族、全 999 题固定角 LP、公开 notebook 拆解",
+      "action": "删除整个 outputs/experiments/research_20261111/（125468 KB）及 11 个专用脚本；删除仅被这些脚本使用的 free_polish.py、soft_quench.py",
+      "reason": "除 evand packer 的 n=910 认证赢家（7.517e-8，已合入当时基线）外全部 0 认证赢家；固定角 LP 在 dL=1e-6 即不可行，接触图超静定；fault-line DP 1166 donors/14.8K gadgets 零进入认证；外部布局与长尾结构均被当前合并前沿支配。结论已并入研究概况。",
+      "deleted_paths": [
+        "outputs/experiments/research_20261111/",
+        "scripts/experiments/chirality_20261111.py",
+        "scripts/experiments/code_review_20261111.py",
+        "scripts/experiments/cpu_opt_20261111.py",
+        "scripts/experiments/faultline_20261111.py",
+        "scripts/experiments/insert_20261111.py",
+        "scripts/experiments/longtail_20261111.py",
+        "scripts/experiments/multiangle_20261111.py",
+        "scripts/experiments/packercampaign_20261111.py",
+        "scripts/experiments/public_frontier_20261111.py",
+        "scripts/experiments/record_family_20261111.py",
+        "scripts/experiments/template_k2d_20261111.py",
+        "src/squares/search/free_polish.py",
+        "src/squares/search/soft_quench.py"
+      ]
+    },
+    {
+      "scope": "2026-11-12 研究树：generalised CDB、冻结网格/楔形再压缩、去尖角/两块分割、外部证书 hunt、旧公开前沿快照",
+      "action": "删除整个 outputs/experiments/research_20261112/（200304 KB）",
+      "reason": "CDB 在 901 题上 0 胜；冻结网格 40 题 ΔL=0 且 δ=0.001 即重叠；去尖角为容量硬台阶，两块分割全部差 0.117-0.233；外部 hunt 的 3 个 jlevy 胜已合入官方 58260286，其余 0 胜。",
+      "deleted_paths": [
+        "outputs/experiments/research_20261112/"
+      ]
+    },
+    {
+      "scope": "2026-11-12b 近平方族 S2 结构化重优化",
+      "action": "删除 outputs/experiments/research_20261112b/s2/（28688 KB）",
+      "reason": "626/842/902/963 三臂搜索全部 ΔL=0，净收益 0；n=626 精确坐在生成族容量台阶上（s 降 1e-3 容量 626→602），15 个多起点全部回到同一 L。结论：差距属于另一个族，连续松弛不可能拿到。",
+      "deleted_paths": [
+        "outputs/experiments/research_20261112b/s2/"
+      ]
+    },
+    {
+      "scope": "2026-11-13 d=9-12 两带+两轴块结构化重优化",
+      "action": "删除 outputs/experiments/research_20261112b/bands/（1360 KB）",
+      "reason": "4 个 Kaggle CPU kernel、244 次 swap + 34 次 transfer、5 题全部 0 改进；971/910/908 接触数 1.34-1.49× 等静定，中位自由位移 1e-11..1e-14，整体收缩上界 ΔL≤9.8e-11。要追需换块划分/换构造。",
+      "deleted_paths": [
+        "outputs/experiments/research_20261112b/bands/"
+      ]
+    },
+    {
+      "scope": "2026-11-12b 文献反推与外部坐标源挖掘",
+      "action": "删除 outputs/experiments/research_20261112b/literature/（1164 KB）与 external/（3005428 KB，含 2.8 GiB 原始下载）",
+      "reason": "经典闭式族（Göbel/CDB/column-CDB/L-extension，1075 个父布局）0 胜；Karimi 两斜条比当前前沿差 0.08-0.11；外部 31 类源中只有 koboshchan 的 25 题胜出且已合入当前候选，其余公开源/证书库全部被当前前沿支配。",
+      "deleted_paths": [
+        "outputs/experiments/research_20261112b/literature/",
+        "outputs/experiments/research_20261112b/external/"
+      ]
+    },
+    {
+      "scope": "2026-11-12b 逐题差距分析",
+      "action": "删除 outputs/experiments/research_20261112b/gaps/（256 KB）",
+      "reason": "目标题清单与 2026-11-11 逐题榜快照已过时；当前差距判断以 data/references/leaderboards/perpuzzle_best_20261111.csv 和研究概况为准。",
+      "deleted_paths": [
+        "outputs/experiments/research_20261112b/gaps/"
+      ]
+    },
+    {
+      "scope": "2026-11-12b 公开前沿监控的原始下载与中间合并",
+      "action": "删除 frontier/downloads、live_downloads、final_sweep、candidates、live_candidates、live_20261112T1633、merged_* 等（合计 1274386 KB）",
+      "reason": "这些是 2026-11-12 已完成扫描的临时 26-41 MB 公开 submission 与合并副本；结论（kobosh pr45 9 胜、其余 0 胜、终检 0 胜）已写入研究概况和保留的 3 份小报告；合计约 1.22 GiB。",
+      "deleted_paths": [
+        "outputs/experiments/research_20261112b/frontier/downloads/",
+        "outputs/experiments/research_20261112b/frontier/live_downloads/",
+        "outputs/experiments/research_20261112b/frontier/final_sweep/",
+        "outputs/experiments/research_20261112b/frontier/candidates/",
+        "outputs/experiments/research_20261112b/frontier/live_candidates/",
+        "outputs/experiments/research_20261112b/frontier/live_20261112T1633/",
+        "outputs/experiments/research_20261112b/frontier/merged_final/",
+        "outputs/experiments/research_20261112b/frontier/merged_jazivxt_1437/",
+        "outputs/experiments/research_20261112b/frontier/merged_jlevy_head/"
+      ]
+    },
+    {
+      "scope": "旧 GPU 结构 pilot 轮次：next_gap_candidates(_v2)、next_gap_deep、next_gap_tight、next_gen_depth2、next_mixed、next_rect、next_rect_gen2、next_round_atlasnew",
+      "action": "删除 9 个目录（合计 167084 KB）",
+      "reason": "全部 completed 且 improved_count=0 / winners=0；已被后续 pilot08/09、公开合并和 GA 结果取代，未进入当前血缘。",
+      "deleted_paths": [
+        "outputs/experiments/next_gap_candidates/",
+        "outputs/experiments/next_gap_candidates_v2/",
+        "outputs/experiments/next_gap_deep/",
+        "outputs/experiments/next_gap_tight/",
+        "outputs/experiments/next_gen_depth2/",
+        "outputs/experiments/next_mixed/",
+        "outputs/experiments/next_rect/",
+        "outputs/experiments/next_rect_gen2/",
+        "outputs/experiments/next_round_atlasnew/"
+      ]
+    },
+    {
+      "scope": "已被取代的中间合并链（outputs/merged/ 下 33 个目录）",
+      "action": "删除（合计 859160 KB），只保留 daily35_kirill_pilot08、v108_plus_p09、v108_plus_self、v124_plus_self 四个血缘目录",
+      "reason": "最终坐标已固化在正式提交/当前候选与 provenance 中；逐轮中间 26 MB 完整 CSV 不再承担复现或血缘作用。",
+      "deleted_paths": [
+        "outputs/merged/ext2_1112b/",
+        "outputs/merged/ext_1112b/",
+        "outputs/merged/ga3_20261112/",
+        "outputs/merged/ga_ab_1112/",
+        "outputs/merged/grenn_1112/",
+        "outputs/merged/jaz2_1112/",
+        "outputs/merged/jaz_20261112/",
+        "outputs/merged/jlevy_20261112/",
+        "outputs/merged/joe_20261112/",
+        "outputs/merged/polish_round1_1/",
+        "outputs/merged/polish_round1_2/",
+        "outputs/merged/polish_round1_3/",
+        "outputs/merged/polish_round1_4/",
+        "outputs/merged/polish_round1b_1/",
+        "outputs/merged/polish_round1b_2/",
+        "outputs/merged/polish_round1b_3/",
+        "outputs/merged/polish_round1b_4/",
+        "outputs/merged/prv_1112/",
+        "outputs/merged/pubnew_all/",
+        "outputs/merged/pubnew_atlas/",
+        "outputs/merged/pubnew_atlas_nilan/",
+        "outputs/merged/pubnew_atlas_prv/",
+        "outputs/merged/sigma_1112/",
+        "outputs/merged/v124_plus_atlasnew/",
+        "outputs/merged/v124_plus_atlasnew2/",
+        "outputs/merged/v124_plus_daily44/",
+        "outputs/merged/v124_plus_daily44_public2/",
+        "outputs/merged/v124_plus_daily44_public2_penguin/",
+        "outputs/merged/v124_plus_daily44_public2_penguin_ga/",
+        "outputs/merged/v124_plus_daily44_public2_penguin_ga_nilan/",
+        "outputs/merged/v124_plus_daily44_public2_penguin_ga_nilan_n910/",
+        "outputs/merged/v124_plus_daily44_public2_penguin_n910/",
+        "outputs/merged/v124_plus_kirill/"
+      ]
+    },
+    {
+      "scope": "2026-11-12 日记",
+      "action": "删除 docs/daily-2026-11-12.md",
+      "reason": "当日提交、关键经验和基础设施结论已并入 docs/research.md；不再保留独立日报。",
+      "deleted_paths": [
+        "docs/daily-2026-11-12.md"
+      ]
+    }
+  ],
+  "retained": {
+    "official_and_candidate": [
+      "outputs/submissions/official_58290129_20261113/（官方 22.1730995210，sha256 13efc5fd...）",
+      "outputs/submissions/candidate_1112j_20261112/（本地最佳 22.17309952100155，同一 sha256）",
+      "outputs/submissions/staged_latest/submission.csv（自动提交暂存，同一 sha256）",
+      "outputs/submissions/ 下其余正式提交与候选归档（git 跟踪，保留官方回执/评分/来源）"
+    ],
+    "lineage": [
+      "outputs/experiments/pilot01/、pilot02/、pilot04/、pilot08/、pilot09/",
+      "outputs/experiments/polish_n696_n553/candidate.csv",
+      "outputs/merged/daily35_kirill_pilot08/、v108_plus_p09/、v108_plus_self/、v124_plus_self/"
+    ],
+    "active_frontier_evidence": [
+      "outputs/experiments/research_20261112b/frontier/report.md",
+      "outputs/experiments/research_20261112b/frontier/monitor.md",
+      "outputs/experiments/research_20261112b/frontier/final_sweep.md",
+      "outputs/experiments/research_20261112b/frontier/witness_to_submission.py",
+      "outputs/experiments/research_20261112b/frontier/download.sh"
+    ],
+    "data_and_scores": [
+      "data/public/（Penguin/Atlas/Daily/Square Deal 供体）",
+      "data/references/leaderboards/（逐题榜快照）",
+      "outputs/scores/（Penguin、Square Deal v33 双路径评分）"
+    ]
+  },
+  "verification": {
+    "official_submission_sha256": "13efc5fd57dc77cef776a941e6eecaf4da1434b273d14669a67d13dc40730f6b",
+    "candidate_submission_sha256": "13efc5fd57dc77cef776a941e6eecaf4da1434b273d14669a67d13dc40730f6b",
+    "staged_submission_sha256": "13efc5fd57dc77cef776a941e6eecaf4da1434b273d14669a67d13dc40730f6b",
+    "retained_outputs_size": "682 MiB",
+    "deleted_paths_checked_absent": true
+  }
+}
