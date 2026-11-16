@@ -1,6 +1,6 @@
 # 使用指南
 
-所有命令从项目根目录运行。研究状态与停止原因见[研究概况](research.md)，第三方版本见[来源记录](third-party.md)。
+所有命令从项目根目录运行。研究状态、停止原因与清理记录见[研究概况](research.md)，第三方来源见[来源记录](third-party.md)。
 
 ## 问题与文件格式
 
@@ -10,15 +10,20 @@
 
 ## 环境与检查
 
-项目默认 Python 3.12，依赖由 `uv.lock` 固定。结构搜索和局部修复需要 `experiments` 依赖组中的 SciPy：
+项目默认 Python 3.12，依赖由 `uv.lock` 固定：
 
 ```sh
-uv sync --locked --extra experiments
+uv sync --locked
 uv run squares --help
-uv run squares inspect outputs/submissions/public_update_1112_20261112/submission.csv
 ```
 
-`inspect` 检查格式、标识符和题目完整性，不检查重叠。新环境没有布局文件时，可生成小型网格验证安装：
+`inspect` 检查格式、标识符和题目完整性，不检查重叠。当前最佳布局在 `outputs/submissions/gpu_f_20261116/submission.csv`（官方 ref 58418244，22.1327829081）：
+
+```sh
+uv run squares inspect outputs/submissions/gpu_f_20261116/submission.csv
+```
+
+新环境没有布局文件时，可生成小型网格验证安装：
 
 ```sh
 uv run squares baseline --max-n 10 --output outputs/examples/grid10.csv
@@ -33,17 +38,17 @@ uv run squares score outputs/examples/grid10.csv --max-n 10 --mode both --worker
 
 每次输出 `report.json` 和 `per_puzzle.csv`，包含文件/评分器哈希、环境版本、有效性及逐题分数。已提交题目无效时命令返回非零状态；总分不能代替有效性检查。
 
-从下一轮实验中选择每题最佳布局：
+从下一轮实验或公开 donor 中选择每题最佳布局：
 
 ```sh
 uv run squares merge \
-  --baseline outputs/submissions/public_update_1112_20261112/submission.csv \
-  --baseline-report outputs/submissions/public_update_1112_20261112/validation/report.json \
-  --candidate outputs/experiments/next/remote/improved_groups.csv \
+  --baseline outputs/submissions/gpu_f_20261116/submission.csv \
+  --baseline-report outputs/submissions/gpu_f_20261116/validation/report.json \
+  --candidate /tmp/harvest/improved_groups.csv \
   --output-dir outputs/merged/next --workers 4
 ```
 
-`--candidate` 可重复。示例中的 `next/remote/improved_groups.csv` 是待生成的新实验结果，需替换为实际路径。合并按完整 n 组选择；两条评分路径都不得比基线退步，保留原始数值文本并记录来源。同题的多次改善只按最终赢家计算一次。
+`--candidate` 可重复。示例中的 `/tmp/harvest/improved_groups.csv` 需替换为实际路径。合并按完整 n 组选择；两条评分路径都不得比基线退步，保留原始数值文本并记录来源。同题的多次改善只按最终赢家计算一次。
 
 `--baseline-report` 仅复用与基线哈希、评分器和环境一致的完整报告；环境改变时省略该参数重新评分。最终序列化文件在提交前仍需完整独立复评：
 
@@ -54,61 +59,24 @@ uv run squares score outputs/merged/next/submission.csv \
 
 这些命令只生成和验证本地文件，不提交比赛。官方评分源码位于 `src/squares/_vendor/`；更新版本时应重新记录来源和哈希。
 
-## 保留的结构搜索流程
+## 搜索与重计算的执行位置
 
-CPU 生成迁移链与接缝交叉候选，GPU 批量连续松弛，官方评分接受有效赢家。新赢家和近优布局可导出为下一轮供体；目前跨轮结构生成仍需重新调用脚本。
+结构搜索、GA 与批量松弛**不在本仓库、也不在本机运行**：全部通过 Kaggle kernel/dataset 执行，结果以 `improved_groups.csv` 或公开 `submission.csv` 回到本地，由 `squares merge` 逐题认证。2026-11-16 已删除旧的 `scripts/experiments/`、`scripts/kaggle/`、`src/squares/search/` 与 `third_party/`，因为该 CPU 生成 + GPU 松弛 pilot 管线已被 Kaggle 静态分区 GA 取代。
 
-生成一轮有界候选：
+本机只做四件事：下载候选、`squares merge`、`squares score` 双路径复核、提交。不要在本机跑优化或批量搜索——2026-11-12 的近平方族脚本在本机峰值内存 103 GB，已明确禁止。
 
-```sh
-uv run python scripts/experiments/prepare_candidates.py \
-  --baseline outputs/submissions/public_update_1112_20261112/submission.csv \
-  --baseline-lineage-json outputs/submissions/public_update_1112_20261112/baseline_lineage.json \
-  --donor data/public/penguin_v2/submission.csv \
-  --donor data/public/atlas_v79/submission.csv \
-  --donor data/public/daily_v13/submission.csv \
-  --max-candidates 48 --max-seconds 120 \
-  --output-dir outputs/experiments/next/candidates
-```
-
-可用 `--parent-n` 聚焦指定父题，用 `--max-parents-per-n`、`--slab-beam-width` 和 `--crossover-children` 控制多样性。默认纪录表 `data/references/leaderboards/perpuzzle_best_20261029.csv` 是历史排序线索，不能作为当前可获得收益。
-
-继续已有迁移链时，成对传入 `--donor-pool-npz` 和 `--donor-pool-json`，指向同一次运行导出的 `donors.npz/json`。Pilot04 的供体保存在 `outputs/experiments/pilot04/remote/pilot04/`。上例的 `baseline_lineage.json` 对应最终基线中的459、642，保留已有链深度；更换基线时也应提供相应谱系，不要用旧基线的谱系文件描述新坐标。
-
-GPU 环境需要安装本项目、NVIDIA CUDA 与匹配的 CuPy；普通本地环境安装不包含 GPU 运行时。在该环境中运行：
-
-```sh
-python scripts/experiments/run_gpu_pilot.py \
-  --baseline outputs/submissions/public_update_1112_20261112/submission.csv \
-  --candidates outputs/experiments/next/candidates/candidates.npz \
-  --manifest outputs/experiments/next/candidates/manifest.json \
-  --output-dir outputs/experiments/next/remote \
-  --seconds 900 --batch 32 --staged-warm --incumbent-passes 10
-```
-
-`--local-repair` 可启用固定角度修复，默认关闭；已有实验显示它成本较高。评价以官方验证后的净收益为准。运行产物包括 `improved_groups.csv`、赢家/供体数组、`per_n_gains.json` 和 `summary.json`。
-
-使用 Kaggle GPU 时，`scripts/kaggle/build_pilot_bundle.py` 将代码和候选打包，不包含凭据，也不启动远程运行。用 `--candidates-dir`、`--output-dir` 指定目录，并显式指定 `--account`、`--slug`、`--run-name` 以及至少一个 `--kernel-source` 或 `--dataset-source`。输入源必须实际包含与候选 manifest 中 SHA-256 一致的 `submission.csv`；最终合并基线需单独作为输入提供，公共 Penguin 输出不能代替它。打包命令的完整参数可用 `--help` 查看。
-
-`scripts/kaggle/account_api.py` 提供显式账号的 quota/push/status/logs/output 操作，需要另行安装 Kaggle 官方 Python 包及配置本地凭据；`push` 会启动计算。计算账号与比赛提交账号分别指定，不因打包而自动更换提交身份。
+当前在用的编排脚本放在 `/tmp`（不在仓库）：`frontier_watch*.py` 扫描公开前沿，`auto_pipeline.py` 每 300 s 合并新候选，`final_slot.py` 在 9 个 UTC 收口点提交，GPU 模板在 `/tmp/ga_kernel_full4`、调度器在 `/tmp/gpu_wave/scheduler.py`。
 
 ## 目录与保留约定
 
 | 目录 | 保留内容 |
 | --- | --- |
 | `docs/` | 本指南、研究概况、来源记录 |
-| `src/squares/` | 官方评分封装、逐题合并、结构搜索与松弛 |
-| `scripts/experiments/` | 候选生成与 GPU 搜索入口 |
-| `scripts/kaggle/` | 运行打包和账号操作 |
-| `third_party/` | 正在使用的 chains 原始摘录、CUDA 内核及来源清单 |
-| `data/public/` | Penguin v2、Atlas v79、Daily v13、Square Deal v33 固定布局 |
-| `data/references/` | 保留的来源、逐题榜快照及 2026-11-09/2026-11-13 清理记录 |
-| `outputs/submissions/` | 正式提交、当前候选、完整评分、来源和回执 |
-| `outputs/experiments/` | pilot01/02/04/08/09、抛光候选、公开前沿报告及必要谱系证据 |
-| `outputs/merged/` | 仅保留 `daily35_kirill_pilot08`、`v108_plus_p09`、`v108_plus_self`、`v124_plus_self` 四个血缘目录 |
+| `src/squares/` | 官方评分封装、逐题合并、提交校验与官方 v20 |
+| `data/references/` | 来源清单、逐题榜快照、历史提交身份表、GPU run_report、清理记录 |
+| `outputs/submissions/` | 仅当前官方最佳 `gpu_f_20261116/`（提交 CSV、完整评分、provenance、run_report） |
+| `outputs/scores/` | 历史公共收益对照的小型完整评分 |
 
-固定公开布局和最终完整CSV在本地保存，Git克隆不会自动携带；来源、评分、有效赢家和供体等小型证据列入保留范围，新实验产物默认忽略。恢复公开布局时按[来源清单](../data/references/sources.json)核对版本与哈希。最终几何与成绩可用Square Deal v33和Pilot04的`improved_groups.csv`逐题合并重建；Pilot04的旧输入可用Penguin v2和Pilot02的`improved_groups.csv`重建。
+正式提交的原始字节以保存的完整 CSV 为准。历史提交（000 级 ref）的 CSV 已在 2026-11-16 清理中删除，但 ref、官方分、SHA-256 与行数保留在 `data/references/official_submissions_20261116.json`，可据以核对任何旧结论。公开 donor 的固定版本与 SHA-256 保留在 `data/references/sources.json`，本地坐标副本已随旧 pilot 管线删除。
 
-正式提交的原始字节仍以保存的完整CSV为准。以v33为基线重建时，n=1的angle文本为`0`，原提交为`0.0`；其余字段一致，几何和成绩相同，但文件哈希不同。逐字节恢复需保留该原始文本并核对研究概况中的SHA-256。
-
-后续实验先将结论与停止原因更新到 `docs/research.md`，再清理被替代或无用途的中间产物。有效坐标、来源谱系和最终验证需一起保留，不再为每轮实验新建一篇独立说明。2026-11-13 已按此约定删除停止方向的专用文档、脚本、原始下载和中间合并，释放 5.41 GiB；具体路径与保留证据见[清理记录](../data/references/cleanup_20261113.json)。
+后续实验先将结论与停止原因更新到 `docs/research.md`，再清理被替代或无用途的中间产物。有效坐标、来源谱系和最终验证需一起保留，不再为每轮实验新建独立说明。2026-11-16 按此约定删除停止方向的脚本、原始下载、中间合并与旧提交归档，释放约 18.3 GiB；具体路径与保留证据见[清理记录](../data/references/cleanup_20261116.json)。

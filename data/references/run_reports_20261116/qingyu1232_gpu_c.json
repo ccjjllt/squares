@@ -1,0 +1,305 @@
+{
+ "profile": "full4",
+ "kernel_run_type": "Batch",
+ "started": "2026-11-15T17:42:47Z",
+ "finished": "2026-11-15T23:14:23Z",
+ "runtime_seconds": 19896.0,
+ "gpu_hours_estimate": 5.5267,
+ "nproc": 10,
+ "targets": [
+  803,
+  328,
+  908,
+  902,
+  791,
+  963,
+  842,
+  491,
+  367,
+  969
+ ],
+ "config": {
+  "min_gens": 300,
+  "minutes_per_puzzle": 180.0,
+  "max_minutes": 195.0,
+  "extend_min": 8.0,
+  "steps": 800,
+  "offspring": 640,
+  "islands": 8,
+  "pop": 64,
+  "soft": 1e-10,
+  "shrink": 0.0002,
+  "cross": 0.05,
+  "sym_frac": [
+   0.25,
+   0.5
+  ],
+  "cool_miss_h": 0.1,
+  "cool_hit_h": 0.1
+ },
+ "baseline": {
+  "path": "/kaggle/working/input/submission.csv",
+  "sha256": "4940bb43d3933fd87be22574595940686846595585632301c332821d1142cfb8",
+  "score": 22.140442950835563
+ },
+ "package_sha256": "c1ca43990752c2b2a98b25050addc8a6d5fdd895f8fc50c170810f60be5a170b",
+ "visits": [
+  {
+   "n": 367,
+   "gens": 1184,
+   "found": 0,
+   "Lo": 19.6829943907286,
+   "best_L": null,
+   "secs": 10801,
+   "tag": "p8",
+   "part": "8/10"
+  },
+  {
+   "n": 908,
+   "gens": 662,
+   "found": 0,
+   "Lo": 30.629622665659408,
+   "best_L": null,
+   "secs": 10801,
+   "tag": "p2",
+   "part": "2/10"
+  },
+  {
+   "n": 791,
+   "gens": 762,
+   "found": 1,
+   "Lo": 28.625920779573594,
+   "best_L": 28.625820779573594,
+   "secs": 10801,
+   "tag": "p4",
+   "part": "4/10"
+  },
+  {
+   "n": 491,
+   "gens": 1015,
+   "found": 0,
+   "Lo": 22.684143606359193,
+   "best_L": null,
+   "secs": 10800,
+   "tag": "p7",
+   "part": "7/10"
+  },
+  {
+   "n": 969,
+   "gens": 585,
+   "found": 1,
+   "Lo": 31.625015344710043,
+   "best_L": 31.624915344710043,
+   "secs": 10803,
+   "tag": "p9",
+   "part": "9/10"
+  },
+  {
+   "n": 902,
+   "gens": 669,
+   "found": 0,
+   "Lo": 30.53553390593295,
+   "best_L": null,
+   "secs": 10803,
+   "tag": "p3",
+   "part": "3/10"
+  },
+  {
+   "n": 328,
+   "gens": 1110,
+   "found": 0,
+   "Lo": 18.614368938490983,
+   "best_L": null,
+   "secs": 10806,
+   "tag": "p1",
+   "part": "1/10"
+  },
+  {
+   "n": 842,
+   "gens": 731,
+   "found": 0,
+   "Lo": 29.520815280171462,
+   "best_L": null,
+   "secs": 10808,
+   "tag": "p6",
+   "part": "6/10"
+  },
+  {
+   "n": 803,
+   "gens": 746,
+   "found": 0,
+   "Lo": 28.817265876496613,
+   "best_L": null,
+   "secs": 10808,
+   "tag": "p0",
+   "part": "0/10"
+  },
+  {
+   "n": 963,
+   "gens": 636,
+   "found": 0,
+   "Lo": 31.535533905932986,
+   "best_L": null,
+   "secs": 10807,
+   "tag": "p5",
+   "part": "5/10"
+  },
+  {
+   "n": 902,
+   "gens": 552,
+   "found": 0,
+   "Lo": 30.53553390593295,
+   "best_L": null,
+   "secs": 8589,
+   "tag": "p3",
+   "part": "3/10"
+  },
+  {
+   "n": 963,
+   "gens": 528,
+   "found": 0,
+   "Lo": 31.535533905932986,
+   "best_L": null,
+   "secs": 8585,
+   "tag": "p5",
+   "part": "5/10"
+  },
+  {
+   "n": 328,
+   "gens": 929,
+   "found": 0,
+   "Lo": 18.614368938490983,
+   "best_L": null,
+   "secs": 8588,
+   "tag": "p1",
+   "part": "1/10"
+  },
+  {
+   "n": 908,
+   "gens": 542,
+   "found": 0,
+   "Lo": 30.629622665659408,
+   "best_L": null,
+   "secs": 8596,
+   "tag": "p2",
+   "part": "2/10"
+  },
+  {
+   "n": 367,
+   "gens": 942,
+   "found": 0,
+   "Lo": 19.6829943907286,
+   "best_L": null,
+   "secs": 8597,
+   "tag": "p8",
+   "part": "8/10"
+  },
+  {
+   "n": 969,
+   "gens": 478,
+   "found": 2,
+   "Lo": 31.624914881480997,
+   "best_L": 31.624715344710044,
+   "secs": 8593,
+   "tag": "p9",
+   "part": "9/10"
+  },
+  {
+   "n": 803,
+   "gens": 593,
+   "found": 0,
+   "Lo": 28.817265876496613,
+   "best_L": null,
+   "secs": 8590,
+   "tag": "p0",
+   "part": "0/10"
+  },
+  {
+   "n": 491,
+   "gens": 822,
+   "found": 0,
+   "Lo": 22.684143606359193,
+   "best_L": null,
+   "secs": 8597,
+   "tag": "p7",
+   "part": "7/10"
+  },
+  {
+   "n": 791,
+   "gens": 615,
+   "found": 1,
+   "Lo": 28.62581553237153,
+   "best_L": 28.62571553237153,
+   "secs": 8597,
+   "tag": "p4",
+   "part": "4/10"
+  },
+  {
+   "n": 842,
+   "gens": 600,
+   "found": 0,
+   "Lo": 29.520815280171462,
+   "best_L": null,
+   "secs": 8592,
+   "tag": "p6",
+   "part": "6/10"
+  }
+ ],
+ "visit_count": 20,
+ "visit_finds": 5,
+ "improvements_log": [
+  {
+   "t": "1794764905.6",
+   "n": "791",
+   "L_before": "28.625920779574",
+   "L_ga": "28.625820771880",
+   "L_polished": "28.625815532372",
+   "gain_score": "3.742e-06",
+   "source": "ga@gpu0"
+  },
+  {
+   "t": "1794765474.0",
+   "n": "969",
+   "L_before": "31.625015344710",
+   "L_ga": "31.624915344606",
+   "L_polished": "31.624914881481",
+   "gain_score": "3.227e-06",
+   "source": "ga@gpu1"
+  },
+  {
+   "t": "1794778602.6",
+   "n": "969",
+   "L_before": "31.624914881481",
+   "L_ga": "31.624814881480",
+   "L_polished": "31.624814847885",
+   "gain_score": "3.214e-06",
+   "source": "ga@gpu1"
+  }
+ ],
+ "win_count": 2,
+ "wins": [
+  {
+   "n": 791,
+   "baseline_L": 28.625920779573594,
+   "new_L": 28.62581553237153,
+   "delta_L": 0.0001052472020646178,
+   "delta_score": 3.7421596998597918e-06,
+   "source": "start:ga@gpu0",
+   "min_gap": 8.736398271480539e-10
+  },
+  {
+   "n": 969,
+   "baseline_L": 31.625015344710043,
+   "new_L": 31.62481484788456,
+   "delta_L": 0.00020049682548162195,
+   "delta_score": 6.440885995964478e-06,
+   "source": "start:ga@gpu1",
+   "min_gap": 9.8716346208505e-10
+  }
+ ],
+ "net_gain_score": 1.018304569582427e-05,
+ "output_sha256": {
+  "improved_groups.csv": "e6e8599416563e72cb339e00f93c73740fd31b32116d695af9d7928bd142f332",
+  "improved_index.csv": "c99ae8ccf3fd91025a3dff7753dc2757a6d39d82c9028d7483d8c6c79899eb17"
+ }
+}
