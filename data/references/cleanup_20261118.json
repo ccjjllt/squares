@@ -1,0 +1,201 @@
+{
+ "date": "2026-11-18",
+ "objective": "删除当前已停止研究的文档、脚本与产物（含本机 /tmp 中一次性扫描、旧前沿目录与中间合并），保留研究概况、停止原因、当前最佳布局与可复核身份，并回收磁盘空间。",
+ "research_overview": [
+  "docs/research.md",
+  "data/references/closed_20261118/reports/"
+ ],
+ "policy": "已放弃路线只保留 docs/research.md 的简述、停止原因与关键量化结果；最终 REPORT 抽存到 data/references/closed_20261118/reports/（29 份，1.2 MiB）；不保留专用脚本、原始下载、中间合并和完整提交 CSV。当前 bank、正在运行的夜间 C++ 收割链、Colab 脚本与官方提交归档不动。",
+ "disk": {
+  "before_repo": "879 MiB (du -sh .)",
+  "after_repo": "638 MiB (du -sh .)",
+  "before_campaign2": "9.4 GiB (du -sh /tmp/campaign2)",
+  "after_campaign2": "196 MiB (du -sh /tmp/campaign2)",
+  "deleted_campaign2_kb": 9655910,
+  "deleted_campaign2_human": "约 9.2 GiB",
+  "deleted_old_tmp_kb": 11010072,
+  "deleted_old_tmp_human": "10.5 GiB",
+  "deleted_repo_cache_kb": 247484,
+  "deleted_repo_cache_human": "242 MiB",
+  "total_freed_human": "约 19.9 GiB",
+  "free_disk_before": "526 GiB (df -h /System/Volumes/Data)",
+  "free_disk_after": "546 GiB (df -h /System/Volumes/Data)"
+ },
+ "decisions": [
+  {
+   "scope": "外部文献/代码/目录挖掘（external 1–3）",
+   "action": "删除 /tmp/campaign2/external、external2、external3（原始下载、git clone、60k+ 候选组、扫描 CSV）",
+   "reason": "Mishapolk 6 题 +1.0402e-3 已并入 bank；round2 仅 +5.8137e-11 且未安装；round3 解析 60,000+ 组、0 胜；公开来源已枯竭。最终数值见 external*.md。",
+   "deleted_kb": 6578792
+  },
+  {
+   "scope": "定向 16 题外部搜索（targeted）",
+   "action": "删除 /tmp/campaign2/targeted（16 题的 kernel/dataset 下载、逐题对照、候选 CSV）",
+   "reason": "16 个高价值题没有公开坐标；per-puzzle leaderboard 只有边长；0 候选。",
+   "deleted_kb": 305000
+  },
+  {
+   "scope": "公开前沿原始收割（harvest/newpub）",
+   "action": "删除 /tmp/campaign2/harvest 与 newpub 下除 merge_nilan 外的所有下载；保留 newpub/merge_nilan 因为它是 bank report 的 input。",
+   "reason": "所有胜题已并入 bank：harvest 最好 +1.1011e-5；今日 romywicaksono +4.514e-5、nilanjansaha +6.460e-5 均已吸收；其余 0 胜。原始 kernel/dataset 可从 Kaggle 重下。",
+   "deleted_kb": 1581952
+  },
+  {
+   "scope": "旧前沿 watcher/agent 与中间合并（/tmp）",
+   "action": "删除 /tmp/evand_sq、frontier_watch_all、frontier_watch_ds、sub_frontier、sub_cpu、frontier_agent",
+   "reason": "旧 merge 最高 22.1296845，已被 22.1283321 取代；packer hop 最好 9.6e-6、penguin n=448 +2.28e-4 均已并入；原始 kernel/dataset 与合并目录不再承担复现作用。",
+   "deleted_kb": 11010072
+  },
+  {
+   "scope": "近方族实心核（master65/master626/multiangle/staircase65）",
+   "action": "删除中间枚举、候选 CSV 与脚本",
+   "reason": "切触界与 bank 逐位相同；45° 5×5 核是唯一可行核；所有 θ/offset/split/fan 更差；族精确封闭。",
+   "deleted_kb": 2364
+  },
+  {
+   "scope": "n=291 双核、CDB、格点、带区相位（master291/cdb/cdb2/lattice/bandphase）",
+   "action": "删除 MILP 中间表、候选 CSV 与扫描目录",
+   "reason": "n=291 精确最优 17.5355339，20 种核排列全部 ≥18.0；CDB 47/82 恰为族最优、35 题 bank 更好、0 胜；两晶格容量恰为 k²。",
+   "deleted_kb": 176832
+  },
+  {
+   "scope": "n=401 三相位 MIS（mis401）",
+   "action": "删除本地复现与 MIS 产物",
+   "reason": "纯晶格族封顶 400；记录的 401 是含 24 个手工 sliver 的松弛布局。",
+   "deleted_kb": 1388
+  },
+  {
+   "scope": "带区 9 题（band）",
+   "action": "删除 12,536 s 抛光输出与候选",
+   "reason": "0 胜；布局接触卡死；精确天花板差 15–38 格；±0.82° 缺陷是承重的。",
+   "deleted_kb": 31668
+  },
+  {
+   "scope": "D=1/D=2 近方族（d1_2224/d2ladder/d2master）",
+   "action": "删除 GA 输出、近失记录与构造族枚举",
+   "reason": "d1-2224 21/21 valid、d2-ladder 17/17 valid，全 0 胜；近失 3.9e-6–5.6e-5；记录 D=2 需 0.0215 的不同构造；刚性族仍差 2–16 格。",
+   "deleted_kb": 134156
+  },
+  {
+   "scope": "刚性组/退火/连续抛光/旧 engine（anneal/polish/engine/engine_deep）",
+   "action": "删除退火轨迹、刚性组证书、engine 中间输出",
+   "reason": "396/396 零松弛；连续收缩上限 ≤1e-7，而需要 0.0075–0.0215；engine 0 胜、半库焊死；deep 0 feasible。",
+   "deleted_kb": 263000
+  },
+  {
+   "scope": "模板/多角度/理论构造族（templates/theory/theory2/cpsat）",
+   "action": "删除构造器、证明脚本与枚举输出",
+   "reason": "5 个闭式族全部被 bank 追平或击败；0 胜；证明结论已写入 docs/research.md。",
+   "deleted_kb": 100000
+  },
+  {
+   "scope": "C++ 引擎一次性测试输出（cpp_engine）",
+   "action": "删除 out_fake/merge_test/merge_lift_selftest/out_ga/out_bs/payload_test/gh/p*/selftest 等；保留 kernel、best、bankds、stage、payload_broad、sqpack_to_csv.py",
+   "reason": "夜间 self-polish/broad/nearmiss/polish2 仍在跑；只清测试与重复 payload。",
+   "deleted_kb": 145408
+  },
+  {
+   "scope": "旧 self-ga/self-cycle 收割输出（watch）",
+   "action": "删除 /tmp/campaign2/watch/cpp_ga 与 cpp_cycle 的下载/合并输出；保留 watch_running.py、state.json、log 与 tiny band1/sa291",
+   "reason": "self-ga 0 胜、self-cycle 11 次 1020s 超时，均已停止；当前夜间收割走 cpp_harvest。",
+   "deleted_kb": 26624
+  },
+  {
+   "scope": "Colab Chrome 配置副本",
+   "action": "删除 /tmp/campaign2/colab/chrome-profile 与截图/日志；保留 REPORT、OAuth 脚本与 Drive bundle",
+   "reason": "复制 profile 无法复用 Google cookie，OAuth 必须在真实浏览器点一次；保留脚本即可继续。",
+   "deleted_kb": 98048
+  },
+  {
+   "scope": "本地 Drive 暂存重复",
+   "action": "删除 /tmp/campaign2/drive_sis/submission.csv 与 work/；保留脚本、colab_pkg、perpuzzle_best、report.json",
+   "reason": "完整 bundle 已在 Google Drive sis_campaign；本地只留可重建脚本。",
+   "deleted_kb": 40848
+  },
+  {
+   "scope": "仓库缓存与根目录一次性表",
+   "action": "删除 .cache/uv（242 MiB）与 family_table*.json、phase_sweep.json；表抽存到 closed_20261118/evidence/",
+   "reason": "构建缓存；一次性族扫描输出，结论已在 master291.md。",
+   "deleted_kb": 247484
+  }
+ ],
+ "retained": [
+  "/tmp/best_bank/submission.csv + report.json（22.128332087771835，SHA 55090172…，1000/1000）",
+  "/tmp/campaign2/cpp_engine（115 MiB：kernel、best、bankds、stage、payload_broad、sqpack_to_csv.py）",
+  "/tmp/campaign2/cpp_harvest（52 MiB：harvest_cpp/auto_* 脚本与日志）",
+  "/tmp/campaign2/watch（26 MiB：watch_running.py 与 state）",
+  "/tmp/campaign2/newpub/merge_nilan（28 MiB，bank report 的 input，SHA 与 bank 相同）",
+  "/tmp/campaign2/colab（48 KiB：REPORT、oauth_loopback.py 等）与 drive_sis（688 KiB 脚本）",
+  "docs/research.md、data/references/closed_20261118/、src/squares/、outputs/submissions/bank_20261117/、outputs/submissions/gpu_f_20261116/",
+  "Google Drive 我的云端硬盘/sis_campaign/（Colab T4 bundle）"
+ ],
+ "verification": {
+  "bank_sha256": "55090172a03555916650bf280d8bf02ee85f55fbba5109df1ca1e2ef4f7ddeeb",
+  "bank_score": 22.128332087771835,
+  "bank_valid": "text 1000/1000, float64 1000/1000",
+  "inspect": "500500 rows, 1000 puzzles, n=1..1000, 0 missing",
+  "score_smoke": "max-n 10 both routes: 1.3711576157686851, valid 10/10 each",
+  "harvest_scripts": "bash -n passes for harvest_cpp.sh, auto_harvest.sh, auto_cycle.sh, auto_night.sh",
+  "merge_nilan_sha": "identical to bank (55090172…)",
+  "free_disk": "526 GiB -> 546 GiB",
+  "merge_self_check": "bank vs bank: 1000 new geometry groups scanned, changed_puzzles=[], net_gain 0.0, score 22.128332087771835 on both routes"
+ },
+ "deleted_paths": {
+  "campaign2_closed": [
+   "/tmp/campaign2/external",
+   "/tmp/campaign2/external2",
+   "/tmp/campaign2/external3",
+   "/tmp/campaign2/harvest",
+   "/tmp/campaign2/targeted",
+   "/tmp/campaign2/newpub/*（保留 merge_nilan）",
+   "/tmp/campaign2/band",
+   "/tmp/campaign2/anneal",
+   "/tmp/campaign2/gadget",
+   "/tmp/campaign2/master291",
+   "/tmp/campaign2/master626",
+   "/tmp/campaign2/master65",
+   "/tmp/campaign2/cdb",
+   "/tmp/campaign2/cdb2",
+   "/tmp/campaign2/lattice",
+   "/tmp/campaign2/bandphase",
+   "/tmp/campaign2/multiangle",
+   "/tmp/campaign2/staircase65",
+   "/tmp/campaign2/lift_check",
+   "/tmp/campaign2/m3_union",
+   "/tmp/campaign2/tpl_merge",
+   "/tmp/campaign2/engine",
+   "/tmp/campaign2/engine_deep",
+   "/tmp/campaign2/templates",
+   "/tmp/campaign2/d2ladder",
+   "/tmp/campaign2/d1_2224",
+   "/tmp/campaign2/d2master",
+   "/tmp/campaign2/d2_out",
+   "/tmp/campaign2/legacy",
+   "/tmp/campaign2/udishiken",
+   "/tmp/campaign2/polish",
+   "/tmp/campaign2/mis401",
+   "/tmp/campaign2/theory",
+   "/tmp/campaign2/theory2",
+   "/tmp/campaign2/pull_sis-d2-ladder-20261118",
+   "/tmp/campaign2/pull_sis-d1-2224-20261118",
+   "/tmp/campaign2/colab/chrome-profile",
+   "/tmp/campaign2/drive_sis/submission.csv",
+   "/tmp/campaign2/drive_sis/work"
+  ],
+  "old_tmp_trees": [
+   "/tmp/evand_sq",
+   "/tmp/frontier_watch_all",
+   "/tmp/frontier_watch_ds",
+   "/tmp/sub_frontier",
+   "/tmp/sub_cpu",
+   "/tmp/frontier_agent"
+  ],
+  "repo": [
+   ".cache/uv",
+   "family_table.json",
+   "family_table2.json",
+   "family_table_final.json",
+   "phase_sweep.json"
+  ]
+ }
+}

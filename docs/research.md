@@ -1107,3 +1107,45 @@ f=0.514079 需要 **0.0215** 的不同构造。1.5h 的 GA 不能跨过；D=2 �
 `sqpack_to_csv.py` 修复了 macOS `._*` 元数据文件导致的崩溃（此前的 self-ga 收割被它误报为
 0 胜；修复后重跑确认确实 0 胜）。
 提交：00:05Z（配额重置后，银行 22.128332087771835 + 已收割战果）；09:00Z（夜间全部战果）。
+
+## 2026-11-18 停止方向清理（已删除约 20 GiB）
+
+按“停止的研究只留本页简述与停止原因，不保留文档、脚本和中间产物”的约定，本轮清理了
+2026-11-17/18 已判死的研究线、已吸收的公开源原始下载、旧前沿 watcher/agent 目录、被取代的
+中间合并，以及本机缓存。完整路径、大小与保留证据见
+[cleanup_20261118.json](../data/references/cleanup_20261118.json)；停止线的最终 REPORT 抽存于
+[closed_20261118/reports](../data/references/closed_20261118/reports/)（29 份，1.2 MiB），
+一次性族扫描表抽存于 `closed_20261118/evidence/`。
+
+| 已停止路线 | 最后结论（停止原因） | 已删除 |
+| --- | --- | ---: |
+| 外部文献/代码/目录挖掘（`external`/`external2`/`external3`） | Mishapolk 6 题 +1.0402e-3 已入 bank；round2 仅 +5.8137e-11 且未安装；round3 解析 60,000+ 组 **0 胜**；来源枯竭 | 6.3 GiB |
+| 定向 16 题外部搜索（`targeted`） | 16 个高价值题没有公开坐标；per-puzzle leaderboard 只有边长；0 候选 | 298 MiB |
+| 公开前沿原始收割（`harvest`/`newpub`） | `harvest` 最好 +1.1011e-5；今日 romywicaksono +4.514e-5、nilanjansaha +6.460e-5 均已吸收；其余 0 胜 | 1.5 GiB |
+| 旧前沿 watcher/agent 与中间合并（`/tmp`） | 旧 merge 最高 22.1296845，已被 22.1283321 取代；packer hop、penguin n=448 等胜题均已并入 | 10.5 GiB |
+| 近方族实心核（`master65`/`master626`/`multiangle`/`staircase65`） | 切触界与 bank 逐位相同；45° 5×5 核是唯一可行核；所有 θ/offset/split/fan 更差；族精确封闭 | 2 MiB |
+| n=291 双核、CDB、格点、带区相位（`master291`/`cdb`/`cdb2`/`lattice`/`bandphase`） | n=291 精确最优 17.5355339，20 种核排列全部 ≥18.0；CDB 47/82 恰为族最优、35 题 bank 更好、0 胜；两晶格容量恰为 k² | 173 MiB |
+| n=401 三相位 MIS（`mis401`） | 纯晶格族封顶 **400**；记录的 401 是含 24 个手工 sliver 的松弛布局 | 1.4 MiB |
+| 带区 9 题（`band`） | 12,536 s 连续抛光 **0 胜**；接触卡死；精确天花板差 15–38 格；±0.82° 缺陷承重 | 31 MiB |
+| D=1/D=2 近方族（`d1_2224`/`d2ladder`/`d2master`） | 21/21、17/17 valid 全 **0 胜**；近失 3.9e-6–5.6e-5；记录 D=2 差 0.0215 = 不同构造；刚性族差 2–16 格 | 131 MiB |
+| 刚性组/退火/连续抛光/旧 engine | 396/396 零松弛；连续收缩 ≤1e-7，而需要 0.0075–0.0215；engine 0 胜、半库焊死；deep 0 feasible | 257 MiB |
+| 模板/多角度/理论构造族（`templates`/`theory`/`theory2`/`cpsat`） | 5 个闭式族全部被 bank 追平或击败；0 胜；证明结论已写入本页 | 98 MiB |
+| C++ 引擎一次性测试输出 | 仅清 `out_fake`/`merge_test`/`out_ga`/`payload_test` 等；夜间 self-polish/broad/nearmiss/polish2 的 kernel、best、bankds、payload_broad 全部保留 | 142 MiB |
+| Colab Chrome 配置副本 | 复制 profile 无法复用 Google cookie，OAuth 必须在真实浏览器点一次；保留 REPORT/OAuth 脚本/Drive bundle | 96 MiB |
+| 本地 Drive 暂存重复 | 完整 bundle 已在 Drive `sis_campaign`；本地只留脚本与 `colab_pkg` | 40 MiB |
+| 仓库 uv 缓存与根目录一次性表 | `.cache/uv` 与 `family_table*.json`/`phase_sweep.json`；表已抽存到证据目录 | 242 MiB |
+
+保留：`/tmp/best_bank`（权威 bank、backup）；正在运行的 C++ 夜间链 `/tmp/campaign2/cpp_engine`
+（115 MiB：kernel/best/bankds/stage/payload_broad/sqpack_to_csv.py）、`cpp_harvest`（脚本与日志）、
+`watch`（watcher 状态）；`newpub/merge_nilan`（bank report 的 input，SHA 与 bank 相同）；
+`colab` 精简脚本与 Drive 上的 T4 bundle；`docs/`、`data/references/`、`src/squares/`、
+`outputs/submissions/bank_20261117/` 与 `gpu_f_20261116/`。
+
+验证：删除前后 bank 的 SHA-256 均为 `55090172…`，`report.json` 仍报 **22.128332087771835**，
+text/float64 均 1000/1000；`squares inspect` 报 500,500 行 / 1000 题 / 0 缺失；
+`squares score --max-n 10 --mode both` 两条路径均 10/10（1.3711576158）；`squares merge`
+用 bank 对自身跑完整收割路径得到 `changed_puzzles=[]`、`net_gain=0.0`、两路径
+22.128332087771835；四个收割脚本 `bash -n` 全部通过；`newpub/merge_nilan/submission.csv`
+与 bank 逐字节相同。磁盘：仓库
+879 MiB → 638 MiB，`/tmp/campaign2` 9.4 GiB → 196 MiB，旧 `/tmp` 树 10.5 GiB 删除，
+可用空间 526 GiB → 546 GiB（清理结束时实测）。
