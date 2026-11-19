@@ -1,0 +1,88 @@
+{
+  "date": "2026-11-18",
+  "purpose": "2026-11-18 官方提交链：ref、官方分、本地分、SHA-256。提交 CSV 由 /tmp/best_bank 生成并在 outputs/submissions/bank_20261117/ 归档。",
+  "chain": [
+    {
+      "ref": 58502763,
+      "submitted_utc": "2026-11-18T09:01:05Z",
+      "status": "COMPLETE",
+      "official_public_score": 22.1279518948,
+      "local_score": 22.127951894820566,
+      "sha256": "68dc750ee116fa8936f4406612ac7e78feef588fde7de4971feb02d1e5adf6d9",
+      "source": "09:00Z 槽：broad-seeded n=545 +4.2176e-6；bank 22.127951894820566"
+    },
+    {
+      "ref": 58512171,
+      "submitted_utc": "2026-11-18T13:50:09Z",
+      "status": "COMPLETE",
+      "official_public_score": 22.1271380476,
+      "local_score": 22.12713804762674,
+      "sha256": "430bb155725407e540948cfc4bda008565e09aef3bed797832fe717c82afc50a",
+      "source": "13:50Z 公开收割：alexchilton best_current.csv 10:54Z（160 题，+7.8687537e-4）+ AHFE0924/Squares-Feeder（21 题，+2.6971826e-5）"
+    },
+    {
+      "ref": 58514784,
+      "submitted_utc": "2026-11-18T15:06:52Z",
+      "status": "COMPLETE",
+      "official_public_score": 22.1271303908,
+      "local_score": 22.127130390856603,
+      "sha256": "f599393a5785c034ee2452edb0ddbbbc5b407d1b14c252852e56ac6c076127fe",
+      "source": "手动 15:05Z：alexchilton best_current + AHFE +8.138e-4 + Colab n=264 +7.657e-6"
+    },
+    {
+      "ref": 58514816,
+      "submitted_utc": "2026-11-18T15:07:41Z",
+      "status": "COMPLETE",
+      "official_public_score": 22.1271303908,
+      "local_score": 22.127130390856603,
+      "sha256": "f599393a5785c034ee2452edb0ddbbbc5b407d1b14c252852e56ac6c076127fe",
+      "source": "老调度器延迟触发的同 bank 重复提交（15:00Z 槽）"
+    },
+    {
+      "ref": 58516336,
+      "submitted_utc": "2026-11-18T15:49:51Z",
+      "status": "COMPLETE",
+      "official_public_score": 22.1267041721,
+      "local_score": 22.126704172180595,
+      "sha256": "e50d51e2d4d9adec5b9dda80949d1355ddc1d62c37068fd157a336a3d25b39a7",
+      "source": "Joost de Winter n=299 exact certificate (1e-12 dilation) +4.2607020e-4, plus AHFE feeder incremental"
+    }
+  ],
+  "local_bank_after_chain": {
+    "score": 22.126704172180595,
+    "sha256": "e50d51e2d4d9adec5b9dda80949d1355ddc1d62c37068fd157a336a3d25b39a7",
+    "source": "Joost n=299 installed at 15:49Z; official 58516336 matches",
+    "expected_submission": "none needed"
+  },
+  "rank_observations": [
+    {
+      "utc": "2026-11-18T13:10Z",
+      "rank": 107,
+      "score": 22.1279518948
+    },
+    {
+      "utc": "2026-11-18T14:05Z",
+      "rank": 102,
+      "score": 22.1271380476
+    },
+    {
+      "utc": "2026-11-18T16:00Z",
+      "rank": 96,
+      "score": 22.1267041721
+    }
+  ],
+  "top_at_1405Z": [
+    {
+      "team": "Cats and boxes 😼",
+      "score": 22.039951081
+    },
+    {
+      "team": "Chris Deotte",
+      "score": 22.046989631
+    },
+    {
+      "team": "VitalyR",
+      "score": 22.0479990757
+    }
+  ]
+}

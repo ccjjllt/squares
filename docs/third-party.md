@@ -32,8 +32,20 @@ Python 依赖与版本由 `pyproject.toml`、`uv.lock` 声明，各依赖保留�
 
 `data/references/leaderboards/perpuzzle_best_20261029.csv` 来自 [lostdecimal27 的 squares-in-squares-bank](https://www.kaggle.com/datasets/lostdecimal27/squares-in-squares-bank)，是 2026-10-29 的边长纪录镜像，仅作历史排序参考，不是实时榜单。
 
+## 2026-11-18 公开 donor（当日收割）
+
+| 材料 | 固定来源 | 版本 / SHA-256 | 收益 |
+| --- | --- | --- | --- |
+| `alexchilton/squares-in-squares-starter-kit` → `best_current.csv` | [Kaggle dataset](https://www.kaggle.com/datasets/alexchilton/squares-in-squares-starter-kit) | v85，2026-11-18T10:54:40Z，`3b60ade8…` | **+7.8687537e-4**，160 题 |
+| `AHFE0924/Squares-Feeder` → `latest_public.csv` | [GitHub](https://github.com/AHFE0924/Squares-Feeder) | commit `d2293a82`，2026-11-18T13:50:43Z，`e9925e49…` | +2.6971826e-5，21 题（后续版本再 +1.85e-8） |
+| 逐题纪录表 | [inversion/squares-in-squares-per-puzzle-leaderboard](https://www.kaggle.com/code/inversion/squares-in-squares-per-puzzle-leaderboard) | 2026-11-18T12:02:43Z 运行，`__results__.html` 内嵌 `const DATA` | 只含边长，无坐标；合并后见 `data/references/leaderboards/perpuzzle_best_20261118.csv`（`9cae7620…`） |
+
+`best_current.csv` 单独整表只有 22.129578（弱于 bank），价值在逐题：160 题更优。
+哨兵 `scripts/watch_public.sh`（即 `/tmp/pubscan2/watch_public.sh`）每 30 分钟重下
+这两个 donor，只做只读 merge，不安装、不提交。
+
 ## 正式提交身份
 
-2026-11-16 清理删除了除当前最佳外的正式/候选提交 CSV。每个 ref 的官方分、SHA-256、行数与本地复核结果保存在[历史提交身份表](../data/references/official_submissions_20261116.json)；当前官方最佳为 `outputs/submissions/gpu_f_20261116/`（ref 58418244，22.1327829081，SHA-256 `3465e359…`）。
+2026-11-16 清理删除了除当前最佳外的正式/候选提交 CSV。每个 ref 的官方分、SHA-256、行数与本地复核结果保存在[历史提交身份表](../data/references/official_submissions_20261116.json)与[2026-11-18 提交链](../data/references/official_submissions_20261118.json)；当前官方最佳为 `outputs/submissions/gpu_f_20261116/`（ref 58418244，22.1327829081，SHA-256 `3465e359…`），最新为 ref 58512171（22.1271380476，SHA-256 `430bb155…`）。
 
 未继续采用的 Notebook、论文调研与外部求解器摘录已清理；相关研究结论及停止原因统一保存在[研究概况](research.md)。

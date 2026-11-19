@@ -1,0 +1,17 @@
+{
+ "snapshot_date": "2026-11-18",
+ "generated_utc": "2026-11-18T13:15:32Z",
+ "method": "Rendered HTML output of the community per-puzzle leaderboard notebook inversion/squares-in-squares-per-puzzle-leaderboard, downloaded via the Kaggle web API output endpoint; the table is embedded as `const DATA = [...]` in __results__.html. Puzzles with no team beating the starting baseline are taken from the 2026-11-11 snapshot (team=\"-\"), since a record only exists where the baseline was beaten.",
+ "notebook_url": "https://www.kaggle.com/code/inversion/squares-in-squares-per-puzzle-leaderboard",
+ "download_url": "https://www.kaggle.com/api/v1/kernels/output/download/inversion/squares-in-squares-per-puzzle-leaderboard/__results__.html",
+ "notebook_last_run_utc": "2026-11-18T12:02:43Z",
+ "latest_record_submission_in_table": "2026-11-18T11:45:10Z (Chris Deotte; 15 puzzles)",
+ "rows_with_team_record": 498,
+ "rows_baseline_only": 502,
+ "implied_per_puzzle_best_total": 22.031007019700255,
+ "official_top1_score": 22.039951081,
+ "official_top1_submission_utc": "2026-11-14T12:08:29.810Z",
+ "validation": "287 puzzles improved vs the 2026-11-11 snapshot, 0 regressed; implied per-puzzle best total is below the best single submission, as required.",
+ "csv_sha256": "9cae7620a966526f5e0547b73f55938ff5638f86197037ea335c1c7d98c74267",
+ "csv_rows": 1000
+}

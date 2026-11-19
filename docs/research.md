@@ -1149,3 +1149,319 @@ text/float64 均 1000/1000；`squares inspect` 报 500,500 行 / 1000 题 / 0 �
 与 bank 逐字节相同。磁盘：仓库
 879 MiB → 638 MiB，`/tmp/campaign2` 9.4 GiB → 196 MiB，旧 `/tmp` 树 10.5 GiB 删除，
 可用空间 526 GiB → 546 GiB（清理结束时实测）。
+
+## 2026-11-18 02:27Z 公开 starter-kit v83 小胜（+1.724e-7）
+
+公开源 subagent 用 Kaggle MCP 扫到 `alexchilton/squares-in-squares-starter-kit` **v83**
+（dataset，2026-11-18 01:53Z 更新）。完整 merge 改 12 题、净 **+1.7379e-7**
+（score 22.128331913985928），但其中 11 题只是 1e-12–1e-16 的格式级差异。按
+“不引入脆弱近 tie”的原则，只取主胜题 **n=865** 做外科式 merge：
+`changed_puzzles=[865]`，净 **+1.724244e-7**，text/float64 均
+**22.12833191534741**，1000/1000。已安装为 bank `9b93a936…`；其余 11 题不安装。
+
+本次对 58418244（22.1327829081）的累计增益为 **4.4509928e-3**。官方 ref 58487857
+已 COMPLETE（22.1283320877）；09:00Z 槽提交新 bank + 夜间 kernel 战果。
+
+证据：`/tmp/pubscan_20261118/merge_n865/`、`/tmp/pubscan_20261118/cand_n865.csv`；
+合并记录已写入 `outputs/submissions/bank_20261117/provenance.json`（15 条 merge）。
+
+## 2026-11-18 02:30Z Colab T4 GA 首个胜题 n=448（+1.3179e-5）
+
+Colab T4 上跑的 Santa 2025 冠军 GA（`grennwolf` 移植）在第 50 代找到 n=448 的合法改进：
+L `21.687501911686 → 21.687222964826`，score 增益 **1.317900e-5**。`make_submission.py`
+输出候选，本地 `squares merge` 认证 `changed_puzzles=[448]`，text/float64 均
+**22.12831873634704**，1000/1000。已安装为 bank `f4e8425d…`。
+
+这是本轮第一条不是公开 donor、而是自研 GPU 搜索产生的胜题。对 58418244 的累计增益
+更新为 **4.4641718e-3**。09:00Z 槽提交该 bank + 夜间 kernel 战果。
+证据：`/tmp/campaign2/colab_merge/`、`/tmp/campaign2/colab_candidate.csv`。
+
+## 2026-11-18 04:02Z Colab n=376 四连改进（+1.6337e-4）
+
+同一 T4 GA 随后在 n=376 上连续四次合法改进：
+
+| 阶段 | L |
+|---|---:|
+| bank | 19.876005938679 |
+| 第 1 次 polish | 19.875391479495 |
+| 第 2 次 polish | 19.874818651469 |
+| 第 3 次 polish | 19.873850496145 |
+| 第 4 次 polish | **19.872838100383** |
+
+本地 `squares merge` 认证 `changed_puzzles=[376]`，text/float64 均
+**22.12815536756089**，1000/1000，净增益 **1.6336879e-4**。已安装为 bank
+`4a03e224…`。这是本轮最大的自研单题收益，超过今天两笔公开 donor 之和。
+
+对 58418244 的累计增益更新为 **4.6275405e-3**；相对官方 58487857
+（22.1283320877）已低 **1.7672e-4**。09:00Z 槽提交该 bank + 夜间 kernel 战果。
+证据：`/tmp/campaign2/colab_merge/`、`/tmp/campaign2/colab_candidate.csv`。
+
+## 2026-11-18 05:27Z Colab n=376 第二阶段（+1.2215e-4）
+
+同一 T4 GA 在 n=376 上继续累积到 **17 条**合法改进，第二阶段把 L 从
+`19.872838100383` 推到 `19.870469467981`。本地认证 `changed_puzzles=[376]`，
+text/float64 均 **22.12803321467166**，1000/1000，净增益 **1.2215289e-4**。
+已安装为 bank `3adf4d68…`。
+
+n=376 单题两阶段合计 **2.8552e-4**，是目前自研 GA 的最大收益。对 58418244 的
+累计增益更新为 **4.7496934e-3**；相对官方 58487857（22.1283320877）低
+**2.9887e-4**。09:00Z 槽提交该 bank + 夜间 kernel 战果。
+证据：`/tmp/campaign2/colab_merge/`、`/tmp/campaign2/colab_candidate.csv`。
+
+## 2026-11-18 08:16Z Colab n=264（+7.710e-5）
+
+T4 GA 继续在 n=264 上累积 4 条合法改进：L `16.773807597984 → 16.772554834668`。
+本地认证 `changed_puzzles=[264]`，text/float64 均 **22.127956112419483**，
+1000/1000，净增益 **7.7102252e-5**。已安装为 bank `5d8d79fa…`。
+
+至此 Colab 自研 GA 已贡献三道题：n=448 +1.3179e-5、n=376 +2.8552e-4、
+n=264 +7.7102e-5，合计 **3.7590e-4**。对 58418244 的累计增益更新为
+**4.8267957e-3**；相对官方 58487857 低 **3.7598e-4**。09:00Z 槽提交。
+证据：`/tmp/campaign2/colab_merge/`、`/tmp/campaign2/colab_candidate.csv`。
+
+## 2026-11-18 08:48Z broad-seeded n=545 与 Colab 会话丢失
+
+`sis-cpp-engine-broad-seeded` 在 08:20Z 截止后完成。CLI 逐文件下载被
+`kaggleusercontent` 的 SSL EOF 卡在 70/389；改用 Kaggle API 列文件 + 独立
+session 重试，**389/389 全部下载成功**。`sqpack_to_csv.py` 找到 1 个胜题：
+n=545，L `23.813821288 → 23.813722828`（ΔL −9.846e-5）。merge 认证
+`changed_puzzles=[545]`，净 **+4.2175989e-6**，双路由 **22.127951894820566**，
+1000/1000，已安装为 bank `68dc750e…`。
+
+`sis-cpp-engine-polish2` 随后完成：23 个 best 文件，**0 胜**。
+
+Colab T4 会话在 08:37:42Z 被回收（404/401），运行 7h22m。最后一条未收割的
+n=264 尾改进（L 16.772474136323，约 **4.97e-6**）随 VM 丢失；当前 bank 保留的是
+16.772554834668。尝试 `colab new -s sis2 --gpu T4` 返回 **503 Service Unavailable**，
+暂时无法重新分配 T4。
+
+对 58418244 的累计增益更新为 **4.8310133e-3**；相对官方 58487857 低
+**3.8019e-4**。09:00Z 槽提交该 bank。
+证据：`/tmp/broad_full/out/best/`（389 JSON）、`/tmp/campaign2/cpp_harvest/broad-full/merge/`。
+
+## 2026-11-18 09:00Z 提交与新 Colab 账号恢复
+
+09:00Z 槽由 `final_slot.py` 正常触发：ref **58502763**，官方分
+**22.1279518948**，`COMPLETE`，与本地 bank `68dc750e…` 一致。
+
+老账号 `smshiliangyao` 的 T4 仍返回 **503**；新账号 `ccjjllt0` 的 T4 可用。
+根因不是账号额度，而是 `colabx` 默认代理 `127.0.0.1:7900` 在
+`POST /tun/m/assign` 上稳定 `SSLEOF`；换 `COLAB_PROXY=http://127.0.0.1:7897`
+后 `new -s gpu1 --gpu T4` 一次成功。该结论已写入 `README.md` 的
+“Colab T4 运行（colabx）”一节，并新增 `scripts/colab_bootstrap_remote.py`。
+
+数据不再依赖 Drive 挂载：GA bundle（`colab_pkg/` + 当前 bank + prepare/run/harvest
+脚本）打成 `sis_bundle.tar.gz`，作为私有数据集
+**`ccjjllt/sis-ga-bundle-20261118`**（7.9 MiB）发布。会话内用 Kaggle token 下载、
+解包到 `/content/sis`、`prepare_colab.py` 建 1000 个 starts；随后
+`NPROC=4 MAX_MIN=600 bash run_colab.sh` 起 4 个 GA worker + 1 个 polish。
+13:04Z 状态：GPU 100%、6 进程、0 改进（刚开始）；13:07Z 首个 worker 进入
+n=367（f 0.68279）。
+
+rank.py 的目标表按当前 bank 与 11-11 逐题记录计算，前 15 大 gap 中
+**6 题（902/963/842/901/962/843）因 45° 边缘被自动跳过**；这 74 题合计
+0.0053 分，是 GA 覆盖不到的剩余空间。主流 gap（328/908/491/367/803/747/…）
+仍在列表内。
+
+证据：`README.md`、`scripts/colab_bootstrap_remote.py`、
+`/tmp/sis_bundle_build/`、Kaggle dataset `ccjjllt/sis-ga-bundle-20261118`。
+
+### 13:09Z 逐题榜刷新：22.0310070197
+
+11-11 快照已过时。`inversion/squares-in-squares-per-puzzle-leaderboard`
+（定时刷新，12:02:43Z 运行）把完整表以 `const DATA` 嵌在 `__results__.html` 里，
+13:09Z 抓取后与 11-11 的 502 条 baseline 行合并为
+`data/references/leaderboards/perpuzzle_best_20261118.csv`（SHA `9cae7620…`）。
+
+- 逐题最佳合计 **22.0310070197**，低于榜首单次提交 22.0399510810（混合收益 0.0089）；
+- 对 bank 的总正差距 **0.096944875120**，399 题落后 ≥1e-6，437 题并列，**0 题严格领先**；
+- 差距集中：top-10 9.3%、top-60 36.1%、top-100 51.3%；
+- 持有者：Cats and boxes 262 题 / 0.066394（68.5%）、VitalyR 7.8%、
+  Sunstone 7.0%、Chris Deotte 4.9%。
+
+| 家族 | 题数 | 落后≥1e-6 | 差距合计 | 占比 |
+|---|---:|---:|---:|---:|
+| D9–16 | 163 | 114 | 0.027646 | 28.5% |
+| mid17–24 | 114 | 68 | 0.020188 | 20.8% |
+| D5–8 | 94 | 53 | 0.013187 | 13.6% |
+| D1 | 31 | 31 | 0.006703 | 6.9% |
+| D2 | 8 | 8 | 0.003904 | 4.0% |
+
+Top 10 目标：234（0.001198）、491、962、901、842、730、328、785、367、738。
+
+**D1/D2 是系统性 k 缩放构造，不是抛光**：D1 记录 `L−k` 从 k=25 的 0.51105
+降到 k=31 的 0.48951（bank 恒为 0.520815），k=31 的 31.489513775 已**低于 k+0.5**，
+与 `√(k²+k)=31.4960` 只差 6.5e-3；D2 同样从 0.53298 降到 0.51177（bank 0.535534）。
+这否定了“记录侧存在固定 `max(w,h)≤29` gadget”的旧结论（§ 结构结论），
+指向随 k 变化的互锁/环扩展构造。
+
+Colab 会话已把 `leaders.csv` 换成本表并重启 ranker；新 ns 首位为 n=234。
+rank.py 的 45° 规则会跳过 D1/D2 的 7 道旗舰题（962/901/842/785/730/963/902），
+因此单独起了一个 `--ns` 固定列表的 worker（tag `_d12`）专攻这 7 题。
+
+证据：`data/references/leaderboards/perpuzzle_best_20261118.csv` 与
+`.provenance.json`、`/tmp/campaign2/GAP_REPORT_20261118.md`、
+`/tmp/campaign2/gap_targets_20261118.json`、`/tmp/campaign2/top100_gap_20261118.csv`。
+
+## 2026-11-18 13:50Z 公开收割 +8.138e-4（bank 22.1271380476）
+
+公开哨兵（`/tmp/pubscan2`）扫了 191 个 notebook、45 份输出、67 个候选 CSV、
+20 个 squares/packing 数据集、17 个 GitHub 仓库后发现两笔真实增量：
+
+| donor | 发布时间 | 胜题 | 净收益 |
+|---|---|---:|---:|
+| `alexchilton/squares-in-squares-starter-kit` → `best_current.csv`（sha `3b60ade8…`） | **2026-11-18T10:54:40Z** | 160 | **+7.8687537e-4** |
+| `AHFE0924/Squares-Feeder` → `latest_public.csv`（sha `da479cab…`） | 2026-11-16 | 21 | **+2.6971826e-5** |
+
+两步 merge 各自双路由 1000/1000：hop1 `22.127951894820566 → 22.127165019452693`
+（`changed_puzzles=160`），hop2 `→ 22.12713804762674`（`changed_puzzles=21`，
+n=378/464/465/495/499/501/502/503/543/546/632/683/686/694/707/736/758/761/809/817/875）。
+最终 union SHA-256 `430bb155…`，500,500 行、1000 题、0 missing，已安装进 bank 并
+提交 **ref 58512171**（13:50:09Z）。
+
+注意 `best_current.csv` 单独评分只有 22.129578（比 bank 差），价值全在**逐题**：
+160 题上它更好。这与“公开源要逐题合并、不能看整表分数”的既有结论一致。
+
+其余公开源全部 0 胜或只是 hop1 的严格子集（jazivxt 7.8577e-4/107 题、nilanjansaha
+GPU 7.8688e-4/107 题、kmmms 2.0440e-4/80、kazuhiroyogo 2.0434e-4/90、
+lianlian99 2.0207e-4/22）。`udishiken/square-in-square-22-26`、`lostdecimal27`
+均无新版本；Nevska 11-18 的 explorer 只有边长/哈希，无坐标。
+
+对 58418244 的累计增益更新为 **5.6448605e-3**。已设置 30 分钟哨兵
+（alex 数据集 + AHFE GitHub），只做只读 merge、不安装、不提交。
+
+证据：`/tmp/pubscan2/REPORT.md`、`/tmp/pubscan2/merge_alex_bestcur/`、
+`/tmp/pubscan2/merge_alex_feeder/`（`submission.csv` SHA `430bb155…`）。
+
+### 14:00Z 官方确认、Colab 首胜与新证据
+
+- ref **58512171 COMPLETE = 22.1271380476**，与本地逐位一致（14:05Z 排名 **102**，
+  09:00Z 时是 107）。
+- Colab T4 用**刷新后的逐题目标表**跑出第一胜：n=264
+  `16.772554834668 → 16.772430426879`（**+7.6567701e-6**），merge
+  `changed_puzzles=[264]`，双路由 1000/1000，bank 更新为
+  **22.127130390856603**（SHA `f599393a…`）。15:00Z 槽提交。
+- 新增 `scripts/colab_harvest_safe.sh`：探测 kernel（卡死就 `restart-kernel`，
+  detached GA worker 不会死）→ 远端 `make_submission.py` → 下载 → 只读 merge →
+  **仅在 ≥1e-10 且双路由 1000/1000 时自动安装**。当前以 1800s 循环常驻，
+  避免再次出现“改进随 VM 丢失”。
+
+**S4 前沿结论（硬否定）**：把记录族形式化为 lattice+defect 后证明
+“任何插入的单位正方形都需要一个含 1×1 空腔的 void”，因此刚性平移 defect 至少
+`f ≥ 1/√2 = 0.70711`（45° 菱形）或 `f = 1`（轴对齐）。记录侧 D1 的 f 从 k=19 的
+0.532894 降到 k=31 的 **0.489514**，低于 1/√2 屏障，所以记录族**不可能**是
+lattice+刚性 defect；必须是 fractional-offset 的重新铺砌/fanning。该结论解释了
+fault-line、two-lattice、frozen-grid、rigid/anneal、contact-LP 全部 0 胜的原因。
+证据：`/tmp/campaign2/FRONTIER_REPORT.md`、kernel
+`ccjjllt/sis-frontier-fanprobe-20261118`（COMPLETE，1272s）。
+
+**S2 环扩展分析**：586 个极大环组，但只有 7 组携带差距（4.46% 的 0.0969），
+95.5% 的差距没有精确环孪生；bank 本身是环扩展的（D1 f 恒 0.520815），
+而记录每一步都降 f——继续拉长环只会保持差距，必须在每个 k 上单独找构型。
+基实例 392 个（只比 399 少 1.8%）。
+
+**S3 CPU kernel**：`ccjjllt/sis-cpp-engine-gap2-20261118` v2 于 13:38Z 起跑，
+57 题（占差距 3.02e-2）、4 workers、203 jobs、~8.15h，预计 22:10–22:40Z commit；
+已排除 45° D1/D2（交给 Colab 专用 worker）。
+
+**S5 alex 方法加宽**：`ccjjllt/sis-alexkit-wide-20261118` v4 于 14:40Z 起跑。
+公开 starter kit 只带 driver，引擎是 `github.com/evand/square-packing` 的
+`packer hop`（basin hopping + L-BFGS，MIT，pin `c801ab47`）。104 题、216 jobs、
+2160 process-min ≈ 9h，预计 23:46Z；首个认证胜 **n=915**
+`30.740316604 → 30.739963633`（−1.17e-5，600s）。
+
+**15:00Z 槽故障与修复**：老 `final_slot.py` 用一次 `time.sleep(357min)`，实际
+15:07:41Z 才醒（macOS 定时器合并/App Nap），结果手动 15:05Z 的 58514784 与它的
+58514816 重复提交了同一个 bank。已换成 `scripts/submit_slots.py`：30 秒轮询、
+按日状态文件去重、CLI 调用带 7897 代理，槽后 10 分钟内触发。当前 bank
+**22.127130390856603** 已由 58514784/58514816 提交，官方 **22.1271303908**。
+
+**Colab 会话 15:20Z 被回收并自动恢复**：第一段 T4 只跑了约 2h20m（13:00–15:20），
+比昨天的 7h22m 短。新增 `scripts/colab_keeper.sh`：每 5 分钟只查 session 列表
+（不碰 kernel），发现丢失就 `colabx new -s gpu1 --gpu T4` → 用最新私有数据集
+bootstrap → 起 4 个 GA worker。15:21Z 已自动完成：新 VM 从 **当前 bank
+22.1271304** 和 **2026-11-18 逐题记录**出发（数据集 v2，15:09Z 上传），
+GPU 100%，worker 正在跑 234/328/367。旧 VM 的唯一改进 n=264 已在丢失前入 bank。
+
+为避免 kernel 再次被过多进程拖死，新会话维持 4 个常规 worker，不再额外挂
+D1/D2 专用 worker；45° 家族交给 S4 的 free-offset 可行性与 Kaggle CPU 侧。
+
+## 2026-11-18 15:50Z Joost n=299 精确证书（+4.2607e-4）
+
+第二轮公开扫描找到 `github.com/JoostdeWinter/square-packing`（HEAD `7232328`，
+2026-11-18T07:31Z）的 `n299/n299_exact.json`：有理数精确证书，边长
+**17.793636991743039**，比 bank 的 17.801004434251865 低 0.00737。证书本身是
+零间隙接触，float64 下不合法；按 1e-12 中心膨胀后通过官方 v20 双路由：
+`changed_puzzles=[299]`，净 **+4.2607020e-4**，score **22.126704172180595**
+（与 AHFE 15:20Z 版本 union 后同分），1000/1000。已安装为 bank `e50d51e2…`，
+提交 **ref 58516336**。
+
+同一轮扫描的其他结论：
+
+- **残余差距 100% 由没有公开坐标的队伍持有**。top-4 占 0.0848186（88.2%）：
+  Cats and boxes 0.0658310（266 题）、VitalyR 0.0075195、Sunstone 0.0067601、
+  Chris Deotte 0.0047080。Deotte 的 14 条记录在其公开 notebook 中复现 0/14；
+  Nevska 的 52 条只有边长。
+- `jlevy/squares` register（HEAD `1015fc17`）解析出 315 条已知最优见证，**0 胜**；
+  9 条代数域见证被跳过，待用同样的 1e-12 膨胀复核。
+- Joost 仓库另有 55 题候选，17 个精确接触组“invalid”，其余都弱于 bank；
+  需要用 n=299 同款膨胀再复核一次，可能还有漏网。
+- alexchilton 仍是 v85（10:54:40Z）；AHFE 15:20Z 版本再贡献 6.08e-9，已并入。
+
+**S4 自由偏移模板最终结论**：T3（45° 块 + 四角楼梯，精确闭式）对 6 个 D1 目标的
+容量只有 601/653/725/820/880/921（需要 626/677/730/842/901/962），**6/6 不可行**；
+T1/T2 因 v1 的 `max_nfev` 参数 bug 未真正迭代，v2 预算被 gadget 压缩耗尽，
+无判决；gadget 压缩在 f=0.520815 上 0/3 可行（n=65 残差 4.18e-3 最接近）。
+CPU 可测的固定模板到此全部封死，剩余可能只有 GPU 上的 fan/multi-angle 自由搜索。
+
+**会话抖动**：15:21 新建的 T4 在 15:37 又消失，keeper 再次重建。已给 keeper 加
+“空列表需二次确认 + runtime ID 记录”，避免把健康会话误判为丢失而重建；
+harvest 也改成连续两次探测失败才 `restart-kernel`。
+
+### 精确证书类已穷尽
+
+对 Joost 55 组 + jlevy 324 组（9 组代数数用 80 位精度求值）逐一做 1e-12 中心膨胀
+并跑官方 v20：**379 组中 138 组原始边长低于 bank，138/138 膨胀后合法，但可用 0 组**。
+原因是膨胀代价约 1.0–1.7e-11，除 n=299（原始余量 1.679e-11）外全部翻负：
+
+- Joost n=268/270 余量 6.68e-13；jlevy n=295 1.037e-12；n=272/262/260 约 6.5e-13；
+- 9 条代数见证的余量只有 3.1e-15…3.72e-14，膨胀代价是余量的 300–3000 倍；
+- 17 个 Joost “invalid” 组在 1e-12/1e-11 下全部合法，纯属零间隙接触退化，
+  其中 n=413/543/547/590/851/910 的边长反而比 bank 差 6.97e-3…4.26e-2。
+
+整类 union（363 题、81,547 行，SHA `2cf2ebbc…`）merge 增益 **0.0**。
+独立 `squares score` 复核 bank：**22.126704172180595** text / 22.1267041721806
+float64，1000 有效、0 invalid、0 missing，输入 SHA `e50d51e2…`。
+证据：`/tmp/pubscan2/rescan2/audit_groups_below_bank.tsv`（138 行）、
+`/tmp/pubscan2/rescan2/merge_audit_all_dilated/`。
+
+**n>324 的精确证书也已穷尽**（第二轮 GitHub 定向搜索）：Joost 55 组、
+jlevy/Couzo 253 组（325–994）、`franciscouzo/square-packing` 396 组（325–998）、
+`TheSnakeFang/squarepack-certs` 17 组、`Mishapolk` 18 组、`evand` 25 组、
+`sosudo` 130 个坐标候选，以及 1zuki/Belloblaze/nayan268/Ujjwal/amin076/
+NNGeetha/RAH333/JohnKimaiyo/wand125/chelokot/HyukdongKim/mohsensbu/anopheles/
+JonathanGun 等仓库，**全部 0 胜**（原始边长就不低于 bank，膨胀无从谈起）。
+唯一“看起来能赢”的 `oceanwang/poc/lift_polish/data/shrunk_frontier.csv` 在
+n=442/485/530/577/743/798 上标称 +1.029e-3，但固定配对的方块重叠约 5e-4，
+1e-10 膨胀后仍非法，是**造假/错误数据**，不采用。
+
+同日 16:27Z 又从 AHFE commit `216698d2` 拿到 n=342/683/736 的
+**+1.8179437e-7**（max n=736 是 2.75e-15 的并列，不算实质胜利），
+bank 更新为 **22.12670399038623**（SHA `1d2c7665…`）。
+
+### 16:00Z Colab 免费 GPU 额度耗尽
+
+15:42 的 T4 只活了 15 分钟，15:57 新建的会话 **4 分钟内又消失**（16:01Z
+`No active sessions found on server`）。这是账号级免费 GPU 额度用完的典型形态，
+不是脚本问题：同一天该账号已累计跑了两段（2h20m + 15m），老账号上午已用 7h22m
+且一直 503。两个账号的免费 T4 目前都不可用。
+
+处理：
+- keeper 加 **backoff**：如果上一个 runtime 存活 <25 分钟，就暂停 90 分钟再试，
+  避免把额度浪费在只能跑几分钟的会话上；
+- harvest 先查 session 列表，没有会话就不再发 exec，也不再 `restart-kernel`；
+- 夜间搜索改由 **Kaggle CPU** 承担（gap2 / alexkit-wide / alexkit-d1d2 三个
+  kernel，约 6 小时）；公开哨兵继续。
+
+Colab 额度恢复后 keeper 会自动重建会话并从数据集 v3
+（bank `e50d51e2…`）bootstrap。
