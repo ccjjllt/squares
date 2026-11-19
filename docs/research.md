@@ -1,8 +1,12 @@
 # 研究概况与放弃原因
 
-截至 **2026-11-19 02:50 UTC（10:50 CST）**，本页为唯一研究状态入口。此处的“停止”指在当前算力/收益比下的资源取舍，不代表数学不可行。历史清理范围见[清理记录](../data/references/cleanup_history.json)，官方提交身份链见[提交记录](../data/references/official_submissions.json)。
+本页为研究状态入口。历史清理范围见[清理记录](../data/references/cleanup_history.json)，官方提交身份链见[提交记录](../data/references/official_submissions.json)。
 
-## 当前研究现状
+## 11 月 19 日晚间复核
+
+正式提交仍为 **22.1267039903**，北京时间 21:36 观察排名 225 / 2254。公开 v26 坐标与两份已完成的 CPU 搜索产物逐题合并后，独立全量复分为 **22.106322870827146**，两种解析各 1,000 题有效。候选单独保存，较正式提交改善了 255 个不同的题。距榜首仍差 0.066371790，下一轮优先研究跨题斜带拼接及其在大题上的传播。[研究结论、公开实现及实验设计](research_20261119.md) · [候选 CSV](../outputs/research_20261119/candidate.csv)
+
+## 11 月 19 日上午 10:50 快照（北京时间）
 
 | 项目 | 当前值 |
 | --- | --- |
@@ -16,7 +20,7 @@
 
 1. **公开前沿逐题合并**：持续扫描 Kaggle 公开输出/数据集与 GitHub 精确证书，经 `squares merge` 双路径严格认证。本轮主力降幅来自此路线（`boxed_v56` +5.378e-3、`rosswade` +1.355e-3、`alexchilton` +1.282e-3、`Mishapolk` 精确证书 +1.040e-3、`Joost` n=299 经 `1e-12` 中心膨胀 +4.261e-4、`jazivxt` 等）。
 2. **Santa 2025 岛式 GPU GA**（`grennwolf` 移植，Colab T4 / Kaggle GPU `NPROC=12` 静态分区）：唯一能产生大额自研收益的跨盆地搜索。Colab T4 已在 n=448/376/264 拿到 `+3.836e-4`；11-15/16 Kaggle GPU（gpu-a/b/d/f 等）合计贡献约 `+1.2e-3`。额度恢复后继续主攻中段 gap（24–288）及未饱和题。
-3. **`evand packer hop` 宽范围盆地跳跃**（Kaggle CPU）：通用多题长链仍有效，隔夜 `alexkit-wide` / `alexkit-wide2` 合计产出 33 题局部严格胜出，待下载 `hop_best.csv` 并入 bank。
+3. **`evand packer hop` 宽范围盆地跳跃**（Kaggle CPU）：隔夜两批分别报告 21 和 12 题改善。换用晚间公开合并基线逐题认证后，547、644、862、915 四题仍有净贡献，已计入晚间研究候选。
 
 ## 已放弃研究方向与停止原因
 

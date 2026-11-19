@@ -1,0 +1,14 @@
+{
+  "snapshot_date": "2026-11-19",
+  "retrieved_utc": "2026-11-19T14:31:28+00:00",
+  "notebook_url": "https://www.kaggle.com/code/inversion/squares-in-squares-per-puzzle-leaderboard",
+  "download_url": "https://www.kaggle.com/api/v1/kernels/output/download/inversion/squares-in-squares-per-puzzle-leaderboard/__results__.html",
+  "source_html_sha256": "a492149bbf52a222cbb1c127ed6b05ffcb13a8be3cdc5c2d497c29c4b5924e2f",
+  "method": "Use n/L_full/team/date from the rendered notebook const DATA array. For the omitted baseline-only puzzles reuse the 2026-11-18 CSV, checking that each has team=-. No team-record row from the previous snapshot is missing.",
+  "latest_record_submission_utc": "2026-11-19 11:46:18 UTC",
+  "rows_with_team_record": 498,
+  "rows_baseline_only": 502,
+  "implied_per_puzzle_best_total": 22.030644698252473,
+  "csv_sha256": "41c3212a81c1a6800cc01a1da3eec1091209f421cd46a64567b080d8b4416f56",
+  "csv_rows": 1000
+}
