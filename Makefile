@@ -1,7 +1,7 @@
 .PHONY: setup baseline
 
 setup:
-	uv sync --locked --extra experiments
+	uv sync --locked
 
 baseline:
-	uv run squares baseline --output outputs/baselines/grid.csv
+	uv run --no-sync squares baseline --output outputs/baselines/grid.csv

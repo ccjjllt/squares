@@ -1,0 +1,211 @@
+{
+  "policy": "已放弃路线只在 docs/research.md 保留简述与停止原因，不保留专用脚本、长报告、原始下载、中间合并和旧提交 CSV；停止是当前资源取舍，而非数学不可行证明。",
+  "rounds": [
+    {
+      "date": "2026-11-09",
+      "freed": "约 381 MiB (253 files, 399,630,383 B)",
+      "decisions": [
+        {
+          "scope": "core/refill 与有限两列构件组合",
+          "reason": "本轮29候选、512构件均无净收益；完整FTMC/递归DP未实施，暂不扩展"
+        },
+        {
+          "scope": "独立固定角CPU续压",
+          "reason": "微小收益已被Pilot04覆盖；修复成本高"
+        },
+        {
+          "scope": "GPU benchmark",
+          "reason": "吞吐选型已完成，不直接产出新布局"
+        },
+        {
+          "scope": "Pilot03/Pilot05",
+          "reason": "Pilot03是后续已执行准备；Pilot05没有新增赢家，输出与Pilot04相同"
+        },
+        {
+          "scope": "旧基线分析、计划和下载研究材料",
+          "reason": "旧基线/差距过时，未推进方向缺少本地收益证据；结论已并入研究概况"
+        },
+        {
+          "scope": "重复完整CSV、临时合并/日志/配额快照",
+          "reason": "最终CSV、有效部分布局、供体和独立评分已足以保留重要成果与血缘"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-13",
+      "freed": "5.41 GiB",
+      "repo_size": "约 7.5 GiB（含 .venv/.cache/.git） -> 1.4 GiB（du -sh .）",
+      "decisions": [
+        {
+          "scope": "2026-11-11 五路并行实验：fault-line gadget DP、evand fq/bandflip、精确插入、长尾 55 题、模板/CDB/记录族、全 999 题固定角 LP、公开 notebook 拆解",
+          "reason": "除 evand packer 的 n=910 认证赢家（7.517e-8，已合入当时基线）外全部 0 认证赢家；固定角 LP 在 dL=1e-6 即不可行，接触图超静定；fault-line DP 1166 donors/14.8K gadgets 零进入认证；外部布局与长尾结构均被当前合并前沿支配。结论已并入研究概况。"
+        },
+        {
+          "scope": "2026-11-12 研究树：generalised CDB、冻结网格/楔形再压缩、去尖角/两块分割、外部证书 hunt、旧公开前沿快照",
+          "reason": "CDB 在 901 题上 0 胜；冻结网格 40 题 ΔL=0 且 δ=0.001 即重叠；去尖角为容量硬台阶，两块分割全部差 0.117-0.233；外部 hunt 的 3 个 jlevy 胜已合入官方 58260286，其余 0 胜。"
+        },
+        {
+          "scope": "2026-11-12b 近平方族 S2 结构化重优化",
+          "reason": "626/842/902/963 三臂搜索全部 ΔL=0，净收益 0；n=626 精确坐在生成族容量台阶上（s 降 1e-3 容量 626→602），15 个多起点全部回到同一 L。结论：差距属于另一个族，连续松弛不可能拿到。"
+        },
+        {
+          "scope": "2026-11-13 d=9-12 两带+两轴块结构化重优化",
+          "reason": "4 个 Kaggle CPU kernel、244 次 swap + 34 次 transfer、5 题全部 0 改进；971/910/908 接触数 1.34-1.49× 等静定，中位自由位移 1e-11..1e-14，整体收缩上界 ΔL≤9.8e-11。要追需换块划分/换构造。"
+        },
+        {
+          "scope": "2026-11-12b 文献反推与外部坐标源挖掘",
+          "reason": "经典闭式族（Göbel/CDB/column-CDB/L-extension，1075 个父布局）0 胜；Karimi 两斜条比当前前沿差 0.08-0.11；外部 31 类源中只有 koboshchan 的 25 题胜出且已合入当前候选，其余公开源/证书库全部被当前前沿支配。"
+        },
+        {
+          "scope": "2026-11-12b 逐题差距分析",
+          "reason": "目标题清单与 2026-11-11 逐题榜快照已过时；当前差距判断以 data/references/leaderboards/perpuzzle_best_20261111.csv 和研究概况为准。"
+        },
+        {
+          "scope": "2026-11-12b 公开前沿监控的原始下载与中间合并",
+          "reason": "这些是 2026-11-12 已完成扫描的临时 26-41 MB 公开 submission 与合并副本；结论（kobosh pr45 9 胜、其余 0 胜、终检 0 胜）已写入研究概况和保留的 3 份小报告；合计约 1.22 GiB。"
+        },
+        {
+          "scope": "旧 GPU 结构 pilot 轮次：next_gap_candidates(_v2)、next_gap_deep、next_gap_tight、next_gen_depth2、next_mixed、next_rect、next_rect_gen2、next_round_atlasnew",
+          "reason": "全部 completed 且 improved_count=0 / winners=0；已被后续 pilot08/09、公开合并和 GA 结果取代，未进入当前血缘。"
+        },
+        {
+          "scope": "已被取代的中间合并链（outputs/merged/ 下 33 个目录）",
+          "reason": "最终坐标已固化在正式提交/当前候选与 provenance 中；逐轮中间 26 MB 完整 CSV 不再承担复现或血缘作用。"
+        },
+        {
+          "scope": "2026-11-12 日记",
+          "reason": "当日提交、关键经验和基础设施结论已并入 docs/research.md；不再保留独立日报。"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-16",
+      "freed": "约 18.3 GiB",
+      "repo_size": "1.6 GiB (du -sh .) -> 671 MiB (du -sh .)",
+      "decisions": [
+        {
+          "scope": "2026-11-15/16 CPU 搜索三条线：contact-LP 抛光、block-LNS、CPU wave 轮转",
+          "reason": "LP 抛光 11.5 h、8404 次尝试/题，仅 n=333 +9.59e-8、n=747 +2.16e-8（合并后 +2.16e-8）；block-LNS 11.4 h、top-8 整块旋转，improved_groups.csv 只有表头（0 胜）；CPU wave 轮转产出 1e-7 量级。当前前沿接触图超静定，CPU 连续/块级扰动无法产出 1e-6 以上改进。"
+        },
+        {
+          "scope": "TPU 路线",
+          "reason": "用户明确要求不使用 TPU（排队过慢）；探测 kernel 长期 QUEUED，未产生任何结果。"
+        },
+        {
+          "scope": "2026-11-07~11-13 旧 CPU 生成 + GPU 松弛 pilot 主线（pilot01/02/04/08/09、prepare_candidates、run_gpu_pilot、cpu_quench、search 模块、third_party 摘录）",
+          "reason": "该管线已被 2026-11-15 起的 Kaggle 静态分区 GA（NPROC=12，24/24 覆盖）与公开前沿逐题合并取代；旧 pilot 结论（n=642 链、pilot08/09 等）已并入研究概况，专用脚本与完整 CSV 不再承担复现作用。"
+        },
+        {
+          "scope": "公开源一次性扫描与外部库下载（penguin assets、ocean 仓库、alex/malyshev/jazivxt 扫描、q8/six_up/ds_up/dw、public_inputs/pub_scan、frontier_sweep_all 等）",
+          "reason": "这些是 2026-11-11~15 的一次性下载/解包，结论（0 胜或已合并）已记录；候选池中已处理文件由 bank 的坐标与 report 覆盖，不再需要逐题重扫。保留未处理文件以免丢失潜在 donor。"
+        },
+        {
+          "scope": "已被取代的正式/候选提交归档（27 个目录）",
+          "reason": "当前官方最佳为 58418244 / 22.1327829081，只有 gpu_f 归档与 bank 同 SHA；其余 25 个 ref 的 CSV 已被后续提交或公开 donor 覆盖。ref、官方分、SHA-256、行数保留，可复核而无需保留 26-28 MB 的整份 CSV。"
+        },
+        {
+          "scope": "中间合并与陈旧的 GPU/seed 运行目录",
+          "reason": "bank 是唯一权威；run_report 已归档到 data/references/run_reports_20261116/；seed bundle 会在 2026-11-21 GPU 配额刷新后按当前 bank 重新生成。"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-18",
+      "freed": "约 19.9 GiB",
+      "repo_size": "879 MiB (du -sh .) -> 638 MiB (du -sh .)",
+      "decisions": [
+        {
+          "scope": "外部文献/代码/目录挖掘（external 1–3）",
+          "reason": "Mishapolk 6 题 +1.0402e-3 已并入 bank；round2 仅 +5.8137e-11 且未安装；round3 解析 60,000+ 组、0 胜；公开来源已枯竭。最终数值见 external*.md。"
+        },
+        {
+          "scope": "定向 16 题外部搜索（targeted）",
+          "reason": "16 个高价值题没有公开坐标；per-puzzle leaderboard 只有边长；0 候选。"
+        },
+        {
+          "scope": "公开前沿原始收割（harvest/newpub）",
+          "reason": "所有胜题已并入 bank：harvest 最好 +1.1011e-5；今日 romywicaksono +4.514e-5、nilanjansaha +6.460e-5 均已吸收；其余 0 胜。原始 kernel/dataset 可从 Kaggle 重下。"
+        },
+        {
+          "scope": "旧前沿 watcher/agent 与中间合并（/tmp）",
+          "reason": "旧 merge 最高 22.1296845，已被 22.1283321 取代；packer hop 最好 9.6e-6、penguin n=448 +2.28e-4 均已并入；原始 kernel/dataset 与合并目录不再承担复现作用。"
+        },
+        {
+          "scope": "近方族实心核（master65/master626/multiangle/staircase65）",
+          "reason": "切触界与 bank 逐位相同；45° 5×5 核是唯一可行核；所有 θ/offset/split/fan 更差；族精确封闭。"
+        },
+        {
+          "scope": "n=291 双核、CDB、格点、带区相位（master291/cdb/cdb2/lattice/bandphase）",
+          "reason": "n=291 精确最优 17.5355339，20 种核排列全部 ≥18.0；CDB 47/82 恰为族最优、35 题 bank 更好、0 胜；两晶格容量恰为 k²。"
+        },
+        {
+          "scope": "n=401 三相位 MIS（mis401）",
+          "reason": "纯晶格族封顶 400；记录的 401 是含 24 个手工 sliver 的松弛布局。"
+        },
+        {
+          "scope": "带区 9 题（band）",
+          "reason": "0 胜；布局接触卡死；精确天花板差 15–38 格；±0.82° 缺陷是承重的。"
+        },
+        {
+          "scope": "D=1/D=2 近方族（d1_2224/d2ladder/d2master）",
+          "reason": "d1-2224 21/21 valid、d2-ladder 17/17 valid，全 0 胜；近失 3.9e-6–5.6e-5；记录 D=2 需 0.0215 的不同构造；刚性族仍差 2–16 格。"
+        },
+        {
+          "scope": "刚性组/退火/连续抛光/旧 engine（anneal/polish/engine/engine_deep）",
+          "reason": "396/396 零松弛；连续收缩上限 ≤1e-7，而需要 0.0075–0.0215；engine 0 胜、半库焊死；deep 0 feasible。"
+        },
+        {
+          "scope": "模板/多角度/理论构造族（templates/theory/theory2/cpsat）",
+          "reason": "5 个闭式族全部被 bank 追平或击败；0 胜；证明结论已写入 docs/research.md。"
+        },
+        {
+          "scope": "C++ 引擎一次性测试输出（cpp_engine）",
+          "reason": "夜间 self-polish/broad/nearmiss/polish2 仍在跑；只清测试与重复 payload。"
+        },
+        {
+          "scope": "旧 self-ga/self-cycle 收割输出（watch）",
+          "reason": "self-ga 0 胜、self-cycle 11 次 1020s 超时，均已停止；当前夜间收割走 cpp_harvest。"
+        },
+        {
+          "scope": "Colab Chrome 配置副本",
+          "reason": "复制 profile 无法复用 Google cookie，OAuth 必须在真实浏览器点一次；保留脚本即可继续。"
+        },
+        {
+          "scope": "本地 Drive 暂存重复",
+          "reason": "完整 bundle 已在 Google Drive sis_campaign；本地只留可重建脚本。"
+        },
+        {
+          "scope": "仓库缓存与根目录一次性表",
+          "reason": "构建缓存；一次性族扫描输出，结论已在 master291.md。"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-19",
+      "freed": "约 332 MiB (仓库 519 MiB -> 187 MiB)",
+      "repo_size": "519 MiB -> 187 MiB",
+      "decisions": [
+        {
+          "scope": ".venv 中已停止研究遗留包（llvmlite/numba/scipy/matplotlib/fonttools/pillow/contourpy/cycler/kiwisolver/pyparsing/highspy/pypdf）",
+          "reason": "仅用于已停用的本地 MILP、PDF 挖掘、绘图与旧 experiments 脚本；核心 squares CLI 与 kaggle CLI 不依赖这些包（.venv 431 MiB -> 130 MiB）。"
+        },
+        {
+          "scope": "已被取代的提交归档与旧评分快照（outputs/submissions/gpu_f_20261116/、outputs/scores/）",
+          "reason": "gpu_f_20261116（58418244 / 22.132783）已被后续 14 笔提交直至 58520513（22.1267039903）取代；outputs/scores/ 为 11-07 旧基线与已过时版本评分（约 28.7 MiB）。"
+        },
+        {
+          "scope": "已关闭路线长报告、中间证据、旧 GPU 日志与旧榜快照（data/references/closed_20261118/、run_reports_20261116/、perpuzzle_best_20261029/20261111.csv）",
+          "reason": "29 份长报告（9,124 行）及中间证据结论均已精简并入 docs/research.md；旧榜快照已被 perpuzzle_best_20261118.csv 覆盖。"
+        },
+        {
+          "scope": "过时 C++20 引擎监控与一次性夜跑脚本（scripts/kaggle_kernel_status.py、watch_kernels.sh、watch_kernel_done.sh）与空目录 src_dl/",
+          "reason": "C++20 引擎战役（含隔夜 gap2 0 胜）已停止；watch_kernel_done.sh 监控的 4 个 11-18 夜跑 kernel 均已 COMPLETE。"
+        },
+        {
+          "scope": "文档与参考文件精简合并",
+          "reason": "docs/research.md 从 1,467 行精简为单页概况；getting-started.md 与 third-party.md 合并为 docs/guide.md；cleanup_*.json 与 official_submissions_*.json 分别合并为单文件。"
+        }
+      ]
+    }
+  ]
+}
