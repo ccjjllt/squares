@@ -2,6 +2,24 @@
 
 本页为研究状态入口。历史清理范围见[清理记录](../data/references/cleanup_history.json)，官方提交身份链见[提交记录](../data/references/official_submissions.json)。
 
+## 11 月 20 日深度研究战役
+
+官方最好 **22.1060264871**（ref `58592523`，fq/harden 增量）← `58589527` = 22.1063144462（公开 malyshev Living Atlas v169 合并）← 22.1267039903。本轮多 subagent 并行深度研究 + Kaggle CPU（zhuating）/ Colab GPU（rainer，80 units，5 账号中唯一有额度）远端算力，本机零搜索。
+
+**关键研究结论**（详见 [CPU 引擎笔记](../outputs/research_20261120/notes_cpu_engines.md)、[斜带拼接笔记](../outputs/research_20261120/notes_bands.md)）：
+- 过去**只用 evand `packer hop`（3.3e-7 score/CPU-h）**，同 repo（pin==HEAD）的 `fq`/`harden`/`hhop` 从未用；alexchilton 实测 fq 系 **0.004 score/CPU-h（30-50×）**，gadget quench + fault DP 代码 CC0 公开。**重叠起点必须 `--round-r0 0.15 --round-compress`，否则塌回 k+1 网格**（解释旧 GPU 滑行 396 题 0 胜）。Sparrow 否决（产不出单位正方形精确接触解）。
+- GeiserX 代码 Apache-2.0 公开（`k123_join`/`k123_tartan`/`k123_step57`，须署名 Sergio Fernández Rubio）。**803（747 join，641/747 可继承）/969（chains-of-9）**可得；730/785、786/843 是「锁」（记录 f 差 ~4e-12=加行设计，条件收益 ~2.9e-3）。
+- **730 家族（730/785/842/901/962）= 289=17² 个 45° 实心核 + 轴向圈**，frac 恒 0.520815；GA rank.py 排除 ≥5 个 45° 方块的题，故 GA 不碰它。突破需 tartan 滑移（17 宽 phi=2.385°），是 GeiserX **尚未建成的开放项**（价值 ~0.005）。
+
+**算力部署与收益**：
+| 战役 | 平台 | 状态/收益 |
+| --- | --- | --- |
+| fq/harden 高产扫掠 | zhuating CPU | COMPLETE，**+0.000288**（333/759/793/805/849/924/977），已提交 58592523 |
+| gadget quench + fault DP（换供体换排序，3 轮自迭代） | zhuating CPU | RUNNING，预期 +0.0003~0.002 |
+| 跨题拼接 + fq 修缝（join/tartan/803 surgery/234 reduce/step57 五 lane） | zhuating CPU | RUNNING，预期 229 族 2.35e-4 / 969 4.3e-4 / 803 7.7e-5 / 730 tartan ≤1.6e-3 |
+| plain-hop 对照 | zhuating CPU | RUNNING |
+| 岛式 GA plain-start | rainer Colab T4 | 0 改善（jammed，预期内），会话已回收；待拼接起点注入 B 组 |
+
 ## 11 月 19 日晚间复核
 
 正式提交仍为 **22.1267039903**，北京时间 21:36 观察排名 225 / 2254。公开 v26 坐标与两份已完成的 CPU 搜索产物逐题合并后，独立全量复分为 **22.106322870827146**，两种解析各 1,000 题有效。候选单独保存，较正式提交改善了 255 个不同的题。距榜首仍差 0.066371790，下一轮优先研究跨题斜带拼接及其在大题上的传播。[研究结论、公开实现及实验设计](research_20261119.md) · [候选 CSV](../outputs/research_20261119/candidate.csv)
