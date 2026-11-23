@@ -156,3 +156,30 @@ GA n=730: best f 0.49848, 13 seeds, soft 1e-10
 - **K=26/25/24 假设**：720 以下，稀疏行无法补回，判死。
 - **goodpjw v20**（05:32Z）：3 题、−5.6224e-6；已链式并入并提交（58765288，预期 22.1034326162）。
 - **Colab T4 n=854**：+4.5677e-7（L 29.70598253→29.70596918），已并入。
+
+## goodpjw 解析下界：blockreg 家族正式封顶（11-23 07:15Z）
+
+goodpjw 的 Hopper Records notebook（markdown §“Where the rest of the gap is”）给出了单 45° 块的解析下界：
+
+```
+每一行被块穿过的直立行恰好浪费 1（两个半单位三角形），而块填的 slack strip 每行只赚 f，
+所以  f >= 1/2 + 1/(2D)，D = m·sqrt(2) = 被穿过的行数。
+17×17 块 → f >= 0.520815，正是公开值。
+```
+
+他们扫描了 k=19–31、d=1–4 的 52 个 (k,d)、6744 个 block/column 选择，**没有任何一个低于 0.520815**。榜首 k=31 的 f=0.4895 因此“needs a different mechanism, not a better-placed block”。
+
+这解释了我们的 blockreg2 结果：730 最好 729（差 1）、785 784、842 840、901 900、962 960——全部卡在解析下界之上。**blockreg 家族不再投入。**
+
+## 剩余分在哪里（goodpjw 的测量）
+
+- per-puzzle leaderboard 仍领先 375 题、合计 0.075。
+- **hopper 的胜场全部在 n>400 且 f=0.6–0.97 的两带族**（two-band：两块约 15° 的微倾块贴两墙，其余直立网格）；f≤0.6 的 299 次运行 0 胜（367 是首个例外）。
+- jazivxt 的两带布局在 n=807–995 拿了 26 题、每题最高 9e-5——这正是 lphopper2 的猎场。
+- k²+1/k²+2 家族（f≈0.5）需要 fault-line / gadget 机制，而不是 blockreg。
+
+## 当前远端
+
+- `sis-faultdp-20261123`：alexchilton 的 fault_dp + 3 遍 closure + quench_gadgets，BASE=我方 bank，donors=couzo/hop/couzo_big，运行中。
+- `sis-cpu-lp-hopper2-20261123`：59 targets/108 jobs，已认证 805(+1.04e-5)、333、694、864、367 等，运行中。
+- `sis-blockreg2-20261123`：12 家族题全部 1–2 短，无胜，收尾中。
