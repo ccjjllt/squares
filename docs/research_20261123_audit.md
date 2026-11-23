@@ -64,3 +64,17 @@
 3. 对 730 家族改跑 **shifted-core 种子**：把 17×17 45° 核整体平移 (δx,δy)，再让 GA/LP hopper 修复环；这比 ring-tilt 更接近“同一核、不同偏移”的假设。
 4. 902 家族只投非刚性 9×9+1 / 两个 45° 斜格 / 678 的 −45° 块；234 只投 de Winter 型错位自叠或从零构造。
 5. 公开侧已逐题 0 wins，哨兵优先级降到自研搜索之后。
+
+## 11-23 下午战役实测（截至 04:00Z）
+
+| 实验 | 平台 | 结果 |
+| --- | --- | --- |
+| fqdeep（新 bank，top gaps + 6 seeds） | Kaggle CPU | 450/600 jobs，8 个 CERTIFIED，但全部是 853（−6.63e-6）与 921（−1.47e-6）的重复 seed；无新 n |
+| step59（family_step 传播，52 walks） | Kaggle CPU | 4 shards 运行中；750→805/695、807→864、919→980/858、547→500 等边待出结果 |
+| LP hopper2（59 targets，108 jobs） | Kaggle CPU | 运行中；已加 `open_contacts`/多档膨胀/`hop_best.csv` |
+| blocks（tilted-block + row fill） | Kaggle CPU | **0 胜**。730 家族的最优就是 bank 的 17×17 45° block + 轴对齐 row fill（offset −1,−0.5，L=27.5208152801）；扩大 offset/角度仍无改进 |
+| scale-then-repair（整体缩放到榜首 L + `relax`/`Compactor`） | Kaggle CPU | **step1 即失败**（E≈1e-7…2e-6）。虽然缩放到榜首 L 的最大重叠只有 ~1e-3，但 jammed 布局的弹性修复无法消掉残余重叠；backtracking 6 档 + `Compactor` 200 iter 仍失败 |
+| ring-tilt（1–8° 环旋转） | Kaggle CPU | **0 胜**。50 个种子中 45 个在 78 秒内判 infeasible；1–8° 旋转无法修复 |
+| Colab T4 GA（40 题宽扫） | Colab | 730/785/842/901/902/963/234/491/738 均 `legal-best 0`，无 improvement；730 家族仍停在 f=0.52082 |
+
+**结论**：730 家族的 bank 在“17×17 45° block + 轴对齐 row fill”内已最优；榜首的 27.4985 不是这个族，也不是 bank 的均匀缩放。剩余可行方向只有：(a) step59 的单 shell 传播；(b) 902 的 j=−2 gadget / (p,q) 整数框架；(c) 234 的全新构造；(d) 榜首 730 设计的 a=19 核假设（待验证）。
