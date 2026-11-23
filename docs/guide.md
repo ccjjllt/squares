@@ -9,7 +9,7 @@
 项目使用 Python 3.12（`uv.lock` 固定核心依赖 `mpmath==1.4.1`、`pandas==2.3.3`；`.venv` 另保留提交/抓取所需的 `kaggle` CLI）。运行局部检查与合并：
 
 ```sh
-BANK=outputs/research_20261120/merged_jaz_20261123
+BANK=outputs/research_20261120/merged_v20_20261123
 .venv/bin/python -m squares inspect "$BANK/submission.csv"
 .venv/bin/python -m squares score "$BANK/submission.csv" \
   --mode both --workers 4 --output-dir /tmp/bank_score
@@ -28,7 +28,7 @@ BANK=outputs/research_20261120/merged_jaz_20261123
 | --- | --- |
 | `src/squares/` | 官方 v20 评分封装、逐题合并（`merge`）、格式检查（`inspect`）与基线生成 |
 | `scripts/` | Colab T4 GA 生命周期管理（`colab_*.py`/`*.sh`、`watch_colab.sh`）与定时提交（`submit_slots.py`） |
-| `outputs/research_20261120/merged_jaz_20261123/` | 当前最佳权威 bank（`submission.csv`、`report.json`；22.103438695324，双路径 1000/1000） |
+| `outputs/research_20261120/merged_v20_20261123/` | 当前最佳权威 bank（`submission.csv`、`report.json`；22.103432616155，双路径 1000/1000） |
 | `data/references/` | `official_submissions.json`、`cleanup_history.json`、`sources.json`、`leaderboards/perpuzzle_best_20261118.csv`、`perpuzzle_best_20261119.csv` |
 | `docs/` | `research.md`（研究概况）、`research_20261120.md`（11-20→22 战役）、`guide.md`（本指南） |
 
