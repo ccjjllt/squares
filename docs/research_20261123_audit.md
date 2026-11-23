@@ -97,3 +97,14 @@ GA n=730: best f 0.49848, 13 seeds, soft 1e-10
 榜首 730 的 f = 0.498475950；GA 的 0.49848 已经到同一量级。若该布局通过 float64/官方认证，n=730 单题收益约 `(27.520815−27.49848)/√730 ≈ 8.27e-4`，并可按 shell step 传播到 785/842/901/962（总条件收益 ~0.0044）。
 
 **采集事故**：Colab 免费 T4 的网关随后 SSL EOF/连接丢失，`/content/sis/work/runs/cand` 与 `ga_state` 未能取回；`ga730b`/`ga1123r` 两个会话均不可达。已改推 Kaggle GPU kernel `ccjjllt/sis-ga730-gpu-20261123`（同一 E2+10 seed，45 min，输出 `candidate_colab.csv`），当前 QUEUED。下一次必须在 GA 跑起来的同时启动一个远程 keeper，把 `candidate_colab.csv` 直接上传 Kaggle 数据集，避免依赖交互式网关。
+
+## 730 GA 信号的更正（11-23 05:25Z）
+
+必须更正上一节：`GA n=730: best f 0.49848` 是 **种子的盒宽**，不是合法布局。证据：
+
+- `work/runs/cand/` 为空，`improvements.csv` 只有表头，`legal-best 0`；
+- 用同一 E2+10 seed 在 Kaggle CPU 跑 `sq_engine.relax`：direct8 E=1.14e-1、direct12 E=1.13e-1、homotopy E=6.67e-3、Compactor E=1.0，全部 infeasible；
+- `squarepack` 数值搜索（bisect/anneal）在 730/901/785/842/234/491/962 上全部 `no_gain`（730 1800s 3927 次 local opt、414 次 improvement，仍停在 bank 27.520815280）；
+- E2 a=16 的 10 块缺口是 **重排问题**，不是加块问题：rotfill 在 730 上 0/0.2 网格无可加候选。
+
+结论：E2+10 seed 不是可行起点；730 的榜首设计仍未找到。剩余唯一未测的是 902 的 `j=−2` / (p,q) 整数框架（E3）。不要再把 `best f` 当成候选；只有 `cand/` 或 `improvements.csv` 或官方 metric 认证才算。
