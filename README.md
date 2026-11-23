@@ -2,7 +2,7 @@
 
 [Kaggle Squares in Squares](https://www.kaggle.com/competitions/squares-in-squares) 几何优化研究项目：通过公开 donor 逐题合并、GPU 岛式 GA（Colab T4 / Kaggle GPU）与宽范围 basin-hopping，压缩 `n=1…1000` 单位正方形最小外接正方形总分。
 
-- **当前官方最好**：ref **`58765288`** = **`22.1034326162`**（预期；2026-11-23 排名 **90 / 2397**）
+- **当前官方最好**：ref **`58765288`** = **`22.1034326161`**（COMPLETE；2026-11-23 排名 **90 / 2397**）
 - **距榜首**：Cats and boxes 😼 `22.0399510810`，差 `0.0634815`；距前 50（`22.0989656913`）差 `0.0044669`
 - **本地权威 bank**：[`outputs/research_20261120/merged_v20_20261123/submission.csv`](outputs/research_20261120/merged_v20_20261123/submission.csv)（SHA-256 `301990bd…`，`22.103432616155`，text/float64 双路径 1000/1000）
 - **文档入口**：[研究概况与放弃原因](docs/research.md) ｜ [使用指南与来源](docs/guide.md) ｜ [11-20 → 11-22 深度研究战役](docs/research_20261120.md)
