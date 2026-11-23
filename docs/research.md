@@ -2,9 +2,20 @@
 
 本页为研究状态入口。历史清理范围见[清理记录](../data/references/cleanup_history.json)，官方提交身份链见[提交记录](../data/references/official_submissions.json)。
 
-## 11 月 20 日深度研究战役
+## 当前状态（2026-11-23 02:14Z）
 
-官方最好 **22.1060264871**（ref `58592523`，fq/harden 增量）← `58589527` = 22.1063144462（公开 malyshev Living Atlas v169 合并）← 22.1267039903。本轮多 subagent 并行深度研究 + Kaggle CPU（zhuating）/ Colab GPU（rainer，80 units，5 账号中唯一有额度）远端算力，本机零搜索。
+| 项目 | 当前值 |
+| --- | --- |
+| 官方最好 | `58709491` = **22.1039649341**（COMPLETE；排名 **100 / 2397**） |
+| 本地权威 bank | `outputs/research_20261120/ga_b_20261120b/merge/submission.csv`（SHA `c19b8bf9…`，`22.103964934115`，text/float64 双路径 1000/1000） |
+| 与榜首差距 | `0.0640139`（Cats and boxes 😼 `22.0399510810`）；距前 50 差 `0.0049992` |
+| 当前算力 | fq/CPU 战役已收官、fq 线待命；Colab 免费池 harvest 循环自 11-22 17:35Z 起持续探测失败，当前无活跃 squares 搜索会话 |
+
+11-20 起的完整降分链、负结果与前沿地图见[11-20 → 11-22 深度研究战役](research_20261120.md)。
+
+## 11 月 20 日深度研究战役（当日快照）
+
+截至 11-20 官方最好 **22.1060264871**（ref `58592523`，fq/harden 增量）← `58589527` = 22.1063144462（公开 malyshev Living Atlas v169 合并）← 22.1267039903。本轮多 subagent 并行深度研究 + Kaggle CPU（zhuating）/ Colab GPU（rainer，80 units，5 账号中唯一有额度）远端算力，本机零搜索。
 
 **关键研究结论**（详见 [CPU 引擎笔记](../outputs/research_20261120/notes_cpu_engines.md)、[斜带拼接笔记](../outputs/research_20261120/notes_bands.md)）：
 - 过去**只用 evand `packer hop`（3.3e-7 score/CPU-h）**，同 repo（pin==HEAD）的 `fq`/`harden`/`hhop` 从未用；alexchilton 实测 fq 系 **0.004 score/CPU-h（30-50×）**，gadget quench + fault DP 代码 CC0 公开。**重叠起点必须 `--round-r0 0.15 --round-compress`，否则塌回 k+1 网格**（解释旧 GPU 滑行 396 题 0 胜）。Sparrow 否决（产不出单位正方形精确接触解）。
@@ -20,11 +31,11 @@
 | plain-hop 对照 | zhuating CPU | RUNNING |
 | 岛式 GA plain-start | rainer Colab T4 | 0 改善（jammed，预期内），会话已回收；待拼接起点注入 B 组 |
 
-## 11 月 19 日晚间复核
+## 11 月 19 日晚间复核（历史快照）
 
 正式提交仍为 **22.1267039903**，北京时间 21:36 观察排名 225 / 2254。公开 v26 坐标与两份已完成的 CPU 搜索产物逐题合并后，独立全量复分为 **22.106322870827146**，两种解析各 1,000 题有效。候选单独保存，较正式提交改善了 255 个不同的题。距榜首仍差 0.066371790，下一轮优先研究跨题斜带拼接及其在大题上的传播。[研究结论、公开实现及实验设计](research_20261119.md) · [候选 CSV](../outputs/research_20261119/candidate.csv)
 
-## 11 月 19 日上午 10:50 快照（北京时间）
+## 11 月 19 日上午 10:50 快照（北京时间，历史）
 
 | 项目 | 当前值 |
 | --- | --- |
@@ -36,6 +47,7 @@
 
 ## 当前有效主线（继续）
 
+- **11-20b–22 主线**：fq 九轮累计 −1.3573e-3、Colab GA B 组 −4.23e-4、公开哨兵（prvsiyan best-of-1121 / goodpjw union-register）、免费池 n=853 连挖 −1.565e-4；详见 [research_20261120.md](research_20261120.md)。
 1. **公开前沿逐题合并**：持续扫描 Kaggle 公开输出/数据集与 GitHub 精确证书，经 `squares merge` 双路径严格认证。本轮主力降幅来自此路线（`boxed_v56` +5.378e-3、`rosswade` +1.355e-3、`alexchilton` +1.282e-3、`Mishapolk` 精确证书 +1.040e-3、`Joost` n=299 经 `1e-12` 中心膨胀 +4.261e-4、`jazivxt` 等）。
 2. **Santa 2025 岛式 GPU GA**（`grennwolf` 移植，Colab T4 / Kaggle GPU `NPROC=12` 静态分区）：唯一能产生大额自研收益的跨盆地搜索。Colab T4 已在 n=448/376/264 拿到 `+3.836e-4`；11-15/16 Kaggle GPU（gpu-a/b/d/f 等）合计贡献约 `+1.2e-3`。额度恢复后继续主攻中段 gap（24–288）及未饱和题。
 3. **`evand packer hop` 宽范围盆地跳跃**（Kaggle CPU）：隔夜两批分别报告 21 和 12 题改善。换用晚间公开合并基线逐题认证后，547、644、862、915 四题仍有净贡献，已计入晚间研究候选。

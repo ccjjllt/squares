@@ -9,12 +9,13 @@
 项目使用 Python 3.12（`uv.lock` 固定核心依赖 `mpmath==1.4.1`、`pandas==2.3.3`；`.venv` 另保留提交/抓取所需的 `kaggle` CLI）。运行局部检查与合并：
 
 ```sh
-.venv/bin/python -m squares inspect outputs/submissions/bank_20261117/submission.csv
-.venv/bin/python -m squares score outputs/submissions/bank_20261117/submission.csv \
+BANK=outputs/research_20261120/ga_b_20261120b/merge
+.venv/bin/python -m squares inspect "$BANK/submission.csv"
+.venv/bin/python -m squares score "$BANK/submission.csv" \
   --mode both --workers 4 --output-dir /tmp/bank_score
 .venv/bin/python -m squares merge \
-  --baseline outputs/submissions/bank_20261117/submission.csv \
-  --baseline-report outputs/submissions/bank_20261117/validation/report.json \
+  --baseline "$BANK/submission.csv" \
+  --baseline-report "$BANK/report.json" \
   --candidate /path/to/candidate.csv --output-dir /tmp/merged_next --workers 4
 ```
 
@@ -27,9 +28,9 @@
 | --- | --- |
 | `src/squares/` | 官方 v20 评分封装、逐题合并（`merge`）、格式检查（`inspect`）与基线生成 |
 | `scripts/` | Colab T4 GA 生命周期管理（`colab_*.py`/`*.sh`、`watch_colab.sh`）与定时提交（`submit_slots.py`） |
-| `outputs/submissions/bank_20261117/` | 当前最佳权威 bank（`submission.csv`、`report.json`、`provenance.json`、`validation/report.json`） |
-| `data/references/` | `official_submissions.json`、`cleanup_history.json`、`sources.json`、`leaderboards/perpuzzle_best_20261118.csv` |
-| `docs/` | `research.md`（研究概况）、`guide.md`（本指南） |
+| `outputs/research_20261120/ga_b_20261120b/merge/` | 当前最佳权威 bank（`submission.csv`、`report.json`；22.103964934115，双路径 1000/1000） |
+| `data/references/` | `official_submissions.json`、`cleanup_history.json`、`sources.json`、`leaderboards/perpuzzle_best_20261118.csv`、`perpuzzle_best_20261119.csv` |
+| `docs/` | `research.md`（研究概况）、`research_20261120.md`（11-20→22 战役）、`guide.md`（本指南） |
 
 ## 第三方来源与许可证
 
@@ -40,5 +41,8 @@
 | 官方评分器 v20 | [Kaggle Competition Metrics](https://www.kaggle.com/code/metric/squares-in-squares) | 运行时保留于 `src/squares/_vendor/`（SHA-256 `abce6231…`） |
 | Santa 2025 岛式 GPU GA | `grennwolf/squares-in-squares-top-1-santa-2025`（移植自 `jcottaar/packing`） | 运行于 Colab T4 私有数据集 `ccjjllt/sis-ga-bundle-20261118` |
 | `packer hop` 引擎 | [`evand/square-packing`](https://github.com/evand/square-packing)（MIT，pin `c801ab47`） | 运行于 Kaggle CPU（`alexkit-wide` 系列） |
-| 逐题纪录快照 | [`inversion/squares-in-squares-per-puzzle-leaderboard`](https://www.kaggle.com/code/inversion/squares-in-squares-per-puzzle-leaderboard)（11-18） | 保留于 `data/references/leaderboards/perpuzzle_best_20261118.csv` |
+| 逐题纪录快照 | [`inversion/squares-in-squares-per-puzzle-leaderboard`](https://www.kaggle.com/code/inversion/squares-in-squares-per-puzzle-leaderboard)（11-18/11-19） | 保留于 `data/references/leaderboards/perpuzzle_best_20261118.csv` 与 `..._20261119.csv` |
+| 跨题斜带/arm 算子 | [`GeiserX/squares-in-squares`](https://github.com/GeiserX/squares-in-squares)（代码 Apache-2.0；布局/文档 CC BY 4.0） | `family_step`/`k123` splice 用于 fq r5–r9 与跨题拼接；保留 NOTICE 并署名 Sergio Fernández Rubio |
+| 逐日公开 best-of | [`prvsiyan/squares-verified-best-of-1105`](https://www.kaggle.com/datasets/prvsiyan/squares-verified-best-of-1105) v26→v1121（CC BY-SA 4.0） | 每日哨兵逐题认证合并；按原表保留逐题署名 |
+| union-register packings | `goodpjw2008`（Kaggle 公开输出，许可随原 notebook） | 11 题独特胜场，已并入 58682330 |
 | 公开 donor 与精确证书 | `alexchilton`（v85）、`AHFE0924/Squares-Feeder`、`rosswade`、`Mishapolk`、`JoostdeWinter`、`jlevy`、`jazivxt` 等 | 坐标已逐题认证并入 bank；历史基线哈希见 `data/references/sources.json` |
