@@ -183,3 +183,14 @@ goodpjw 的 Hopper Records notebook（markdown §“Where the rest of the gap is
 - `sis-faultdp-20261123`：alexchilton 的 fault_dp + 3 遍 closure + quench_gadgets，BASE=我方 bank，donors=couzo/hop/couzo_big，运行中。
 - `sis-cpu-lp-hopper2-20261123`：59 targets/108 jobs，已认证 805(+1.04e-5)、333、694、864、367 等，运行中。
 - `sis-blockreg2-20261123`：12 家族题全部 1–2 短，无胜，收尾中。
+
+## fault-DP 与 two-band 几何（11-23 07:40Z）
+
+- **alexchilton fault-line DP**（BASE=我方 22.1034 bank，donors=couzo/hop/couzo_big，3 遍计划）：
+  - pass 0：1116 donors、114980 个 per-key gadget、14550 个去支配后 gadget、DP 464s，**0 个认证改进**。
+  - quench_gadgets 因 starter kit 未带 Rust `fq` 二进制而失败；已单独构建 `evand/square-packing` 的 `fq/packer` 并重跑 quench（`sis-quench-20261123`，90s/gadget）。
+- **two-band 几何**（我方 bank 的 807/919/750/547/653/698）：
+  - 不是实心块，而是两块 ±15–22.5° 的**倾斜晶格带**沿两墙互锁；例如 919 的两组为 +19.4°（163 块，13×23 格，55% 填充）和 −20.3°（158 块，21×13 格，58% 填充）。
+  - 807：+22.2° 86 块、−22.2° 116 块；750：+22.9° 91 块、−22.7° 116 块。
+  - 这些带的具体块数常是整数乘积（919：156=12×13、112=7×16；698：68、65；645：84、68），说明是两个 a×b 倾斜块被盒壁/接缝裁切后的形状。
+  - 该族在 f=0.6–0.97 出分（jazivxt 在 807–995 拿了 26 题）；k²+1 的 f≈0.49 是否能用双带达到仍未知，是 blockreg 封顶后唯一可解释榜首的机制。
