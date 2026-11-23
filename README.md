@@ -2,9 +2,9 @@
 
 [Kaggle Squares in Squares](https://www.kaggle.com/competitions/squares-in-squares) 几何优化研究项目：通过公开 donor 逐题合并、GPU 岛式 GA（Colab T4 / Kaggle GPU）与宽范围 basin-hopping，压缩 `n=1…1000` 单位正方形最小外接正方形总分。
 
-- **当前官方最好**：ref **`58709491`** = **`22.1039649341`**（COMPLETE；2026-11-23 02:14Z 排名 **100 / 2397**）
-- **距榜首**：Cats and boxes 😼 `22.0399510810`，差 `0.0640139`；距前 50（`22.0989656913`）差 `0.0049992`
-- **本地权威 bank**：[`outputs/research_20261120/ga_b_20261120b/merge/submission.csv`](outputs/research_20261120/ga_b_20261120b/merge/submission.csv)（SHA-256 `c19b8bf9…`，`22.103964934115`，text/float64 双路径 1000/1000）
+- **当前官方最好**：ref **`58754448`** = **`22.1034743290`**（COMPLETE；2026-11-23 排名 **90 / 2397**）
+- **距榜首**：Cats and boxes 😼 `22.0399510810`，差 `0.0635232`；距前 50（`22.0989656913`）差 `0.0045086`
+- **本地权威 bank**：[`outputs/research_20261120/merged_public_20261123/submission.csv`](outputs/research_20261120/merged_public_20261123/submission.csv)（SHA-256 `173d86aa…`，`22.103474329021`，text/float64 双路径 1000/1000）
 - **文档入口**：[研究概况与放弃原因](docs/research.md) ｜ [使用指南与来源](docs/guide.md) ｜ [11-20 → 11-22 深度研究战役](docs/research_20261120.md)
 
 ## 快速验证
@@ -12,7 +12,7 @@
 本仓库只做评分、合并、提交校验与远端编排；重计算全部在 Colab / Kaggle 执行。
 
 ```sh
-BANK=outputs/research_20261120/ga_b_20261120b/merge
+BANK=outputs/research_20261120/merged_public_20261123
 .venv/bin/python -m squares --help
 .venv/bin/python -m squares inspect "$BANK/submission.csv"
 .venv/bin/python -m squares merge \

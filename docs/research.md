@@ -6,10 +6,10 @@
 
 | 项目 | 当前值 |
 | --- | --- |
-| 官方最好 | `58709491` = **22.1039649341**（COMPLETE；排名 **100 / 2397**） |
-| 本地权威 bank | `outputs/research_20261120/ga_b_20261120b/merge/submission.csv`（SHA `c19b8bf9…`，`22.103964934115`，text/float64 双路径 1000/1000） |
-| 与榜首差距 | `0.0640139`（Cats and boxes 😼 `22.0399510810`）；距前 50 差 `0.0049992` |
-| 当前算力 | fq/CPU 战役已收官、fq 线待命；Colab 免费池 harvest 循环自 11-22 17:35Z 起持续探测失败，当前无活跃 squares 搜索会话 |
+| 官方最好 | `58754448` = **22.1034743290**（COMPLETE；排名 **90 / 2397**） |
+| 本地权威 bank | `outputs/research_20261120/merged_public_20261123/submission.csv`（SHA `173d86aa…`，`22.103474329021`，text/float64 双路径 1000/1000） |
+| 与榜首差距 | `0.0635232`（Cats and boxes 😼 `22.0399510810`）；距前 50 差 `0.0045086` |
+| 当前算力 | Kaggle CPU `sis-cpu-fqdeep-20261123` + `sis-cpu-lp-hopper-20261123` 运行中；Colab T4 `ga1123r`（40 题）与 `val1`（730 家族专用）运行中；本机零搜索 |
 
 11-20 起的完整降分链、负结果与前沿地图见[11-20 → 11-22 深度研究战役](research_20261120.md)。
 
@@ -47,7 +47,7 @@
 
 ## 当前有效主线（继续）
 
-- **11-20b–22 主线**：fq 九轮累计 −1.3573e-3、Colab GA B 组 −4.23e-4、公开哨兵（prvsiyan best-of-1121 / goodpjw union-register）、免费池 n=853 连挖 −1.565e-4；详见 [research_20261120.md](research_20261120.md)。
+- **11-20b–22 主线**：fq 九轮累计 −1.3573e-3、Colab GA B 组 −4.23e-4、公开哨兵（prvsiyan best-of-1121 / goodpjw union-register v17 −4.906e-4）、免费池 n=853 连挖 −1.565e-4；详见 [research_20261120.md](research_20261120.md)。
 1. **公开前沿逐题合并**：持续扫描 Kaggle 公开输出/数据集与 GitHub 精确证书，经 `squares merge` 双路径严格认证。本轮主力降幅来自此路线（`boxed_v56` +5.378e-3、`rosswade` +1.355e-3、`alexchilton` +1.282e-3、`Mishapolk` 精确证书 +1.040e-3、`Joost` n=299 经 `1e-12` 中心膨胀 +4.261e-4、`jazivxt` 等）。
 2. **Santa 2025 岛式 GPU GA**（`grennwolf` 移植，Colab T4 / Kaggle GPU `NPROC=12` 静态分区）：唯一能产生大额自研收益的跨盆地搜索。Colab T4 已在 n=448/376/264 拿到 `+3.836e-4`；11-15/16 Kaggle GPU（gpu-a/b/d/f 等）合计贡献约 `+1.2e-3`。额度恢复后继续主攻中段 gap（24–288）及未饱和题。
 3. **`evand packer hop` 宽范围盆地跳跃**（Kaggle CPU）：隔夜两批分别报告 21 和 12 题改善。换用晚间公开合并基线逐题认证后，547、644、862、915 四题仍有净贡献，已计入晚间研究候选。
