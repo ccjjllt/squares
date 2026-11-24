@@ -45,4 +45,5 @@ BANK=outputs/research_20261120/merged_quench_20261123
 | 跨题斜带/arm 算子 | [`GeiserX/squares-in-squares`](https://github.com/GeiserX/squares-in-squares)（代码 Apache-2.0；布局/文档 CC BY 4.0） | `family_step`/`k123` splice 用于 fq r5–r9 与跨题拼接；保留 NOTICE 并署名 Sergio Fernández Rubio |
 | 逐日公开 best-of | [`prvsiyan/squares-verified-best-of-1105`](https://www.kaggle.com/datasets/prvsiyan/squares-verified-best-of-1105) v26→v1121（CC BY-SA 4.0） | 每日哨兵逐题认证合并；按原表保留逐题署名 |
 | union-register packings | `goodpjw2008`（Kaggle 公开输出，许可随原 notebook） | 11 题独特胜场，已并入 58682330 |
+| 公开最优 v37 | [`goodpjw2008/squares-in-squares-union-register-packings`](https://www.kaggle.com/datasets/goodpjw2008/squares-in-squares-union-register-packings) v33（2026-11-24T05:19Z，CC BY 4.0） | 认证 22.0919946653；本地双路径 1000/1000；ref `58815660`；SHA `353c5cdc…` |
 | 公开 donor 与精确证书 | `alexchilton`（v85）、`AHFE0924/Squares-Feeder`、`rosswade`、`Mishapolk`、`JoostdeWinter`、`jlevy`、`jazivxt` 等 | 坐标已逐题认证并入 bank；历史基线哈希见 `data/references/sources.json` |

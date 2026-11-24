@@ -2,9 +2,9 @@
 
 [Kaggle Squares in Squares](https://www.kaggle.com/competitions/squares-in-squares) 几何优化研究项目：通过公开 donor 逐题合并、GPU 岛式 GA（Colab T4 / Kaggle GPU）与宽范围 basin-hopping，压缩 `n=1…1000` 单位正方形最小外接正方形总分。
 
-- **当前官方最好**：ref **`58768971`** = **`22.1034314474`**（COMPLETE；2026-11-23 排名 **90 / 2397**）
-- **距榜首**：Cats and boxes 😼 `22.0399510810`，差 `0.0634803`；距前 50（`22.0989656913`）差 `0.0044658`
-- **本地权威 bank**：[`outputs/research_20261120/merged_quench_20261123/submission.csv`](outputs/research_20261120/merged_quench_20261123/submission.csv)（SHA-256 `6e801edd…`，`22.103431447448`，text/float64 双路径 1000/1000）
+- **当前官方最好**（公开最优同步）：ref **`58815660`** = **`22.0919946652`**（COMPLETE；2026-11-24 快照 **111 / 2439**，同分密集排名有波动）；来源 goodpjw2008 v37（union-register 数据集 v33），记录见 [`public_best_20261124.json`](data/references/public_best_20261124.json)
+- **距榜首**：Cats and boxes 😼 `22.0399510810`，差 `0.0520435842`；距前 50（`22.0891645011`）差 `0.0028301641`
+- **本地权威 bank**（自研链，未随本次公开最优提交改动）：[`outputs/research_20261120/merged_quench_20261123/submission.csv`](outputs/research_20261120/merged_quench_20261123/submission.csv)（SHA-256 `6e801edd…`，`22.103431447448`，text/float64 双路径 1000/1000；官方 ref `58768971`）
 - **文档入口**：[研究概况与放弃原因](docs/research.md) ｜ [使用指南与来源](docs/guide.md) ｜ [11-20 → 11-22 深度研究战役](docs/research_20261120.md)
 
 ## 快速验证
