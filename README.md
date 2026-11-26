@@ -1,49 +1,28 @@
 # Squares in Squares
 
-[Kaggle Squares in Squares](https://www.kaggle.com/competitions/squares-in-squares) 几何优化研究项目：通过公开 donor 逐题合并、GPU 岛式 GA（Colab T4 / Kaggle GPU）与宽范围 basin-hopping，压缩 `n=1…1000` 单位正方形最小外接正方形总分。
+Kaggle 几何优化项目。对每个 `n = 1…1000`，把 `n` 个允许旋转的单位正方形无重叠地装进最小正方形。若其边长为 `L_n`，总分为 `Σ max(0, L_n / √n − 1)`，越低越好。[比赛页面](https://www.kaggle.com/competitions/squares-in-squares)
 
-- **当前官方最好**（公开最优同步）：ref **`58815660`** = **`22.0919946652`**（COMPLETE；2026-11-24 快照 **111 / 2439**，同分密集排名有波动）；来源 goodpjw2008 v37（union-register 数据集 v33），记录见 [`public_best_20261124.json`](data/references/public_best_20261124.json)
-- **距榜首**：Cats and boxes 😼 `22.0399510810`，差 `0.0520435842`；距前 50（`22.0891645011`）差 `0.0028301641`
-- **本地权威 bank**（自研链，未随本次公开最优提交改动）：[`outputs/research_20261120/merged_quench_20261123/submission.csv`](outputs/research_20261120/merged_quench_20261123/submission.csv)（SHA-256 `6e801edd…`，`22.103431447448`，text/float64 双路径 1000/1000；官方 ref `58768971`）
-- **文档入口**：[研究概况与放弃原因](docs/research.md) ｜ [使用指南与来源](docs/guide.md) ｜ [11-20 → 11-22 深度研究战役](docs/research_20261120.md)
+## 当前成绩
 
-## 快速验证
+| 记录 | 得分 | 提交编号 | 本地文件 |
+| --- | ---: | ---: | --- |
+| 11 月 26 日公开最好，jazivxt 的 Boxed In Sub v77 原文件 | 官方 **22.0905523976** | 58920662 | [提交 CSV](outputs/public_best_20261126/boxed_in_v77.csv) |
+| 11 月 23 日已提交研究基线，逐题合并公开布局与自研结果 | 官方 **22.1034314474** | 58768971 | [研究基线 CSV](outputs/research_20261120/merged_quench_20261123/submission.csv) |
+| 11 月 25 日最新自研快照，Colab GA B 组再改善 3 题 | 本地 **22.10339658009354** | 未单独提交 | [GA 快照 CSV](outputs/retained_research/ga_20261125/submission.csv) |
 
-本仓库只做评分、合并、提交校验与远端编排；重计算全部在 Colab / Kaggle 执行。
+北京时间 2026 年 11 月 26 日 10:03，公开最好提交排名 **156 / 2490**，距榜首 **0.0506013166**，距第 50 名 **0.0041593443**。[公开文件、哈希与复分记录](data/references/public_best_20261126.json) · [官方提交账本](data/references/official_submissions.json)
+
+已恢复的 5 题 CPU 增量及其认证结果、停止方向和开放问题见[研究概况](docs/research.md)。第三方实现、数据和署名见[来源记录](data/references/sources.json)。
+
+## 本地验证
+
+完整 CSV 含 500,500 行，坐标为方块中心，角度单位为弧度。官方 v20 评分器分别读取原始十进制文本和 float64 往返值，两条路径都应有 1,000 题有效。
 
 ```sh
 BANK=outputs/research_20261120/merged_quench_20261123
-.venv/bin/python -m squares --help
 .venv/bin/python -m squares inspect "$BANK/submission.csv"
-.venv/bin/python -m squares merge \
-  --baseline "$BANK/submission.csv" \
-  --baseline-report "$BANK/report.json" \
-  --candidate /path/to/candidate.csv \
-  --output-dir /tmp/merge_check --workers 2
+.venv/bin/python -m squares score "$BANK/submission.csv" \
+  --mode both --workers 4 --output-dir /tmp/squares-score
 ```
 
-## Colab T4 GA 与提交编排（`scripts/`）
-
-- **代理与账号**：本机直连 Colab TLS 会被重置，必须走 `export COLAB_PROXY=http://127.0.0.1:7897`（`7900` 会 `SSLEOF`）。使用 `colabx` 管理多账号（`colab-accounts` / `colab-use ccjjllt0`）。
-- **数据 bundle**：私有数据集 `ccjjllt/sis-ga-bundle-20261118`（含 `colab_pkg/`、bank、启动脚本）。
-
-```sh
-# 1. 启动并部署 T4 会话
-colabx new -s gpu1 --gpu T4
-colabx exec -s gpu1 -f scripts/colab_bootstrap_remote.py --timeout 1800 \
-  --env KAGGLE_API_TOKEN="$(cat ~/.kaggle/access_token_ccjjllt_check)"
-
-# 2. 后台保活与安全收割（仅当 >=1e-10 且双路径 1000/1000 才安装，不自动提交）
-nohup ./scripts/colab_keeper.sh --loop 300 >> /tmp/campaign2/colab_keeper.log 2>&1 &
-nohup ./scripts/colab_harvest_safe.sh --loop 1800 >> /tmp/campaign2/colab_harvest.out 2>&1 &
-
-# 3. 手动查看状态 / 停机
-colabx exec -s gpu1 -f scripts/colab_status_remote.py --timeout 120
-./scripts/watch_colab.sh -s gpu1 --once
-colabx stop -s gpu1
-
-# 4. 固定 UTC 槽位提交（严格优于榜上最好才提交）
-.venv/bin/python scripts/submit_slots.py --slots 09:00,15:00,21:00 --check
-```
-
-免费 T4 会话回收周期约 2–7 小时，GA 每题自带 `work/runs/ga_state` 断点，重连后可继续。
+本地 CLI 支持逐题合并，参数见 `.venv/bin/python -m squares merge --help`。搜索在 Kaggle 或 Colab 执行。Kaggle CPU 任务完成后可用[手动收割合并脚本](scripts/harvest_merge.py)下载并复分。Colab GA 会话可用[监控脚本](scripts/watch_colab.sh)查看。

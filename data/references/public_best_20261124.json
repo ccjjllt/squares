@@ -1,64 +1,22 @@
 {
   "purpose": "记录 2026-11-24 公开最优同步提交（非自研 bank，本地 bank 未改动）",
-  "source": {
-    "notebook": "goodpjw2008/squares-in-squares-hopper-records-lb-22-09199",
-    "notebook_version": 36,
-    "notebook_certified_score": 22.091994665251665,
-    "dataset": "goodpjw2008/squares-in-squares-union-register-packings",
-    "dataset_version": 33,
-    "dataset_version_created_utc": "2026-11-24T05:19:14.073Z",
-    "file": "submission.csv",
-    "dataset_license": "CC BY 4.0",
-    "notebook_code_license": "Apache 2.0"
-  },
-  "file": {
-    "local_path": "outputs/public_best_20261124/goodpjw_v33_submission.csv",
-    "sha256": "353c5cdc763cdc1003970d466513615f0da14fe7575b9ee67fa9d432d47ad3d1",
-    "bytes": 26592323,
-    "rows": 500500,
-    "puzzles": 1000
-  },
-  "local_verification": {
-    "metric": "official v20",
-    "mode": "both (text and float64)",
-    "score_text": 22.091994665251665,
-    "score_float64": 22.091994665251665,
-    "valid": "1000/1000 both routes",
-    "inspect": "500500 rows, 1000 puzzles, n=1..1000, missing 0",
-    "report_json": "/tmp/score_goodpjw_v33/report.json",
-    "commands": [
-      ".venv/bin/python -m squares inspect outputs/public_best_20261124/goodpjw_v33_submission.csv",
-      ".venv/bin/python -m squares score outputs/public_best_20261124/goodpjw_v33_submission.csv --mode both --workers 4 --output-dir /tmp/score_goodpjw_v33"
-    ]
-  },
+  "source": {"notebook": "goodpjw2008/squares-in-squares-hopper-records-lb-22-09199", "notebook_version": 36, "notebook_certified_score": 22.091994665251665, "dataset": "goodpjw2008/squares-in-squares-union-register-packings", "dataset_version": 33, "dataset_version_created_utc": "2026-11-24T05:19:14.073Z", "file": "submission.csv", "dataset_license": "CC BY 4.0", "notebook_code_license": "Apache 2.0"},
+  "file": {"sha256": "353c5cdc763cdc1003970d466513615f0da14fe7575b9ee67fa9d432d47ad3d1", "bytes": 26592323, "rows": 500500, "puzzles": 1000},
   "submission": {
     "ref": 58815660,
     "submitted_utc": "2026-11-24T06:29:15Z",
     "submitted_cst": "2026-11-24T14:29:15+08:00",
     "status": "COMPLETE",
     "official_public_score": 22.0919946652,
-    "previous_official_best": {
-      "ref": 58768971,
-      "score": 22.1034314474
-    },
+    "previous_official_best": {"ref": 58768971, "score": 22.1034314474},
     "improvement": 0.0114367822,
     "rank_snapshot": 111,
     "teams_snapshot": 2439,
     "rank_snapshot_utc": "2026-11-24T06:42:00Z",
     "rank_note": "公开榜同分提交密集，排名随提交时间波动（本次曾见 108）",
-    "leaderboard": {
-      "top1": {"team": "Cats and boxes 😼", "score": 22.039951081},
-      "top10_cutoff": 22.0698492946,
-      "top50_cutoff": 22.0891645011,
-      "gap_to_top1": 0.0520435842,
-      "gap_to_top10": 0.0221453706,
-      "gap_to_top50": 0.0028301641
-    },
+    "leaderboard": {"top1": {"team": "Cats and boxes 😼", "score": 22.039951081}, "top10_cutoff": 22.0698492946, "top50_cutoff": 22.0891645011, "gap_to_top1": 0.0520435842, "gap_to_top10": 0.0221453706, "gap_to_top50": 0.0028301641},
     "submission_description": "public best goodpjw2008 v37 (union-register dataset v33): certified 22.0919946653; local dual-route 1000/1000; source kaggle.com/datasets/goodpjw2008/squares-in-squares-union-register-packings"
   },
-  "notes": [
-    "通过 Kaggle MCP start_competition_submission_upload + 签名 URL PUT + submit_to_competition 提交。",
-    "该文件是当日公开 Code 榜最优（goodpjw2008 与 JoeGun 22.0922090845 等人的合并前沿），不是本地自研 bank。",
-    "本地自研 bank 仍为 outputs/research_20261120/merged_quench_20261123/submission.csv（22.1034314474）。"
-  ]
+  "file_preservation": {"state": "superseded_local_copy_removed", "source_file": "submission.csv", "dataset_version_url": "https://www.kaggle.com/datasets/goodpjw2008/squares-in-squares-union-register-packings/versions/33", "former_local_path": "outputs/public_best_20261124/goodpjw_v33_submission.csv"},
+  "local_verification": {"metric": "official v20", "mode": "both (text and float64)", "score_text": 22.091994665251665, "score_float64": 22.091994665251665, "valid": "1000/1000 both routes"}
 }

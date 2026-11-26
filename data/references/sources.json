@@ -1,80 +1,27 @@
 {
- "updated_on": "2026-11-19",
- "runtime": [
-  {
-   "name": "official_metric_v20",
-   "path": "src/squares/_vendor/official_metric.py",
-   "source_url": "https://www.kaggle.com/code/metric/squares-in-squares",
-   "version": 20,
-   "sha256": "abce6231e3eda28d040455e651bfe3578bce31bb69449c99f67f0b82a4a6c56b"
-  }
- ],
- "leaderboard_snapshot": {
-  "path": "data/references/leaderboards/perpuzzle_best_20261118.csv",
-  "sha256": "9cae7620a966526f5e0547b73f55938ff5638f86197037ea335c1c7d98c74267",
-  "source_url": "https://www.kaggle.com/code/inversion/squares-in-squares-per-puzzle-leaderboard",
-  "snapshot_date": "2026-11-18",
-  "implied_per_puzzle_best_total": 22.031007019700255
- },
- "active_search_engines_and_donors": [
-  {
-   "name": "Santa 2025 Island GPU GA (grennwolf port)",
-   "source": "grennwolf/squares-in-squares-top-1-santa-2025 (from github.com/jcottaar/packing)",
-   "bundle": "ccjjllt/sis-ga-bundle-20261118"
-  },
-  {
-   "name": "evand/square-packing packer hop",
-   "source_url": "https://github.com/evand/square-packing",
-   "commit": "c801ab47",
-   "license": "MIT"
-  },
-  {
-   "name": "alexchilton/squares-in-squares-starter-kit",
-   "source_url": "https://www.kaggle.com/datasets/alexchilton/squares-in-squares-starter-kit",
-   "version": "v85 (2026-11-18T10:54:40Z)",
-   "best_current_sha256_prefix": "3b60ade8"
-  },
-  {
-   "name": "AHFE0924/Squares-Feeder",
-   "source_url": "https://github.com/AHFE0924/Squares-Feeder",
-   "latest_commit_recorded": "216698d2"
-  },
-  {
-   "name": "JoostdeWinter/square-packing",
-   "source_url": "https://github.com/JoostdeWinter/square-packing",
-   "commit": "7232328 (n=299 exact cert with 1e-12 dilation)"
-  }
- ],
- "deleted_historical_baselines_20261107": [
-  {
-   "name": "penguin_v2",
-   "source_url": "https://www.kaggle.com/code/penguin069/squares-in-squares-certified-research-portfolio",
-   "version": 2,
-   "sha256": "243c0d9768b5c98acc629ebb1b9f4272ea8077f40a9fcc5402047a33c7d5b309"
-  },
-  {
-   "name": "atlas_v79",
-   "source_url": "https://www.kaggle.com/code/malyshevdanil/squares-in-squares-living-atlas-of-tight-packings",
-   "version": 79,
-   "sha256": "fcecec42a8e608a4c4674b91d84689f30b1113f5307117b5c559468d540bb2c5"
-  },
-  {
-   "name": "daily_v13",
-   "source_url": "https://www.kaggle.com/code/kmmmvs/squares-public-merge-daily",
-   "version": 13,
-   "sha256": "82b9193e1d76a9f9a16cd1ed79536747e09313617427012fb62360dde5bdcc81"
-  },
-  {
-   "name": "square_deal_v33",
-   "source_url": "https://www.kaggle.com/code/prvsiyan/a-square-deal-research-to-verified-packings",
-   "version": 33,
-   "sha256": "940d493f1137e4121e93615b6ea9b5b9c376668742432e504817b42628704995"
-  },
-  {
-   "name": "perpuzzle_best_20261029",
-   "source_url": "https://www.kaggle.com/datasets/lostdecimal27/squares-in-squares-bank",
-   "version": 2,
-   "sha256": "ada09ba81a90ced3372ea9faa9da98b9b23ac3af86d9707a2260dc88b0e866c9"
-  }
- ]
+  "updated_on": "2026-11-26",
+  "runtime": [
+    {"name": "official_metric_v20", "path": "src/squares/_vendor/official_metric.py", "source_url": "https://www.kaggle.com/code/metric/squares-in-squares", "version": 20, "sha256": "abce6231e3eda28d040455e651bfe3578bce31bb69449c99f67f0b82a4a6c56b"}
+  ],
+  "leaderboard_snapshot": {"path": "data/references/leaderboards/perpuzzle_best_20261119.csv", "sha256": "41c3212a81c1a6800cc01a1da3eec1091209f421cd46a64567b080d8b4416f56", "provenance": "data/references/leaderboards/perpuzzle_best_20261119.provenance.json", "snapshot_date": "2026-11-19"},
+  "active_search_engines_and_donors": [
+    {"name": "Santa 2025 Island GPU GA (grennwolf port)", "source": "grennwolf/squares-in-squares-top-1-santa-2025 (from github.com/jcottaar/packing)", "bundles": ["ccjjllt/sis-ga-bundle-20261118", "ccjjllt/sis-ga-bundle-20261120"]},
+    {"name": "Evan Daniel, square-packing (fq, harden and packer hop)", "source_url": "https://github.com/evand/square-packing", "commit": "c801ab47", "license": "MIT"},
+    {"name": "alexchilton/squares-in-squares-starter-kit", "source_url": "https://www.kaggle.com/datasets/alexchilton/squares-in-squares-starter-kit", "version": "v85 (2026-11-18T10:54:40Z)", "best_current_sha256_prefix": "3b60ade8"},
+    {"name": "AHFE0924/Squares-Feeder", "source_url": "https://github.com/AHFE0924/Squares-Feeder", "latest_commit_recorded": "4f34a21"},
+    {"name": "JoostdeWinter/square-packing", "source_url": "https://github.com/JoostdeWinter/square-packing", "commit": "7232328 (n=299 exact cert with 1e-12 dilation)"}
+  ],
+  "deleted_historical_baselines_20261107": [
+    {"name": "penguin_v2", "source_url": "https://www.kaggle.com/code/penguin069/squares-in-squares-certified-research-portfolio", "version": 2, "sha256": "243c0d9768b5c98acc629ebb1b9f4272ea8077f40a9fcc5402047a33c7d5b309"},
+    {"name": "atlas_v79", "source_url": "https://www.kaggle.com/code/malyshevdanil/squares-in-squares-living-atlas-of-tight-packings", "version": 79, "sha256": "fcecec42a8e608a4c4674b91d84689f30b1113f5307117b5c559468d540bb2c5"},
+    {"name": "daily_v13", "source_url": "https://www.kaggle.com/code/kmmmvs/squares-public-merge-daily", "version": 13, "sha256": "82b9193e1d76a9f9a16cd1ed79536747e09313617427012fb62360dde5bdcc81"},
+    {"name": "square_deal_v33", "source_url": "https://www.kaggle.com/code/prvsiyan/a-square-deal-research-to-verified-packings", "version": 33, "sha256": "940d493f1137e4121e93615b6ea9b5b9c376668742432e504817b42628704995"},
+    {"name": "perpuzzle_best_20261029", "source_url": "https://www.kaggle.com/datasets/lostdecimal27/squares-in-squares-bank", "version": 2, "sha256": "ada09ba81a90ced3372ea9faa9da98b9b23ac3af86d9707a2260dc88b0e866c9"}
+  ],
+  "source_attribution": [
+    {"name": "Sergio Fernández Rubio (GeiserX)", "source_url": "https://github.com/GeiserX/squares-in-squares", "code_license": "Apache-2.0", "layout_and_document_license": "CC BY 4.0", "notice": "data/references/attribution/GeiserX.NOTICE", "project_credits": "data/references/attribution/splice-credits.md"},
+    {"name": "prvsiyan v26", "source_url": "https://www.kaggle.com/datasets/prvsiyan/squares-verified-best-of-1105/versions/26", "license": "CC BY-SA 4.0", "upstream_credits": "data/references/attribution/prvsiyan_v26_per_size.csv", "per_puzzle_sources": "data/references/attribution/candidate_20261119_per_puzzle.csv"},
+    {"name": "jazivxt Boxed In Sub v77 / Boxed In v79", "record": "data/references/public_best_20261126.json", "dataset_license": "Apache 2.0"},
+    {"name": "goodpjw2008 Hopper Records / union-register v33", "record": "data/references/public_best_20261124.json", "dataset_license": "CC BY 4.0"}
+  ]
 }

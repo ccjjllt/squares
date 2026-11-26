@@ -1,0 +1,45 @@
+{
+  "ga_snapshot": {
+    "parent_official_ref": 58768971,
+    "parent_sha256": "6e801edde5533d2af662297ef665e8046df1e0d614ec4e422548a340adb707cf",
+    "snapshot_date": "2026-11-25",
+    "file": "outputs/retained_research/ga_20261125/submission.csv",
+    "sha256": "4655255df96d54db6d19f884aa5b7103010cf76a41bdec9c30ce1290e7cc4366",
+    "original_local_rolling_bank": "/private/tmp/sis_campaign2_20261120/ga_b/best_bank",
+    "validation_report": "outputs/retained_research/ga_20261125/validation/report.json",
+    "v20_scores": {
+      "text": 22.10339658009354,
+      "float64": 22.10339658009354
+    },
+    "gains_vs_parent": {
+      "376": 1.8894707993766247e-06,
+      "805": 3.5837542953220947e-06,
+      "853": 2.9394129458015783e-05
+    },
+    "submitted": false,
+    "delta_from_parent": "data/references/ga_20261125_three_puzzles.csv.gz",
+    "delta_sha256": "be81b1ea396e7935ce9f970d348cef050f12bc42fb5a6ccce5fc28d525f76acc",
+    "restore": "Starting with parent 58768971, replace the complete n=376,805,853 CSV groups from the gzip, preserving row order and exact bytes. Reconstructed SHA-256 verified."
+  },
+  "lp_hopper2": {
+    "source": "https://www.kaggle.com/code/ccjjllt/sis-cpu-lp-hopper2-20261123",
+    "version": 1,
+    "file": "outputs/retained_research/lp_hopper2_20261123/wins.csv",
+    "sha256": "4f3caeee1c93bd903c05079fc54c0176fb67f895272e092e5d425fe2e3376eee",
+    "provenance": "outputs/retained_research/lp_hopper2_20261123/provenance.json",
+    "improved_vs_ga": [
+      333,
+      367,
+      694,
+      805,
+      864
+    ],
+    "gain_vs_ga": 7.061461466228991e-06,
+    "submitted": false
+  },
+  "source_archive": {
+    "path": "outputs/retained_research/campaign_20261123_sources.tar.gz",
+    "sha256": "02ab689b445f428de01367c4eb223c5966e72368861b06d7b7e0022143e67a7e",
+    "contents": "Four 11/23 CPU kernels, source and dataset references, original notices, selected experiment summaries."
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "as_of_local_date": "2026-11-26",
+  "source": {
+    "author": "jazivxt",
+    "notebook": "jazivxt/boxed-in-sub",
+    "notebook_url": "https://www.kaggle.com/code/jazivxt/boxed-in-sub?scriptVersionId=374186484",
+    "notebook_version": 77,
+    "script_version_id": 374186484,
+    "run_utc": "2026-11-26T01:35:35.923Z",
+    "output": "submission.csv",
+    "dataset": "jazivxt/boxed-in",
+    "dataset_version": 79,
+    "dataset_url": "https://www.kaggle.com/datasets/jazivxt/boxed-in/versions/79",
+    "dataset_license": "Apache 2.0",
+    "dataset_csv_sha256": "8f680ab06f41c5f7c45d6bcbdb1a76aef69f5efe0c94bb2ac51b98234d3e7e61",
+    "notebook_matches_dataset_after_crlf_to_lf": true
+  },
+  "file": {
+    "path": "outputs/public_best_20261126/boxed_in_v77.csv",
+    "sha256": "393f01bbd24714b679d158ef67caf2ab0faf29148cc6fbe60d2286f097ba438f",
+    "bytes": 42899814,
+    "rows": 500500,
+    "puzzles": 1000
+  },
+  "verification": {
+    "metric_version": 20,
+    "report_path": "outputs/public_best_20261126/validation_boxed_v77/report.json",
+    "routes": {
+      "text": {
+        "score": 22.09055239765122,
+        "valid": 1000,
+        "missing": 0,
+        "invalid_submitted": 0
+      },
+      "float64": {
+        "score": 22.090552397651223,
+        "valid": 1000,
+        "missing": 0,
+        "invalid_submitted": 0
+      }
+    }
+  },
+  "scope": "Compared downloadable public files, with Kaggle notebooks sorted by score and by most recent run, public datasets and external sources. The selected file is the original public notebook output.",
+  "compared": [
+    {
+      "ref": "avazaku/squares-in-squares-contact-residual-search",
+      "version": 4,
+      "script_version_id": 374147564,
+      "v20_score": 22.090632238830995
+    },
+    {
+      "ref": "kmmmvs/squares-public-merge-daily-261124",
+      "version": 36,
+      "script_version_id": 374161107,
+      "v20_score": 22.09063223883173
+    },
+    {
+      "dataset": "goodpjw2008/squares-in-squares-union-register-packings",
+      "version": 46,
+      "author_score": 22.0906322474
+    },
+    {
+      "ref": "AHFE0924/Squares-Feeder",
+      "commit": "4f34a21",
+      "author_score": 22.09063233480483
+    },
+    {
+      "dataset": "alexchilton/squares-in-squares-starter-kit",
+      "version": 115,
+      "bbox_estimate": 22.090665900090634
+    },
+    {
+      "dataset": "jonathan1506/joegun-squares-packings",
+      "version": 15,
+      "bbox_estimate": 22.091028645368
+    },
+    {
+      "label": "Nevska public frontier",
+      "version": 18,
+      "bbox_estimate": 22.091727770021
+    }
+  ],
+  "previous_submission": {
+    "ref": 58815660,
+    "official_public_score": 22.0919946652
+  },
+  "per_puzzle_changes_vs_previous_at_1e_10": {
+    "improved": 28,
+    "regressed": 0
+  },
+  "submission": {
+    "ref": 58920662,
+    "submitted_utc": "2026-11-26T01:53:13.317Z",
+    "submitted_cst": "2026-11-26T09:53:13.317+08:00",
+    "status": "COMPLETE",
+    "file_name_on_kaggle": "boxed_in_v77.csv",
+    "team": "ccjjllt",
+    "description": "Public Boxed In Sub v77 by jazivxt (374186484), Boxed In dataset v79. SHA256 393f01bbd247. v20 validated 1000/1000, local 22.0905523976512.",
+    "official_public_score": "22.0905523976",
+    "improvement": "0.0014422676",
+    "leaderboard_snapshot_utc": "2026-11-26T02:03:18Z",
+    "rank": 156,
+    "teams": 2490,
+    "leaderboard": {
+      "top1": {
+        "team": "Cats and boxes 😼",
+        "score": "22.0399510810"
+      },
+      "top10_cutoff": "22.0611215438",
+      "top50_cutoff": "22.0863930533",
+      "top100_cutoff": "22.0898165340",
+      "strictly_better_teams": 153,
+      "tied_at_score_on_page": [
+        "Clark Kitchen",
+        "Boxed In !",
+        "ccjjllt",
+        "John Leskas"
+      ],
+      "listed_position": 156
+    }
+  }
+}
